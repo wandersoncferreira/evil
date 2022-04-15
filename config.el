@@ -1,12 +1,11 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Here be Evil dragons!!
 (setq user-full-name "Wanderson Ferreira"
       user-mail-address "wand@hey.com"
       ;; theme - I'm a huge fan of the default theme
       doom-theme nil
       ;; font
-      doom-font (font-spec :family "Monaco" :size 14)
+      doom-font (font-spec :family "Monaco" :size 12)
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
       ;; where to find/add my org files?
@@ -17,14 +16,8 @@
       dired-dwim-target t
       ;; search for typed word in all visible windows
       avy-all-windows t
-      ;; improve LSP performance
-      read-process-output-max (* 1024 1024)
       ;; change line spacing for all buffers
       line-spacing 3
-      ;; real emacs knights don't use shift to mark things
-      shift-select-mode nil
-      ;; evil bindings in the minibuffer
-      evil-collection-setup-minibuffer t
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete)
 
