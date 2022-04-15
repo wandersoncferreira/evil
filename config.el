@@ -12,6 +12,7 @@
 (load! "+bindings")
 
 ;; cisco configs
+;; we need to postpone the loading of gpg files to make it work
 (add-hook 'after-init-hook
           (lambda ()
             (load-file (expand-file-name "+cisco.el.gpg" doom-private-dir))
