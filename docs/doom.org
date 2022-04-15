@@ -1,0 +1,26 @@
+#+TITLE: Learning Doom
+
+- =^= go to the first non-blank character of the line
+- =g_= go to the last non-blank character of the line
+- =C-r= redo
+- =%= go to the corresponding (, [, or {
+- =*= go to the next occurrence of the word under the cursor
+- =#= go to the previous occurrence of the word under the cursor
+- How to center the current line in the screen in Vim?
+  - zz, zt, zb
+- How to scroll down/up in Vim?
+  - ctrl-d, ctrl-u, ctrl-b, ctrl-f
+- Try using the Toggle functionality more often to remove or bring up eshell or REPL
+- Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
+- =dot= will repeat the last command
+- completion works via =c-n= and =c-p=
+- =spc sp= to search all files in the current project
+- =/= to search within the current buffer. Use `n` and `N` to go to next and
+  previous matches. =?= to search backwards.
+- =s= and type two characters to jump forward to the nearest match
+  - if the things I want to jump to is fairly close to where the cursor is I'll
+    use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
+    (gs SPC)
+- use =c-,= to find next flyspell error
+- use =z-== to fix the wrong word at point
+- use =c-;= to fix previous wrong word.
