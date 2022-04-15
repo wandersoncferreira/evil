@@ -25,7 +25,7 @@
       avy-all-windows t
 
       ;; change line spacing for all buffers
-      line-spacing 3
+      line-spacing 4
 
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete)
