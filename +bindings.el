@@ -37,6 +37,4 @@
        (:map (clojure-mode-map)
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
-         ";" #'cider-eval-defun-to-comment)
-        (:prefix ("f" . "format")
-         "l" #'flycheck-list-errors))))
+         ";" #'cider-eval-defun-to-comment))))
