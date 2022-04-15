@@ -19,7 +19,7 @@
        snippets
 
        :emacs
-       dired    ; making dired pretty [functional]
+       dired             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
@@ -33,19 +33,20 @@
 
        :tools
        editorconfig      ; let someone else argue about tabs vs spaces
-       (eval +overlay)     ; run code, run (also, repls)
+       (eval +overlay)   ; run code, run (also, repls)
        gist              ; interacting with github gists
-       lookup              ; navigate your code and its documentation
+       lookup            ; navigate your code and its documentation
        lsp               ; M-x vscode
        magit             ; a git porcelain for Emacs
 
        :os
-       (:if IS-MAC macos)  ; improve compatibility with macOS
+       (:if IS-MAC
+        macos)           ; improve compatibility with macOS
 
        :lang
-       (clojure +lsp)           ; java with a lisp
+       (clojure +lsp)    ; java with a lisp
        emacs-lisp        ; drown in parentheses
-       (latex +latexmk)    ; writing papers in Emacs has never been so fun
+       (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
        org               ; organize your plain life in plain text
        sh                ; she sells {ba,z,fi}sh shells on the C xor
