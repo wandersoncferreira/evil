@@ -9,3 +9,7 @@
 ;; disabling some packages
 (package! magit-gitflow :disable t)
 (package! marginalia :disable t)
+(package! diff-hl :disable t)
+(package! fd-dired :disable t)
+(package! diredfl :disable t)
+(package! dired-rsync :disable t)
