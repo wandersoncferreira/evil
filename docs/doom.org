@@ -1,4 +1,4 @@
-#+TITLE: Learning Doom
+#+TITLE: Learning Doom and Vim
 
 - =^= go to the first non-blank character of the line
 - =g_= go to the last non-blank character of the line
@@ -24,3 +24,29 @@
 - use =c-,= to find next flyspell error
 - use =z-== to fix the wrong word at point
 - use =c-;= to fix previous wrong word.
+- the "dot" command: think if the dot command would repeat your edition correctly
+- use the more general text objects (iw rather than w)
+- prefer text objects to motions when possible
+- visual mode is a smell
+- don't use two sentences where one will due
+- visual mode breaks repeatability
+- custom operators
+  - surround
+    - change surround <object>: cs
+    - add surround: ys
+    - delete surround: ds
+  - commentary
+    - gc <text object>: for example, gcip to comment entire paragraph
+  - replace with register: TODO: verify if I want to include this plugin in my conf
+- custom text objects
+  - indent
+    - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
+- <verb> i <noun> is amazing
+- =ma= will set a mark in =a= register
+- =`a= will jump back to specific place of mark =a=
+- ='a= will jump to the beginning of the line of the specific mark =a=
+
+
+* Resources
+- [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
+- [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
