@@ -27,12 +27,6 @@
 ;; disable aesthetic plugin for fancier bullets
 (remove-hook 'org-mode-hook #'org-superstar-mode)
 
-;; I don't want to group directories first in direct buffers, then use the original default value
-(setq-default dired-listing-switches "-al")
-
-;; start emacs maximized
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
 (use-package! smartparens
   :init
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
