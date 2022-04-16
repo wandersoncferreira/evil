@@ -30,6 +30,9 @@
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete)
 
+;; change line spacing for all bufferd
+(setq-default line-spacing 4)
+
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
 
