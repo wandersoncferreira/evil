@@ -1,4 +1,4 @@
-;;; ../code/evil/+lsp.el -*- lexical-binding: t; -*-
+;;; ../code/evil/preferences/+lsp.el -*- lexical-binding: t; -*-
 
 (use-package! lsp-mode
   :commands lsp

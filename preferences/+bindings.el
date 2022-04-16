@@ -1,4 +1,4 @@
-;;; +bindings.el -*- lexical-binding: t; -*-
+;;; ../code/evil/preferences/+bindings.el -*- lexical-binding: t; -*-
 
 ;; general remapping
 (map! :leader

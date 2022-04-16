@@ -1,4 +1,4 @@
-;;; ../code/evil/+parens.el -*- lexical-binding: t; -*-
+;;; ../code/evil/preferences/+parens.el -*- lexical-binding: t; -*-
 
 (use-package! smartparens
   :init

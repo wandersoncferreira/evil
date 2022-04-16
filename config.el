@@ -12,7 +12,8 @@
     "clojure"
     "elisp"
     "bindings"
-    "cisco.el.gpg"))
+    "cisco.el.gpg"
+    "projectile"))
 
 (dolist (cfg list-of-preferences)
   (let ((path (format "preferences/+%s" cfg)))

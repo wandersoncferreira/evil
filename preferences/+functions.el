@@ -1,4 +1,4 @@
-;;; +functions.el -*- lexical-binding: t; -*-
+;;; ../code/evil/preferences/+functions.el -*- lexical-binding: t; -*-
 
 (defun sp-reindent ()
   (interactive)

@@ -1,4 +1,4 @@
-;;; ../code/evil/+clojure.el -*- lexical-binding: t; -*-
+;;; ../code/evil/preferences/+clojure.el -*- lexical-binding: t; -*-
 
 (use-package! cider
   :init
