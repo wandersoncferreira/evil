@@ -6,9 +6,17 @@
 ;; I don't like unbalanced s-expressions
 (package! evil-smartparens)
 
-;; disabling some packages
-(package! magit-gitflow :disable t)
+;;; disabling some packages
+;; company
+(package! company-dict :disable t)
+
+;; vertico
 (package! marginalia :disable t)
+
+;; magit
+(package! magit-gitflow :disable t)
+
+;; dired
 (package! diff-hl :disable t)
 (package! fd-dired :disable t)
 (package! diredfl :disable t)
