@@ -47,6 +47,31 @@
 - ='a= will jump to the beginning of the line of the specific mark =a=
 
 
+* Learn the Mindset
+
+Don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
+
+* Vim Verbs
+
+Single character verbs
+| Command | Action                                                |
+|---------+-------------------------------------------------------|
+| x       | delete character under the cursor                     |
+| r       | replace character under cursor with another character |
+| s       | delete character under cursor and move to insert mode |
+
+
+* Vim Text Objects
+
+The second type of "direct object" that Vim verbs can take is a text object. You can think of text objects as a "defined chunk of text".
+
+| Command | Text Object                                         |
+|---------+-----------------------------------------------------|
+| iw      | applies to everything in the current word           |
+| it      | aplies to everything in current xml/html tag        |
+| i{      | applies to everything inside nearest curly brackets |
+
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
+- [[https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language][Learning Vim as a Language]]  - Ben McCormick blog post
