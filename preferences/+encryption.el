@@ -10,3 +10,10 @@
       epa-file-encrypt-to '("wand@hey.com"))
 
 (set 'epg-pinentry-mode nil)
+
+(defun bk/bitwarden ()
+  "Get bitwarden."
+  (interactive)
+  (kill-new (auth-source-pick-first-password
+             :host "bitwarden.app"
+             :user "bartuka")))
