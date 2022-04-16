@@ -13,6 +13,9 @@
 ;; vertico
 (package! marginalia :disable t)
 
+;; doom
+(package! solaire-mode :disable t)
+
 ;; magit
 (package! magit-gitflow :disable t)
 
