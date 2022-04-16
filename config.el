@@ -13,7 +13,8 @@
     "elisp"
     "bindings"
     "cisco.el.gpg"
-    "projectile"))
+    "projectile"
+    "rss"))
 
 (dolist (cfg list-of-preferences)
   (let ((path (format "preferences/+%s" cfg)))
