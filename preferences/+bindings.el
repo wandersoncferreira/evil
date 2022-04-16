@@ -23,10 +23,6 @@
       :i "M-l" #'sp-forward-slurp-sexp
       :i "M-h" #'sp-forward-barf-sexp)
 
-;; I usually like to move through sexp easily
-(map! :n "H" #'sp-backward-sexp
-      :n "L" #'sp-forward-sexp)
-
 ;; disable evil-smartparens overwriting of s/S keys
 (map! :map (evil-smartparens-mode-map)
       :n "s" nil
