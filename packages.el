@@ -28,3 +28,6 @@
 ;; modeline
 (package! anzu :disable t)
 (package! evil-anzu :disable t)
+
+;; markdown
+(package! markdown-toc :disable t)
