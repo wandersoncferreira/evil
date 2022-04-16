@@ -1,6 +1,6 @@
 ;;; ../code/evil/preferences/+clojure.el -*- lexical-binding: t; -*-
 
-
+;;;###autoload
 (defun bk/cider--modeline-info ()
   "I'd like to see only cider[connected:port] or cider[not connected]"
   (if-let* ((current-connection (ignore-errors (cider-current-repl))))

@@ -1,5 +1,6 @@
 ;;; ../code/evil/preferences/+functions.el -*- lexical-binding: t; -*-
 
+;;;###autoload
 (defun sp-reindent ()
   (interactive)
   (save-excursion
@@ -8,6 +9,7 @@
      (region-beginning)
      (region-end))))
 
+;;;###autoload
 (defun bk/toggle-transparency ()
   (interactive)
   (let ((alpha (frame-parameter nil 'alpha)))

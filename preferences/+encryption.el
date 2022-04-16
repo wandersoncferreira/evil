@@ -11,6 +11,7 @@
 
 (set 'epg-pinentry-mode nil)
 
+;;;###autoload
 (defun bk/bitwarden ()
   "Get bitwarden."
   (interactive)
