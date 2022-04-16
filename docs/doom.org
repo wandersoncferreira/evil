@@ -1,5 +1,17 @@
 #+TITLE: Learning Doom and Vim
 
+Vi is fundammentally built on command composability. It favors small,
+general-purpose commands that can be combined with objects to compose larger
+commands.
+
+This philosophy of minimalist commands that can be composed together is the
+fundamental originating philosophy of Unix, and Vim exemplifies it like no other
+editor.
+
+You know what improves productivity? Mastering motions and operators.
+
+* General Notes
+
 - =^= go to the first non-blank character of the line
 - =g_= go to the last non-blank character of the line
 - =C-r= redo
@@ -71,7 +83,13 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 | it      | aplies to everything in current xml/html tag        |
 | i{      | applies to everything inside nearest curly brackets |
 
+
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
 - [[https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language][Learning Vim as a Language]]  - Ben McCormick blog post
+- [[https://medium.com/@mkozlows/why-atom-cant-replace-vim-433852f4b4d1][Why Atom can't replace Vim]] - Mike Kozlowski blog post
+- [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]  - Alex R. Young blog post
+- Best of Alex R. Young Medium activity:
+  - [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]
+  - [[https://medium.com/usevim/vim-101-quick-movement-c12889e759e0][Vim 101: Quick movement]]
