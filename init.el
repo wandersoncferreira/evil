@@ -53,7 +53,7 @@
 
        :email
        :app
-       (rss +org)        ; emacs as an RSS reader
+       rss               ; emacs as an RSS reader
 
        :config
        (default +bindings +smartparens))
