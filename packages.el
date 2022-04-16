@@ -24,3 +24,7 @@
 (package! fd-dired :disable t)
 (package! diredfl :disable t)
 (package! dired-rsync :disable t)
+
+;; modeline
+(package! anzu :disable t)
+(package! evil-anzu :disable t)
