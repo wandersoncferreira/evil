@@ -26,4 +26,19 @@
   ;; use lsp for completion
   (add-hook 'cider-mode-hook
             (lambda ()
-              (remove-hook 'completion-at-point-functions #'cider-complete-at-point))))
+              (remove-hook 'completion-at-point-functions #'cider-complete-at-point)))
+
+  ;; include cider buffer into current workspace
+  (add-hook 'cider-repl-mode-hook
+            (lambda ()
+              (persp-add-buffer (current-buffer))))
+
+  ;; include test-report buffer into current workspace
+  (add-hook 'cider-test-report-mode-hook
+            (lambda ()
+              (persp-add-buffer (current-buffer))))
+
+  ;; include temp buffers created by cider into current workspace
+  (add-hook 'cider-popup-buffer-mode-hook
+            (lambda ()
+              (persp-add-buffer (current-buffer)))))
