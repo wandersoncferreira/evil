@@ -34,3 +34,7 @@
 
 ;; markdown
 (package! markdown-toc :disable t)
+
+;; org
+(package! avy :disable t)
+(package! org-yt :disable t)
