@@ -57,6 +57,19 @@ You know what improves productivity? Mastering motions and operators.
 - =ma= will set a mark in =a= register
 - =`a= will jump back to specific place of mark =a=
 - ='a= will jump to the beginning of the line of the specific mark =a=
+- =g;= cycle through recent changes
+- =g,= reverse direction
+- ='.= jump to last modification line
+- =`.= jump to exact positon in last modification line
+- =:s/search/replace= by default operates on the first match of the current line
+- Subtitute flags
+  - The most common flags are probably =g= and =i=
+  - =g= works on every match
+  - =i= performs case-insensitive match
+  - =c= prompts for confirmation of each substitution
+- =c-r= in insert-mode will make evil paste from a register
+
+* Works in Vim, but seems not to work on Doom
 
 
 * Learn the Mindset
@@ -93,5 +106,7 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 - Best of Alex R. Young Medium activity:
   - [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]
   - [[https://medium.com/usevim/vim-101-quick-movement-c12889e759e0][Vim 101: Quick movement]]
+  - [[https://medium.com/usevim/vim-101-search-and-replace-d1901619c2a6
+][Vim 101: Search and Replace]]
 - [[https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56][Deliberate Practice on Vim Surround]] - House Lin blog post
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
