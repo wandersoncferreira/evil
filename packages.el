@@ -38,3 +38,13 @@
 ;; org
 (package! avy :disable t)
 (package! org-yt :disable t)
+
+;; macos
+(package! ns-auto-titlebar :disable t)
+
+;; rss
+(package! elfeed-goodies :disable t)
+
+;; defaults
+(package! drag-stuff :disable t)
+(package! expand-region :disable t)

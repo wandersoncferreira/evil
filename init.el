@@ -33,7 +33,7 @@
 
        :tools
        editorconfig      ; let someone else argue about tabs vs spaces
-       (eval +overlay)   ; run code, run (also, repls)
+       eval              ; run code, run (also, repls)
        gist              ; interacting with github gists
        lookup            ; navigate your code and its documentation
        lsp               ; M-x vscode
