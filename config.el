@@ -14,6 +14,7 @@
     "bindings"
     "cisco.el.gpg"
     "projectile"
+    "uniquify"
     "rss"))
 
 (dolist (cfg list-of-preferences)
