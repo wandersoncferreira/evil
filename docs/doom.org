@@ -106,7 +106,6 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 - Best of Alex R. Young Medium activity:
   - [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]
   - [[https://medium.com/usevim/vim-101-quick-movement-c12889e759e0][Vim 101: Quick movement]]
-  - [[https://medium.com/usevim/vim-101-search-and-replace-d1901619c2a6
-][Vim 101: Search and Replace]]
+  - [[https://medium.com/usevim/vim-101-search-and-replace-d1901619c2a6][Vim 101: Search and Replace]]
 - [[https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56][Deliberate Practice on Vim Surround]] - House Lin blog post
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
