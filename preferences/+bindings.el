@@ -14,11 +14,6 @@
        :desc "barf" "b" #'sp-forward-barf-sexp
        :desc "splice backward" "k" #'sp-splice-sexp-killing-backward
        :desc "raise" "r" #'sp-raise-sexp
-       (:prefix ("w" . "wrap")
-        :desc "parens" "w" #'sp-wrap-round
-        :desc "square" "s" #'sp-wrap-square
-        :desc "curly" "c" #'sp-wrap-curly)
-       :desc "copy" "y" #'sp-copy-sexp
        :desc "transpose" "t" #'sp-transpose-sexp)
       :i "M-l" #'sp-forward-slurp-sexp
       :i "M-h" #'sp-forward-barf-sexp)
