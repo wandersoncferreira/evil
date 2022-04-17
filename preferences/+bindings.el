@@ -9,7 +9,6 @@
 ;; keybindings on parens
 (map! :leader
       (:prefix ("l" . "lisp")
-       :desc "reindent" "=" #'sp-reindent
        :desc "slurp" "l" #'sp-forward-slurp-sexp
        :desc "barf" "b" #'sp-forward-barf-sexp
        :desc "splice backward" "k" #'sp-splice-sexp-killing-backward
