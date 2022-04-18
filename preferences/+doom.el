@@ -27,6 +27,10 @@
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete)
 
+;; DO NOT group directories first
+(after! dired
+  (setq dired-listing-switches "-alh"))
+
 ;; change line spacing for all bufferd
 (setq-default line-spacing 4)
 
