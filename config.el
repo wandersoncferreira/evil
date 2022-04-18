@@ -11,7 +11,6 @@
     "lsp"
     "clojure"
     "elisp"
-    "bindings"
     "cisco.el.gpg"
     "projectile"
     "uniquify"

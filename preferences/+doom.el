@@ -39,3 +39,8 @@
 ;;; vertico and consult
 ;; disable the default preview when switching buffers
 (setq consult-preview-key (kbd "M-."))
+
+(map! :leader
+      "fj" #'dired-jump
+      "y" #'consult-yank-from-kill-ring
+      "pt" #'projectile-toggle-between-implementation-and-test)

@@ -42,3 +42,9 @@
   (add-hook 'cider-popup-buffer-mode-hook
             (lambda ()
               (persp-add-buffer (current-buffer)))))
+
+(map! (:localleader
+       (:map (clojure-mode-map)
+        (:prefix ("e" . "eval")
+         "v" #'cider-eval-sexp-at-point
+         ";" #'cider-eval-defun-to-comment))))
