@@ -48,3 +48,7 @@
       "fj" #'dired-jump
       "y" #'consult-yank-from-kill-ring
       "pt" #'projectile-toggle-between-implementation-and-test)
+
+;; add workspace name into the modeline
+(after! doom-modeline
+  (setq doom-modeline-persp-name t))
