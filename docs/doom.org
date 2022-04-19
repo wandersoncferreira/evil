@@ -68,6 +68,8 @@ You know what improves productivity? Mastering motions and operators.
   - =i= performs case-insensitive match
   - =c= prompts for confirmation of each substitution
 - =c-r= in insert-mode will make evil paste from a register
+- The =0= register is useful because it contains the value of the last yank
+  - ="0p= will paste the content of the last yanked value
 
 * Works in Vim, but seems not to work on Doom
 
@@ -107,5 +109,6 @@ The second type of "direct object" that Vim verbs can take is a text object. You
   - [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]
   - [[https://medium.com/usevim/vim-101-quick-movement-c12889e759e0][Vim 101: Quick movement]]
   - [[https://medium.com/usevim/vim-101-search-and-replace-d1901619c2a6][Vim 101: Search and Replace]]
+  - [[https://medium.com/usevim/vim-101-registers-f6ad105dfd89][Vim 101: Registers]]
 - [[https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56][Deliberate Practice on Vim Surround]] - House Lin blog post
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
