@@ -9,5 +9,6 @@
           "https://okmij.org/ftp/rss.xml"
           "http://planet.clojure.in/atom.xml"))
 
-  (set-face-attribute 'elfeed-search-title-face nil :foreground "dim gray")
-  (set-face-attribute 'elfeed-search-unread-title-face nil :foreground "blue"))
+  ;; (set-face-attribute 'elfeed-search-title-face nil :foreground "dim gray")
+  ;; (set-face-attribute 'elfeed-search-unread-title-face nil :foreground "blue")
+  )
