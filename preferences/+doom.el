@@ -4,7 +4,7 @@
       user-mail-address "wand@hey.com"
 
       ;; theme - I'm a huge fan of the default theme
-      doom-theme nil
+      doom-theme 'doom-monokai-classic
 
       ;; font
       doom-font (font-spec :family "Monaco" :size 12)
