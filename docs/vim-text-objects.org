@@ -1,0 +1,31 @@
+#+title: Vim Text Objects
+
+Vim provides text objects for the three building blocks of plaintext: words,
+sentences, and paragraphs. Vim's text objects provide an incredible level of
+precison, the key is to try to always edit by text objects.
+
+- =aw= - a word (includes surrounding white space)
+- =iw= - inner word (does not include surrounding white space)
+
+This convention about the =a= and =i= is followed by all text objects.
+
+- =as= - a sentence
+- =is= - inner sentence
+- =ap= - a paragraph
+- =ip= - inner paragraph
+
+* Programming language text objects
+
+Vim provides several text objects based on common programming language
+constructs.
+
+| Command | Description                |
+| a"      | a double quoted string     |
+| i"      | inner double quoted string |
+| a)      | a parenthesized block      |
+| i)      | inner parenthesized block  |
+| ai      | a indentation block        |
+| ii      | inner indentation          |
+
+* References
+ - [[https://blog.carbonfive.com/vim-text-objects-the-definitive-guide/][Vim text objects the definitive guide]] - Jared Carroll blog post
