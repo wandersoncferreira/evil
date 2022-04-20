@@ -48,3 +48,6 @@
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
          ";" #'cider-eval-defun-to-comment))))
+
+(map! (:map (clojure-mode-map)
+       "DEL" #'sp-backward-delete-char))
