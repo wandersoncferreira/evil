@@ -71,12 +71,15 @@ You know what improves productivity? Mastering motions and operators.
 - The =0= register is useful because it contains the value of the last yank
   - ="0p= will paste the content of the last yanked value
 
-* Works in Vim, but seems not to work on Doom
+* Works in Vim, but seems not to work on Doom [0/1]
+- [ ] Global marks are preserved between sessions in Vim
 
 
 * Learn the Mindset
 
 Don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
+
+Think operators, text objects, and motions
 
 * Vim Verbs
 
