@@ -4,7 +4,8 @@
       user-mail-address "wand@hey.com"
 
       ;; theme - I'm a huge fan of the default theme
-      doom-theme 'doom-monokai-classic
+      ;; let's stay really close to Vim for a while =)
+      doom-theme 'vim-colors
 
       ;; font
       doom-font (font-spec :family "Monaco" :size 12)
