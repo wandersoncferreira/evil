@@ -48,6 +48,7 @@
       "fj" #'dired-jump
       "y" #'consult-yank-from-kill-ring
       "pt" #'projectile-toggle-between-implementation-and-test
+      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
 
