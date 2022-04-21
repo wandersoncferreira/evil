@@ -1,0 +1,18 @@
+#+title:  Vim Motions
+
+ Always be scrolling! Don't use =hjkl= to move around the screen.
+
+| Commands | Description                       |
+|----------+-----------------------------------|
+| H        | high                              |
+| M        | middle                            |
+| L        | low                               |
+| zt       | put the cursor positon to top     |
+| zz       | put the cursor position to middle |
+| zb       | put the cursor position to bottom |
+| Ctrl-U   | scroll up half screen             |
+| Ctrl-B   | scroll up full screen             |
+| Ctrl-Y   | scroll up incrementally           |
+| Ctrl-D   | scroll down half screen           |
+| Ctrl-F   | scroll down full screen           |
+| Ctrl-E   | scroll down incrementally         |
