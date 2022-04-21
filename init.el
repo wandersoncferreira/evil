@@ -49,6 +49,7 @@
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
        org               ; organize your plain life in plain text
+       plantuml          ; diagrams for confusing people more
        sh                ; she sells {ba,z,fi}sh shells on the C xor
 
        :email

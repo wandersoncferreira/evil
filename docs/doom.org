@@ -12,64 +12,78 @@ You know what improves productivity? Mastering motions and operators.
 
 * General Notes
 
-- =^= go to the first non-blank character of the line
-- =g_= go to the last non-blank character of the line
-- =C-r= redo
-- =%= go to the corresponding (, [, or {
-- =*= go to the next occurrence of the word under the cursor
-- =#= go to the previous occurrence of the word under the cursor
-- How to center the current line in the screen in Vim?
-  - zz, zt, zb
-- How to scroll down/up in Vim?
-  - ctrl-d, ctrl-u, ctrl-b, ctrl-f
-- Try using the Toggle functionality more often to remove or bring up eshell or REPL
-- Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
-- =dot= will repeat the last command
-- completion works via =c-n= and =c-p=
-- =spc sp= to search all files in the current project
-- =/= to search within the current buffer. Use `n` and `N` to go to next and
-  previous matches. =?= to search backwards.
-- =s= and type two characters to jump forward to the nearest match
-  - if the things I want to jump to is fairly close to where the cursor is I'll
-    use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
-    (gs SPC)
-- use =c-,= to find next flyspell error
-- use =z-== to fix the wrong word at point
-- use =c-;= to fix previous wrong word.
-- the "dot" command: think if the dot command would repeat your edition correctly
-- use the more general text objects (iw rather than w)
-- prefer text objects to motions when possible
-- visual mode is a smell
-- don't use two sentences where one will due
-- visual mode breaks repeatability
-- custom operators
-  - surround
-    - change surround <object>: cs
-    - add surround: ys
-    - delete surround: ds
-  - commentary
-    - gc <text object>: for example, gcip to comment entire paragraph
-  - replace with register: TODO: verify if I want to include this plugin in my conf
-- custom text objects
-  - indent
-    - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
-- <verb> i <noun> is amazing
-- =ma= will set a mark in =a= register
-- =`a= will jump back to specific place of mark =a=
-- ='a= will jump to the beginning of the line of the specific mark =a=
-- =g;= cycle through recent changes
-- =g,= reverse direction
-- ='.= jump to last modification line
-- =`.= jump to exact positon in last modification line
-- =:s/search/replace= by default operates on the first match of the current line
-- Subtitute flags
-  - The most common flags are probably =g= and =i=
-  - =g= works on every match
-  - =i= performs case-insensitive match
-  - =c= prompts for confirmation of each substitution
-- =c-r= in insert-mode will make evil paste from a register
-- The =0= register is useful because it contains the value of the last yank
-  - ="0p= will paste the content of the last yanked value
+ - =^= go to the first non-blank character of the line
+ - =g_= go to the last non-blank character of the line
+ - =C-r= redo
+ - =%= go to the corresponding (, [, or {
+ - =*= go to the next occurrence of the word under the cursor
+ - =#= go to the previous occurrence of the word under the cursor
+ - How to center the current line in the screen in Vim?
+   - zz, zt, zb
+ - How to scroll down/up in Vim?
+   - ctrl-d, ctrl-u, ctrl-b, ctrl-f
+ - Try using the Toggle functionality more often to remove or bring up eshell or REPL
+ - Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
+ - =dot= will repeat the last command
+ - completion works via =c-n= and =c-p=
+ - =spc sp= to search all files in the current project
+ - =/= to search within the current buffer. Use `n` and `N` to go to next and
+   previous matches. =?= to search backwards.
+ - =s= and type two characters to jump forward to the nearest match
+   - if the things I want to jump to is fairly close to where the cursor is I'll
+     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
+     (gs SPC)
+ - use =c-,= to find next flyspell error
+ - use =z-== to fix the wrong word at point
+ - use =c-;= to fix previous wrong word.
+ - the "dot" command: think if the dot command would repeat your edition correctly
+ - use the more general text objects (iw rather than w)
+ - prefer text objects to motions when possible
+ - visual mode is a smell
+ - don't use two sentences where one will due
+ - visual mode breaks repeatability
+ - custom operators
+   - surround
+     - change surround <object>: cs
+     - add surround: ys
+     - delete surround: ds
+   - commentary
+     - gc <text object>: for example, gcip to comment entire paragraph
+   - replace with register: TODO: verify if I want to include this plugin in my conf
+ - custom text objects
+   - indent
+     - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
+ - <verb> i <noun> is amazing
+ - =ma= will set a mark in =a= register
+ - =`a= will jump back to specific place of mark =a=
+ - ='a= will jump to the beginning of the line of the specific mark =a=
+ - =g;= cycle through recent changes
+ - =g,= reverse direction
+ - ='.= jump to last modification line
+ - =`.= jump to exact positon in last modification line
+ - =:s/search/replace= by default operates on the first match of the current line
+ - Subtitute flags
+   - The most common flags are probably =g= and =i=
+   - =g= works on every match
+   - =i= performs case-insensitive match
+   - =c= prompts for confirmation of each substitution
+ - =c-r= in insert-mode will make evil paste from a register
+ - The =0= register is useful because it contains the value of the last yank
+   - ="0p= will paste the content of the last yanked value
+ - Using =[m= to move to the beginning of previous/current method
+ - Using =]m= to move to the beginning of next method
+ - =ctrl-o / ctrl-i= cycle through :jumps
+ - =g; / g,= cycle through :changes
+ - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
+
+* Digging
+
+Some files with more detailed information about Vim
+
+- [[file:vim-marks.org][Vim Marks]]
+- [[file:vim-text-objects.org][Vim Text Objects]]
+- [[file:vim-motions.org][Vim Motions]]
+- [[file:vim-jumplist.org][Vim Jumplist]]
 
 * Works in Vim, but seems not to work on Doom [0/1]
 - [ ] Global marks are preserved between sessions in Vim
@@ -77,7 +91,7 @@ You know what improves productivity? Mastering motions and operators.
 
 * Learn the Mindset
 
-Don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
+Don't type it twice, is a pretty good summary of the Vim" Way" of doing things.
 
 Think operators, text objects, and motions
 
@@ -102,6 +116,7 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 | i{      | applies to everything inside nearest curly brackets |
 
 
+
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
@@ -115,3 +130,4 @@ The second type of "direct object" that Vim verbs can take is a text object. You
   - [[https://medium.com/usevim/vim-101-registers-f6ad105dfd89][Vim 101: Registers]]
 - [[https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56][Deliberate Practice on Vim Surround]] - House Lin blog post
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
+- [[https://www.youtube.com/watch?v=E-ZbrtoSuzw][Vim: Tutorial on Editing, Navigation, and File Management]]  - Leeren YT video
