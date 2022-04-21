@@ -11,7 +11,7 @@
       doom-font (font-spec :family "Monaco" :size 12)
 
       ;; DO NOT display fixed line numbers in the left fringe
-      display-line-numbers-type nil
+      display-line-numbers-type 'relative
 
       ;; where to find/add my org files?
       org-directory "~/org/"
