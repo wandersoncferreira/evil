@@ -75,6 +75,13 @@ You know what improves productivity? Mastering motions and operators.
  - =ctrl-o / ctrl-i= cycle through :jumps
  - =g; / g,= cycle through :changes
  - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
+ - =M-d= will select the current word, and again will find another ocurrence
+ - =M-D= will find occurrence upward
+ - In visual mode you can select a word and =R= will select all ocurrences
+   - =Ctrl-n= for next selection
+   - =Ctrl-p= for previous selection
+   - Exclude matches with =RET=
+   - You can make an edit and the changes will be reflected in all the selection
 
 * Digging
 
@@ -131,3 +138,4 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 - [[https://towardsdatascience.com/how-i-learned-to-enjoy-vim-e310e53e8d56][Deliberate Practice on Vim Surround]] - House Lin blog post
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
 - [[https://www.youtube.com/watch?v=E-ZbrtoSuzw][Vim: Tutorial on Editing, Navigation, and File Management]]  - Leeren YT video
+- [[https://github.com/niyumard/Doom-Emacs-Cheat-Sheet][Doom Emacs CheatSheet]] - Hossein Naghdbishi GB repo
