@@ -1,0 +1,27 @@
+#+title: Vim Operators
+
+The following operators are available:
+
+| Command | Description                                    |
+|---------+------------------------------------------------|
+| c       | change                                         |
+| d       | delete                                         |
+| y       | yank into register                             |
+| ~       | swap case                                      |
+| g~      | swap case                                      |
+| gu      | make lowercase                                 |
+| gU      | make uppercase                                 |
+| !       | filter through an external program             |
+| =       | filter through C-indenting                     |
+| gq      | text formatting                                |
+| g?      | ROT13 encoding                                 |
+| >       | shift right                                    |
+| <       | shift left                                     |
+| zf      | define a fold                                  |
+| g@      | call function set with the operatorfunc option |
+
+If the motion includes a count and the operator also had a count before it, then
+the two counts are multiplied. For example: "2d3w" deletes six words.
+
+* References
+- [[http://vimdoc.sourceforge.net/htmldoc/motion.html#operator][Vim Documentation]]
