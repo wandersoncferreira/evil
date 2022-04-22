@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+doom.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+doom.el -*- lexical-binding: t; -*-
 
 (setq user-full-name "Wanderson Ferreira"
       user-mail-address "wand@hey.com"

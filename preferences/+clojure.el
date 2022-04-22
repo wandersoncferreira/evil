@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+clojure.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+clojure.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
 (defun bk/cider--modeline-info ()

@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+uniquify.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+uniquify.el -*- lexical-binding: t; -*-
 
 ;; enable uniquify again
 (add-hook! 'doom-init-ui-hook

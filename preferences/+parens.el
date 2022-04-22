@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+parens.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+parens.el -*- lexical-binding: t; -*-
 
 (after! smartparens
   (add-hook! (clojure-mode emacs-lisp-mode) #'smartparens-strict-mode))

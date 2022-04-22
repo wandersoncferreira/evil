@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+elisp.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+elisp.el -*- lexical-binding: t; -*-
 
 ;; remove highlighting of the parens...
 (after! elisp-mode

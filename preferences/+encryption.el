@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+encryption.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+encryption.el -*- lexical-binding: t; -*-
 
 (require 'epa)
 (require 'auth-source)

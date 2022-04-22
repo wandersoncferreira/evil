@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+functions.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+functions.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
 (defun bk/toggle-transparency ()

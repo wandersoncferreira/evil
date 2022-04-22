@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+evil.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+evil.el -*- lexical-binding: t; -*-
 
 ;; I want to keep Evil-mode as close to Vim as possible
 

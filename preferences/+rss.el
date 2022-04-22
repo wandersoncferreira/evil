@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+rss.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+rss.el -*- lexical-binding: t; -*-
 
 (after! elfeed
   (setq elfeed-feeds

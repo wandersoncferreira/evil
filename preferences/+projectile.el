@@ -1,4 +1,4 @@
-;;; ../code/evil/preferences/+projectile.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/preferences/+projectile.el -*- lexical-binding: t; -*-
 
 (after! projectile
 
