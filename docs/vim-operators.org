@@ -23,5 +23,19 @@ The following operators are available:
 If the motion includes a count and the operator also had a count before it, then
 the two counts are multiplied. For example: "2d3w" deletes six words.
 
+* Insert Mode Shotcuts
+
+When editing a file in Insert Mode, many shortcuts used elsewhere in Unix and other text editors are available.
+
+| Command      | Description                                    |
+|--------------+------------------------------------------------|
+| Ctrl-w       | delete the word before the cursor              |
+| Ctrl-u       | delete the current line                        |
+| Ctrl-[       | quits insert mode and goes back to Normal mode |
+| Ctrl-r {reg} | paste text from register                       |
+| Ctrl-n       | invoke Vim's auto completion                   |
+| Ctrl-p       | invoke Vim's auto completion                   |
+
 * References
 - [[http://vimdoc.sourceforge.net/htmldoc/motion.html#operator][Vim Documentation]]
+- [[https://medium.com/usevim/vim-101-insert-mode-shortcuts-3401724079ee][Vim 101: Insert Mode Shortcuts]]

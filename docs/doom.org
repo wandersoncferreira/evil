@@ -92,8 +92,9 @@ Some files with more detailed information about Vim
 - [[file:vim-motions.org][Vim Motions]]
 - [[file:vim-jumplist.org][Vim Jumplist]]
 
-* Works in Vim, but seems not to work on Doom [0/1]
+* Works in Vim, but seems not to work on Doom [0/2]
 - [ ] Global marks are preserved between sessions in Vim
+- [ ] :help <doc-entry> Vim docs not available :/
 
 
 * Learn the Mindset
