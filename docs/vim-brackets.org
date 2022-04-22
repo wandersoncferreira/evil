@@ -1,0 +1,8 @@
+#+title: Vim Brackets
+
+Every programming language seems to make use of all brackets, incluiding curly
+and square. Clojure is by far no exception. =)
+
+* Movement and selection
+
+Moving the cursor over a bracket and pressing =%= will cause the cursor to jump to the corresponding bracket.
