@@ -16,7 +16,8 @@
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        multiple-cursors  ; editing in many places at once
-       snippets
+       snippets          ; my elves. They type so I don't have to
+       fold              ; (nigh) universal code folding
 
        :emacs
        dired             ; making dired pretty [functional]

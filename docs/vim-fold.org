@@ -1,0 +1,15 @@
+#+title: Vim Fold
+
+The default fold method of Vim is =manual=, so no folding occurs. There are
+several ways to add folds:
+
+- zf{motion}: Create a fold based on motion
+- visual selecton, zf: fold selection
+
+| Commands | Description                               |
+|----------+-------------------------------------------|
+| zo       | open fold                                 |
+| zc       | close fold                                |
+| zE       | eliminate all folds in the current window |
+| za       | toggle fold                               |
+

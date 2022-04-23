@@ -14,6 +14,7 @@
     "cisco.el.gpg"
     "projectile"
     "uniquify"
+    "folds"
     "modeline"
     "completion"
     "rss"))
