@@ -5,12 +5,6 @@
 ;; company
 (package! company-dict :disable t)
 
-;; vertico
-(package! marginalia :disable t)
-(package! embark :disable t)
-(package! embark-consult :disable t)
-(package! consult-dir :disable t)
-
 ;; doom
 (package! solaire-mode :disable t)
 
