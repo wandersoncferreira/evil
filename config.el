@@ -14,7 +14,8 @@
     "cisco.el.gpg"
     "projectile"
     "uniquify"
-    "embark"
+    "modeline"
+    "completion"
     "rss"))
 
 (dolist (cfg list-of-preferences)

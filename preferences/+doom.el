@@ -41,10 +41,6 @@
 ;; disable aesthetic plugin for fancier bullets
 (remove-hook 'org-mode-hook #'org-superstar-mode)
 
-;;; vertico and consult
-;; disable the default preview when switching buffers
-(setq consult-preview-key (kbd "M-."))
-
 (map! :leader
       "fj" #'dired-jump
       "y" #'consult-yank-from-kill-ring
@@ -52,7 +48,3 @@
       :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
-
-;; add workspace name into the modeline
-(after! doom-modeline
-  (setq doom-modeline-persp-name t))
