@@ -82,6 +82,8 @@ You know what improves productivity? Mastering motions and operators.
    - =Ctrl-p= for previous selection
    - Exclude matches with =RET=
    - You can make an edit and the changes will be reflected in all the selection
+ - we can run the =dot= command in a visual selection
+ - fix indentation of the whole file ==G=
 
 * Digging
 
