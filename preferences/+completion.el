@@ -21,6 +21,9 @@
       "v" #'bk/vsplit-file-open
       "x" #'bk/split-file-open)
 
+;; restore some vim balance
+(map! :n "[I" #'+vertico/search-symbol-at-point)
+
 ;;; company
 ;; disable automatic completion
 (after! company
