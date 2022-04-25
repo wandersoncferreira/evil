@@ -21,7 +21,7 @@ You know what improves productivity? Mastering motions and operators.
  - How to center the current line in the screen in Vim?
    - zz, zt, zb
  - How to scroll down/up in Vim?
-   - ctrl-d, ctrl-u, ctrl-b, ctrl-f
+   - ctrl-d, ctrl-u, ctrl-b, ctrl-f. ctrl-e, ctrl-
  - Try using the Toggle functionality more often to remove or bring up eshell or REPL
  - Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
  - =dot= will repeat the last command
@@ -33,6 +33,7 @@ You know what improves productivity? Mastering motions and operators.
    - if the things I want to jump to is fairly close to where the cursor is I'll
      use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
      (gs SPC)
+   - if you want to jump to other matches use =;= and =,=
  - use =c-,= to find next flyspell error
  - use =z-== to fix the wrong word at point
  - use =c-;= to fix previous wrong word.
@@ -84,6 +85,9 @@ You know what improves productivity? Mastering motions and operators.
    - You can make an edit and the changes will be reflected in all the selection
  - we can run the =dot= command in a visual selection
  - fix indentation of the whole file ==G=
+ - In insert mode we can type =ctrl+x ctrl-l= to enable line completion
+ - In insert mode use =ctrl-w= to erase the last inserted word
+ - In insert mode use =ctrl-u= to erase the last inserted line
 
 * Digging
 
@@ -93,10 +97,14 @@ Some files with more detailed information about Vim
 - [[file:vim-text-objects.org][Vim Text Objects]]
 - [[file:vim-motions.org][Vim Motions]]
 - [[file:vim-jumplist.org][Vim Jumplist]]
+- [[file:vim-fold.org][Vim Fold]]
+- [[file:vim-brackets.org][Vim Brackets]]
+- [[file:vim-operators.org][Vim Operators]]
 
 * Works in Vim, but seems not to work on Doom [0/2]
 - [ ] Global marks are preserved between sessions in Vim
 - [ ] :help <doc-entry> Vim docs not available :/
+- [ ] =[I= show lines with matching word under cursor
 
 
 * Learn the Mindset
