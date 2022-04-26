@@ -11,7 +11,6 @@
     "lsp"
     "clojure"
     "elisp"
-    "cisco.el.gpg"
     "projectile"
     "uniquify"
     "folds"
@@ -19,10 +18,12 @@
     "completion"
     "rss"))
 
+(defvar list-of-gpg-preferences
+  '("cisco"))
+
 (dolist (cfg list-of-preferences)
   (let ((path (format "preferences/+%s" cfg)))
-    (if (s-ends-with? ".gpg" path)
-        (add-hook 'after-init-hook
-                  (lambda ()
-                    (load-file (expand-file-name path doom-private-dir))))
-      (load! path))))
+    (load! path)))
+
+(dolist (cfg list-of-gpg-preferences)
+  (bk/load-gpg-file cfg))
