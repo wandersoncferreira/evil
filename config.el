@@ -1,7 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(require 's)
-
 (defvar list-of-preferences
   '("doom"
     "functions"
