@@ -88,6 +88,7 @@ You know what improves productivity? Mastering motions and operators.
  - In insert mode we can type =ctrl+x ctrl-l= to enable line completion
  - In insert mode use =ctrl-w= to erase the last inserted word
  - In insert mode use =ctrl-u= to erase the last inserted line
+ - Complete file path in insert-mode using =C-x C-f=
 
 * Digging
 
@@ -101,10 +102,11 @@ Some files with more detailed information about Vim
 - [[file:vim-brackets.org][Vim Brackets]]
 - [[file:vim-operators.org][Vim Operators]]
 
-* Works in Vim, but seems not to work on Doom [0/2]
+* Works in Vim, but seems not to work on Doom [1/3]
 - [ ] Global marks are preserved between sessions in Vim
 - [ ] :help <doc-entry> Vim docs not available :/
-- [ ] =[I= show lines with matching word under cursor
+- [X] =[I= show lines with matching word under cursor
+  - now, this binding will show up =+vertico/search-symbol-at-point= function
 
 
 * Learn the Mindset

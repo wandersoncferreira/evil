@@ -1,0 +1,12 @@
+#+title: Vim Completion
+
+There is a nice table summarizing the Vim completion functionalities implemented in Doom:
+
+| Command | Description                       |
+|---------+-----------------------------------|
+| C-x C-f | complete file path                |
+| C-x C-l | complete full line                |
+| C-x C-o | invoke complete-at-point function |
+| C-x C-p | complete previous symbol at point |
+| C-x C-s | complete snippet                  |
+| C-x s   | complete spelling suggestions     |
