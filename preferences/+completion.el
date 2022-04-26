@@ -23,9 +23,11 @@
 
 ;;; vertico
 ;; restore some vim balance
+;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
 (map! :n "[I" #'+vertico/search-symbol-at-point
       :map vertico-map
-      "]" #'vertico-next-group)
+      "]" #'vertico-next-group
+      "[" #'vertico-previous-group)
 
 ;;; company
 ;; disable automatic completion
