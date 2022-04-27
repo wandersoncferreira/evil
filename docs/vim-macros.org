@@ -1,0 +1,8 @@
+#+title: Vim Macros
+
+You record your actions into a register and play those actions back.
+
+- press =qa= to start recording your actions into register =a=
+- perform some actions that you want repeated
+- you press =@a= to playback the contents of regiter =a=
+- you could press =10@@= to repeat the playback for 10 times

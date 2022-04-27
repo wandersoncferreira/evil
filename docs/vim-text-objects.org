@@ -19,13 +19,14 @@ This convention about the =a= and =i= is followed by all text objects.
 Vim provides several text objects based on common programming language
 constructs.
 
-| Command | Description                |
-| a"      | a double quoted string     |
-| i"      | inner double quoted string |
-| a)      | a parenthesized block      |
-| i)      | inner parenthesized block  |
-| ai      | a indentation block        |
-| ii      | inner indentation          |
+| Command | Description                                         |
+| a"      | a double quoted string                              |
+| i"      | inner double quoted string                          |
+| a)      | a parenthesized block                               |
+| i)      | inner parenthesized block                           |
+| ai      | a indentation block                                 |
+| ii      | inner indentation                                   |
+| gn      | the next occurrence of the last used search pattern |
 
 * References
  - [[https://blog.carbonfive.com/vim-text-objects-the-definitive-guide/][Vim text objects the definitive guide]] - Jared Carroll blog post

@@ -89,6 +89,33 @@ You know what improves productivity? Mastering motions and operators.
  - In insert mode use =ctrl-w= to erase the last inserted word
  - In insert mode use =ctrl-u= to erase the last inserted line
  - Complete file path in insert-mode using =C-x C-f=
+ - recording macros
+   - press =q= followed by any valid register to start recording. usually =qq=
+   - start typing the changes you need to make
+   - press =q= again to stop recording
+   - press =@<register>= to replay the recorded steps
+ - moving lines around
+   - you can use =:/<string-in-the-line-you-want-to-move>/m<motion operator>=
+   - you can move a line, or a block of lines, with the =:m= command
+     - =:m 12= move current line to after line 12
+     - =:m $= move current line to after the last line
+     - =:m +1= moves down 1 line
+     - =:m -2= moves up 1 line
+ - move a line up: =ddkP=
+ - move a line down: =ddp=
+ - this is extremely useful to me: =ctrl-^= will send you back to the previous buffer you were in
+ - history of past searches
+   - just press =q/=
+ - useful selection of =g= commands
+   | command | description                                        |
+   |---------+----------------------------------------------------|
+   | gf      | open file under cursor                             |
+   | g;      | traverse forward through the change list           |
+   | g,      | traverse backward through the change list          |
+   | gi      | go back to last insert position                    |
+   | ga      | show char codes for char under cursor              |
+   | g&      | repeat last :s on all lines (last replace command) |
+   | gv      | repeat last visual selection                       |
 
 * Digging
 
@@ -101,6 +128,8 @@ Some files with more detailed information about Vim
 - [[file:vim-fold.org][Vim Fold]]
 - [[file:vim-brackets.org][Vim Brackets]]
 - [[file:vim-operators.org][Vim Operators]]
+- [[file:vim-search.org][Vim Search]]
+- [[file:vim-macros.org][Vim Macros]]
 
 * Works in Vim, but seems not to work on Doom [1/3]
 - [ ] Global marks are preserved between sessions in Vim
@@ -114,6 +143,14 @@ Some files with more detailed information about Vim
 Don't type it twice, is a pretty good summary of the Vim" Way" of doing things.
 
 Think operators, text objects, and motions
+
+
+* Cute tricks
+
+- Search and change
+  Whenever you want to search and replace some text, you might immediately use the substitute command =:%s=
+- On the fly computations
+  Do you need to perform quick math? While in insert mode press =C-r==. You will see an equal sign appearing in the bottom of the window.
 
 * Vim Verbs
 
@@ -152,3 +189,7 @@ The second type of "direct object" that Vim verbs can take is a text object. You
 - [[http://zzapper.co.uk/vimtips.html][Best of Vim Tips]]  - Zzapper blog post
 - [[https://www.youtube.com/watch?v=E-ZbrtoSuzw][Vim: Tutorial on Editing, Navigation, and File Management]]  - Leeren YT video
 - [[https://github.com/niyumard/Doom-Emacs-Cheat-Sheet][Doom Emacs CheatSheet]] - Hossein Naghdbishi GB repo
+- [[https://www.cs.swarthmore.edu/oldhelp/vim/home.html][vim tips and tricks]] - web page
+- [[https://vim.fandom.com/wiki/Moving_lines_up_or_down#Move_command][Move command]] - Vim Tips wiki
+- [[https://bennetthardwick.com/beginner-advanced-vim-tips/][Beginner Advanced Vim tips]]  - Bennett Hardwick blog post
+- [[https://github.com/adrianscheff/wizardly-tips-vim][Wizardly Tips Vim]]  - Adrian Scheff github readme

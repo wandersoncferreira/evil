@@ -12,12 +12,18 @@ letter. Using an apostrophe jumps to the beginning of the line holding the mark,
 
 It's possible to navigate between lowercase marks
 
-| Command | description                                 |
-|---------+---------------------------------------------|
-| ]'      | jump to next line with a lowercase mark     |
-| ['      | jump to previous line with a lowercase mark |
-| ]`      | jump to next lowercase mark                 |
-| [`      | jump to previous lowercase mark             |
+| Command | description                                                |
+|---------+------------------------------------------------------------|
+| ]'      | jump to next line with a lowercase mark                    |
+| ['      | jump to previous line with a lowercase mark                |
+| ]`      | jump to next lowercase mark                                |
+| [`      | jump to previous lowercase mark                            |
+| ``      | after a movement, you can return to your previous location |
+| ctrl-^  | send you back to the previous buffer that you were in      |
+
+Example of =``= usage:
+- =/while<Enter>=  ;; jump to the first match of while
+- =``=             ;; move back to start
 
 * Resources
 - [[https://youtu.be/f4_68zI81Vk][Vim (14) Marks]]
