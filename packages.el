@@ -37,3 +37,4 @@
 ;; defaults
 (package! drag-stuff :disable t)
 (package! expand-region :disable t)
+(package! paredit :disable t)
