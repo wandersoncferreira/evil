@@ -20,6 +20,10 @@
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
   :config
+
+  ;; fix parens handling in Evil
+  (add-hook! clojure-mode-hook #'(evil-cleverparens-mode evil-smartparens-mode))
+
   ;; remove the colors in the parens, I'm boring person
   (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
@@ -48,6 +52,3 @@
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
          ";" #'cider-eval-defun-to-comment))))
-
-(map! (:map (clojure-mode-map)
-       "DEL" #'sp-backward-delete-char))

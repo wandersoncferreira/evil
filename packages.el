@@ -1,6 +1,9 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
+;;; standard way to fix all lisp + evil + structural editing issues
+(package! evil-cleverparens)
+
 ;;; disabling some packages
 ;; company
 (package! company-dict :disable t)
