@@ -12,7 +12,7 @@ You know what improves productivity? Mastering motions and operators.
 
 * Learn the Mindset
 
-Don't type it twice, is a pretty good summary of the Vim" Way" of doing things.
+Don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
 Think operators, text objects, and motions
 
 * Digging
@@ -131,7 +131,8 @@ Some files with more detailed information about Vim
 - [ ] Global marks are preserved between sessions in Vim
 - [ ] :help <doc-entry> Vim docs not available :/
 - [X] =[I= show lines with matching word under cursor
-  - now, this binding will show up =+vertico/search-symbol-at-point= function
+  - now, this binding will call =+vertico/search-symbol-at-point= function which
+    is an improvement over Vim's default behavior due to interactivity
 
 * Cute tricks
 
