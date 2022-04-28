@@ -145,15 +145,6 @@ Some files with more detailed information about Vim
   Do you need to perform quick math? While in insert mode press =C-r==. You will
   see an equal sign appearing in the bottom of the window.
 
-* Vim Verbs
-
-Single character verbs
-| Command | Action                                                |
-|---------+-------------------------------------------------------|
-| x       | delete character under the cursor                     |
-| r       | replace character under cursor with another character |
-| s       | delete character under cursor and move to insert mode |
-
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
