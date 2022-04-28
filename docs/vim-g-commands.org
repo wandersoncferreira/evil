@@ -1,0 +1,13 @@
+#+title: Vim G Commands
+
+Special list of G commands
+
+| command | description                                        |
+|---------+----------------------------------------------------|
+| gf      | open file under cursor                             |
+| g;      | traverse forward through the change list           |
+| g,      | traverse backward through the change list          |
+| gi      | go back to last insert position                    |
+| ga      | show char codes for char under cursor              |
+| g&      | repeat last :s on all lines (last replace command) |
+| gv      | repeat last visual selection                       |

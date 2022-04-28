@@ -10,6 +10,25 @@ editor.
 
 You know what improves productivity? Mastering motions and operators.
 
+* Learn the Mindset
+
+Don't type it twice, is a pretty good summary of the Vim" Way" of doing things.
+Think operators, text objects, and motions
+
+* Digging
+
+Some files with more detailed information about Vim
+
+- [[file:vim-marks.org][Vim Marks]]
+- [[file:vim-text-objects.org][Vim Text Objects]]
+- [[file:vim-motions.org][Vim Motions]]
+- [[file:vim-jumplist.org][Vim Jumplist]]
+- [[file:vim-fold.org][Vim Fold]]
+- [[file:vim-brackets.org][Vim Brackets]]
+- [[file:vim-operators.org][Vim Operators]]
+- [[file:vim-search.org][Vim Search]]
+- [[file:vim-macros.org][Vim Macros]]
+
 * General Notes
 
  - =^= go to the first non-blank character of the line
@@ -106,30 +125,6 @@ You know what improves productivity? Mastering motions and operators.
  - this is extremely useful to me: =ctrl-^= will send you back to the previous buffer you were in
  - history of past searches
    - just press =q/=
- - useful selection of =g= commands
-   | command | description                                        |
-   |---------+----------------------------------------------------|
-   | gf      | open file under cursor                             |
-   | g;      | traverse forward through the change list           |
-   | g,      | traverse backward through the change list          |
-   | gi      | go back to last insert position                    |
-   | ga      | show char codes for char under cursor              |
-   | g&      | repeat last :s on all lines (last replace command) |
-   | gv      | repeat last visual selection                       |
-
-* Digging
-
-Some files with more detailed information about Vim
-
-- [[file:vim-marks.org][Vim Marks]]
-- [[file:vim-text-objects.org][Vim Text Objects]]
-- [[file:vim-motions.org][Vim Motions]]
-- [[file:vim-jumplist.org][Vim Jumplist]]
-- [[file:vim-fold.org][Vim Fold]]
-- [[file:vim-brackets.org][Vim Brackets]]
-- [[file:vim-operators.org][Vim Operators]]
-- [[file:vim-search.org][Vim Search]]
-- [[file:vim-macros.org][Vim Macros]]
 
 * Works in Vim, but seems not to work on Doom [1/3]
 - [ ] Global marks are preserved between sessions in Vim
@@ -137,20 +132,14 @@ Some files with more detailed information about Vim
 - [X] =[I= show lines with matching word under cursor
   - now, this binding will show up =+vertico/search-symbol-at-point= function
 
-
-* Learn the Mindset
-
-Don't type it twice, is a pretty good summary of the Vim" Way" of doing things.
-
-Think operators, text objects, and motions
-
-
 * Cute tricks
 
 - Search and change
-  Whenever you want to search and replace some text, you might immediately use the substitute command =:%s=
+  Whenever you want to search and replace some text, you might immediately use
+  the substitute command =:%s=
 - On the fly computations
-  Do you need to perform quick math? While in insert mode press =C-r==. You will see an equal sign appearing in the bottom of the window.
+  Do you need to perform quick math? While in insert mode press =C-r==. You will
+  see an equal sign appearing in the bottom of the window.
 
 * Vim Verbs
 
@@ -160,19 +149,6 @@ Single character verbs
 | x       | delete character under the cursor                     |
 | r       | replace character under cursor with another character |
 | s       | delete character under cursor and move to insert mode |
-
-
-* Vim Text Objects
-
-The second type of "direct object" that Vim verbs can take is a text object. You can think of text objects as a "defined chunk of text".
-
-| Command | Text Object                                         |
-|---------+-----------------------------------------------------|
-| iw      | applies to everything in the current word           |
-| it      | aplies to everything in current xml/html tag        |
-| i{      | applies to everything inside nearest curly brackets |
-
-
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
