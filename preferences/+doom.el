@@ -8,7 +8,7 @@
       doom-theme 'vim-colors
 
       ;; font
-      doom-font (font-spec :family "Monaco" :size 12)
+      doom-font (font-spec :family "Monaco" :size 14)
 
       ;; remove icons from modeline
       doom-modeline-icon nil
@@ -24,6 +24,9 @@
 
       ;; dired tries to guess the default target directory
       dired-dwim-target t
+
+      ;; prefer to use newer files always
+      load-prefer-newer t
 
       ;; search for typed word in all visible windows
       avy-all-windows t
