@@ -21,6 +21,12 @@
       "v" #'bk/vsplit-file-open
       "x" #'bk/split-file-open)
 
+;; do not ask for confirmation to delete a bookmark
+(setf embark-pre-action-hooks
+      (assoc-delete-all
+       'bookmark-delete
+       embark-pre-action-hooks))
+
 ;;; vertico
 ;; restore some vim balance
 ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
