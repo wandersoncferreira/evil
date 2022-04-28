@@ -10,7 +10,6 @@
     "clojure"
     "elisp"
     "projectile"
-    "uniquify"
     "folds"
     "modeline"
     "completion"
