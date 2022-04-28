@@ -1,6 +1,7 @@
 #+title: Vim Marks
 
-A *mark* allows you to record your current position so you can return to it later.
+A *mark* allows you to record your current position so you can return to it
+later.
 
 - each file has a set marks identified by lowercase letters
 - global marks are identified by uppercase letters
@@ -8,7 +9,8 @@ A *mark* allows you to record your current position so you can return to it late
 * Using marks
 
 To jump to a mark enter an apostrophe ='= or a backtick =`= followed by a
-letter. Using an apostrophe jumps to the beginning of the line holding the mark, while a backtick jumps to the line and column of the mark.
+letter. Using an apostrophe jumps to the beginning of the line holding the mark,
+while a backtick jumps to the line and column of the mark.
 
 It's possible to navigate between lowercase marks
 
@@ -23,7 +25,7 @@ It's possible to navigate between lowercase marks
 
 Example of =``= usage:
 - =/while<Enter>=  ;; jump to the first match of while
-- =``=             ;; move back to start
+- =``=         ;; move back to start
 
 * Resources
 - [[https://youtu.be/f4_68zI81Vk][Vim (14) Marks]]

@@ -136,9 +136,12 @@ Some files with more detailed information about Vim
 * Cute tricks
 
 - Search and change
+
   Whenever you want to search and replace some text, you might immediately use
   the substitute command =:%s=
+
 - On the fly computations
+
   Do you need to perform quick math? While in insert mode press =C-r==. You will
   see an equal sign appearing in the bottom of the window.
 
