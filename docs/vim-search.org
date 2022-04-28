@@ -7,15 +7,21 @@ people and cats
 =============
 
 - Search under cursor
-  You can search for the current word under the cursor by using the =*= and =#= commands in normal mode.
+  You can search for the current word under the cursor by using the =*= and =#=
+  commands in normal mode.
 
 - Reinsert substituted text
   Using the =&= you can reinsert the text matched in a substitution
   run the following command to see the effect: =:%s/cats/"&"/g=
 
 - Substitute capture groups
-  You can dictate capture groups using escaped brackets in a search. They can then be accessed in the replacement using escaped numbers.
+  You can dictate capture groups using escaped brackets in a search. They can
+  then be accessed in the replacement using escaped numbers.
   =:%s/\(\w\) and /\1 but not/g=
 
 - History of past searches
-  You search for various keywords in your code. After a while you want to search for some of those keywords again but you don't remember them exactly. No worries. Just press =q/= and you'll open a small window at the bottom containing your searches. Navigate with =jk= and press Enter to repeat the selected search. Or just close that window with =:q=
+  You search for various keywords in your code. After a while you want to search
+  for some of those keywords again but you don't remember them exactly. No
+  worries. Just press =q/= and you'll open a small window at the bottom
+  containing your searches. Navigate with =jk= and press Enter to repeat the
+  selected search. Or just close that window with =:q=

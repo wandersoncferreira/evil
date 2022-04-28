@@ -1,6 +1,6 @@
 #+title:  Vim Motions
 
- Always be scrolling! Don't use =hjkl= to move around the screen.
+Always be scrolling! Don't use =hjkl= to move around the screen.
 
 | Commands    | Description                       |
 |-------------+-----------------------------------|
