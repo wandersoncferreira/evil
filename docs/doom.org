@@ -28,6 +28,7 @@ Some files with more detailed information about Vim
 - [[file:vim-operators.org][Vim Operators]]
 - [[file:vim-search.org][Vim Search]]
 - [[file:vim-macros.org][Vim Macros]]
+- [[file:vim-g-commands.org][Vim G Commands]]
 
 * General Notes
 
