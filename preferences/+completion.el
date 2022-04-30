@@ -22,10 +22,11 @@
       "x" #'bk/split-file-open)
 
 ;; do not ask for confirmation to delete a bookmark
-(setf embark-pre-action-hooks
-      (assoc-delete-all
-       'bookmark-delete
-       embark-pre-action-hooks))
+(after! embark
+  (setf embark-pre-action-hooks
+        (assoc-delete-all
+         'bookmark-delete
+         embark-pre-action-hooks)))
 
 ;;; vertico
 ;; restore some vim balance
