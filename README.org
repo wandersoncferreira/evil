@@ -1,3 +1,9 @@
 #+TITLE: Emacs Configuration
 #+DATE: April 30, 2022
 #+AUTHOR: Wanderson Ferreira
+
+
+* Documentation
+
+There are lots of resources to learn *Evil* and *Doom* in the docs/ folder.
+[[file:docs/README.org][Follow for more.]]
