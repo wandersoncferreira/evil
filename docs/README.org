@@ -17,7 +17,8 @@ Think operators, text objects, and motions
 
 * Digging
 
-Some files with more detailed information about Vim
+There is a [[file:tips.org][Tips]] file with many entries, but if you prefer to dive deeper in
+certain subjects, go ahead:
 
 - [[file:vim-marks.org][Vim Marks]]
 - [[file:vim-text-objects.org][Vim Text Objects]]
@@ -30,103 +31,7 @@ Some files with more detailed information about Vim
 - [[file:vim-macros.org][Vim Macros]]
 - [[file:vim-g-commands.org][Vim G Commands]]
 
-* General Notes
-
- - =^= go to the first non-blank character of the line
- - =g_= go to the last non-blank character of the line
- - =C-r= redo
- - =%= go to the corresponding (, [, or {
- - =*= go to the next occurrence of the word under the cursor
- - =#= go to the previous occurrence of the word under the cursor
- - How to center the current line in the screen in Vim?
-   - zz, zt, zb
- - How to scroll down/up in Vim?
-   - ctrl-d, ctrl-u, ctrl-b, ctrl-f. ctrl-e, ctrl-
- - Try using the Toggle functionality more often to remove or bring up eshell or REPL
- - Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
- - =dot= will repeat the last command
- - completion works via =c-n= and =c-p=
- - =spc sp= to search all files in the current project
- - =/= to search within the current buffer. Use `n` and `N` to go to next and
-   previous matches. =?= to search backwards.
- - =s= and type two characters to jump forward to the nearest match
-   - if the things I want to jump to is fairly close to where the cursor is I'll
-     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
-     (gs SPC)
-   - if you want to jump to other matches use =;= and =,=
- - use =c-,= to find next flyspell error
- - use =z-== to fix the wrong word at point
- - use =c-;= to fix previous wrong word.
- - the "dot" command: think if the dot command would repeat your edition correctly
- - use the more general text objects (iw rather than w)
- - prefer text objects to motions when possible
- - visual mode is a smell
- - don't use two sentences where one will due
- - visual mode breaks repeatability
- - custom operators
-   - surround
-     - change surround <object>: cs
-     - add surround: ys
-     - delete surround: ds
-   - commentary
-     - gc <text object>: for example, gcip to comment entire paragraph
-   - replace with register: TODO: verify if I want to include this plugin in my conf
- - custom text objects
-   - indent
-     - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
- - <verb> i <noun> is amazing
- - =ma= will set a mark in =a= register
- - =`a= will jump back to specific place of mark =a=
- - ='a= will jump to the beginning of the line of the specific mark =a=
- - =g;= cycle through recent changes
- - =g,= reverse direction
- - ='.= jump to last modification line
- - =`.= jump to exact positon in last modification line
- - =:s/search/replace= by default operates on the first match of the current line
- - Subtitute flags
-   - The most common flags are probably =g= and =i=
-   - =g= works on every match
-   - =i= performs case-insensitive match
-   - =c= prompts for confirmation of each substitution
- - =c-r= in insert-mode will make evil paste from a register
- - The =0= register is useful because it contains the value of the last yank
-   - ="0p= will paste the content of the last yanked value
- - Using =[m= to move to the beginning of previous/current method
- - Using =]m= to move to the beginning of next method
- - =ctrl-o / ctrl-i= cycle through :jumps
- - =g; / g,= cycle through :changes
- - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
- - =M-d= will select the current word, and again will find another ocurrence
- - =M-D= will find occurrence upward
- - In visual mode you can select a word and =R= will select all ocurrences
-   - =Ctrl-n= for next selection
-   - =Ctrl-p= for previous selection
-   - Exclude matches with =RET=
-   - You can make an edit and the changes will be reflected in all the selection
- - we can run the =dot= command in a visual selection
- - fix indentation of the whole file ==G=
- - In insert mode we can type =ctrl+x ctrl-l= to enable line completion
- - In insert mode use =ctrl-w= to erase the last inserted word
- - In insert mode use =ctrl-u= to erase the last inserted line
- - Complete file path in insert-mode using =C-x C-f=
- - recording macros
-   - press =q= followed by any valid register to start recording. usually =qq=
-   - start typing the changes you need to make
-   - press =q= again to stop recording
-   - press =@<register>= to replay the recorded steps
- - moving lines around
-   - you can use =:/<string-in-the-line-you-want-to-move>/m<motion operator>=
-   - you can move a line, or a block of lines, with the =:m= command
-     - =:m 12= move current line to after line 12
-     - =:m $= move current line to after the last line
-     - =:m +1= moves down 1 line
-     - =:m -2= moves up 1 line
- - move a line up: =ddkP=
- - move a line down: =ddp=
- - this is extremely useful to me: =ctrl-^= will send you back to the previous buffer you were in
- - history of past searches
-   - just press =q/=
- - to avoid using Esc we can press =C-[=
+If you have good corrections or contributions, please open a PR.
 
 * Works in Vim, but seems not to work on Doom [1/3]
 - [ ] Global marks are preserved between sessions in Vim
@@ -134,18 +39,6 @@ Some files with more detailed information about Vim
 - [X] =[I= show lines with matching word under cursor
   - now, this binding will call =+vertico/search-symbol-at-point= function which
     is an improvement over Vim's default behavior due to interactivity
-
-* Cute tricks
-
-- Search and change
-
-  Whenever you want to search and replace some text, you might immediately use
-  the substitute command =:%s=
-
-- On the fly computations
-
-  Do you need to perform quick math? While in insert mode press =C-r==. You will
-  see an equal sign appearing in the bottom of the window.
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
@@ -169,3 +62,4 @@ Some files with more detailed information about Vim
 - [[https://medium.com/hacking-and-gonzo/10-vim-tricks-you-should-know-6393842b3537][10 Vim tricks you should know]]  - Amir Salihefendic blog post
 - Best of Vim Tips Wiki:
   - [[https://vim.fandom.com/wiki/Avoid_the_escape_key][Avoid the escape key]]
+  - [[https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern][Delete all lines containing a pattern]]

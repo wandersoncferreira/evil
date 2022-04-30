@@ -11,3 +11,9 @@ Special list of G commands
 | ga      | show char codes for char under cursor              |
 | g&      | repeat last :s on all lines (last replace command) |
 | gv      | repeat last visual selection                       |
+
+
+* Power of g
+
+The global command =:g= is very useful. =[range]g/pattern/cmd= is the template
+for the g ex-command
