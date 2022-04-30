@@ -2,8 +2,17 @@
 #+DATE: April 30, 2022
 #+AUTHOR: Wanderson Ferreira
 
+My first configuration files using Doom Emacs with Evil mode enabled.
+
+So far, enjoying a lot. I'm documenting all the learning process in the =docs/=
+folder. After 10 years of standard Emacs keybindings, this was a big jump and a
+great level of frustration for the first two weeks.
+
+
+Enjoy and be patient if traveling the same waters.
+
 
 * Documentation
 
-There are lots of resources to learn *Evil* and *Doom* in the docs/ folder.
-[[file:docs/README.org][Follow for more.]]
+Lots of resources to learn *Evil* and *Doom* in the =docs/= folder. [[file:docs/README.org][Follow for
+more.]]
