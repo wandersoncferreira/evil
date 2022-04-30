@@ -1,9 +1,10 @@
 #+title: Vim Marks
 
-A *mark* allows you to record your current position so you can return to it
-later.
+A *mark* allows you to record your current cursor position so you can return to
+it later. They have one non-trivial problem, you can't easily see them while
+working on your document.
 
-- each file has a set marks identified by lowercase letters
+- each file has a set marks identified by lowercase letters from =a= to =z=
 - global marks are identified by uppercase letters
 
 * Using marks
@@ -22,10 +23,25 @@ It's possible to navigate between lowercase marks
 | [`      | jump to previous lowercase mark                            |
 | ``      | after a movement, you can return to your previous location |
 | ctrl-^  | send you back to the previous buffer that you were in      |
+| d`p     | delete to mark =p=                                         |
+| d'p     | delete everything including the line mark =p= is on        |
+| y`p     | yank to mark                                               |
+| `'      | jump back and forth between the last two jump destinations |
+| `.      | jump to the position of the last edit                      |
+| '.      | jump to the line of the last edit                          |
+| `<      | jump to the start of the last visual selection             |
+| `>      | jump to the end of the last visual selection               |
 
 Example of =``= usage:
 - =/while<Enter>=  ;; jump to the first match of while
 - =``=         ;; move back to start
 
+* Seeing Marks
+
+Without plugins you can "see" your marks by running =:marks= which shows you a
+quickfix window that list all your marks.
+
+
 * Resources
 - [[https://youtu.be/f4_68zI81Vk][Vim (14) Marks]]
+- [[https://vim.works/2019/04/22/marks/][Marks]] - Vim works

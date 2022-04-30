@@ -1,6 +1,6 @@
 #+TITLE: Learning Doom and Vim
 
-Vi is fundammentally built on command composability. It favors small,
+Vim is fundammentally built on command composability. It favors small,
 general-purpose commands that can be combined with objects to compose larger
 commands.
 
@@ -10,12 +10,9 @@ editor.
 
 You know what improves productivity? Mastering motions and operators.
 
-* Learn the Mindset
+Let's dive into it.
 
-Don't type it twice, is a pretty good summary of the "Vim Way" of doing things.
-Think operators, text objects, and motions
-
-* Digging
+* Dive in
 
 There is no clear reason why each of the topics below are in separate files
 other than my desired to study then deeper at some moment.
