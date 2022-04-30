@@ -17,9 +17,12 @@ Think operators, text objects, and motions
 
 * Digging
 
-There is a [[file:tips.org][Tips]] file with many entries, but if you prefer to dive deeper in
-certain subjects, go ahead:
+There is no clear reason why each of the topics below are in separate files
+other than my desired to study then deeper at some moment.
 
+Find more information below:
+
+- [[file:doom.org][Doom]]
 - [[file:vim-marks.org][Vim Marks]]
 - [[file:vim-text-objects.org][Vim Text Objects]]
 - [[file:vim-motions.org][Vim Motions]]

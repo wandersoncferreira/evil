@@ -1,0 +1,15 @@
+#+title: Doom
+
+- Try using the Toggle functionality more often to remove or bring up eshell or REPL
+- Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
+- =spc sp= to search all files in the current project
+ - =/= to search within the current buffer. Use `n` and `N` to go to next and
+   previous matches. =?= to search backwards.
+- =s= and type two characters to jump forward to the nearest match
+  - if the things I want to jump to is fairly close to where the cursor is I'll
+     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
+     (gs SPC)
+  - if you want to jump to other matches use =;= and =,=
+- use =c-,= to find next flyspell error
+- use =z-== to fix the wrong word at point
+- use =c-;= to fix previous wrong word.
