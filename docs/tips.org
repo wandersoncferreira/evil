@@ -113,7 +113,13 @@ General tips for Doom and Vim
 
 * Vim: G command
 
- - =g;= cycle through recent changes
- - =g; / g,= cycle through :changes
- - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
- - =g,= reverse direction
+| Command        | Description                                       |
+|----------------+---------------------------------------------------|
+| g;             | cycle through recent changes                      |
+| g,             | cycle through changes (reverse direction)         |
+| gh, gj, gk, gl | makes visual movements instead of logical         |
+| :g!/pattern/d  | delete all lines that do not match a pattern      |
+| :g/^\s*$/d     | delete all blank lines                            |
+| :g/pattern/t$  | copy all lines matching a pattern to end of file  |
+| :g/pattern/m$  | move all lines matching a pattern to end of file  |
+| :g/pattern/y A | copy all lines matching a pattern to register 'a' |
