@@ -1,1 +1,36 @@
 #+title: Vim Jumplist
+
+From Vim's =:help jumplist=:
+
+#+begin_quote
+Jumps are remembered in a jump list. With the Ctrl-o and Ctrl-i command you can
+go to cursor positions before olders jumps, and back again. Thus you can move up
+and down the list. There is a separate jump list for each window.
+#+end_quote
+
+It's important to know what qualifies as a jump?
+
+| Command  | Description                |
+|----------+----------------------------|
+| <n>G     | jump to line <n>           |
+| }        | jump to next blank line    |
+| {        | jump to prev blank line    |
+| [{       | jump to begin of block     |
+| ]}       | jump to end of block       |
+| )        | jump to end of sentence    |
+| (        | jump to begin of sentence  |
+| ]]       | jump to end of section     |
+| [[       | jump to beg of section     |
+| H        | jump to top of window      |
+| M        | jump to middle of window   |
+| L        | jump to bottom of window   |
+| %        | jump to matching delimiter |
+| :tag ... | jump to specified tag      |
+| Ctrl-t   | jump to older tag          |
+| Ctrl-]   | jump to tag definition     |
+
+You can see all the jump list by typing =:jumps=
+
+
+* References
+- [[https://medium.com/@kadek/understanding-vims-jump-list-7e1bfc72cdf0][Understanding Vim's jump list]] - Kade Killary blog post

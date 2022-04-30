@@ -16,3 +16,4 @@ veterans who want less framework in their frameworks.
 - use =Ctrl-,= to find next flyspell error
 - use =z-== to fix the wrong word at point
 - use =Ctrl-;= to fix previous wrong word.
+- =spc s j= will show you the jumplist, this is equivalent of =:jumps=
