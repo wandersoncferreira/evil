@@ -6,6 +6,17 @@ General tips for Doom and Vim
 
 - Try using the Toggle functionality more often to remove or bring up eshell or REPL
 - Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
+- =spc sp= to search all files in the current project
+ - =/= to search within the current buffer. Use `n` and `N` to go to next and
+   previous matches. =?= to search backwards.
+- =s= and type two characters to jump forward to the nearest match
+  - if the things I want to jump to is fairly close to where the cursor is I'll
+     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
+     (gs SPC)
+  - if you want to jump to other matches use =;= and =,=
+- use =c-,= to find next flyspell error
+- use =z-== to fix the wrong word at point
+- use =c-;= to fix previous wrong word.
 
 * Vim
 
@@ -14,6 +25,8 @@ General tips for Doom and Vim
  - visual mode is a smell
  - don't use two sentences where one will due
  - visual mode breaks repeatability
+ - <verb> i <noun> is amazing
+ - to avoid using Esc we can press =C-[=
 
 * Vim: Moviment
 
@@ -27,41 +40,40 @@ General tips for Doom and Vim
    - zz, zt, zb
  - How to scroll down/up in Vim?
    - ctrl-d, ctrl-u, ctrl-b, ctrl-f. ctrl-e, ctrl-
-
-* Vim: Completion
- - =dot= will repeat the last command
- - the "dot" command: think if the dot command would repeat your edition correctly
- - completion works via =c-n= and =c-p=
- - =spc sp= to search all files in the current project
- - =/= to search within the current buffer. Use `n` and `N` to go to next and
-   previous matches. =?= to search backwards.
- - =s= and type two characters to jump forward to the nearest match
-   - if the things I want to jump to is fairly close to where the cursor is I'll
-     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
-     (gs SPC)
-   - if you want to jump to other matches use =;= and =,=
- - use =c-,= to find next flyspell error
- - use =z-== to fix the wrong word at point
- - use =c-;= to fix previous wrong word.
-   - custom operators
-     - surround
-       - change surround <object>: cs
-       - add surround: ys
-       - delete surround: ds
-     - commentary
-       - gc <text object>: for example, gcip to comment entire paragraph
-     - replace with register: TODO: verify if I want to include this plugin in my conf
- - custom text objects
-   - indent
-     - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
- - <verb> i <noun> is amazing
+ - Using =[m= to move to the beginning of previous/current method
+ - Using =]m= to move to the beginning of next method
  - =ma= will set a mark in =a= register
  - =`a= will jump back to specific place of mark =a=
  - ='a= will jump to the beginning of the line of the specific mark =a=
- - =g;= cycle through recent changes
- - =g,= reverse direction
  - ='.= jump to last modification line
  - =`.= jump to exact positon in last modification line
+ - =ctrl-o / ctrl-i= cycle through :jumps
+   - =M-d= will select the current word, and again will find another ocurrence
+   - =M-D= will find occurrence upward
+
+* Vim: Completion
+
+ - =dot= will repeat the last command
+ - the "dot" command: think if the dot command would repeat your edition correctly
+ - we can run the =dot= command in a visual selection
+ - completion works via =c-n= and =c-p=
+ - In insert mode we can type =ctrl+x ctrl-l= to enable line completion
+ - In insert mode use =ctrl-w= to erase the last inserted word
+ - In insert mode use =ctrl-u= to erase the last inserted line
+ - Complete file path in insert-mode using =C-x C-f=
+ - custom operators
+   - surround
+     - change surround <object>: cs
+     - add surround: ys
+     - delete surround: ds
+   - commentary
+     - gc <text object>: for example, gcip to comment entire paragraph
+ - custom text objects
+   - indent
+     - we can use =ii= to denote the indentation object e.g. gdii will comment all indentation
+
+* Vim: Miscellaneous
+
  - =:s/search/replace= by default operates on the first match of the current line
  - Subtitute flags
    - The most common flags are probably =g= and =i=
@@ -71,24 +83,12 @@ General tips for Doom and Vim
  - =c-r= in insert-mode will make evil paste from a register
  - The =0= register is useful because it contains the value of the last yank
    - ="0p= will paste the content of the last yanked value
- - Using =[m= to move to the beginning of previous/current method
- - Using =]m= to move to the beginning of next method
- - =ctrl-o / ctrl-i= cycle through :jumps
- - =g; / g,= cycle through :changes
- - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
- - =M-d= will select the current word, and again will find another ocurrence
- - =M-D= will find occurrence upward
  - In visual mode you can select a word and =R= will select all ocurrences
    - =Ctrl-n= for next selection
    - =Ctrl-p= for previous selection
    - Exclude matches with =RET=
    - You can make an edit and the changes will be reflected in all the selection
- - we can run the =dot= command in a visual selection
  - fix indentation of the whole file ==G=
- - In insert mode we can type =ctrl+x ctrl-l= to enable line completion
- - In insert mode use =ctrl-w= to erase the last inserted word
- - In insert mode use =ctrl-u= to erase the last inserted line
- - Complete file path in insert-mode using =C-x C-f=
  - recording macros
    - press =q= followed by any valid register to start recording. usually =qq=
    - start typing the changes you need to make
@@ -106,16 +106,14 @@ General tips for Doom and Vim
  - this is extremely useful to me: =ctrl-^= will send you back to the previous buffer you were in
  - history of past searches
    - just press =q/=
- - to avoid using Esc we can press =C-[=
-
  - Search and change
-
-   Whenever you want to search and replace some text, you might immediately use
-   the substitute command =:%s=
-
+   - Whenever you want to search and replace some text, you might immediately use the substitute command =:%s=
  - On the fly computations
-
-   Do you need to perform quick math? While in insert mode press =C-r==. You will
-   see an equal sign appearing in the bottom of the window.
+   - Do you need to perform quick math? While in insert mode press =C-r==. You will see an equal sign appearing in the bottom of the window.
 
 * Vim: G command
+
+ - =g;= cycle through recent changes
+ - =g; / g,= cycle through :changes
+ - =gh=, =gj=, =gk=, and =gl= makes visual movements instead of logical
+ - =g,= reverse direction
