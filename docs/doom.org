@@ -5,7 +5,7 @@ veterans who want less framework in their frameworks.
 
 - Use the *toggle* functionality more often to remove or bring up eshell or REPL
 - Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
-- =spc sp= to search all files in the current project
+- =SPC sp= to search all files in the current project
 - =/= to search within the current buffer. Use `n` and `N` to go to next and
    previous matches. =?= to search backwards.
 - =s= and type two characters to jump forward to the nearest match
@@ -16,4 +16,23 @@ veterans who want less framework in their frameworks.
 - use =Ctrl-,= to find next flyspell error
 - use =z-== to fix the wrong word at point
 - use =Ctrl-;= to fix previous wrong word.
-- =spc s j= will show you the jumplist, this is equivalent of =:jumps=
+- =SPC s j= will show you the jumplist, this is equivalent of =:jumps=
+- =SPC ret= jump to bookmark
+
+* Modules / Layers
+
+Doom has several modules enabling different features across Emacs. This section
+attempts to document the major functionalities I rely on in a daily basis
+
+** Search
+
+If you press =SPC= and wait for a few seconds, the =which-key= panel will pop
+up. We can already see a couple of good search options, but the majority of the
+search functionality is behind =SPC s=.
+
+| Commands  | Description                                           |
+|-----------+-------------------------------------------------------|
+| SPC + *   | search for the word at point across the whole project |
+| SPC + '   | resume last search                                    |
+| SPC + /   | search in the whole project                           |
+| SPC + s j | search in the jumplist                                |
