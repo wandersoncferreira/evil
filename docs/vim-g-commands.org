@@ -1,5 +1,8 @@
 #+title: Vim G Commands
 
+The global command =:g= is very useful. =[range]g/pattern/cmd= is the template
+for the g ex-command
+
 Special list of G commands
 
 | command        | description                                        |
@@ -17,9 +20,3 @@ Special list of G commands
 | :g/pattern/t$  | copy all lines matching a pattern to end of file   |
 | :g/pattern/m$  | move all lines matching a pattern to end of file   |
 | :g/pattern/y A | copy all lines matching a pattern to register 'a'  |
-
-
-* Power of g
-
-The global command =:g= is very useful. =[range]g/pattern/cmd= is the template
-for the g ex-command
