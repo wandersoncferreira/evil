@@ -10,4 +10,4 @@ great level of frustration for the first two weeks.
 
 Enjoy and be patient if traveling the same waters.
 
-[[lfile:docs/README.org][Learn more about Doom and Evil.]]
+[[file:docs/README.org][Learn more about Doom and Evil]]
