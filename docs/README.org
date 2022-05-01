@@ -66,4 +66,5 @@ If you have good corrections or contributions, please open a PR.
   - [[https://vim.fandom.com/wiki/Avoid_the_escape_key][Avoid the escape key]]
   - [[https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern][Delete all lines containing a pattern]]
   - [[https://vim.fandom.com/wiki/Power_of_g][Power of G]]
+  - [[https://vim.fandom.com/wiki/Search_patterns][Search patterns]]
 - [[https://medium.com/@kadek/understanding-vims-jump-list-7e1bfc72cdf0][Understanding Vim's jump list]] - Kade Killary blog post

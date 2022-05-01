@@ -1,5 +1,8 @@
 #+title: Vim Search
 
+In normal mode you can search forwards by pressing =/= then typing your search
+pattern. Type =Gn= to jump to the first match, or =GN= to jump to the last. Search backwards by pressing =?= then typing your search pattern.
+
 #+begin_quote
 cats and dogs
 dogs and cats
@@ -29,3 +32,26 @@ people and cats
   worries. Just press =q/= and you'll open a small window at the bottom
   containing your searches. Navigate with =jk= and press Enter to repeat the
   selected search. Or just close that window with =:q=
+
+
+* Search Pattern
+
+| Pattern | Description                        |
+|---------+------------------------------------|
+| \<      | represents the beginning of a word |
+| \>      | represents the end of a word       |
+|         |                                    |
+
+- Findind duplicate words: =\(\<\w\+\>\)\_s*\<\1\>=
+  - =\<= word beginning
+  - =\w= word character
+  - =\+= one or more word characters
+  - =\>= word end
+  - =\_s*= any amount of whitespaces
+  - =\1= uses the same pattern as the first group
+
+- Finding this or that
+  - =\|= to search for something or something else
+
+- Finding two words in either order
+  - =\&= separates alternates e.g. =.*red\&.*blue= will match either red or blue in any order.
