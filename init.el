@@ -7,7 +7,6 @@
        :ui
        doom              ; what makes DOOM look the way it does
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       modeline
        (popup +defaults) ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
        workspaces        ; tab emulation, persistence & separate workspaces

@@ -3,6 +3,7 @@
 
 ;;; standard way to fix all lisp + evil + structural editing issues
 (package! evil-cleverparens)
+(package! mood-line)
 
 ;;; disabling some packages
 ;; company
