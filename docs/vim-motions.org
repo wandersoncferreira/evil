@@ -31,3 +31,30 @@ an [[file:vim-operators.org][operator]] command, to have the comand operate on t
 
 After applying the operator the cursor is mostly left at the start of the text
 that was operated upon.
+
+* Exclusive vs Inclusive
+
+Directly from =:help exclusive= in Vim:
+
+#+begin_quote
+A character motion is either inclusive or exclusive. When inclusive, the start
+and the end position of the motion are included in the operation. When
+exclusive, the last character towards the end of the buffer is not included.
+#+end_quote
+
+We can find out what word motions are inclusive or exclusive by reading =:help word-motions= in Vim
+
+| Command | Description      |
+|---------+------------------|
+| w       | exclusive motion |
+| W       | exclusive motion |
+| e       | inclusive motion |
+| E       | inclusive motion |
+| b       | exclusive motion |
+| B       | exclusive motion |
+| ge      | inclusive motion |
+| gE      | inclusive motion |
+
+Looking in retrospect and digging a little more into the motions help files in
+Vim seems like only =e= is inclusive and all other motions are exclusive. Huge
+asterisk here because I've checked only the ones I use regularly.
