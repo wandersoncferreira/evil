@@ -44,6 +44,7 @@ If you have good corrections or contributions, please open a PR.
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer
+- [[https://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/][Learn Vim Progressively]]  - Yann Esposito blog post
 - [[https://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language][Learning Vim as a Language]]  - Ben McCormick blog post
 - [[https://medium.com/@mkozlows/why-atom-cant-replace-vim-433852f4b4d1][Why Atom can't replace Vim]] - Mike Kozlowski blog post
 - [[https://medium.com/usevim/stop-the-vim-configuration-madness-c825578bbf3e][Stop the Vim configuration madness]]  - Alex R. Young blog post
