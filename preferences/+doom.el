@@ -10,9 +10,6 @@
       ;; font
       doom-font (font-spec :family "Monaco" :size 14)
 
-      ;; remove icons from modeline
-      doom-modeline-icon nil
-
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
 
