@@ -40,7 +40,7 @@ If you have good corrections or contributions, please open a PR.
 - [X] =[I= show lines with matching word under cursor
   - now, this binding will call =+vertico/search-symbol-at-point= function which
     is an improvement over Vim's default behavior due to interactivity
-- [ ] ='[=, and =']= does not work. Marks preset by Vim to jump to last yank/changed text
+- [ ] the commands ='[=, and =']= does not work. Marks preset by Vim to jump to last yank/changed text
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
