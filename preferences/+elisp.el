@@ -6,11 +6,3 @@
 
 ;; fix parens handling in Evil
 (add-hook! emacs-lisp-mode-hook #'(evil-cleverparens-mode evil-smartparens-mode))
-
-(defun bk/improve-last-parens ()
-  (interactive)
-  (evil-normal-state)
-  (evil-append-line 1))
-
-(map! :i "C-j" #'bk/improve-last-parens
-      :i "C-l" #'sp-forward-sexp)

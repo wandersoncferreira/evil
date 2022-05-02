@@ -9,3 +9,11 @@
        :desc "barf" "b" #'sp-forward-barf-sexp
        :desc "splice" "k" #'sp-splice-sexp-killing-backward
        :desc "transpose" "t" #'sp-transpose-sexp))
+
+(defun bk/improve-last-parens ()
+  (interactive)
+  (evil-normal-state)
+  (evil-append-line 1))
+
+(map! :i "C-j" #'bk/improve-last-parens
+      :i "C-l" #'sp-forward-sexp)
