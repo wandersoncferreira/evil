@@ -1,6 +1,6 @@
 ;;; $DOOMDIR/preferences/+evil.el -*- lexical-binding: t; -*-
-;; I want to keep Evil-mode as close to Vim as possible
 
+;; I want to keep Evil-mode as close to Vim as possible
 (setq
  ;; defaults like Vim, c-i jumps forward in the jump list
  evil-want-C-i-jump t
