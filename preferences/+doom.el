@@ -25,9 +25,6 @@
       ;; prefer to use newer files always
       load-prefer-newer t
 
-      ;; search for typed word in all visible windows
-      avy-all-windows t
-
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete)
 
