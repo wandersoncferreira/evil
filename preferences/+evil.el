@@ -11,3 +11,11 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (modify-syntax-entry ?_ "w")))
+
+;; fix issue with ] and [ markers in Evil
+;; more details https://discourse.doomemacs.org/t/how-to-fix-marker-is-not-set-in-this-buffer/2603/2
+(defun bk/bring-marker-back-on-yank (&rest _)
+  (evil-set-marker ?\[ (point))
+  (evil-set-marker ?\] (1- (point))))
+
+(advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank)
