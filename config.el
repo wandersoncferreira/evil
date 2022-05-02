@@ -12,7 +12,6 @@
     "clojure"
     "elisp"
     "projectile"
-    "folds"
     "modeline"
     "completion"
     "cisco.gpg"
