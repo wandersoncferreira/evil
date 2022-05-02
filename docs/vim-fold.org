@@ -1,5 +1,7 @@
 #+title: Vim Fold
 
+**!!! WARNING: I'M NOT USING FOLD FOR NOW!! I NEED TO GET USED TO OTHER THINGS FIRST!**
+
 The default fold method of Vim is =manual=, so no folding occurs. There are
 several ways to add folds:
 
