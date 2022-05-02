@@ -1,19 +1,20 @@
 #+title: Vim Marks
 
-A *mark* allows you to record your current cursor position so you can return to
-it later. They have one non-trivial problem, you can't easily see them while
+A *mark* allows to record the current cursor position, then later we can return
+to it. They have one non-trivial problem, you can't easily see them while
 working on your document.
 
-- each file has a set marks identified by lowercase letters from =a= to =z=
+- each file has a set of available marks identified by lowercase letters from =a= to =z=
 - global marks are identified by uppercase letters
 
 * Using marks
+To jump to a mark enter an apostrophe ='= or a backtick =`= followed by the
+letter where the mark was set.
 
-To jump to a mark enter an apostrophe ='= or a backtick =`= followed by a
-letter. Using an apostrophe jumps to the beginning of the line holding the mark,
-while a backtick jumps to the line and column of the mark.
+Using an apostrophe jumps to the beginning of the line holding the mark, while a
+backtick jumps to the line and column of the mark.
 
-It's possible to navigate between lowercase marks
+There are many ways to use marks, the following table summarize some of it:
 
 | Command | description                                                |
 |---------+------------------------------------------------------------|
@@ -34,13 +35,24 @@ It's possible to navigate between lowercase marks
 
 Example of =``= usage:
 - =/while<Enter>=  ;; jump to the first match of while
-- =``=         ;; move back to start
+- =``=             ;; move back to start
 
 * Seeing Marks
-
 Without plugins you can "see" your marks by running =:marks= which shows you a
 quickfix window that list all your marks.
 
+* Special Marks
+From the table above, there are some marks that we don't need to set because they are already defined:
+
+| Command | Description                                                 |
+|---------+-------------------------------------------------------------|
+| '<      | start of visual selection                                   |
+| >'      | end of visual selection                                     |
+| '[      | start of last change or yank                                |
+| ']      | end of last change or yank                                  |
+| '.      | position of where last change was made                      |
+| '^      | position of cursor when last time Vim left insert-mode (gi) |
+| ''      | positon before last jump                                    |
 
 * Resources
 - [[https://youtu.be/f4_68zI81Vk][Vim (14) Marks]]
