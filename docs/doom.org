@@ -18,6 +18,9 @@ veterans who want less framework in their frameworks.
 - use =Ctrl-;= to fix previous wrong word.
 - =SPC s j= will show you the jumplist, this is equivalent of =:jumps=
 - =SPC ret= jump to bookmark
+- =spc i r= to insert from evil-register
+- =spc b l= cycle between buffers
+- learn about =evil-window-mru= bound to =spc w c-p=. It jumps to the last window used.
 
 * Modules / Layers
 
