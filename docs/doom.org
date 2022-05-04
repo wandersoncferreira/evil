@@ -22,6 +22,15 @@ veterans who want less framework in their frameworks.
 - =spc b l= cycle between buffers
 - learn about =evil-window-mru= bound to =spc w c-p=. It jumps to the last window used.
 
+* How to perform project-search and replace?
+
+- =spc s p= launch a project text search
+- =c-;= to run =embark-act=
+- =E= to run =embark-export=
+- =C-c C-p= to run =wgrep-change-to-wgrep-mode= to make search results writable
+- =:%s/foo/bar/g= to perform a regular single file edit
+- =Z Z= to write all the changes to their respective files or =Z Q= to abort search and replace
+
 * Modules / Layers
 
 Doom has several modules enabling different features across Emacs. This section
