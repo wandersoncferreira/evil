@@ -15,6 +15,7 @@
     "modeline"
     "completion"
     "cisco.gpg"
+    "vc"
     "rss"))
 
 (dolist (cfg list-of-preferences)
