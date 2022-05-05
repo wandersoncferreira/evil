@@ -1,8 +1,7 @@
 ;;; $DOOMDIR/preferences/+evil-gym.el -*- lexical-binding: t; -*-
 
 ;;; build muscle memory within some annoying walls
-(add-hook 'after-init-hook
-          #'global-evil-motion-trainer-mode)
+(add-hook 'after-init-hook #'global-evil-motion-trainer-mode)
 
 (after! evil-motion-trainer
   (setq evil-motion-trainer-super-annoying-mode nil
