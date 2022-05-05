@@ -17,6 +17,7 @@
     "cisco.gpg"
     "vc"
     "gifs"
+    "evil-gym"
     "rss"))
 
 (dolist (cfg list-of-preferences)

@@ -5,6 +5,8 @@
 (package! evil-cleverparens)
 (package! mood-line)
 (package! gif-screencast)
+(package! evil-motion-trainer :recipe
+  (:host github :repo "martinbaillie/evil-motion-trainer"))
 
 ;;; disabling some packages
 ;; company
