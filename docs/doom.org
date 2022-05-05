@@ -1,26 +1,31 @@
 #+title: Doom
 
 [[https://github.com/hlissner/doom-emacs][Doom]] is a configuration framework for Emacs tailored for Emacs bankruptcy
-veterans who want less framework in their frameworks.
+veterans who want less framework in their frameworks. Configuration is at the
+same time the most fun and biggest challenge of any Emacs installation, Doom has
+the advantage to be a sink for several hours of digging into very specific
+corners of Emacs. Let's all leverage that.
 
-- Use the *toggle* functionality more often to remove or bring up eshell or REPL
-- Nice day today! I just learned that pressing =jk= will get me out of INSERT MODE
-- =SPC sp= to search all files in the current project
-- =/= to search within the current buffer. Use `n` and `N` to go to next and
-   previous matches. =?= to search backwards.
-- =s= and type two characters to jump forward to the nearest match
-  - if the things I want to jump to is fairly close to where the cursor is I'll
-     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
-     (gs SPC)
-  - if you want to jump to other matches use =;= and =,=
-- use =Ctrl-,= to find next flyspell error
-- use =z-== to fix the wrong word at point
-- use =Ctrl-;= to fix previous wrong word.
-- =SPC s j= will show you the jumplist, this is equivalent of =:jumps=
-- =SPC ret= jump to bookmark
-- =spc i r= to insert from evil-register
-- =spc b l= cycle between buffers
-- learn about =evil-window-mru= bound to =spc w c-p=. It jumps to the last window used.
+**General recommendations:**
+
+1. Use REPL and Eshell toggle functionality: =SPC o e=
+
+
+**Commands:**
+
+| Command      | Description                             |
+|--------------+-----------------------------------------|
+| jk           | get me out of INSERT MODE               |
+| SPC sp       | search all files in the current project |
+| /            | search within the current buffer        |
+| ?            | search backwards                        |
+| CTRL ,       | find next flyspell error                |
+| z=           | fix wrong word at point                 |
+| CTRL ;       | fix previous wrong word                 |
+| SPC bl       | cycle between buffers                   |
+| SPC RET      | jump to bookmark                        |
+| SPC sj       | show me the jumplist                    |
+| SPC w Ctrl p | jumps to the last window used           |
 
 * How to perform project-search and replace?
 
