@@ -19,8 +19,8 @@
         cider-use-xref nil ;; use lsp
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
-  :config
 
+  :config
   ;; fix parens handling in Evil
   (add-hook! clojure-mode (progn (evil-cleverparens-mode) (evil-smartparens-mode)))
 
