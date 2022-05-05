@@ -4,6 +4,7 @@
 ;;; standard way to fix all lisp + evil + structural editing issues
 (package! evil-cleverparens)
 (package! mood-line)
+(package! gif-screencast)
 
 ;;; disabling some packages
 ;; company

@@ -16,6 +16,7 @@
     "completion"
     "cisco.gpg"
     "vc"
+    "gifs"
     "rss"))
 
 (dolist (cfg list-of-preferences)
