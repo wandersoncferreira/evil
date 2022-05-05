@@ -6,12 +6,12 @@ same time the most fun and biggest challenge of any Emacs installation, Doom has
 the advantage to be a sink for several hours of digging into very specific
 corners of Emacs. Let's all leverage that.
 
-**General recommendations:**
+*General recommendations:*
 
 1. Use REPL and Eshell toggle functionality: =SPC o e=
 
 
-**Commands:**
+*Commands:*
 
 | Command      | Description                             |
 |--------------+-----------------------------------------|
