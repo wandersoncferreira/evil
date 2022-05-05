@@ -33,6 +33,11 @@ people and cats
   containing your searches. Navigate with =jk= and press Enter to repeat the
   selected search. Or just close that window with =:q=
 
+- =s= and type two characters to jump forward to the nearest match
+ - if the things I want to jump to is fairly close to where the cursor is I'll
+     use evil-snipe (s and S). If it's far away or in another window, I'll use Avy
+     (gs SPC)
+ - if you want to jump to other matches use =;= and =,=
 
 * Search Pattern
 
