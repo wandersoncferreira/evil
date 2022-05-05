@@ -22,7 +22,7 @@
   :config
 
   ;; fix parens handling in Evil
-  (add-hook! clojure-mode-hook #'(evil-cleverparens-mode evil-smartparens-mode))
+  (add-hook! clojure-mode (progn (evil-cleverparens-mode) (evil-smartparens-mode)))
 
   ;; remove the colors in the parens, I'm boring person
   (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
