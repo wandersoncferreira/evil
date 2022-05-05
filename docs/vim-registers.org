@@ -1,0 +1,3 @@
+#+title: Vim Registers
+
+- =spc i r= to insert from evil-register

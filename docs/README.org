@@ -30,6 +30,7 @@ Find more information below:
 - [[file:vim-search.org][Vim Search]]
 - [[file:vim-macros.org][Vim Macros]]
 - [[file:vim-g-commands.org][Vim G Commands]]
+- [[file:vim-registers.org][Vim Registers]]
 
 If you have good corrections or contributions, please open a PR.
 
