@@ -18,6 +18,7 @@
     "vc"
     "gifs"
     "evil-gym"
+    "blog"
     "rss"))
 
 (dolist (cfg list-of-preferences)

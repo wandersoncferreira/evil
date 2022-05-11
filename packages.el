@@ -8,6 +8,7 @@
 (package! gif-screencast)
 (package! evil-motion-trainer :recipe
   (:host github :repo "martinbaillie/evil-motion-trainer"))
+(package! org-web-tools)
 
 ;;; disabling some packages
 ;; company
@@ -46,3 +47,7 @@
 (package! drag-stuff :disable t)
 (package! expand-region :disable t)
 (package! paredit :disable t)
+
+;; org roam
+(unpin! org-roam)
+(package! org-roam-ui)
