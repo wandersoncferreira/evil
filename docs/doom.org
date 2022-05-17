@@ -64,3 +64,15 @@ under =SPC p= prefix.
 | spc + p + e | edit .dir-locals file from project             |
 | spc + p + i | invalidate project cache                       |
 | spc + p + t | toggle between project implementation and test |
+
+** Git timemachine
+
+The evil keybindings for git-timemachine are:
+
+| Command | Function                           |
+|---------+------------------------------------|
+| C-k     | git-timemachine-show-prev-revision |
+| C-j     | git-timemachine-show-next-revision |
+| q       | git-timemachine-quit               |
+| gtY     | git-timemachine-kill-revision      |
+| gtb     | git-timemachine-blame              |
