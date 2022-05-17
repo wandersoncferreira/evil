@@ -10,7 +10,18 @@ editor.
 
 You know what improves productivity? Mastering motions and operators.
 
-Let's dive into it.
+* Vim
+
+This is a general section for some interesting sayings about how to use Vim.
+
+- use the more general text objects (iw rather than w)
+- prefer text objects to motions when possible
+- visual mode is a smell
+- don't use two sentences where one will do it
+- visual mode breaks repeatability
+- to avoid using Esc we can press ~C-[~
+- history of past searches: ~q/~
+- ~ctrl-^~ will send you back to the previous buffer you were in
 
 * Dive in
 
