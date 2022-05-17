@@ -6,7 +6,6 @@
 (package! gif-screencast)
 (package! evil-motion-trainer :recipe
   (:host github :repo "martinbaillie/evil-motion-trainer"))
-(package! org-web-tools)
 
 ;;; disabling some packages
 ;; company
