@@ -5,10 +5,10 @@
 
       ;; theme - I'm a huge fan of the default theme
       ;; let's stay really close to Vim for a while =)
-      doom-theme 'doom-dracula
+      doom-theme 'vim-colors
 
       ;; font
-      doom-font (font-spec :family "Monaco" :size 15)
+      doom-font (font-spec :family "Monaco" :size 14)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
