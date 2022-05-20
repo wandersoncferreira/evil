@@ -8,7 +8,7 @@
       doom-theme 'vim-colors
 
       ;; font
-      doom-font (font-spec :family "Monaco" :size 14)
+      doom-font (font-spec :size 14)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
@@ -33,7 +33,7 @@
   (setq dired-listing-switches "-alh"))
 
 ;; change line spacing for all bufferd
-(setq-default line-spacing 4)
+(setq-default line-spacing 6)
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)

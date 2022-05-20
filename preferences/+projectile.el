@@ -1,7 +1,6 @@
 ;;; $DOOMDIR/preferences/+projectile.el -*- lexical-binding: t; -*-
 
 (after! projectile
-
   ;; disable projectile caching
   (setq projectile-enable-caching nil)
 

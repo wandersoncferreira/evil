@@ -2,7 +2,7 @@
 ;;; $DOOMDIR/packages.el
 
 ;;; standard way to fix all lisp + evil + structural editing issues
-(package! mood-line)
+(package! delight)
 (package! gif-screencast)
 (package! evil-motion-trainer :recipe
   (:host github :repo "martinbaillie/evil-motion-trainer"))

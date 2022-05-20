@@ -5,22 +5,6 @@
 (setq consult-preview-key (kbd "M-."))
 
 ;;; embark
-;; add functions to open new file in vertical or horizontal splits
-(defun bk/vsplit-file-open (f)
-  (let ((evil-vsplit-window-right t))
-    (+evil/window-vsplit-and-follow)
-    (find-file f)))
-
-(defun bk/split-file-open (f)
-  (let ((evil-split-window-below t))
-    (+evil/window-split-and-follow)
-    (find-file f)))
-
-(map! :after embark
-      :map embark-file-map
-      "v" #'bk/vsplit-file-open
-      "x" #'bk/split-file-open)
-
 ;; do not ask for confirmation to delete a bookmark
 (after! embark
   (setf embark-pre-action-hooks

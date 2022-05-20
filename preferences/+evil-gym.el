@@ -6,6 +6,5 @@
 (after! evil-motion-trainer
   (setq evil-motion-trainer-super-annoying-mode nil
         evil-motion-trainer-threshold 6)
-
   ;; add new advice
   (add-emt-advice sp-backward-delete-char '(sp-backward-kill-word)))
