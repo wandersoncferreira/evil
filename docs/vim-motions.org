@@ -27,6 +27,8 @@ an [[file:vim-operators.org][operator]] command, to have the comand operate on t
 | %           | goto the corresponding (, [, or {                     |
 | *           | goto the next occurrence of the word under cursor     |
 | #           | goto the previous occurrence of the word under cursor |
+| ]           | next-*                                                |
+| [           | previous-*                                            |
 
 
 After applying the operator the cursor is mostly left at the start of the text

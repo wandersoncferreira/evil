@@ -18,6 +18,7 @@ The following operators are available:
 | >       | shift right                        |
 | <       | shift left                         |
 | zf      | define a fold                      |
+| d])     | delete until the next close parens |
 
 If the motion includes a count and the operator also had a count before it, then
 the two counts are multiplied. For example: "2d3w" deletes six words.
