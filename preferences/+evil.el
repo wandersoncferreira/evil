@@ -1,6 +1,8 @@
 ;;; $DOOMDIR/preferences/+evil.el -*- lexical-binding: t; -*-
 ;;; I want to keep Evil-mode as close to Vim as possible
 
+(setq evil-mode-line-format 'before)
+
 ;; defaults like Vim, c-i jumps forward in the jump list
 (setq evil-want-C-i-jump t)
 
@@ -18,6 +20,7 @@
 
 (advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank)
 
+;;; evil-motion-trainer
 ;;; build muscle memory within some annoying walls
 (add-hook 'after-init-hook #'global-evil-motion-trainer-mode)
 

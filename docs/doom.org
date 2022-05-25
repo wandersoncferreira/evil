@@ -9,6 +9,7 @@ corners of Emacs. Let's all leverage that.
 *General recommendations:*
 
 1. Use REPL and Eshell toggle functionality: =SPC o e=
+2. When ~Too many open pipes~ error pops up run: ~M-x file-notify-rm-all-watchers~
 
 
 *Commands:*

@@ -42,6 +42,7 @@
         +hugo
         +roam2)          ; organize your plain life in plain text
        plantuml          ; diagrams for confusing people more
+       ledger            ; be audit you can be
 
        :email
        :app

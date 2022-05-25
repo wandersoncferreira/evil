@@ -2,26 +2,29 @@
 
 (require 's)
 
+;;;###autoload
 (defun bk/load-gpg-file (filename)
   (let ((file (expand-file-name (format "preferences/+%s.el.gpg" filename) doom-private-dir))
         (file-name-handler-alist '(("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" . epa-file-handler))))
     (load-file file)))
 
 (defvar list-of-preferences
-  '("doom"
-    "encryption"
-    "parens"
-    "evil"
-    "lsp"
-    "clojure"
-    "elisp"
-    "projectile"
-    "modeline"
-    "completion"
+  '("blog"
     "cisco.gpg"
-    "vc"
+    "clojure"
+    "completion"
+    "doom"
+    "elisp"
+    "encryption"
+    "evil"
+    "finance"
     "gifs"
-    "blog"))
+    "lsp"
+    "modeline"
+    "parens"
+    "persp"
+    "projectile"
+    "vc"))
 
 (dolist (cfg list-of-preferences)
   (if (s-ends-with? ".gpg" cfg)

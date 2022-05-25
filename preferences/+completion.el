@@ -2,7 +2,8 @@
 
 ;;; consult
 ;; disable the default preview when switching buffers
-(setq consult-preview-key (kbd "M-."))
+(after! consult
+  (setq consult-preview-key (kbd "M-.")))
 
 ;;; embark
 ;; do not ask for confirmation to delete a bookmark

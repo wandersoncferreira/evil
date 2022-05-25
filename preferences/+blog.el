@@ -1,7 +1,8 @@
 ;;; $DOOMDIR/preferences/+blog.el -*- lexical-binding: t; -*-
 
-(require 'time-stamp)
-(add-hook 'write-file-functions 'time-stamp)
+(after! org
+  (require 'time-stamp)
+  (add-hook 'write-file-functions 'time-stamp))
 
 (after! org-roam
   (setq org-roam-directory "~/code/wandersoncferreira.github.io/orgfiles"
@@ -18,16 +19,19 @@
   (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
         org-hugo-section "items"))
 
+;;;###autoload
 (defun bk/publish-bookmark ()
   (interactive)
   (let ((org-hugo-section "bookmarks"))
     (org-hugo-export-wim-to-md)))
 
+;;;###autoload
 (defun bk/publish-posts ()
   (interactive)
   (let ((org-hugo-section "posts"))
     (org-hugo-export-wim-to-md)))
 
+;;;###autoload
 (defun bk/publish-notes ()
   (interactive)
   (let ((org-hugo-section "notes"))

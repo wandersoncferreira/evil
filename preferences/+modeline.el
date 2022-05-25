@@ -5,7 +5,8 @@
   (delight
    '((company-mode nil company)
      (eldoc-mode nil eldoc)
-     (evil-snipe-local-mode nil evil-snipe)
+
+     (dired-omit-mode nil dired-x)
      (better-jumper-local-mode nil better-jumper)
      (which-key-mode nil which-key)
      (ws-butler-mode nil ws-butler)
@@ -15,8 +16,32 @@
      (smartparens-mode nil smartparens)
      (lsp-lens-mode nil lsp-lens)
      (clj-refactor-mode nil clj-refactor)
+     (visual-line-mode nil simple)
      (dtrt-indent-mode nil dtrt-indent)
+
+     (evil-snipe-local-mode nil evil-snipe)
      (evil-escape-mode nil evil-escape)
-     (projectile-mode (:eval (concat " Prj[" (projectile-project-name) "]")) projectile)
+     (evil-traces-mode nil evil-traces)
+     (evil-org-mode nil evil-org)
+
+     (org-indent-mode nil org-indent)
+     (projectile-mode nil projectile)
      (gcmh-mode nil gcmh)
      (whitespace-mode nil whitespace))))
+
+(setq-default mode-line-format
+              '("%e"
+                mode-line-front-space
+                (:propertize
+                 ("" mode-line-modified mode-line-remote)
+                 display
+                 (min-width
+                  (5.0)))
+                " "
+                mode-line-buffer-identification
+                "   "
+                mode-line-position
+                "  "
+                mode-line-modes
+                mode-line-misc-info
+                mode-line-end-spaces))
