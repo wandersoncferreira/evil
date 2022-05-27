@@ -50,6 +50,9 @@
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
 
+;; set registers
+(set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))
+
 ;;;###autoload
 (defun bk/toggle-transparency ()
   (interactive)
