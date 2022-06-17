@@ -5,25 +5,22 @@ general-purpose commands that can be combined with objects to compose larger
 commands.
 
 This philosophy of minimalist commands that can be composed together is the
-fundamental originating philosophy of Unix, and Vim exemplifies it like no other
-editor.
+fundamental philosophy of Unix and Vim exemplifies it like no other editor.
 
-You know what improves productivity? Mastering motions and operators.
+You know what improves productivity? *Mastering motions and operators.*
 
 * Vim
 
-This is a general section for some interesting sayings about how to use Vim.
-
 - use the more general text objects (iw rather than w)
 - prefer text objects to motions when possible
-- visual mode is a smell
+- visual mode is a smell because it breaks repeatability
 - don't use two sentences where one will do it
-- visual mode breaks repeatability
-- to avoid using Esc we can press ~C-[~
+- to avoid using Esc we can press ~C-[~ or ~jk~ in Doom
 - history of past searches: ~q/~
 - ~ctrl-^~ will send you back to the previous buffer you were in
 
 ** Anti-Patterns
+
 *** If you are pressing the same key more than twice, you're doing it wrong
 - You should either prefix a command with the number of times you want to repeat
 it or look for a shorter command which does the same thing (there always is).
@@ -32,15 +29,14 @@ it or look for a shorter command which does the same thing (there always is).
 - use relative line numbers instead. Using relative line numbers will tell you how
 many lines above and below the cursor the other lines are. Knowing that you can
 then use RELATIVE_NUMBER + j/k to jump straight to that line.
-
-- using / and searching for a word is usually faster than moving the cursor there.
-
-- to move up/down multiple lines I then use CTRL+u and CTRL+d
+  - I removed all line numbers from Doom.
+- / to search for a word is usually faster than moving the cursor.
+- to move up/down multiple lines I then use ~CTRL+u~ and ~CTRL+d~.
 
 *** Moving sideways one character at a time
 
-- use f to move to a particular character (forward) and t to move to place right before a character (forward)
-- use F and T to move backwards
+- use ~f~ to move to a particular character (forward) and ~t~ to move to place right before a character (forward)
+- use ~F~ and ~T~ to move backwards
 
 *** Deleting text before inserting new text
 *** Spending too much time in insert mode
@@ -55,10 +51,8 @@ RegEx find and replace instead
 
 * Dive in
 
-There is no clear reason why each of the topics below are in separate files
-other than my desired to study then deeper at some moment.
-
-Find more information below:
+There is no clear rationale for why each of the topics below are in separate
+files other than my desired to study then deeper at some moment.
 
 - [[file:doom.org][Doom]]
 - [[file:vim-marks.org][Vim Marks]]
