@@ -16,7 +16,6 @@
   (setq cider-jdk-src-paths '("~/Downloads/clojure-1.10.3-sources" "~/Downloads/jvm11/source")
         cider-clojure-cli-command "~/code/dotfiles/clojure/clojure-bin-enriched"
         cider-save-file-on-load t
-        cider-use-xref nil ;; use lsp
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
   :config

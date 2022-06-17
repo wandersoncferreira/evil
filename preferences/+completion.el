@@ -22,6 +22,5 @@
       "[" #'vertico-previous-group)
 
 ;;; company
-;; disable automatic completion
 (after! company
-  (setq company-idle-delay nil))
+  (setq company-idle-delay 0.1))

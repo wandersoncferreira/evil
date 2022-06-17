@@ -3,12 +3,8 @@
 (setq user-full-name "Wanderson Ferreira"
       user-mail-address "wand@hey.com"
 
-      ;; theme - I'm a huge fan of the default theme
-      ;; let's stay really close to Vim for a while =)
-      doom-theme 'vim-colors
-
       ;; font
-      doom-font (font-spec :size 14)
+      ;; doom-font (font-spec :family "IBM Plex Mono" :size 14)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
@@ -74,3 +70,20 @@
   (kill-new (auth-source-pick-first-password
              :host "bitwarden.app"
              :user "bartuka")))
+
+(defun enable-default-black-theme ()
+  "customizing the faces for default-black theme."
+  (setq doom-theme 'default-black)
+  (add-hook 'after-init-hook
+            (lambda ()
+              (custom-set-faces
+               '(success ((t (:foreground "ForestGreen" :weight bold))))
+               '(vertico-current ((t (:background "DarkSlateGray")))))
+              )))
+
+(defun enable-vim-colors ()
+  "enable the vim-colors theme."
+  (setq doom-theme 'vim-colors))
+
+;; current theme
+(enable-vim-colors)
