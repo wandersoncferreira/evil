@@ -25,6 +25,7 @@ corners of Emacs. Let's all leverage that.
 | CTRL ;       | fix previous wrong word                 |
 | SPC bl       | cycle between buffers                   |
 | SPC RET      | jump to bookmark                        |
+| SPC bm       | set bookmark                            |
 | SPC sj       | show me the jumplist                    |
 | SPC w Ctrl p | jumps to the last window used           |
 
