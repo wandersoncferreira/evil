@@ -8,6 +8,7 @@ working on your document.
 - global marks are identified by uppercase letters
 
 * Using marks
+
 To jump to a mark enter an apostrophe ='= or a backtick =`= followed by the
 letter where the mark was set.
 
@@ -32,6 +33,13 @@ There are many ways to use marks, the following table summarize some of it:
 | '.      | jump to the line of the last edit                          |
 | `<      | jump to the start of the last visual selection             |
 | `>      | jump to the end of the last visual selection               |
+| '<      | start of visual selection                                   |
+| >'      | end of visual selection                                     |
+| '[      | start of last change or yank                                |
+| ']      | end of last change or yank                                  |
+| '.      | position of where last change was made                      |
+| '^      | position of cursor when last time Vim left insert-mode (gi) |
+| ''      | positon before last jump                                    |
 
 Example of =``= usage:
 - =/while<Enter>=  ;; jump to the first match of while
@@ -40,19 +48,6 @@ Example of =``= usage:
 * Seeing Marks
 Without plugins you can "see" your marks by running =:marks= which shows you a
 quickfix window that list all your marks.
-
-* Special Marks
-From the table above, there are some marks that we don't need to set because they are already defined:
-
-| Command | Description                                                 |
-|---------+-------------------------------------------------------------|
-| '<      | start of visual selection                                   |
-| >'      | end of visual selection                                     |
-| '[      | start of last change or yank                                |
-| ']      | end of last change or yank                                  |
-| '.      | position of where last change was made                      |
-| '^      | position of cursor when last time Vim left insert-mode (gi) |
-| ''      | positon before last jump                                    |
 
 * Resources
 - [[https://youtu.be/f4_68zI81Vk][Vim (14) Marks]]
