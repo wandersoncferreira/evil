@@ -8,10 +8,14 @@
        doom              ; what makes DOOM look the way it does
        (popup +defaults) ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
+       ophints           ; highlight the region an operation acts on
+       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
+       file-templates    ; auto-snippets for empty files
        snippets          ; my elves. They type so I don't have to
 
        :emacs
@@ -20,6 +24,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
+       eshell            ; the elisp shell that works everywhere
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
