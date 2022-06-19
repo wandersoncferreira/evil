@@ -12,6 +12,7 @@
   '("blog"
     "cisco.gpg"
     "clojure"
+    "coding"
     "completion"
     "doom"
     "elisp"
