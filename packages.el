@@ -4,6 +4,7 @@
 ;;; standard way to fix all lisp + evil + structural editing issues
 (package! delight)
 (package! gif-screencast)
+(package! company-quickhelp)
 (package! evil-motion-trainer :recipe
   (:host github :repo "martinbaillie/evil-motion-trainer"))
 
