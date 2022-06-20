@@ -17,12 +17,16 @@
      (lsp-lens-mode nil lsp-lens)
      (clj-refactor-mode nil clj-refactor)
      (visual-line-mode nil simple)
+     (vi-tilde-fringe-mode nil vi-tilde-fringe)
      (dtrt-indent-mode nil dtrt-indent)
 
      (evil-snipe-local-mode nil evil-snipe)
      (evil-escape-mode nil evil-escape)
      (evil-traces-mode nil evil-traces)
      (evil-org-mode nil evil-org)
+     (evil-smartparens-mode nil evil-smartparens)
+     (evil-cleverparens-mode nil evil-cleverparens)
+     (evil-goggles-mode nil evil-goggles)
 
      (org-indent-mode nil org-indent)
      (projectile-mode nil projectile)

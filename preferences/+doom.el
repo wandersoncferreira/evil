@@ -28,7 +28,7 @@
 (after! dired
   (setq dired-listing-switches "-alh"))
 
-;; change line spacing for all bufferd
+;; change line spacing for all buffers
 (setq-default line-spacing 6)
 
 ;; disable highliting of current line
@@ -41,27 +41,17 @@
       "fj" #'dired-jump
       "y" #'consult-yank-from-kill-ring
       "pt" #'projectile-toggle-between-implementation-and-test
-      "wo" #'delete-other-windows
-      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
 
+(global-set-key (kbd "M-m") nil)
+(global-set-key (kbd "M-m m") #'evil-multiedit-match-symbol-and-next)
+(global-set-key (kbd "M-m p") #'evil-multiedit-match-symbol-and-prev)
+(global-set-key (kbd "M-m a") #'evil-multiedit-match-all)
+(global-set-key (kbd "M-m h") #'lsp-evil-multiedit-highlights)
+
 ;; set registers
 (set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))
-
-;;;###autoload
-(defun bk/toggle-transparency ()
-  (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
-    (set-frame-parameter
-     nil 'alpha
-     (if (or (eql (cond ((numberp alpha) alpha)
-                        ((numberp (cdr alpha)) (cdr alpha))
-                        ((numberp (cadr alpha)) (cadr alpha)))
-                  100)
-             (not alpha))
-         85
-       100))))
 
 ;;;###autoload
 (defun bk/bitwarden ()

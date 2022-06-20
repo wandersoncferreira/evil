@@ -5,6 +5,9 @@
 (package! delight)
 (package! gif-screencast)
 (package! company-quickhelp)
+(package! windresize)
+(package! evil-cleverparens)
+(package! evil-smartparens)
 (package! evil-motion-trainer :recipe
   (:host github :repo "martinbaillie/evil-motion-trainer"))
 

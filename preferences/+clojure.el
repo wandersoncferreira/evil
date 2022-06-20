@@ -19,13 +19,14 @@
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
   :config
+  ;; handling parens correctly
+  (add-hook 'clojure-mode-hook
+            (lambda ()
+              (evil-cleverparens-mode)
+              (evil-smartparens-mode)))
+
   ;; remove the colors in the parens, I'm boring person
   (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
-
-  ;; use lsp for completion
-  (add-hook 'cider-mode-hook
-            (lambda ()
-              (remove-hook 'completion-at-point-functions #'cider-complete-at-point)))
 
   ;; include cider buffer into current workspace
   (add-hook 'cider-repl-mode-hook
@@ -44,9 +45,8 @@
 
 (map! (:localleader
        (:map (clojure-mode-map)
+        (:prefix ("r" . "repl")
+         "s" #'sesman-browser)
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
          ";" #'cider-eval-defun-to-comment))))
-
-(map! (:map (clojure-mode-map)
-       "DEL" #'sp-backward-delete-char))

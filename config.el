@@ -23,10 +23,12 @@
     "java"
     "lsp"
     "modeline"
+    "narrowing"
     "parens"
     "persp"
     "projectile"
-    "vc"))
+    "vc"
+    "window"))
 
 (dolist (cfg list-of-preferences)
   (if (s-ends-with? ".gpg" cfg)

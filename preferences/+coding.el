@@ -10,3 +10,9 @@
 
 (map! :leader
       "fe" #'toggle/flycheck-list-errors)
+
+(use-package! evil-cleverparens
+  :init
+  (setq evil-cleverparens-use-additional-movement-keys nil
+        evil-cleverparens-use-additional-bindings nil
+        evil-cleverparens-use-s-and-S nil))
