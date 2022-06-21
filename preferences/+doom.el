@@ -4,7 +4,8 @@
       user-mail-address "wand@hey.com"
 
       ;; font
-      ;; doom-font (font-spec :family "IBM Plex Mono" :size 14)
+      ;; systemfontstack.com
+      doom-font (font-spec :family "Monaco" :size 14)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
