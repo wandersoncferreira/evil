@@ -21,9 +21,19 @@ This is definitely bothering me on my current Doom instalation, but before going
 to the self-degradation "do-it-yourself because I can" route,  let me try
 something new.
 
-I will document every aspect of Doom as I discover about it so I can get
-familiar with what's around. Basically, reading elisp code and removing packages
-that I don't like or know what it is doing.
+I will document every aspect of Doom as soon as I discover them, my goal is to
+get familiar with what's around.
+
+Therefore, if I am unsure what a package does or if I want to use it or not:
+remove it. Only enable packages that I made significant effort to understand
+their value proposition.
+
+| Status  | Meaning                                                                     |
+|---------+-----------------------------------------------------------------------------|
+| ENABLED | package kept, with or without modifications from Doom defaults              |
+| REMOVED | package removed, after being assessed and considered not fit to my workflow |
+| OFF     | package removed, but under consideration                                    |
+
 
 ** Doom CORE
 Doom is basically divided into ~core~ and ~modules~ at a very high level. All
@@ -31,19 +41,15 @@ the code in ~core~ are related to sane defaults, Doom's foundation on package
 management, projects, and a feel more pieces.
 
 These are some packages of my interest:
-- [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
-
-These are some packages that I want to remove because I don't care at all about them:
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
-- restart-emacs
-
-These are the ones I removed but I'm still judging if I'll miss them or not:
-- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
+- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
+- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
+- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
+- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
+- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
+- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
+- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
+- [REMOVED] restart-emacs
+- [OFF] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
 
 ** Doom MODULES
 I'll follow the order from ~init.el~ file.
@@ -64,19 +70,14 @@ Packages that I'm interesting in keeping & learning:
 - [OFF] consult-flycheck
 - [OFF] embark
 - [OFF] embark-consult
+- [OFF] consult-dir
 - [OFF] wgrep
-
-However, I'll enable each of them only after I make significant effort to
-understand their value proposition and how they fit into my workflow in Emacs.
-
-Packages removed that I might miss someday:
-- consult-dir
-- marginalia
+- [REMOVED] marginalia
 
 *** doom
-Nothing here to see. Packages removed:
-- doom-themes
-- solaire-mode
+Nothing here to see.
+- [REMOVED] doom-themes
+- [REMOVED] solaire-mode
 
 *** TODO popup
 Very amazing package developed by Doom team. I'm very interested in digging
@@ -85,13 +86,11 @@ deeper here. Taming popup has been one of my worst skills in Emacs.
 I enabled ~+all~ special buffers to be handled as popups. Very optimistic about this.
 
 *** TODO vc-gutter
-Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e9098f0a598791/modules/ui/vc-gutter/config.el#L22][git-gutter]] is instealled. Victory! The defaults are nice.
-
 *** TODO hl-todo
-Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e9098f0a598791/modules/ui/hl-todo/config.el#L3][hl-todo]] is instealled. Victory! The defaults are nice.
-
 *** TODO workspaces
 *** STARTED evil
+Module responsible for bringing Vim over to the party.
+
 - [ENABLED] evil
 - [OFF] evil-args
 - [OFF] evil-easymotion
@@ -110,6 +109,7 @@ Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e90
 - [OFF] exato
 - [OFF] evil-quick-diff
 - [ENABLED] evil-collection
+
 *** TODO file-templates
 *** TODO multiple-cursors
 *** TODO snippets
