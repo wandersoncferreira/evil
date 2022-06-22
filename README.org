@@ -28,11 +28,11 @@ Therefore, if I am unsure what a package does or if I want to use it or not:
 remove it. Only enable packages that I made significant effort to understand
 their value proposition.
 
-| Status  | Meaning                                                                     |
-|---------+-----------------------------------------------------------------------------|
-| ENABLED | package kept, with or without modifications from Doom defaults              |
-| REMOVED | package removed, after being assessed and considered not fit to my workflow |
-| OFF     | package removed, but under consideration                                    |
+| Status | Meaning                                                                     |
+|--------+-----------------------------------------------------------------------------|
+| ✅     | package kept, with or without modifications from Doom defaults              |
+| ❌     | package removed, after being assessed and considered not fit to my workflow |
+| ⚠️     | package removed, but under consideration                                    |
 
 
 ** Doom CORE
@@ -41,15 +41,15 @@ the code in ~core~ are related to sane defaults, Doom's foundation on package
 management, projects, and a feel more pieces.
 
 These are some packages of my interest:
-- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
-- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
-- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
-- [ENABLED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
-- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
-- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
-- [REMOVED] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
-- [REMOVED] restart-emacs
-- [OFF] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
+- [❌] restart-emacs
+- [⚠️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
 
 ** Doom MODULES
 I'll follow the order from ~init.el~ file.
@@ -59,25 +59,25 @@ Only company is installed. Victory! The defaults are nice.
 
 *** STARTED vertico
 Packages that I'm interesting in keeping & learning:
-- [ENABLED] [[https://github.com/minad/vertico][vertico]]
+- [✅] [[https://github.com/minad/vertico][vertico]]
   - also enabled ~vertico-multiform-mode~ for project-wide searches
-- [ENABLED] [[https://github.com/oantolin/orderless][orderless]]
+- [✅] [[https://github.com/oantolin/orderless][orderless]]
   - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster than this option. Let's keep it around.
   - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
-- [ENABLED] consult
-  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :( seems good reason to enabled it for now.
-- [OFF] consult-dir
-- [OFF] consult-flycheck
-- [OFF] embark
-- [OFF] embark-consult
-- [OFF] consult-dir
-- [OFF] wgrep
-- [REMOVED] marginalia
+- [✅] consult
+  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :( seems good reason to ✅ it for now.
+- [⚠️] consult-dir
+- [⚠️] consult-flycheck
+- [⚠️] embark
+- [⚠️] embark-consult
+- [⚠️] consult-dir
+- [⚠️] wgrep
+- [❌] marginalia
 
 *** doom
 Nothing here to see.
-- [REMOVED] doom-themes
-- [REMOVED] solaire-mode
+- [❌] doom-themes
+- [❌] solaire-mode
 
 *** TODO popup
 Very amazing package developed by Doom team. I'm very interested in digging
@@ -91,24 +91,24 @@ I enabled ~+all~ special buffers to be handled as popups. Very optimistic about 
 *** STARTED evil
 Module responsible for bringing Vim over to the party.
 
-- [ENABLED] evil
-- [OFF] evil-args
-- [OFF] evil-easymotion
-- [OFF] evil-embrace
-- [ENABLED] evil-escape
-- [OFF] evil-exchange
-- [OFF] evil-indent-plus
-- [OFF] evil-lion
-- [OFF] evil-nerd-commenter
-- [OFF] evil-numbers
-- [OFF] evil-snipe
-- [OFF] evil-surround
-- [OFF] evil-textobj-anyblock
-- [OFF] evil-traces
-- [OFF] evil-visualstar
-- [OFF] exato
-- [OFF] evil-quick-diff
-- [ENABLED] evil-collection
+- [✅] evil
+- [⚠️] evil-args
+- [⚠️] evil-easymotion
+- [⚠️] evil-embrace
+- [✅] evil-escape
+- [⚠️] evil-exchange
+- [⚠️] evil-indent-plus
+- [⚠️] evil-lion
+- [⚠️] evil-nerd-commenter
+- [⚠️] evil-numbers
+- [⚠️] evil-snipe
+- [⚠️] evil-surround
+- [⚠️] evil-textobj-anyblock
+- [⚠️] evil-traces
+- [⚠️] evil-visualstar
+- [⚠️] exato
+- [⚠️] evil-quick-diff
+- [✅] evil-collection
 
 *** TODO file-templates
 *** TODO multiple-cursors
