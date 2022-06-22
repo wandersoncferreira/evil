@@ -28,24 +28,23 @@
   ;; remove the colors in the parens, I'm boring person
   (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
-  ;; include cider buffer into current workspace
   (add-hook 'cider-repl-mode-hook
             (lambda ()
+              ;; include cider buffer into current workspace
               (persp-add-buffer (current-buffer))))
 
-  ;; include test-report buffer into current workspace
   (add-hook 'cider-test-report-mode-hook
             (lambda ()
+              ;; include test-report buffer into current workspace
               (persp-add-buffer (current-buffer))))
 
-  ;; include temp buffers created by cider into current workspace
   (add-hook 'cider-popup-buffer-mode-hook
             (lambda ()
+              ;; include temp buffers created by cider into current workspace
               (persp-add-buffer (current-buffer))))
 
   ;; fix the placement of the test-report buffer
-  (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
-  )
+  (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4))
 
 (map! (:localleader
        (:map (clojure-mode-map)
@@ -53,4 +52,13 @@
          "s" #'sesman-browser)
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
+         "s" #'eval-sexp-fu-cider-eval-sexp-inner-list
          ";" #'cider-eval-defun-to-comment))))
+
+(after! cider-mode
+  (require 'eval-sexp-fu)
+  (require 'cider-eval-sexp-fu))
+
+(use-package! eval-sexp-fu
+  :config
+  (require 'cider-eval-sexp-fu))

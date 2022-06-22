@@ -168,8 +168,22 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
 *** TODO lookup
 *** TODO lsp
 *** TODO magit
-*** TODO macos
-*** TODO clojure
+*** macos
+- [❌] ns-auto-titlebar
+- [❌] osx-trash
+
+*** clojure
+Clojure extension packages so I can pay my bills and not get crazy working with
+insane langs setup commonly found in the mainstream
+
+- [✅] clojure-mode
+- [✅] clj-refactor
+- [✅] cider
+  - CIDER is a big project and reading its documentation always teaches me something new
+  - I also added ~eval-sexp-fu~. Very handy when the cursor is inside a sexp and I want to eval the surrounding sexp
+  - I could not make the fuzzy completion work with CIDER. The instructions from CIDER docs didn't work
+- [✅] flycheck-clj-kondo
+
 *** TODO emacs-lisp
 *** TODO latex
 *** TODO markdown

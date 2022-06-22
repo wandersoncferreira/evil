@@ -38,7 +38,7 @@
         macos)           ; improve compatibility with macOS
 
        :lang
-       (clojure +lsp)    ; java with a lisp
+       clojure           ; java with a lisp
        emacs-lisp
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore

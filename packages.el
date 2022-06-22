@@ -1,7 +1,9 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;;; standard way to fix all lisp + evil + structural editing issues
+;;; bring yet more packages :)
+(package! eval-sexp-fu)
+(package! cider-eval-sexp-fu)
 (package! delight)
 (package! gif-screencast)
 (package! company-quickhelp)
