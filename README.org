@@ -51,7 +51,7 @@ These are some packages of my interest:
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
 - [❌] restart-emacs
 - [☑️️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
-  - I felt the difference in my first day working without this package. I need to dig deeper to learn more about it
+  - I felt the difference in my first day working without this package.
 
 ** Doom MODULES
 I'll follow the order from ~init.el~ file.
@@ -67,7 +67,7 @@ Packages that I'm interesting in keeping & learning:
   - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster. Let's keep it around.
   - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
 - [☑️] consult
-  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :( seems good reason to ✅ it for now.
+  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :(
 - [⚠️] consult-dir
 - [⚠️] consult-flycheck
 - [⚠️] embark
