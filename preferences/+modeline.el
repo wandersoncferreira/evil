@@ -43,9 +43,9 @@
                   (5.0)))
                 " "
                 mode-line-buffer-identification
-                "   "
+                " "
                 mode-line-position
-                "  "
+                " "
                 mode-line-modes
                 mode-line-misc-info
                 mode-line-end-spaces))

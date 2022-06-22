@@ -78,3 +78,10 @@
 
 ;; current theme
 (enable-vim-colors)
+
+;;;###autoload
+(defun insert-file-name ()
+  "Insert the file name without extension."
+  (interactive)
+  (let ((path (or buffer-file-name default-directory)))
+    (file-name-base buffer-file-name)))

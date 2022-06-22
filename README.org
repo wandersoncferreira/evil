@@ -11,3 +11,103 @@ great level of frustration for the first two weeks.
 Enjoy and be patient if traveling the same waters.
 
 [[file:docs/README.org][Learn more about Doom and Evil]]
+
+* Documentation for the little voice on your shoulder!
+
+One thing I feared the most about Emacs Frameworks was installing lots of
+functionality that I'd never know about because I haven't explicitly added them.
+
+This is definitely bothering me on my current Doom instalation, but before going
+to the self-degradation "do-it-yourself because I can" route,  let me try
+something new.
+
+I will document every aspect of Doom as I discover about it so I can get
+familiar with what's around. Basically, reading elisp code and removing packages
+that I don't like or know what it is doing.
+
+** Doom CORE
+Doom is basically divided into ~core~ and ~modules~ at a very high level. All
+the code in ~core~ are related to sane defaults, Doom's foundation on package
+management, projects, and a feel more pieces.
+
+These are some packages of my interest:
+- [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
+
+These are some packages that I want to remove because I don't care at all about them:
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
+- restart-emacs
+
+These are the ones I removed but I'm still judging if I'll miss them or not:
+- [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
+
+** Doom MODULES
+I'll follow the order from ~init.el~ file.
+
+*** company
+Only company is installed. Victory! The defaults are nice.
+
+*** STARTED vertico
+Packages that I'm interesting in keeping & learning:
+- [ENABLED] [[https://github.com/minad/vertico][vertico]]
+  - also enabled ~vertico-multiform-mode~ for project-wide searches
+- [ENABLED] [[https://github.com/oantolin/orderless][orderless]]
+  - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster than this option. Let's keep it around.
+  - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
+- [OFF] consult
+- [OFF] consult-dir
+- [OFF] consult-flycheck
+- [OFF] embark
+- [OFF] embark-consult
+- [OFF] wgrep
+
+However, I'll enable each of them only after I make significant effort to
+understand their value proposition and how they fit into my workflow in Emacs.
+
+Packages removed that I might miss someday:
+- consult-dir
+- marginalia
+
+*** doom
+Nothing here to see. Packages removed:
+- doom-themes
+- solaire-mode
+
+*** TODO popup
+Very amazing package developed by Doom team. I'm very interested in digging
+deeper here. Taming popup has been one of my worst skills in Emacs.
+
+I enabled ~+all~ special buffers to be handled as popups. Very optimistic about this.
+
+*** TODO vc-gutter
+Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e9098f0a598791/modules/ui/vc-gutter/config.el#L22][git-gutter]] is instealled. Victory! The defaults are nice.
+
+*** TODO hl-todo
+Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e9098f0a598791/modules/ui/hl-todo/config.el#L3][hl-todo]] is instealled. Victory! The defaults are nice.
+
+*** TODO workspaces
+*** TODO evil
+*** TODO file-templates
+*** TODO multiple-cursors
+*** TODO snippets
+*** TODO dired
+*** TODO electric
+*** TODO vc
+*** TODO eshell
+*** TODO syntax
+*** TODO eval
+*** TODO lookup
+*** TODO lsp
+*** TODO magit
+*** TODO macos
+*** TODO clojure
+*** TODO emacs-lisp
+*** TODO latex
+*** TODO markdown
+*** TODO org
+*** TODO plantuml
+*** TODO ledger

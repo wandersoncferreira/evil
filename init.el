@@ -6,10 +6,8 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       (popup +defaults) ; tame sudden yet inevitable temporary windows
+       (popup +all)      ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
-       ophints           ; highlight the region an operation acts on
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        workspaces        ; tab emulation, persistence & separate workspaces
 
@@ -30,7 +28,6 @@
        syntax            ; tasing you for every semicolon you forget
 
        :tools
-       eval              ; run code, run (also, repls)
        lookup            ; navigate your code and its documentation
        lsp               ; M-x vscode
        magit             ; a git porcelain for Emacs

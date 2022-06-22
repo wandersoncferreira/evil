@@ -13,13 +13,39 @@
          'bookmark-delete
          embark-pre-action-hooks)))
 
-;;; vertico
-;; restore some vim balance
-;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
-(map! :n "[I" #'+vertico/search-symbol-at-point
-      :map vertico-map
-      "]" #'vertico-next-group
-      "[" #'vertico-previous-group)
+(after! vertico
+  (setq vertico-count 10)
+  ;; restore some vim balance
+  ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
+  (map! :n "[I" #'+vertico/search-symbol-at-point
+        :map vertico-map
+        "]" #'vertico-next-group
+        "[" #'vertico-previous-group)
+
+  ;;; restrict the set of candidates
+  (defun +vertico-restrict-to-matches ()
+    (interactive)
+    (let ((inhibit-read-only t))
+      (goto-char (point-max))
+      (insert " ")
+      (add-text-properties (minibuffer-prompt-end) (point-max)
+                           '(invisible t read-only t cursor-intangible t rear-nonsticky t))))
+
+  (map! :map vertico-map
+        "s-SPC" #'+vertico-restrict-to-matches)
+
+  ;;; extensions
+  ;; 1. using the whole buffer to display project-wide searches via `SPC-/'
+  (vertico-multiform-mode +1)
+
+  (setq vertico-multiform-categories
+        '((consult-grep buffer)))
+
+  (setq vertico-multiform-commands
+        '((consult-imenu buffer)
+          (+default/search-project buffer)))
+
+  (set-popup-rule! "*vertico*" :side 'right :width 0.6))
 
 ;;; company
 (use-package! company
