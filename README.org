@@ -107,12 +107,21 @@ Module responsible for bringing Vim over to the party.
 - [⚠️] evil-indent-plus
 - [⚠️] evil-lion
 - [⚠️] evil-nerd-commenter
-- [⚠️] evil-numbers
+- [❌️] evil-numbers
+  - :/ I think I never had to increase/decrease numbers by unit before
 - [⚠️] evil-snipe
-- [⚠️] evil-surround
+- [✅️] evil-surround
+  - I use this plugin everytime! I'm not using smartparens to handle surrounding.
+  - Actually, I use ~add surrounding~ (~yS<textobject>~) a lot but not the next ones:
+    - change surrounding: ~cs<old-textobject><new-textobject>~
+    - delete surrounding: ~ds<textobject>~
 - [⚠️] evil-textobj-anyblock
-- [⚠️] evil-traces
-- [⚠️] evil-visualstar
+- [✅️] evil-traces
+  - It's useful to visualize the output of some commands before applying it
+  - I'm not so good at Ex commands in Vim, so I generally like visual hints that I'm not doing something wrong.
+- [❌️️] evil-visualstar
+  - Didn't see any improvement in the behavior of plain ~*~ or ~#~
+  - tbh, I think I'm not a power user of Visual mode so I don't see the benefit here.
 - [⚠️] exato
 - [⚠️] evil-quick-diff
 - [✅] evil-collection
@@ -120,7 +129,17 @@ Module responsible for bringing Vim over to the party.
 *** TODO file-templates
 *** TODO multiple-cursors
 *** TODO snippets
-*** TODO dired
+*** dired
+Dired is the main mode for Emacs file-manager operations.
+
+- [❌] diredfl
+- [✅️] dired-git-info
+  - This is nice specially because it comes disabled and I can toggle using ~)~ in Dired buffer
+  - However, I'm still having double thoughts about its usefulness... I never needed this feature, but who knows now that I'm aware of it
+- [❌] diff-hl
+- [❌] fd-dired
+- [❌] dired-rsync
+
 *** TODO electric
 *** TODO vc
 *** undo
@@ -135,6 +154,13 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
  - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 
 *** TODO eshell
+- [⚠] eshell-z
+- [⚠] eshell-did-you-mean
+- [⚠] esh-help
+- [⚠] shrink-path
+- [⚠] eshell-up
+- [⚠] eshell-syntax-highlighting
+
 *** TODO syntax
 *** TODO eval
 *** TODO lookup

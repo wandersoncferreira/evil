@@ -28,12 +28,14 @@
 (package! esh-help :disable t)
 (package! shrink-path :disable t)
 (package! eshell-up :disable t)
+(package! eshell-syntax-highlighting :disable t)
 
 ;; dired
 (package! diff-hl :disable t)
 (package! fd-dired :disable t)
 (package! diredfl :disable t)
 (package! dired-rsync :disable t)
+(package! dired-git-info :disable t)
 
 ;; lsp
 (package! consult-lsp :disable t)
@@ -99,9 +101,7 @@
 (package! evil-nerd-commenter :disable t)
 (package! evil-numbers :disable t)
 (package! evil-snipe :disable t)
-(package! evil-surround :disable t)
 (package! evil-textobj-anyblock :disable t)
-(package! evil-traces :disable t)
 (package! evil-visualstar :disable t)
 (package! exato :disable t)
 (package! evil-quick-diff :disable t)
@@ -112,4 +112,3 @@
 (package! embark :disable t)
 (package! embark-consult :disable t)
 (package! wgrep :disable t)
-(package! better-jumper :disable t)

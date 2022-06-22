@@ -41,7 +41,11 @@
   ;; include temp buffers created by cider into current workspace
   (add-hook 'cider-popup-buffer-mode-hook
             (lambda ()
-              (persp-add-buffer (current-buffer)))))
+              (persp-add-buffer (current-buffer))))
+
+  ;; fix the placement of the test-report buffer
+  (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
+  )
 
 (map! (:localleader
        (:map (clojure-mode-map)
