@@ -94,7 +94,6 @@
 (package! evil-args :disable t)
 (package! evil-easymotion :disable t)
 (package! evil-embrace :disable t)
-(package! evil-exchange :disable t)
 (package! evil-indent-plus :disable t)
 (package! evil-lion :disable t)
 (package! evil-nerd-commenter :disable t)

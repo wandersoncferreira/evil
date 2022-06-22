@@ -95,12 +95,15 @@ Module responsible for bringing Vim over to the party.
   - Evil requires any of the following for ~C-r~
     - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
     - However, Doom also uses undo-fu-session to save/restore undo history. I'm not interested in this.
-        - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
+      - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 - [⚠️] evil-args
 - [⚠️] evil-easymotion
 - [⚠️] evil-embrace
 - [✅] evil-escape
-- [⚠️] evil-exchange
+- [✅️] evil-exchange
+  - I'm extremely happy I'm going through all of this! What a nice package!!!
+  - [[http://vimcasts.org/episodes/swapping-two-regions-of-text-with-exchange-vim/][learn more about this here]]
+  - be aware that in Doom the keybinding is bound to ~gx~ instead of ~cx~ as in vim-exchange. Yeah, the way evil works... this is a gem!
 - [⚠️] evil-indent-plus
 - [⚠️] evil-lion
 - [⚠️] evil-nerd-commenter
