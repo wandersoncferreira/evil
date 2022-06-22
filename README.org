@@ -90,8 +90,12 @@ I enabled ~+all~ special buffers to be handled as popups. Very optimistic about 
 *** TODO workspaces
 *** STARTED evil
 Module responsible for bringing Vim over to the party.
-
 - [✅] evil
+  - There are some dependencies required by ~evil~ stated in their README page:
+  - Evil requires any of the following for ~C-r~
+    - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
+    - However, Doom also uses undo-fu-session to save/restore undo history. I'm not interested in this.
+        - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 - [⚠️] evil-args
 - [⚠️] evil-easymotion
 - [⚠️] evil-embrace
@@ -116,6 +120,17 @@ Module responsible for bringing Vim over to the party.
 *** TODO dired
 *** TODO electric
 *** TODO vc
+*** undo
+These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) properly.
+ - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
+   - Simple, stable linear undo with redo for Emacs.
+   - Changes compared to Emacs undo:
+     - Redo will not pass the initial undo action
+     - Redo winn not undo
+     - These constraints can be disabled by pressing ~C-g~ before undo or redo.
+   - Doom increases the undo-limit, I'd like to revert that to defaults. Look for the default values at ~preferences/+doom.el~
+ - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
+
 *** TODO eshell
 *** TODO syntax
 *** TODO eval

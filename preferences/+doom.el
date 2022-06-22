@@ -23,7 +23,13 @@
       load-prefer-newer t
 
       ;; tab key is very useful in insert molde to fix identation or completion imho
-      tab-always-indent 'complete)
+      tab-always-indent 'complete
+
+      ;; bring undo-* defaults back
+      undo-limit 160000
+      undo-strong-limit 240000
+      undo-outer-limit 24000000
+      )
 
 ;; DO NOT group directories first
 (after! dired

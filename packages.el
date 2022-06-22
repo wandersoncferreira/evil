@@ -87,6 +87,9 @@
 (unpin! org-roam)
 (package! org-roam-ui)
 
+;; undo
+(package! undo-fu-session :disable t)
+
 ;; evil
 (package! evil-args :disable t)
 (package! evil-easymotion :disable t)
