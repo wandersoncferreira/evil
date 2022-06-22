@@ -87,9 +87,25 @@
 (unpin! org-roam)
 (package! org-roam-ui)
 
+;; evil
+(package! evil-args :disable t)
+(package! evil-easymotion :disable t)
+(package! evil-embrace :disable t)
+(package! evil-exchange :disable t)
+(package! evil-indent-plus :disable t)
+(package! evil-lion :disable t)
+(package! evil-nerd-commenter :disable t)
+(package! evil-numbers :disable t)
+(package! evil-snipe :disable t)
+(package! evil-surround :disable t)
+(package! evil-textobj-anyblock :disable t)
+(package! evil-traces :disable t)
+(package! evil-visualstar :disable t)
+(package! exato :disable t)
+(package! evil-quick-diff :disable t)
+
 ;; packages removed that I'm uncertain if I need them
 ;; I need to understand their value proposition first
-(package! consult :disable t)
 (package! consult-flycheck :disable t)
 (package! embark :disable t)
 (package! embark-consult :disable t)

@@ -58,7 +58,8 @@ Packages that I'm interesting in keeping & learning:
 - [ENABLED] [[https://github.com/oantolin/orderless][orderless]]
   - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster than this option. Let's keep it around.
   - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
-- [OFF] consult
+- [ENABLED] consult
+  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :( seems good reason to enabled it for now.
 - [OFF] consult-dir
 - [OFF] consult-flycheck
 - [OFF] embark
@@ -90,7 +91,25 @@ Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e90
 Only [[https://github.com/hlissner/doom-emacs/blob/f913ff07b3a63d57ca0de48037e9098f0a598791/modules/ui/hl-todo/config.el#L3][hl-todo]] is instealled. Victory! The defaults are nice.
 
 *** TODO workspaces
-*** TODO evil
+*** STARTED evil
+- [ENABLED] evil
+- [OFF] evil-args
+- [OFF] evil-easymotion
+- [OFF] evil-embrace
+- [ENABLED] evil-escape
+- [OFF] evil-exchange
+- [OFF] evil-indent-plus
+- [OFF] evil-lion
+- [OFF] evil-nerd-commenter
+- [OFF] evil-numbers
+- [OFF] evil-snipe
+- [OFF] evil-surround
+- [OFF] evil-textobj-anyblock
+- [OFF] evil-traces
+- [OFF] evil-visualstar
+- [OFF] exato
+- [OFF] evil-quick-diff
+- [ENABLED] evil-collection
 *** TODO file-templates
 *** TODO multiple-cursors
 *** TODO snippets
