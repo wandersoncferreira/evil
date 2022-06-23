@@ -12,20 +12,22 @@ Enjoy and be patient if traveling the same waters.
 
 [[file:docs/README.org][Learn more about Doom and Evil]]
 
-* Documentation for the little voice on your shoulder!
+* Documentation for that little voice on your shoulder!
 
-I fear for not knowing was is installed in my Emacs Frameworks. I didn't add
-most of the packages explicitly and the anxious from "not knowing" grows every
-day in a fast pace.
+I fear not knowing was is installed in Emacs Frameworks. I didn't add
+most of the packages explicitly and the anxiety of "not knowing" grows every
+day in me.
 
 This is definitely bothering me on Doom Emacs, but before going to the
-self-degradation "do-it-yourself because you can" route,  let me try something
+self-degradation "do-it-yourself because you can" route, let me try something
 new. I will document every aspect of Doom. My goal is to get familiar with what
 is around.
 
-Therefore, if I am unsure about what a package does or even if I'm not sure I want to use the package just
-*remove it*. Only enabled packages are those I've made significant effort to
-understand their value proposition.
+Therefore, if I am unsure about what a package does or if I want to keep it or not then just
+*remove it*. The only enabled packages are those I've made significant effort to
+understand their value proposition. **(or they broke Doom/Emacs in some way after I removed it)**
+
+The current statuses for each package are:
 
 | Status | Meaning                                                                                             |
 |--------+-----------------------------------------------------------------------------------------------------|
