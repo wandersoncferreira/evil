@@ -28,9 +28,7 @@
 (package! eshell-z :disable t)
 (package! eshell-did-you-mean :disable t)
 (package! esh-help :disable t)
-(package! shrink-path :disable t)
 (package! eshell-up :disable t)
-(package! eshell-syntax-highlighting :disable t)
 
 ;; dired
 (package! diff-hl :disable t)

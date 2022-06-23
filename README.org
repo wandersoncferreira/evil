@@ -166,13 +166,13 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
    - Doom increases the undo-limit, I'd like to revert that to defaults. Look for the default values at ~preferences/+doom.el~
  - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 
-*** TODO eshell
+*** eshell
 - [⚠] eshell-z
 - [⚠] eshell-did-you-mean
 - [⚠] esh-help
-- [⚠] shrink-path
+- [☑] shrink-path
 - [⚠] eshell-up
-- [⚠] eshell-syntax-highlighting
+- [☑️] eshell-syntax-highlighting
 
 *** TODO syntax
 *** TODO lookup
@@ -199,7 +199,12 @@ insane langs setup commonly found in the mainstream
   - I could not make the fuzzy completion work with CIDER. The instructions from CIDER docs didn't work
 - [✅] flycheck-clj-kondo
 
-*** TODO emacs-lisp
+*** emacs-lisp
+- [❌] macrostep
+- [❌] overseer
+- [❌] elisp-def
+- [❌] elisp-demos
+
 *** TODO latex
 *** TODO markdown
 *** TODO org
