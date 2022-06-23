@@ -54,8 +54,13 @@
 (package! markdown-toc :disable t)
 
 ;; org
+(package! org-contrib :disable t)
 (package! avy :disable t)
 (package! org-yt :disable t)
+(package! ox-clip :disable t)
+(package! toc-org :disable t)
+(package! org-cliplink :disable t)
+(package! orgit :disable t)
 
 ;; macos
 (package! ns-auto-titlebar :disable t)

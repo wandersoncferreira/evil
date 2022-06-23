@@ -33,6 +33,7 @@ understand their value proposition.
 | ❌     | package removed, after being assessed and considered not fit to my workflow                         |
 | ⚠️     | package removed, but under consideration                                                            |
 | ☑️     | package kept, something in my workflow broke because of the removal, but I need to dig deeper later |
+| 💠     | package kept, hard dependency of some other package                                                 |
 
 
 ** Doom CORE
@@ -207,6 +208,28 @@ insane langs setup commonly found in the mainstream
 
 *** TODO latex
 *** TODO markdown
-*** TODO org
-*** TODO plantuml
-*** TODO ledger
+*** STARTED org
+- [✅] org
+- [✅] evil-org
+- [✅] org-roam
+- [✅] ox-hugo
+- [⚠] org-contrib
+- [❌] avy
+- [❌] org-yt
+- [⚠] ox-clip
+- [⚠] orgit
+- [⚠] toc-org
+- [⚠] org-cliplink
+- [💠] htmlize
+
+*** plantuml
+- [✅] plantuml-mode
+- [✅] flycheck-plantuml
+
+*** ledger
+I'm trying to keep my finances in order. I've been using Ledger CLI for almost 2
+years now and enjoying it. However, I need a better software to handle the
+registration in their specified format. I'm considering writing something myself.
+- [✅] ledger-mode
+- [✅] evil-ledger
+- [✅] flycheck-ledger
