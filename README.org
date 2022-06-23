@@ -74,22 +74,31 @@ Packages that I'm interesting in keeping & learning:
 - [⚠️] embark-consult
 - [⚠️] consult-dir
 - [⚠️] wgrep
-- [❌] marginalia
+- [✅] marginalia
+  - This is useful because as there is a bug with ~uniquify~ and ~persp-mode~ used for workspaces, then I can't really know the difference for several buffers opened with the same name. Therefore, marginalia adds sufficient annotation to make this way better.
 
 *** doom
 Nothing here to see.
 - [❌] doom-themes
 - [❌] solaire-mode
 
-*** TODO popup
+*** popup
 Very amazing package developed by Doom team. I'm very interested in digging
 deeper here. Taming popup has been one of my worst skills in Emacs.
 
 I enabled ~+all~ special buffers to be handled as popups. Very optimistic about this.
 
-*** TODO vc-gutter
-*** TODO hl-todo
-*** TODO workspaces
+*** vc-gutter
+Nowdays, the hint to know which code block was added/modified/deleted compared to remote branch is mandatory.
+- [✅️] git-gutter-fringe
+
+*** hl-todo
+- [✅️] hl-todo
+
+*** workspaces
+- [✅] persp-mode
+  - I have a couple of modifications to include special buffers from project project to the enabled workspace at the time
+
 *** STARTED evil
 Module responsible for bringing Vim over to the party.
 - [✅] evil
@@ -108,7 +117,8 @@ Module responsible for bringing Vim over to the party.
   - be aware that in Doom the keybinding is bound to ~gx~ instead of ~cx~ as in vim-exchange. Yeah, the way evil works... this is a gem!
 - [⚠️] evil-indent-plus
 - [⚠️] evil-lion
-- [⚠️] evil-nerd-commenter
+- [✅️] evil-nerd-commenter
+  - Comment code efficiently!
 - [❌️] evil-numbers
   - :/ I think I never had to increase/decrease numbers by unit before
 - [⚠️] evil-snipe
@@ -142,7 +152,9 @@ Dired is the main mode for Emacs file-manager operations.
 - [❌] fd-dired
 - [❌] dired-rsync
 
-*** TODO electric
+*** electric
+No external package! Small customization fro Doom also.
+
 *** TODO vc
 *** undo
 These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) properly.
@@ -164,10 +176,14 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
 - [⚠] eshell-syntax-highlighting
 
 *** TODO syntax
-*** TODO eval
 *** TODO lookup
-*** TODO lsp
-*** TODO magit
+*** magit
+- [✅️] magit
+- [❌️] magit-gitflow
+  - Oh, I'm glad I don't work following gitflow anymore
+- [❌️] magit-todos
+- [😎] code-review
+  - I'm the maintainer, so yeah! I should use it.
 *** macos
 - [❌] ns-auto-titlebar
 - [❌] osx-trash

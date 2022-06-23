@@ -84,8 +84,11 @@
 (package! restart-emacs :disable t)
 
 ;; vertico
-(package! marginalia :disable t)
 (package! consult-dir :disable t)
+(package! consult-flycheck :disable t)
+(package! embark :disable t)
+(package! embark-consult :disable t)
+(package! wgrep :disable t)
 
 ;; org roam
 (unpin! org-roam)
@@ -100,7 +103,6 @@
 (package! evil-embrace :disable t)
 (package! evil-indent-plus :disable t)
 (package! evil-lion :disable t)
-(package! evil-nerd-commenter :disable t)
 (package! evil-numbers :disable t)
 (package! evil-snipe :disable t)
 (package! evil-textobj-anyblock :disable t)
@@ -108,9 +110,3 @@
 (package! exato :disable t)
 (package! evil-quick-diff :disable t)
 
-;; packages removed that I'm uncertain if I need them
-;; I need to understand their value proposition first
-(package! consult-flycheck :disable t)
-(package! embark :disable t)
-(package! embark-consult :disable t)
-(package! wgrep :disable t)
