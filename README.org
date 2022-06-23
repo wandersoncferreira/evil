@@ -138,9 +138,19 @@ Module responsible for bringing Vim over to the party.
 - [⚠️] evil-quick-diff
 - [✅] evil-collection
 
-*** TODO file-templates
-*** TODO multiple-cursors
-*** TODO snippets
+*** file-templates
+- [✅] yasnippet
+
+*** multiple-cursors
+- [⚠] evil-multiedit
+- [⚠️️] evil-mc
+- [⚠️️] multiple-cursors
+
+*** snippets
+- [✅] yasnippet
+- [⚠] auto-yasnippet
+- [⚠] doom-snippets
+
 *** dired
 Dired is the main mode for Emacs file-manager operations.
 
@@ -155,7 +165,12 @@ Dired is the main mode for Emacs file-manager operations.
 *** electric
 No external package! Small customization fro Doom also.
 
-*** TODO vc
+*** vc
+- [⚠] browse-at-remote
+- [⚠] git-commit
+- [✅] git-timemachine
+- [⚠] git-modes
+
 *** undo
 These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) properly.
  - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
@@ -175,7 +190,10 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
 - [⚠] eshell-up
 - [☑️] eshell-syntax-highlighting
 
-*** TODO syntax
+*** syntax
+- [✅️] flycheck
+- [⚠️] flycheck-popup-tip
+
 *** TODO lookup
 *** magit
 - [✅️] magit

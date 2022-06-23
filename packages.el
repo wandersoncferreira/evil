@@ -23,6 +23,7 @@
 
 ;; magit
 (package! magit-gitflow :disable t)
+(package! magit-todos :disable t)
 
 ;; eshell
 (package! eshell-z :disable t)
@@ -113,3 +114,19 @@
 (package! exato :disable t)
 (package! evil-quick-diff :disable t)
 
+;; multiple-cursors
+(package! evil-multiedit :disable t)
+(package! evil-mc :disable t)
+(package! multiple-cursors :disable t)
+
+;; snippets
+(package! auto-yasnippet :disable t)
+(package! doom-snippets :disable t)
+
+;; vc
+(package! browse-at-remote :disable t)
+(package! git-commit :disable t)
+(package! git-modes :disable t)
+
+;; syntax
+(package! flycheck-popup-tip :disable t)
