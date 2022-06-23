@@ -30,7 +30,6 @@
 
        :tools
        lookup            ; navigate your code and its documentation
-       lsp               ; M-x vscode
        magit             ; a git porcelain for Emacs
 
        :os
@@ -42,7 +41,6 @@
        emacs-lisp
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
-       (java +lsp)
        (org
         +hugo
         +roam2)          ; organize your plain life in plain text

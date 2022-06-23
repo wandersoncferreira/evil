@@ -20,8 +20,6 @@
     "evil"
     "finance"
     "gifs"
-    "java"
-    "lsp"
     "modeline"
     "narrowing"
     "parens"
