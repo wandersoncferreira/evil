@@ -166,7 +166,8 @@ Dired is the main mode for Emacs file-manager operations.
 No external package! Small customization fro Doom also.
 
 *** vc
-- [⚠] browse-at-remote
+- [💠] browse-at-remote
+  - After removing the package, Doom didn't startup correctly.
 - [⚠] git-commit
 - [✅] git-timemachine
 - [⚠] git-modes

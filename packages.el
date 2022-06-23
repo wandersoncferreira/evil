@@ -124,7 +124,6 @@
 (package! doom-snippets :disable t)
 
 ;; vc
-(package! browse-at-remote :disable t)
 (package! git-commit :disable t)
 (package! git-modes :disable t)
 
