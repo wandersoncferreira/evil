@@ -8,7 +8,6 @@
        doom              ; what makes DOOM look the way it does
        (popup +all)      ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
-       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
@@ -24,7 +23,6 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
-       eshell            ; the elisp shell that works everywhere
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
@@ -38,12 +36,8 @@
 
        :lang
        clojure           ; java with a lisp
-       emacs-lisp
-       (latex +latexmk)  ; writing papers in Emacs has never been so fun
+       emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
-       (org
-        +hugo
-        +roam2)          ; organize your plain life in plain text
        plantuml          ; diagrams for confusing people more
        ledger            ; be audit you can be
 

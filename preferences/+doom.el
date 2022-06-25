@@ -5,7 +5,7 @@
 
       ;; font
       ;; systemfontstack.com
-      doom-font (font-spec :family "Monaco" :size 14)
+      ;; doom-font (font-spec :family "Monaco" :size 14)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
@@ -83,7 +83,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-vim-colors)
+;; the default one.. aka none
 
 ;;;###autoload
 (defun insert-file-name ()

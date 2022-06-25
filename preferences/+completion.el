@@ -14,7 +14,17 @@
          embark-pre-action-hooks)))
 
 (after! vertico
-  (setq vertico-count 10)
+
+  (setq vertico-count-format nil
+        vertico-cycle nil
+        ;; keep cursor always at mid-height when scrolling..
+        ;; bottom of screen is unecessary head movement
+        vertico-scroll-margin 10)
+
+  ;; let's make a test and only sort functions by history and alphabetically
+  (setq vertico-sort-function #'vertico-sort-history-alpha)
+
+
   ;; restore some vim balance
   ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
   (map! :n "[I" #'+vertico/search-symbol-at-point
@@ -32,34 +42,19 @@
                            '(invisible t read-only t cursor-intangible t rear-nonsticky t))))
 
   (map! :map vertico-map
-        "s-SPC" #'+vertico-restrict-to-matches)
-
-  ;;; extensions
-  ;; 1. using the whole buffer to display project-wide searches via `SPC-/'
-  (vertico-multiform-mode +1)
-
-  (setq vertico-multiform-categories
-        '((consult-grep buffer)))
-
-  (setq vertico-multiform-commands
-        '((consult-imenu buffer)
-          (+default/search-project buffer)))
-
-  (set-popup-rule! "*vertico*" :side 'right :width 0.6))
+        "s-SPC" #'+vertico-restrict-to-matches))
 
 ;;; company
 (use-package! company
   :config
-  (setq company-tooltip-align-annotations t
-        company-frontends '(company-pseudo-tooltip-frontend)))
+  (setq company-idle-delay 0.1))
 
 (use-package! company-quickhelp
   :init
-  (company-quickhelp-mode)
-  :config
   (setq company-quickhelp-delay nil
-        company-quickhelp-use-propertized-text t
-        company-quickhelp-max-lines 10))
+        company-quickhelp-max-lines 10)
+  :config
+  (company-quickhelp-mode))
 
 (map! :map company-active-map
       "C-h" #'company-quickhelp-manual-begin

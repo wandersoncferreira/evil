@@ -15,6 +15,8 @@
   :init
   (setq cider-jdk-src-paths '("~/Downloads/clojure-1.10.3-sources" "~/Downloads/jvm11/source")
         cider-clojure-cli-command "~/code/dotfiles/clojure/clojure-bin-enriched"
+        ;; only jump to errors
+        cider-auto-jump-to-error 'errors-only
         cider-save-file-on-load t
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
@@ -57,8 +59,4 @@
 
 (after! cider-mode
   (require 'eval-sexp-fu)
-  (require 'cider-eval-sexp-fu))
-
-(use-package! eval-sexp-fu
-  :config
   (require 'cider-eval-sexp-fu))

@@ -10,8 +10,6 @@
 (package! windresize)
 (package! evil-cleverparens)
 (package! evil-smartparens)
-(package! evil-motion-trainer :recipe
-  (:host github :repo "martinbaillie/evil-motion-trainer"))
 
 ;;; disabling some packages
 ;; company
@@ -90,13 +88,6 @@
 ;; vertico
 (package! consult-dir :disable t)
 (package! consult-flycheck :disable t)
-(package! embark :disable t)
-(package! embark-consult :disable t)
-(package! wgrep :disable t)
-
-;; org roam
-(unpin! org-roam)
-(package! org-roam-ui)
 
 ;; undo
 (package! undo-fu-session :disable t)

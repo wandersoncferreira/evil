@@ -9,3 +9,8 @@
           (lambda ()
             (evil-cleverparens-mode)
             (evil-smartparens-mode)))
+
+;; eval buffer
+(map! :mode emacs-lisp-mode
+      :localleader
+      "eb" #'eval-buffer)

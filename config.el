@@ -9,8 +9,7 @@
     (load-file file)))
 
 (defvar list-of-preferences
-  '("blog"
-    "cisco.gpg"
+  '("cisco.gpg"
     "clojure"
     "coding"
     "completion"

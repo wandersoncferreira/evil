@@ -9,10 +9,15 @@
       (flycheck-list-errors))))
 
 (map! :leader
-      "fe" #'toggle/flycheck-list-errors)
+      :desc "Toggle list errors" "fe" #'toggle/flycheck-list-errors
+      :desc "Check buffer syntax" "fb" #'flycheck-buffer)
 
 (use-package! evil-cleverparens
   :init
   (setq evil-cleverparens-use-additional-movement-keys nil
         evil-cleverparens-use-additional-bindings nil
         evil-cleverparens-use-s-and-S nil))
+
+(after! flycheck
+  ;; uses `flycheck-buffer' manually to check syntax
+  (setq flycheck-check-syntax-automatically nil))
