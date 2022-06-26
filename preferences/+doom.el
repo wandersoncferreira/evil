@@ -22,6 +22,9 @@
       ;; prefer to use newer files always
       load-prefer-newer t
 
+      ;; org return follow links
+      org-return-follows-link t
+
       ;; tab key is very useful in insert molde to fix identation or completion imho
       tab-always-indent 'complete
 
