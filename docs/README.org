@@ -78,6 +78,11 @@ If you have good corrections or contributions, please open a PR.
     is an improvement over Vim's default behavior due to interactivity
 - [ ] the commands ='[=, and =']= does not work. Marks preset by Vim to jump to last yank/changed text
 
+
+* Vim Daily Tricks & Vim Tricks Twitter threads
+
+ [[file:vim-daily-tricks.org][Page to follow Vim Daily Tips and Vim Tricks on twitter.]]
+
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
 - [[https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim][Your problem with Vim is that you don't grok vi]] - StackOverflow answer

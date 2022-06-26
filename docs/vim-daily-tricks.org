@@ -1,0 +1,10 @@
+#+title: Vim Daily Tricks
+
+Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips]] and [[https://twitter.com/vim_tricks][Vim Tricks]] twitter profiles.
+
+
+1. Combine d, c, or y with ~/~ to operate on text up until a ~pattern~ match:
+   | example | description                          |
+   |---------+--------------------------------------|
+   | d/foo   | delete forward untill ~foo~          |
+   | c/\d    | change forward until the next number |
