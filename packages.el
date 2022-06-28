@@ -77,11 +77,15 @@
 (package! elfeed-goodies :disable t)
 
 ;; defaults - core
+(package! explain-pause-mode :disable t)
 (package! drag-stuff :disable t)
 (package! expand-region :disable t)
 (package! paredit :disable t)
 (package! highlight-numbers :disable t)
 (package! all-the-icons :disable t)
+(package! hide-mode-line :disable t)
+(package! rainbow-delimiters :disable t)
+(package! project :disable t)
 (package! helpful :disable t)
 (package! restart-emacs :disable t)
 
