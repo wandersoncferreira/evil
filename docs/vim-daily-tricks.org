@@ -4,11 +4,13 @@ Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips
 
 
 1. Combine d, c, or y with ~/~ to operate on text up until a ~pattern~ match:
-   | example | description                          |
-   |---------+--------------------------------------|
-   | d/foo   | delete forward untill ~foo~          |
-   | c/\d    | change forward until the next number |
+   - ~d/foo~  delete forward untill ~foo~
+   - ~c/\d~ change forward until the next number
 
 2. navigate more efficiently by using jumps
    - ~ctrl-o~ moves backwards through the jump list
    - ~ctrl-i~ moves forwards through the jump list
+
+3. removes lines matching a pattern with the ~g~ command
+   - ~:g/pattern/d~ remove lines matching pattern
+   - ~:g!/pattern/d~ remove lines that do NOT match
