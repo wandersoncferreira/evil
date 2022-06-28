@@ -49,6 +49,13 @@ These are some packages of my interest:
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
+- [❌] explain-pause-mode
+- [❌] hide-mode-line
+- [❌] rainbow-delimiters
+- [❌] project
+- [❌] expand-region
+- [❌] drag-stuff
+- [❌] paredit
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
 - [❌] restart-emacs
