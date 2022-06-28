@@ -2,8 +2,6 @@
 ;;; $DOOMDIR/packages.el
 
 ;;; bring yet more packages :)
-(package! eval-sexp-fu)
-(package! cider-eval-sexp-fu)
 (package! delight)
 (package! gif-screencast)
 (package! company-quickhelp)

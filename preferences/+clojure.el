@@ -54,9 +54,4 @@
          "s" #'sesman-browser)
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
-         "s" #'eval-sexp-fu-cider-eval-sexp-inner-list
          ";" #'cider-eval-defun-to-comment))))
-
-(after! cider-mode
-  (require 'eval-sexp-fu)
-  (require 'cider-eval-sexp-fu))
