@@ -5,13 +5,17 @@
 
       ;; font
       ;; systemfontstack.com
-      ;; doom-font (font-spec :family "Monaco" :size 14)
+      doom-font (font-spec :size 13)
 
       ;; DO NOT display fixed line numbers in the left fringe
-      display-line-numbers-type nil
+      display-line-numbers-type 'relative
 
       ;; where to find/add my org files?
       org-directory "~/org/"
+
+      ;; change fringe width
+      ;; remove default style of git-gutter-fringe to use thin fringe width
+      +vc-gutter-default-style nil
 
       ;; do not ask me if I want to leave Emacs
       confirm-kill-emacs nil
@@ -85,8 +89,19 @@
   "enable the vim-colors theme."
   (setq doom-theme 'vim-colors))
 
+(defun enable-modus-vivendi ()
+  (setq modus-themes-mode-line '(accented padded borderless)
+        modus-themes-region '(bg-only no-extend)
+        modus-themes-completions '(moderate)
+        modus-themes-bold-constructs t
+        modus-themes-italic-constructs t
+        modus-themes-paren-match '(bold intense)
+        modus-themes-subtle-line-numbers t
+        modus-themes-lang-checkers '(background)
+        doom-theme 'modus-vivendi))
+
 ;; current theme
-;; the default one.. aka none
+(enable-modus-vivendi)
 
 ;;;###autoload
 (defun insert-file-name ()
@@ -94,3 +109,9 @@
   (interactive)
   (let ((path (or buffer-file-name default-directory)))
     (file-name-base buffer-file-name)))
+
+(after! git-gutter
+  (setq git-gutter:update-interval 0.3))
+
+;; change frige width
+(fringe-mode '(10 . 0))

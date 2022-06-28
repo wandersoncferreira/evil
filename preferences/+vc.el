@@ -1,6 +1,7 @@
 ;;; $DOOMDIR/preferences/+vc.el -*- lexical-binding: t; -*-
 
 (use-package! code-review
+  :commands (code-review-start)
   :load-path "~/code/code-review"
   :init
   (setq code-review-auth-login-marker 'forge

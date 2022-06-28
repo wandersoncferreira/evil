@@ -8,3 +8,7 @@ Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips
    |---------+--------------------------------------|
    | d/foo   | delete forward untill ~foo~          |
    | c/\d    | change forward until the next number |
+
+2. navigate more efficiently by using jumps
+   - ~ctrl-o~ moves backwards through the jump list
+   - ~ctrl-i~ moves forwards through the jump list
