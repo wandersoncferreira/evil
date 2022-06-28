@@ -3,7 +3,7 @@
 Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips]] and [[https://twitter.com/vim_tricks][Vim Tricks]] twitter profiles.
 
 
-1. Combine d, c, or y with ~/~ to operate on text up until a ~pattern~ match:
+1. combine d, c, or y with ~/~ to operate on text up until a ~pattern~ match:
    - ~d/foo~  delete forward untill ~foo~
    - ~c/\d~ change forward until the next number
 
@@ -14,3 +14,21 @@ Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips
 3. removes lines matching a pattern with the ~g~ command
    - ~:g/pattern/d~ remove lines matching pattern
    - ~:g!/pattern/d~ remove lines that do NOT match
+
+4. delete without overwriting your last yank
+   - use the black hole register `_`
+   - ~"_daw~ delete a word
+
+ 5. the 0 register will contain your most recent yank
+    - ~"0p~ put the yanked word before a delete
+
+6. use ~10@a~ to play the macro saved in register ~a~ 10 times
+
+7. use ~ea~ to append to the end of the current word
+
+8. use ~(~ and ~)~ to jump to the beginning and end of sentences
+
+9. scroll current line to
+   - ~zt~ scroll to top
+   - ~zb~ scroll to bottom
+   - ~zz~ scroll to center
