@@ -9,7 +9,8 @@
     (load-file file)))
 
 (defvar list-of-preferences
-  '("cisco.gpg"
+  '("appearance"
+    "cisco.gpg"
     "clojure"
     "coding"
     "completion"
@@ -19,6 +20,7 @@
     "evil"
     "finance"
     "gifs"
+    "jumplist"
     "modeline"
     "narrowing"
     "parens"

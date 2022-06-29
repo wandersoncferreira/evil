@@ -49,18 +49,18 @@ These are some packages of my interest:
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
-- [❌] explain-pause-mode
-- [❌] hide-mode-line
-- [❌] rainbow-delimiters
+- [❌] [[https://github.com/lastquestion/explain-pause-mode][explain-pause-mode]] ;; top, for Emacs
+- [❌] [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]]
 - [❌] project
-- [❌] expand-region
-- [❌] drag-stuff
-- [❌] paredit
+- [❌] [[https://github.com/magnars/expand-region.el][expand-region.el]]
+- [❌] [[https://github.com/rejeep/drag-stuff.el][drag-stuff.el]]
+- [❌] [[https://github.com/emacsmirror/paredit][paredit]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
-- [❌] restart-emacs
-- [☑️️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
+- [❌] [[https://github.com/iqbalansari/restart-emacs][restart-emacs]]
+- [✅️️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
   - I felt the difference in my first day working without this package.
+  - The package seems pretty nice and the functionality is important to daily usage when coding.
 
 ** Doom MODULES
 I'll follow the order from ~init.el~ file.

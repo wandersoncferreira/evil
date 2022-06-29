@@ -32,3 +32,9 @@ Find here a list of tips from [[https://twitter.com/VImTipsDaily][Vim Daily Tips
    - ~zt~ scroll to top
    - ~zb~ scroll to bottom
    - ~zz~ scroll to center
+
+10. Use ~e~ to move to the end of the next word, and ~ge~ to the end of the previous word
+
+11. Use ~``~ to jump to snap back to where you were before your last jump.
+
+12. Use ~gf~ to jump to the file name under the cursor

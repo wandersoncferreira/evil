@@ -8,3 +8,10 @@
         code-review-new-buffer-window-strategy #'switch-to-buffer)
   :config
   (require 'code-review))
+
+(add-hook 'code-review-mode-hook
+          (lambda ()
+            ;; include *Code-Review* buffer into current workspace
+            (persp-add-buffer (current-buffer))))
+
+(add-hook 'code-review-mode-hook #'emojify-mode)

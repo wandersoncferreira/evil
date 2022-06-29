@@ -39,6 +39,7 @@
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
+       org               ; organize your plain life in plain text
        ledger            ; be audit you can be
 
        :email

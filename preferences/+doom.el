@@ -8,7 +8,7 @@
       doom-font (font-spec :size 13)
 
       ;; DO NOT display fixed line numbers in the left fringe
-      display-line-numbers-type 'relative
+      display-line-numbers-type nil
 
       ;; where to find/add my org files?
       org-directory "~/org/"
@@ -75,34 +75,6 @@
              :host "bitwarden.app"
              :user "bartuka")))
 
-(defun enable-default-black-theme ()
-  "customizing the faces for default-black theme."
-  (setq doom-theme 'default-black)
-  (add-hook 'after-init-hook
-            (lambda ()
-              (custom-set-faces
-               '(success ((t (:foreground "ForestGreen" :weight bold))))
-               '(vertico-current ((t (:background "DarkSlateGray")))))
-              )))
-
-(defun enable-vim-colors ()
-  "enable the vim-colors theme."
-  (setq doom-theme 'vim-colors))
-
-(defun enable-modus-vivendi ()
-  (setq modus-themes-mode-line '(accented padded borderless)
-        modus-themes-region '(bg-only no-extend)
-        modus-themes-completions '(moderate)
-        modus-themes-bold-constructs t
-        modus-themes-italic-constructs t
-        modus-themes-paren-match '(bold intense)
-        modus-themes-subtle-line-numbers t
-        modus-themes-lang-checkers '(background)
-        doom-theme 'modus-vivendi))
-
-;; current theme
-(enable-modus-vivendi)
-
 ;;;###autoload
 (defun insert-file-name ()
   "Insert the file name without extension."
@@ -112,6 +84,3 @@
 
 (after! git-gutter
   (setq git-gutter:update-interval 0.3))
-
-;; change frige width
-(fringe-mode '(10 . 0))
