@@ -65,9 +65,6 @@ These are some packages of my interest:
 ** Doom MODULES
 I'll follow the order from ~init.el~ file.
 
-*** company
-Only company is installed. Victory! The defaults are nice.
-
 *** STARTED vertico
 Packages that I'm interesting in keeping & learning:
 - [✅] [[https://github.com/minad/vertico][vertico]]

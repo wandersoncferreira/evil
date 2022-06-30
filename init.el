@@ -1,7 +1,6 @@
 ;;; init.el -*- lexical-binding: t; -*-
 (doom! :input
        :completion
-       company           ; the ultimate code completion backend
        vertico           ; the search engine of the future
 
        :ui
@@ -29,13 +28,14 @@
        :tools
        lookup            ; navigate your code and its documentation
        magit             ; a git porcelain for Emacs
+       lsp               ; M-x vscode
 
        :os
        (:if IS-MAC
         macos)           ; improve compatibility with macOS
 
        :lang
-       clojure           ; java with a lisp
+       (clojure +lsp)    ; java with a lisp
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more

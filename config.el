@@ -21,6 +21,7 @@
     "finance"
     "gifs"
     "jumplist"
+    "lsp"
     "modeline"
     "narrowing"
     "parens"

@@ -19,8 +19,19 @@
         cider-auto-jump-to-error 'errors-only
         cider-save-file-on-load t
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
-        clojure-toplevel-inside-comment-form t)
+        clojure-toplevel-inside-comment-form t
+        ;;; prefer lsp over cider
+        ;; semantic tokens
+        cider-font-lock-dynamically nil
+        ;; completion system
+        cider-use-xref nil)
   :config
+  ;;; prefer lsp over cider
+  ;; remove completion hooks
+  (add-hook 'cider-mode-hook
+            (lambda ()
+              (remove-hook 'completion-at-point-functions
+                           #'cider-complete-at-point)))
   ;; handling parens correctly
   (add-hook 'clojure-mode-hook
             (lambda ()
@@ -47,6 +58,13 @@
 
   ;; fix the placement of the test-report buffer
   (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4))
+
+(use-package! clj-refactor
+  :after clojure-mode
+  :config
+  (set-lookup-handlers! 'clj-refactor-mode nil)
+  (setq cljr-eagerly-build-asts-on-startup nil
+        cljr-add-ns-to-blank-clj-files nil))
 
 (map! (:localleader
        (:map (clojure-mode-map)

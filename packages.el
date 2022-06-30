@@ -4,8 +4,9 @@
 ;;; bring yet more packages :)
 (package! delight)
 (package! gif-screencast)
-(package! company-quickhelp)
 (package! windresize)
+(package! corfu)
+(package! corfu-doc)
 (package! evil-cleverparens)
 (package! evil-smartparens)
 

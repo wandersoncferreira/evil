@@ -44,18 +44,20 @@
   (map! :map vertico-map
         "s-SPC" #'+vertico-restrict-to-matches))
 
-;;; company
-(use-package! company
-  :config
-  (setq company-idle-delay 0.1))
-
-(use-package! company-quickhelp
+;; corfu
+(use-package! corfu
   :init
-  (setq company-quickhelp-delay nil
-        company-quickhelp-max-lines 10)
+  (setq corfu-echo-documentation nil
+        corfu-separator ?&
+        corfu-cycle t)
   :config
-  (company-quickhelp-mode))
+  (global-corfu-mode))
 
-(map! :map company-active-map
-      "C-h" #'company-quickhelp-manual-begin
-      "M-h" #'company-show-doc-buffer)
+(use-package! corfu-doc
+  :init
+  (setq corfu-doc-auto nil)
+  :config
+  (add-hook 'corfu-mode-hook #'corfu-doc-mode))
+
+(map! (:map corfu-map)
+      "M-h" #'corfu-doc-toggle)
