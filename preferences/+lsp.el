@@ -5,8 +5,14 @@
   :config
   (setq lsp-semantic-tokens-enable t
         lsp-completion-no-cache t
+        lsp-enable-file-watchers nil
         lsp-completion-use-last-result nil)
 
   (add-hook 'lsp-after-apply-edits-hook
             (lambda (&rest _)
-              (save-buffer))))
+              (save-buffer)))
+
+  (add-hook 'lsp-completion-mode-hook
+            (lambda ()
+              (setq-local completion-styles '(orderless)
+                          completion-category-defaults nil))))

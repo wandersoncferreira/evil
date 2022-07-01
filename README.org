@@ -14,18 +14,20 @@ Enjoy and be patient if traveling the same waters.
 
 * Documentation for that little voice on your shoulder!
 
-I fear not knowing was is installed in Emacs Frameworks. I didn't add
+I fear not knowing what is installed in Emacs Frameworks. I didn't add
 most of the packages explicitly and the anxiety of "not knowing" grows every
 day in me.
 
 This is definitely bothering me on Doom Emacs, but before going to the
-self-degradation "do-it-yourself because you can" route, let me try something
-new. I will document every aspect of Doom. My goal is to get familiar with what
-is around.
+self-degradation route of "do-it-yourself because you can", let me try something
+new. I will document every aspect of Doom installed packages. My goal is to get
+familiar with what is around.
 
 Therefore, if I am unsure about what a package does or if I want to keep it or not then just
-*remove it*. The only enabled packages are those I've made significant effort to
-understand their value proposition. **(or they broke Doom/Emacs in some way after I removed it)**
+*remove it*.
+
+The only enabled packages are those I've made significant effort to understand
+their value proposition. *or they broke Doom/Emacs in some way after I removed it*
 
 The current statuses for each package are:
 
@@ -68,10 +70,10 @@ I'll follow the order from ~init.el~ file.
 *** STARTED vertico
 Packages that I'm interesting in keeping & learning:
 - [✅] [[https://github.com/minad/vertico][vertico]]
-  - also enabled ~vertico-multiform-mode~ for project-wide searches
 - [✅] [[https://github.com/oantolin/orderless][orderless]]
   - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster. Let's keep it around.
   - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
+  - The separator also works with ~corfu~ now that I ditched ~company~ for a while
 - [☑️] consult
   - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :(
 - [⚠️] consult-dir

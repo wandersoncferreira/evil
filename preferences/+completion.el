@@ -44,12 +44,20 @@
   (map! :map vertico-map
         "s-SPC" #'+vertico-restrict-to-matches))
 
-;; corfu
+;;; corfu
+
+;; corfu plays nicely with orderless
+(setq completion-styles '(orderless))
+
+;; tab cycle if there are only few candidates
+(setq completion-cycle-threshold 3)
+
 (use-package! corfu
   :init
-  (setq corfu-echo-documentation nil
-        corfu-separator ?&
-        corfu-cycle t)
+  (setq corfu-echo-documentation t
+        corfu-auto t
+        corfu-auto-delay 0.1
+        corfu-separator ?&)
   :config
   (global-corfu-mode))
 
