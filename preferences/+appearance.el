@@ -63,3 +63,16 @@
 
 (map! :leader
       :desc "Set window to 80 columns" "w8" #'set-80-columns)
+
+(defun set-font-for-laptop-usage ()
+  "Set the font to a smaller value when working from the laptop.
+Fit more in the screen!"
+  (interactive)
+  (setq doom-font (font-spec :size 11))
+  (doom/reload-font))
+
+(defun set-font-dual-monitor ()
+  "Set the font to a higher value when working from external monitor."
+  (interactive)
+  (setq doom-font (font-spec :size 13))
+  (doom/reload-font))

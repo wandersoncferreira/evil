@@ -5,7 +5,7 @@
 
       ;; font
       ;; systemfontstack.com
-      doom-font (font-spec :size 13)
+      doom-font (font-spec :size 11)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
