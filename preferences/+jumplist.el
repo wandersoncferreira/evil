@@ -6,3 +6,6 @@
         ;; start new window with empty jumplist
         better-jumper-new-window-behavior 'empty
         ))
+
+(after! dumb-jump
+  (setq dumb-jump-default-project "~/code"))

@@ -47,8 +47,12 @@ management, projects, and a feel more pieces.
 These are some packages of my interest:
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
+  - Only display on ~C-h~ press after a prefix
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
+- [✅] gcmh
+- [✅] pcre2el
+  - Improve working with Emacs regexp
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
 - [❌] [[https://github.com/lastquestion/explain-pause-mode][explain-pause-mode]] ;; top, for Emacs
 - [❌] [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]]
@@ -56,6 +60,7 @@ These are some packages of my interest:
 - [❌] [[https://github.com/magnars/expand-region.el][expand-region.el]]
 - [❌] [[https://github.com/rejeep/drag-stuff.el][drag-stuff.el]]
 - [❌] [[https://github.com/emacsmirror/paredit][paredit]]
+- [❌] dtrt-indent
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
 - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
 - [❌] [[https://github.com/iqbalansari/restart-emacs][restart-emacs]]
@@ -155,8 +160,8 @@ Module responsible for bringing Vim over to the party.
 
 *** snippets
 - [✅] yasnippet
-- [⚠] auto-yasnippet
-- [⚠] doom-snippets
+- [⚠️️] auto-yasnippet
+- [⚠️️] doom-snippets
 
 *** dired
 Dired is the main mode for Emacs file-manager operations.
@@ -175,7 +180,7 @@ No external package! Small customization fro Doom also.
 *** vc
 - [💠] browse-at-remote
   - After removing the package, Doom didn't startup correctly.
-- [⚠] git-commit
+-️️ [⚠️️] git-commit
 - [✅] git-timemachine
 - [⚠] git-modes
 
@@ -191,18 +196,22 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
  - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 
 *** eshell
-- [⚠] eshell-z
-- [⚠] eshell-did-you-mean
-- [⚠] esh-help
-- [☑] shrink-path
-- [⚠] eshell-up
+- [⚠️️] eshell-z
+- [⚠️️] eshell-did-you-mean
+- [⚠️️] esh-help
+- [⚠️️] shrink-path
+- [⚠️️] eshell-up
 - [☑️] eshell-syntax-highlighting
 
 *** syntax
 - [✅️] flycheck
 - [⚠️] flycheck-popup-tip
 
-*** TODO lookup
+*** lookup
+- [✅️] dumb-jump
+- [✅️] request
+  - For online lookup
+
 *** magit
 - [✅️] magit
 - [❌️] magit-gitflow
@@ -232,8 +241,15 @@ insane langs setup commonly found in the mainstream
 - [❌] elisp-def
 - [❌] elisp-demos
 
-*** TODO latex
-*** TODO markdown
+*** markdown
+- [✅] markdown-mode
+- [✅] edit-indirect
+- [✅] evil-markdown
+  - Let's keep ~evil-everywhere~ motto!
+- [✅] grip
+  - Displays Github-flavored markdown in xwidget or browser
+- [❌] markdown-toc
+
 *** STARTED org
 - [✅] org
 - [✅] evil-org
@@ -242,10 +258,10 @@ insane langs setup commonly found in the mainstream
 - [⚠] org-contrib
 - [❌] avy
 - [❌] org-yt
-- [⚠] ox-clip
-- [⚠] orgit
-- [⚠] toc-org
-- [⚠] org-cliplink
+-️ [⚠️️] ox-clip
+- [⚠️️] orgit
+- [⚠️️] toc-org
+- [⚠️️] org-cliplink
 - [💠] htmlize
 
 *** plantuml
@@ -259,3 +275,9 @@ registration in their specified format. I'm considering writing something myself
 - [✅] ledger-mode
 - [✅] evil-ledger
 - [✅] flycheck-ledger
+
+*** config
+- [❌] avy
+- [❌] drag-stuff
+- [❌] link-hint
+- [❌] expand-region
