@@ -4,7 +4,7 @@
 
 ;;;###autoload
 (defun bk/load-gpg-file (filename)
-  (let ((file (expand-file-name (format "preferences/+%s.el.gpg" filename) doom-private-dir))
+  (let ((file (expand-file-name (format "work/+%s.el.gpg" filename) doom-private-dir))
         (file-name-handler-alist '(("\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'" . epa-file-handler))))
     (load-file file)))
 

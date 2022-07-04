@@ -13,3 +13,11 @@
                           'persp-face-lighter-buffer-not-in-persp)
                       'persp-face-lighter-nil-persp)))
            (safe-persp-name (get-current-persp))))))
+
+;; shares a common set of buffers between perspectives
+(defvar persp-shared-buffers
+  '("*scratch*" "*Messages*"))
+
+(add-hook 'persp-activated-functions
+          (lambda (_)
+            (persp-add-buffer persp-shared-buffers)))

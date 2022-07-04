@@ -14,7 +14,6 @@
          embark-pre-action-hooks)))
 
 (after! vertico
-
   (setq vertico-count-format nil
         vertico-cycle nil
         ;; keep cursor always at mid-height when scrolling..
@@ -23,7 +22,6 @@
 
   ;; let's make a test and only sort functions by history and alphabetically
   (setq vertico-sort-function #'vertico-sort-history-alpha)
-
 
   ;; restore some vim balance
   ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
@@ -38,8 +36,9 @@
     (let ((inhibit-read-only t))
       (goto-char (point-max))
       (insert " ")
-      (add-text-properties (minibuffer-prompt-end) (point-max)
-                           '(invisible t read-only t cursor-intangible t rear-nonsticky t))))
+      (add-text-properties
+       (minibuffer-prompt-end) (point-max)
+       '(invisible t read-only t cursor-intangible t rear-nonsticky t))))
 
   (map! :map vertico-map
         "s-SPC" #'+vertico-restrict-to-matches))
