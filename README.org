@@ -19,25 +19,24 @@ most of the packages explicitly and the anxiety of "not knowing" grows every
 day in me.
 
 This is definitely bothering me on Doom Emacs, but before going to the
-self-degradation route of "do-it-yourself because you can", let me try something
-new. I will document every aspect of Doom installed packages. My goal is to get
-familiar with what is around.
-
-Therefore, if I am unsure about what a package does or if I want to keep it or not then just
-*remove it*.
+self-degradation route of "do-it-yourself because you can", let me try
+something new. I will document every aspect of Doom installed packages. My
+goal is to get familiar with what is around. Therefore, if I am unsure about
+what a package does or if I want to keep it or not then just *remove it*.
 
 The only enabled packages are those I've made significant effort to understand
-their value proposition. *or they broke Doom/Emacs in some way after I removed it*
+their value proposition. *or they broke Doom/Emacs in some way after I removed
+it*
 
 The current statuses for each package are:
 
-| Status | Meaning                                                                                             |
-|--------+-----------------------------------------------------------------------------------------------------|
-| ✅     | package kept, with or without modifications from Doom defaults                                      |
-| ❌     | package removed, after being assessed and considered not fit to my workflow                         |
-| ⚠️     | package removed, but under consideration                                                            |
-| ☑️     | package kept, something in my workflow broke because of the removal, but I need to dig deeper later |
-| 💠     | package kept, hard dependency of some other package                                                 |
+| Status | Meaning                                             |
+|--------+-----------------------------------------------------|
+| ✅     | package kept                                        |
+| ❌     | package removed                                     |
+| ⚠️     | package removed, but under consideration            |
+| ☑️     | package kept, something broke on removal            |
+| 💠     | package kept, hard dependency of some other package |
 
 
 ** Doom CORE

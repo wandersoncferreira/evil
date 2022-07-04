@@ -6,9 +6,9 @@
 (package! gif-screencast)
 (package! windresize)
 (package! corfu)
-(package! corfu-doc)
 (package! evil-cleverparens)
 (package! evil-smartparens)
+(package! clojars)
 
 ;;; disabling some packages
 ;; company

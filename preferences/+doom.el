@@ -10,6 +10,10 @@
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
 
+      ;; when at the beginning of a line, make `ctrl-k' remove the whole
+      ;; line, instead of just emptying it
+      kill-whole-line t
+
       ;; where to find/add my org files?
       org-directory "~/org/"
 
@@ -84,3 +88,9 @@
 
 (after! git-gutter
   (setq git-gutter:update-interval 0.3))
+
+
+;; do not show which-key if not explicitly asked
+(setq which-key-show-early-on-C-h t
+      which-key-idle-delay 10000
+      which-key-idle-secondary-delay 0.05)

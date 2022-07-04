@@ -10,6 +10,7 @@
 
 (defvar list-of-preferences
   '("appearance"
+    "buffers"
     "cisco.gpg"
     "clojure"
     "coding"

@@ -45,27 +45,15 @@
         "s-SPC" #'+vertico-restrict-to-matches))
 
 ;;; corfu
-
-;; corfu plays nicely with orderless
-(setq completion-styles '(orderless))
-
-;; tab cycle if there are only few candidates
-(setq completion-cycle-threshold 3)
-
 (use-package! corfu
   :init
-  (setq corfu-echo-documentation t
-        corfu-auto t
+  (setq corfu-auto t
         corfu-auto-delay 0.1
         corfu-separator ?&)
   :config
   (global-corfu-mode))
 
-(use-package! corfu-doc
-  :init
-  (setq corfu-doc-auto nil)
-  :config
-  (add-hook 'corfu-mode-hook #'corfu-doc-mode))
-
-(map! (:map corfu-map)
-      "M-h" #'corfu-doc-toggle)
+;; do not truncate lines in the minibuffer
+(add-hook 'minibuffer-setup-hook
+          (lambda ()
+            (setq-local truncate-lines nil)))

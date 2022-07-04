@@ -38,3 +38,28 @@
 
 ;; current theme
 (enable-modus-vivendi)
+
+;; start emacs with specific size and position
+(setq initial-frame-alist
+      '((top . 0)
+        (left . -1)
+        (width . 82)
+        (height . 65)))
+
+;; enable column indicator
+(global-display-fill-column-indicator-mode)
+
+;; set window width in 80 chars
+(defun set-window-width (n)
+  "Set the selected window's width."
+  (adjust-window-trailing-edge
+   (selected-window)
+   (- n (window-width)) t))
+
+(defun set-80-columns ()
+  "Set the selected window to 80 columns."
+  (interactive)
+  (set-window-width 80))
+
+(map! :leader
+      :desc "Set window to 80 columns" "w8" #'set-80-columns)
