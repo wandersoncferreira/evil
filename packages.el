@@ -9,6 +9,7 @@
 (package! evil-cleverparens)
 (package! evil-smartparens)
 (package! clojars)
+(package! pocket-reader)
 
 ;;; disabling some packages
 ;; company

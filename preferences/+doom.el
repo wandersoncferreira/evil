@@ -5,7 +5,7 @@
 
       ;; font
       ;; systemfontstack.com
-      doom-font (font-spec :size 11)
+      doom-font (font-spec :size 12)
 
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
@@ -88,7 +88,6 @@
 
 (after! git-gutter
   (setq git-gutter:update-interval 0.3))
-
 
 ;; do not show which-key if not explicitly asked
 (setq which-key-show-early-on-C-h t

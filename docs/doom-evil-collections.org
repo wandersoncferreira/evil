@@ -1,0 +1,15 @@
+#+title: Doom Evil Collections
+
+* Rationale
+
+Many special modes share the same set of similar actions. Those actions should share the same bindings across all modes whenever feasible.
+
+** Motions
+** Quitting (q, ZQ, ZZ)
+In Vim, ~q~ is for recording macros. Vim quits with ~ZZ~ or ~ZQ~. In most Emacs special modes, it stands for quitting while macros are recorded/played with ~<f3>~ and ~<f4>~.
+
+- Bind ~q~ and ~ZZ~ to ~quit-window~
+- Bind ~ZQ~ to ~evil-quit~
+
+** Refreshing / Reverting (gr)
+- ~gr~ is used for refreshing in ~evil-magit~, ~evil-mu4e~, and more.

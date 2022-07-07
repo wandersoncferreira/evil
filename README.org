@@ -85,7 +85,15 @@ Packages that I'm interesting in keeping & learning:
 - [⚠️] embark
 - [⚠️] embark-consult
 - [⚠️] consult-dir
-- [⚠️] wgrep
+- [✅️] wgrep
+  - wgrep allows you to edit a grep buffer and apply those changes to the
+    file buffer like ~sed~ interactively. No need to learn sed script, just
+    learn Emacs
+  - example of workflow:
+    - ~projectile-grep~
+    - ~i~
+    - ~:s/<pattern>/<new-pattern>/g~
+    - ~ZZ~
 - [✅] marginalia
   - This is useful because as there is a bug with ~uniquify~ and ~persp-mode~ used for workspaces, then I can't really know the difference for several buffers opened with the same name. Therefore, marginalia adds sufficient annotation to make this way better.
 
@@ -105,7 +113,7 @@ Nowdays, the hint to know which code block was added/modified/deleted compared t
 - [✅️] git-gutter-fringe
 
 *** hl-todo
-- [✅️] hl-todo
+- [❌️] hl-todo
 
 *** workspaces
 - [✅] persp-mode
@@ -253,8 +261,9 @@ insane langs setup commonly found in the mainstream
 *** STARTED org
 - [✅] org
 - [✅] evil-org
-- [✅] org-roam
+- [❌] org-roam
 - [✅] ox-hugo
+- [✅] org-journal
 - [⚠] org-contrib
 - [❌] avy
 - [❌] org-yt

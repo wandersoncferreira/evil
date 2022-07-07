@@ -32,6 +32,9 @@
             (lambda ()
               (remove-hook 'completion-at-point-functions
                            #'cider-complete-at-point)))
+
+  (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
+
   ;; handling parens correctly
   (add-hook 'clojure-mode-hook
             (lambda ()
@@ -57,7 +60,10 @@
               (persp-add-buffer (current-buffer))))
 
   ;; fix the placement of the test-report buffer
-  (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4))
+  (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
+
+  ;; fix the placement of the cider-repl buffer
+  (set-popup-rule! "^\\*cider-repl" :side 'bottom :quit nil))
 
 (use-package! clj-refactor
   :after clojure-mode

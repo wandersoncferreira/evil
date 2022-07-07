@@ -21,3 +21,13 @@
 (after! flycheck
   ;; uses `flycheck-buffer' manually to check syntax
   (setq flycheck-check-syntax-automatically nil))
+
+(after! ws-butler
+  ;; include org mode too
+  (setq ws-butler-global-exempt-modes
+        '(special-mode
+          comint-mode
+          diff-mode
+          eshell-mode
+          markdown-mode
+          org-mode)))

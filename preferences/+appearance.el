@@ -1,5 +1,6 @@
 ;;; $DOOMDIR/preferences/+appearance.el -*- lexical-binding: t; -*-
 
+;; highlight common words to indicate work in dev projects
 (defun highlight-todos ()
   (font-lock-add-keywords
    nil
@@ -76,3 +77,8 @@ Fit more in the screen!"
   (interactive)
   (setq doom-font (font-spec :size 13))
   (doom/reload-font))
+
+;; do not truncate lines in the minibuffer
+(add-hook 'minibuffer-setup-hook
+          (lambda ()
+            (setq-local truncate-lines nil)))

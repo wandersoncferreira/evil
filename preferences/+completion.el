@@ -51,8 +51,3 @@
         corfu-separator ?&)
   :config
   (global-corfu-mode))
-
-;; do not truncate lines in the minibuffer
-(add-hook 'minibuffer-setup-hook
-          (lambda ()
-            (setq-local truncate-lines nil)))

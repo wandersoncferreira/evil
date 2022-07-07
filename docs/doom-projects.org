@@ -1,0 +1,8 @@
+#+title: Doom Projects
+
+These are some commands from ~projectile~ worth studying for my use-cases:
+
+| Key     | Description                   |
+|---------+-------------------------------|
+| s-p s g | Grep (search for text/regexp) |
+| s-p r   | replace in project            |

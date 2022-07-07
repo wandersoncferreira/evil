@@ -19,3 +19,7 @@
   (evil-set-marker ?\] (1- (point))))
 
 (advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank)
+
+;; enable evil in the minibuffer
+(after! evil-collection
+  (setq evil-collection-setup-minibuffer t))
