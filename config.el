@@ -19,7 +19,6 @@
     "encryption"
     "evil"
     "finance"
-    "gifs"
     "journal"
     "jumplist"
     "lsp"
@@ -27,7 +26,6 @@
     "narrowing"
     "parens"
     "persp"
-    "pocket"
     "projectile"
     "vc"
     "window")

@@ -3,12 +3,10 @@
 
 ;;; bring yet more packages :)
 (package! delight)
-(package! gif-screencast)
 (package! windresize)
 (package! evil-cleverparens)
 (package! evil-smartparens)
 (package! clojars)
-(package! pocket-reader)
 
 ;;; disabling some packages
 ;; company

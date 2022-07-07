@@ -48,6 +48,7 @@
        :app
        :custom
        corfu
+       miscellaneous
 
        :config
        (default +bindings +smartparens))
