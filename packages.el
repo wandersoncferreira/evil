@@ -5,7 +5,6 @@
 (package! delight)
 (package! gif-screencast)
 (package! windresize)
-(package! corfu)
 (package! evil-cleverparens)
 (package! evil-smartparens)
 (package! clojars)

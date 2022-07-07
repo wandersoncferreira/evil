@@ -42,12 +42,3 @@
 
   (map! :map vertico-map
         "s-SPC" #'+vertico-restrict-to-matches))
-
-;;; corfu
-(use-package! corfu
-  :init
-  (setq corfu-auto t
-        corfu-auto-delay 0.1
-        corfu-separator ?&)
-  :config
-  (global-corfu-mode))

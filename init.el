@@ -46,5 +46,8 @@
 
        :email
        :app
+       :custom
+       corfu
+
        :config
        (default +bindings +smartparens))
