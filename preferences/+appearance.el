@@ -26,7 +26,7 @@
   "enable the vim-colors theme."
   (setq doom-theme 'vim-colors))
 
-(defun enable-modus-vivendi ()
+(defun enable-some-modus-theme ()
   (setq modus-themes-mode-line '(accented padded borderless)
         modus-themes-region '(bg-only no-extend)
         modus-themes-completions '(moderate)
@@ -34,8 +34,15 @@
         modus-themes-italic-constructs t
         modus-themes-paren-match '(bold intense)
         modus-themes-subtle-line-numbers t
-        modus-themes-lang-checkers '(background)
-        doom-theme 'modus-vivendi))
+        modus-themes-lang-checkers '(background)))
+
+(defun enable-modus-vivendi ()
+  (enable-some-modus-theme)
+  (setq doom-theme 'modus-vivendi))
+
+(defun enable-modus-operandi ()
+  (enable-some-modus-theme)
+  (setq doom-theme 'modus-operandi))
 
 ;; current theme
 (enable-modus-vivendi)
