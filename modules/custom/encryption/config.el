@@ -1,4 +1,4 @@
-;;; $DOOMDIR/preferences/+encryption.el -*- lexical-binding: t; -*-
+;;; custom/encryption/config.el -*- lexical-binding: t; -*-
 
 (setq epg-gpg-program "gpg"
       password-cache-expiry nil

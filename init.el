@@ -47,7 +47,9 @@
        :email
        :app
        :custom
+       buffers
        corfu
+       encryption
        miscellaneous
 
        :config
