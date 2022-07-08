@@ -93,3 +93,14 @@
 (setq which-key-show-early-on-C-h t
       which-key-idle-delay 10000
       which-key-idle-secondary-delay 0.05)
+
+;; disabling bindings
+(map! :leader
+      "." nil ;; find file -- i'm always in projects `spc spc'
+      "<" nil ;; switch buffer also `spc b b'
+      "`" nil ;; switch to last buffer also `spc b l'
+      "x" nil ;; popup to scratch buffer
+      "X" nil ;; org capture .. TODO: config my org mode settings
+      ":" nil ;; remapped below to `x' - avoid one extra key press
+      "," nil ;; seems that by default switch buffer filters per workspace
+      :desc "M-x" "x" #'execute-extended-command)

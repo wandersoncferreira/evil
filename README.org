@@ -290,3 +290,19 @@ registration in their specified format. I'm considering writing something myself
 - [❌] drag-stuff
 - [❌] link-hint
 - [❌] expand-region
+
+* The little voice is getting louder...
+
+Yeap, now it's time for the keybindings. I see some modes adds lots and lots of
+bindigs with custom functions and whatnot. Let's start documenting a few obvious
+ones:
+
+| keybinding | description          |
+|------------+----------------------|
+| spc + ret  | jump to bookmark     |
+| spc + spc  | find file in project |
+| spc + y    | kill-ring history    |
+| spc + ~    | toggle last popup    |
+
+
+All the disabled values can be found here.
