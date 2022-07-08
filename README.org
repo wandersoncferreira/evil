@@ -305,4 +305,4 @@ ones:
 | spc + ~    | toggle last popup    |
 
 
-All the disabled values can be found here.
+All the disabled values can be found [[https://github.com/wandersoncferreira/evil/blob/main/preferences/%2Bdoom.el#L97][here]].
