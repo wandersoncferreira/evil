@@ -11,12 +11,10 @@
 (defvar list-of-preferences
   '("appearance"
     "clojure"
-    "coding"
     "completion"
     "doom"
     "evil"
     "jumplist"
-    "lsp"
     "modeline"
     "persp"
     "projectile"

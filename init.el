@@ -48,6 +48,7 @@
        :app
        :custom
        buffers
+       coding
        corfu
        encryption
        miscellaneous

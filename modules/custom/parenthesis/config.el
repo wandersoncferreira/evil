@@ -3,6 +3,9 @@
 (use-package! evil-cleverparens
   :init
   (setq evil-cleverparens-complete-parens-in-yanked-region t
+        evil-cleverparens-use-additional-movement-keys nil
+        evil-cleverparens-use-additional-bindings nil
+        evil-cleverparens-use-s-and-S nil
         evil-cleverparens-move-skip-delimiters nil
         evil-cleverparens-use-regular-insert t
         evil-cleverparens-indent-afterwards nil))
