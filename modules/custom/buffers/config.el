@@ -15,3 +15,7 @@
        "p" #'narrow-to-page
        "r" #'narrow-to-region
        "w" #'widen))
+
+(map! :mode emacs-lisp-mode
+      :localleader
+      "eb" #'eval-buffer)

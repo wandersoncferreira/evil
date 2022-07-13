@@ -51,6 +51,7 @@
        corfu
        encryption
        miscellaneous
+       parenthesis
 
        :config
        (default +bindings +smartparens))
