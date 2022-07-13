@@ -4,8 +4,6 @@
 ;;; bring yet more packages :)
 (package! delight)
 (package! windresize)
-(package! evil-cleverparens)
-(package! evil-smartparens)
 (package! clojars)
 
 ;;; disabling some packages

@@ -1,5 +1,12 @@
 ;;; custom/parenthesis/config.el -*- lexical-binding: t; -*-
 
+(use-package! evil-cleverparens
+  :init
+  (setq evil-cleverparens-complete-parens-in-yanked-region t
+        evil-cleverparens-move-skip-delimiters nil
+        evil-cleverparens-use-regular-insert t
+        evil-cleverparens-indent-afterwards nil))
+
 ;; enable parenthesis handler in Clojure mode
 (after! smartparens
   (add-hook!
