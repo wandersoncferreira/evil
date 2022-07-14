@@ -38,6 +38,7 @@
   ;; handling parens correctly
   (add-hook 'clojure-mode-hook
             (lambda ()
+              (smartparens-strict-mode)
               (evil-cleverparens-mode)
               (evil-smartparens-mode)))
 

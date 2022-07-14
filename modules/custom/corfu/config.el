@@ -3,8 +3,8 @@
 (use-package! corfu
   :init
   (setq corfu-auto t
-        corfu-auto-delay 0.1
-        corfu-separator ?&)
+        corfu-separator ?&
+        corfu-quit-no-match 'separator)
   :config
   (global-corfu-mode))
 
@@ -17,4 +17,18 @@
   (add-hook 'corfu-mode-hook #'corfu-doc-mode))
 
 (map! :map corfu-map
-      "C-h" 'corfu-doc-toggle)
+      "C-h" 'corfu-doc-toggle
+      "M-SPC" 'corfu-insert-separator)
+
+(use-package! kind-icon
+  :after corfu
+  :init
+  (setq kind-icon-default-face 'corfu-default
+        kind-icon-use-icons nil)
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+;; fix corfu for evil users
+(evil-make-overriding-map corfu-map)
+(advice-add 'corfu--setup :after 'evil-normalize-keymaps)
+(advice-add 'corfu--teardown :after 'evil-normalize-keymaps)

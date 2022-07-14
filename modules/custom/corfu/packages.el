@@ -3,3 +3,4 @@
 
 (package! corfu)
 (package! corfu-doc)
+(package! kind-icon)

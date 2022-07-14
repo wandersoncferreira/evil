@@ -11,10 +11,9 @@
   ;;       evil-cleverparens-indent-afterwards nil)
   )
 
-;; enable parenthesis handler in Clojure mode
 (after! smartparens
   (add-hook!
-    (clojure-mode emacs-lisp-mode)
+    (emacs-lisp-mode)
     #'smartparens-strict-mode))
 
 ;; enable parenthesis handler in Emacs Lisp mode
