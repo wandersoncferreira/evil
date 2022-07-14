@@ -52,6 +52,7 @@
        corfu
        encryption
        miscellaneous
+       mydoom
        parenthesis
 
        :config

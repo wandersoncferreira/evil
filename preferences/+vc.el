@@ -15,3 +15,6 @@
             (persp-add-buffer (current-buffer))))
 
 (add-hook 'code-review-mode-hook #'emojify-mode)
+
+(after! git-gutter
+  (setq git-gutter:update-interval 0.3))

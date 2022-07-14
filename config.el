@@ -12,11 +12,8 @@
   '("appearance"
     "clojure"
     "completion"
-    "doom"
     "evil"
-    "jumplist"
-    "modeline"
-    "persp"
+    "keys"
     "projectile"
     "vc"
     "window")
