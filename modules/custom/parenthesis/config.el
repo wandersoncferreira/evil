@@ -3,12 +3,11 @@
 (use-package! evil-cleverparens
   :config
   (setq evil-cleverparens-move-skip-delimiters nil
+        evil-cleverparens-use-additional-movement-keys nil
+        evil-cleverparens-use-additional-bindings nil
         evil-cleverparens-use-regular-insert t)
   ;; (setq evil-cleverparens-complete-parens-in-yanked-region t
-  ;;       evil-cleverparens-use-additional-movement-keys nil
-  ;;       evil-cleverparens-use-additional-bindings nil
   ;;       evil-cleverparens-use-s-and-S nil
-  ;;       evil-cleverparens-use-regular-insert t
   ;;       evil-cleverparens-indent-afterwards nil)
   )
 
@@ -38,3 +37,10 @@
 
 (map! :i "C-j" #'bk/improve-last-parens
       :i "C-l" #'sp-forward-sexp)
+
+;; disable evil-cleverparens "clever"-append that tries to include a space
+;; before some identifiers when we switch to insert mode
+;; idk, it annoys me.
+(map! :map evil-cleverparens-mode-map
+      :n "i" nil
+      :n "a" nil)
