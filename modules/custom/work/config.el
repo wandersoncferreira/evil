@@ -2,5 +2,5 @@
 
 ;; load work related configurations
 
-(when load-cisco?
+(when (featurep! +cisco)
   (load-file (expand-file-name "emacs-at-work/cisco.el" doom-private-dir)))

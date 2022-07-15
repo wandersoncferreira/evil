@@ -1,8 +1,5 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
-(defvar load-cisco? t
-  "Should we load Elisp code specific to work at Cisco?")
-
 (doom! :input
        :completion
        vertico           ; the search engine of the future
@@ -66,7 +63,8 @@
        projects
        skin
        wicked
-       work
+       (work
+        +cisco)
        myclojure
        mydoom
        mypackages
