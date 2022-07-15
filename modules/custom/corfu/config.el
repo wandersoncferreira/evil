@@ -2,8 +2,7 @@
 
 (use-package! corfu
   :init
-  (setq corfu-auto t
-        corfu-separator ?&
+  (setq corfu-separator ?&
         corfu-quit-no-match 'separator)
   :config
   (global-corfu-mode))
@@ -18,7 +17,7 @@
 
 (map! :map corfu-map
       "C-h" 'corfu-doc-toggle
-      "M-SPC" 'corfu-insert-separator)
+      "SPC" 'corfu-insert-separator)
 
 (use-package! kind-icon
   :after corfu
@@ -32,3 +31,10 @@
 (evil-make-overriding-map corfu-map)
 (advice-add 'corfu--setup :after 'evil-normalize-keymaps)
 (advice-add 'corfu--teardown :after 'evil-normalize-keymaps)
+
+;; keywords are configured in `cape-keyword-list' var
+;;; more completion-at-point functions
+(use-package! cape
+  :bind (("M-p f" . cape-file)
+         ("M-p l" . cape-line)
+         ("M-p k" . cape-keyword)))

@@ -11,10 +11,8 @@
 (defvar list-of-preferences
   '("appearance"
     "clojure"
-    "completion"
     "evil"
     "keys"
-    "projectile"
     "vc"
     "window")
   "Not all is the way we like! Luck me, Emacs encourage customization.")

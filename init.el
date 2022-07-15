@@ -49,11 +49,13 @@
        :custom
        buffers
        coding
+       completions
        corfu
        encryption
        miscellaneous
        mydoom
        parenthesis
+       projects
 
        :config
        (default +bindings +smartparens))

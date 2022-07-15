@@ -1,4 +1,4 @@
-;;; $DOOMDIR/preferences/+completion.el -*- lexical-binding: t; -*-
+;;; custom/completions/config.el -*- lexical-binding: t; -*-
 
 ;;; consult
 ;; disable the default preview when switching buffers
