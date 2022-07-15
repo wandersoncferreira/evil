@@ -48,6 +48,7 @@
        :app
        :custom
        buffers
+       cisco
        coding
        completions
        corfu

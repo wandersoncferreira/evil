@@ -17,17 +17,8 @@
     "window")
   "Not all is the way we like! Luck me, Emacs encourage customization.")
 
-(defvar list-of-work-settings
-  '("cisco")
-  "I have private emacs lisp code to ease my daily activities at work.
-I should have started to document these shortcuts a long time ago, but better
-late than never.")
-
 ;; load the code
 
 (dolist (cfg list-of-preferences)
   (let ((path (format "preferences/+%s" cfg)))
     (load! path)))
-
-(dolist (cfg list-of-work-settings)
-  (bk/load-work-file cfg))
