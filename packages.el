@@ -2,7 +2,6 @@
 ;;; $DOOMDIR/packages.el
 
 ;;; bring yet more packages :)
-(package! delight)
 (package! windresize)
 (package! clojars)
 

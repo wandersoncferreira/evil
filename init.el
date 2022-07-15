@@ -50,17 +50,24 @@
 
        :email
        :app
+
+       :config
+       (default +bindings +smartparens)
+
        :custom
        buffers
-       cisco
        coding
        completions
        corfu
        encryption
+       keys
        miscellaneous
-       mydoom
        parenthesis
        projects
-
-       :config
-       (default +bindings +smartparens))
+       skin
+       wicked
+       work
+       myclojure
+       mydoom
+       mypackages
+       )

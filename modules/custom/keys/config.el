@@ -1,4 +1,4 @@
-;;; $DOOMDIR/preferences/+doom.el -*- lexical-binding: t; -*-
+;;; custom/keys/config.el -*- lexical-binding: t; -*-
 
 (map! :leader
       "fj" #'dired-jump

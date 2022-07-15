@@ -1,0 +1,12 @@
+#+TITLE:   custom/wicked
+#+DATE:    July 15, 2022
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+
+* Description
+I want to keep Evil mode as close to Vim as possible.
+
+** Plugins
++ evil-collection
+
