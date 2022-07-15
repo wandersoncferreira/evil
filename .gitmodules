@@ -1,0 +1,3 @@
+[submodule "emacs-at-work"]
+	path = emacs-at-work
+	url = git@github.com:wandersoncferreira/emacs-at-work.git

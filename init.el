@@ -1,4 +1,8 @@
 ;;; init.el -*- lexical-binding: t; -*-
+
+(defvar load-cisco? t
+  "Should we load Elisp code specific to work at Cisco?")
+
 (doom! :input
        :completion
        vertico           ; the search engine of the future

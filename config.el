@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(prefer-coding-system 'utf-8)
+
 ;;;###autoload
 (defun bk/load-work-file (filename)
   (let ((file (expand-file-name
