@@ -45,3 +45,19 @@
 
 (after! dumb-jump
   (setq dumb-jump-default-project "~/code"))
+
+;; allow haskell-mode to look for ghc in the current sandbox
+(after! haskell-customize
+  (setq haskell-process-wrapper-function
+        (lambda (args)
+          (apply 'nix-shell-command (nix-current-sandbox) args))))
+
+;; allow flycheck to find executables of checkers that would be only
+;; accessible via nix-shell
+(after! flycheck
+  (setq flycheck-command-wrapper-function
+        (lambda (command)
+          (apply 'nix-shell-command (nix-current-sandbox) command))
+        flycheck-executable-find
+        (lambda (cmd)
+          (nix-executable-find (nix-current-sandbox) cmd))))
