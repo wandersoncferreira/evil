@@ -54,6 +54,7 @@
 
        :custom
        buffers
+       clj
        coding
        completions
        corfu
@@ -66,7 +67,6 @@
        wicked
        (work
         +cisco)
-       myclojure
        mydoom
        mypackages
        )

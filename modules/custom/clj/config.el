@@ -1,4 +1,4 @@
-;;; custom/myclojure/config.el -*- lexical-binding: t; -*-
+;;; custom/clj/config.el -*- lexical-binding: t; -*-
 
 (use-package! cider
   :init

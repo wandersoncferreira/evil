@@ -1,4 +1,4 @@
-;;; custom/myclojure/autoload.el -*- lexical-binding: t; -*-
+;;; custom/clj/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
 (defun bk/cider--modeline-info ()

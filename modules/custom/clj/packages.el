@@ -1,4 +1,4 @@
 ;; -*- no-byte-compile: t; -*-
-;;; custom/myclojure/packages.el
+;;; custom/clj/packages.el
 
 (package! clojars)
