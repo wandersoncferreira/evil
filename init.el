@@ -65,8 +65,7 @@
        projects
        self
        skin
-       wicked
-       (work
-        +cisco)
        whatever
+       wicked
+       (work +cisco)
        )
