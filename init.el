@@ -37,6 +37,7 @@
 
        :lang
        (clojure +lsp)    ; java with a lisp
+       nix               ; I hereby declare "nix geht mehr!"
        emacs-lisp        ; drown in parentheses
        (markdown +grip)  ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
