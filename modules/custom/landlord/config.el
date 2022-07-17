@@ -1,4 +1,4 @@
-;;; custom/mypackages/config.el -*- lexical-binding: t; -*-
+;;; custom/landlord/config.el -*- lexical-binding: t; -*-
 
 ;; code review!
 

@@ -60,6 +60,7 @@
        corfu
        encryption
        keys
+       landlord
        miscellaneous
        parenthesis
        projects
@@ -68,5 +69,4 @@
        (work
         +cisco)
        mydoom
-       mypackages
        )

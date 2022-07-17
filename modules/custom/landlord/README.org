@@ -1,0 +1,15 @@
+#+TITLE:   custom/landlord
+#+DATE:    July 17, 2022
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+
+* Description
+
+Module to configure all projects that I own in Emacs Lisp.
+
+I usually keep these modules around even though I'm not currently maintaining
+then any more. 
+
+** Plugins
++ code-review
