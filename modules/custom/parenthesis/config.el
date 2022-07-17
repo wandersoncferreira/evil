@@ -1,7 +1,7 @@
 ;;; custom/parenthesis/config.el -*- lexical-binding: t; -*-
 
 (use-package! evil-cleverparens
-  :config
+  :init
   (setq evil-cleverparens-move-skip-delimiters nil
         evil-cleverparens-use-additional-movement-keys nil
         evil-cleverparens-use-additional-bindings nil
@@ -9,18 +9,41 @@
   ;; (setq evil-cleverparens-complete-parens-in-yanked-region t
   ;;       evil-cleverparens-use-s-and-S nil
   ;;       evil-cleverparens-indent-afterwards nil)
-  )
+  :config
+  ;; clojure setup
+  (after! clojure-mode
+    (add-hook 'clojure-mode-hook
+              (lambda ()
+                (evil-cleverparens-mode))))
+  ;; emacs setup
+  (after! elisp-mode
+    (add-hook 'emacs-lisp-mode-hook
+              (lambda ()
+                (evil-cleverparens-mode)))))
 
-(after! smartparens
-  (add-hook!
-    (emacs-lisp-mode)
-    #'smartparens-strict-mode))
+(use-package! evil-smartparens
+  :after evil-cleverparens
+  :config
+  ;; clojure-setup
+  (after! clojure-mode
+    (add-hook 'clojure-mode-hook
+              (lambda ()
+                (evil-smartparens))))
+  ;; emacs setup
+  (after! elisp-mode
+    (add-hook 'emacs-lisp-mode-hook
+              (lambda ()
+                (evil-smartparens)))))
 
-;; enable parenthesis handler in Emacs Lisp mode
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (evil-cleverparens-mode)
-            (evil-smartparens-mode)))
+(use-package! smartparens
+  :config
+  (after! elisp-mode
+    (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode))
+  (after! clojure-mode
+    (add-hook 'clojure-mode-hook #'smartparens-strict-mode))
+
+  (after! haskell-mode
+    (add-hook 'haskell-mode-hook #'smartparens-strict-mode)))
 
 ;; remove highlighting of the parens...
 (after! elisp-mode

@@ -24,13 +24,6 @@
 
   (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
 
-  ;; handling parens correctly
-  (add-hook 'clojure-mode-hook
-            (lambda ()
-              (smartparens-strict-mode)
-              (evil-cleverparens-mode)
-              (evil-smartparens-mode)))
-
   ;; remove the colors in the parens, I'm boring person
   (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
