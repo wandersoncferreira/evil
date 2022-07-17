@@ -28,12 +28,12 @@
   (after! clojure-mode
     (add-hook 'clojure-mode-hook
               (lambda ()
-                (evil-smartparens))))
+                (evil-smartparens-mode))))
   ;; emacs setup
   (after! elisp-mode
     (add-hook 'emacs-lisp-mode-hook
               (lambda ()
-                (evil-smartparens)))))
+                (evil-smartparens-mode)))))
 
 (use-package! smartparens
   :config
