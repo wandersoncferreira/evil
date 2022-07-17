@@ -1,3 +1,15 @@
 [submodule "emacs-at-work"]
-	path = emacs-at-work
+	path = landlord/emacs-at-work
 	url = git@github.com:wandersoncferreira/emacs-at-work.git
+[submodule "landlord/code-review"]
+	path = landlord/code-review
+	url = git@github.com:wandersoncferreira/code-review.git
+[submodule "landlord/helm-spotify-plus"]
+	path = landlord/helm-spotify-plus
+	url = git@github.com:wandersoncferreira/helm-spotify-plus.git
+[submodule "landlord/oblique-strategies"]
+	path = landlord/oblique-strategies
+	url = git@github.com:wandersoncferreira/oblique-strategies.git
+[submodule "landlord/alabaster-theme"]
+	path = landlord/alabaster-theme
+	url = git@github.com:wandersoncferreira/alabaster-theme.git

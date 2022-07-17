@@ -4,7 +4,7 @@
 
 (use-package! code-review
   :commands (code-review-start)
-  :load-path "~/code/code-review"
+  ;; :load-path "~/code/code-review"
   :init
   (setq code-review-auth-login-marker 'forge
         code-review-new-buffer-window-strategy #'switch-to-buffer)
@@ -21,3 +21,9 @@
 
 (after! git-gutter
   (setq git-gutter:update-interval 0.3))
+
+(use-package! helm-spotify-plus
+  :commands (helm-spotify-plus))
+
+(use-package! oblique-strategies
+  :commands (oblique-strategies))

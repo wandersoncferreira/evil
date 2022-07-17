@@ -23,6 +23,8 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
+       eshell
+
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
