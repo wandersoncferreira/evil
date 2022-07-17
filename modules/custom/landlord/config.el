@@ -16,14 +16,15 @@
               ;; include *Code-Review* buffer into current workspace
               (persp-add-buffer (current-buffer))
               ;; emojify!
-              (emojify-mode)
-              )))
+              (emojify-mode))))
 
 (after! git-gutter
   (setq git-gutter:update-interval 0.3))
 
 (use-package! helm-spotify-plus
-  :commands (helm-spotify-plus))
+  :commands (helm-spotify-plus)
+  :config
+  (set-popup-rule! "*helm-spotify*" :side 'bottom :size 0.5))
 
 (use-package! oblique-strategies
   :commands (oblique-strategies))
