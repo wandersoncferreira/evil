@@ -61,7 +61,6 @@
        encryption
        keys
        landlord
-       miscellaneous
        parenthesis
        projects
        self
@@ -69,4 +68,5 @@
        wicked
        (work
         +cisco)
+       whatever
        )

@@ -1,4 +1,4 @@
-;;; custom/miscellaneous/config.el -*- lexical-binding: t; -*-
+;;; custom/whatever/config.el -*- lexical-binding: t; -*-
 
 (use-package! gif-screencast
   :defer t
