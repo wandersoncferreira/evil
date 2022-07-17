@@ -1,23 +1,30 @@
 ;;; custom/wicked/config.el -*- lexical-binding: t; -*-
 
-(setq evil-mode-line-format 'before)
-
-;; defaults like Vim, c-i jumps forward in the jump list
-(setq evil-want-C-i-jump t)
-
-;; defaults like Vim, yank to whole line
-(setq evil-want-Y-yank-to-eol nil)
-
-;; keep the underscore as a word character like in Vim
-(add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
-
 ;; fix issue with ] and [ markers in Evil
 ;; more details https://discourse.doomemacs.org/t/how-to-fix-marker-is-not-set-in-this-buffer/2603/2
 (defun bk/bring-marker-back-on-yank (&rest _)
   (evil-set-marker ?\[ (point))
   (evil-set-marker ?\] (1- (point))))
 
-(advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank)
+(after! evil
+
+  (setq evil-mode-line-format 'before)
+
+  ;; defaults like Vim, c-i jumps forward in the jump list
+  (setq evil-want-C-i-jump t)
+
+  ;; defaults like Vim, yank to whole line
+  (setq evil-want-Y-yank-to-eol nil)
+
+  ;; make evil start in emacs state for magit commit buffers
+  (add-hook 'git-commit-mode-hook 'evil-insert-state)
+
+  ;; fix issue with ] and [ markers
+  (advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank))
+
+;; keep the underscore as a word character like in Vim
+(after! clojure-mode
+  (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w"))))
 
 ;; enable evil in the minibuffer
 (after! evil-collection
