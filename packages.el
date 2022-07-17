@@ -1,10 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;;; bring yet more packages :)
-(package! windresize)
-(package! clojars)
-
 ;;; disabling some packages
 ;; company
 (package! company-dict :disable t)
