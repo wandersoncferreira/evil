@@ -1,0 +1,10 @@
+#+TITLE:   custom/self
+#+DATE:    July 17, 2022
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+
+* Description
+
+Changing Doom Emacs itself
+

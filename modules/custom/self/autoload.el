@@ -1,4 +1,4 @@
-;;; custom/mydoom/autoload.el -*- lexical-binding: t; -*-
+;;; custom/self/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
 (defun bk/bitwarden ()

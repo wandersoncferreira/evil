@@ -64,9 +64,9 @@
        miscellaneous
        parenthesis
        projects
+       self
        skin
        wicked
        (work
         +cisco)
-       mydoom
        )

@@ -1,4 +1,4 @@
-;;; custom/mydoom/config.el -*- lexical-binding: t; -*-
+;;; custom/self/config.el -*- lexical-binding: t; -*-
 
 (setq user-full-name "Wanderson Ferreira"
       user-mail-address "wand@hey.com"
