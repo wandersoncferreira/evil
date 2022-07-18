@@ -127,3 +127,6 @@
       "wt" #'toggle-window-split
       :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
       )
+
+;; prevents some cases of emacs flickering
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))

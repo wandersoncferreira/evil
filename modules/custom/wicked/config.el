@@ -8,7 +8,8 @@
 
 (after! evil
 
-  (setq evil-mode-line-format 'before)
+  ;; remove mode indicator from the modeline
+  (setq evil-mode-line-format nil)
 
   ;; defaults like Vim, c-i jumps forward in the jump list
   (setq evil-want-C-i-jump t)
