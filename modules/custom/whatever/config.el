@@ -23,4 +23,10 @@
   :commands pocket-reader
   :config
   ;; change face for archived items
-  (set-face-attribute 'pocket-reader-archived nil :foreground "dim gray"))
+  (set-face-attribute 'pocket-reader-archived nil :foreground "dim gray")
+  :bind (:map pocket-reader-mode-map
+         ("j" . evil-next-line)
+         ("k" . evil-previous-line)))
+
+(after! evil
+  (add-hook 'pocket-reader-mode-hook #'turn-off-evil-mode))
