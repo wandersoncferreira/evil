@@ -61,3 +61,6 @@
         flycheck-executable-find
         (lambda (cmd)
           (nix-executable-find (nix-current-sandbox) cmd))))
+
+;; center window on error
+(add-hook! 'next-error-hook #'recenter)

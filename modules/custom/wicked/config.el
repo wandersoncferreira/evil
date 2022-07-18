@@ -20,7 +20,12 @@
   (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
   ;; fix issue with ] and [ markers
-  (advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank))
+  (advice-add #'evil-yank :before #'bk/bring-marker-back-on-yank)
+
+  ;; disable evil in world-clock mode
+  (add-hook 'world-clock-mode-hook #'turn-off-evil-mode)
+
+  )
 
 ;; keep the underscore as a word character like in Vim
 (after! clojure-mode

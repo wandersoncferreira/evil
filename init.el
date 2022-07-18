@@ -65,6 +65,7 @@
        landlord
        parenthesis
        projects
+       search
        self
        skin
        whatever

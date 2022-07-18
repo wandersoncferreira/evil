@@ -65,7 +65,7 @@
 ;; do not truncate lines in the minibuffer
 (add-hook 'minibuffer-setup-hook
           (lambda ()
-            (setq-local truncate-lines nil)))
+            (setq truncate-lines nil)))
 
 ;; start emacs with specific size and position
 (setq initial-frame-alist

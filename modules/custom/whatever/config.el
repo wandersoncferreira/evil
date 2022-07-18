@@ -1,5 +1,15 @@
 ;;; custom/whatever/config.el -*- lexical-binding: t; -*-
 
+;; timezones that I care about
+(after! time
+  (setq world-clock-list
+        '(("America/Chicago" "Central")
+          ("Europe/Paris" "Paris")
+          ("Europe/Berlin" "Berlin")
+          ("Europe/Zurich" "Zurich")
+          ("EST5EDT" "Durham")
+          ("MST7MDT" "Calgary"))))
+
 (use-package! gif-screencast
   :defer t
   :commands gif-screencast

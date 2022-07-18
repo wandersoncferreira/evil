@@ -37,6 +37,16 @@
 
 (use-package! smartparens
   :config
+
+  ;; Doom's default module skips pairs if one is typed at the beggining of word
+  (dolist (brace '("(" "{" "["))
+    (sp-pair brace nil
+             :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))
+             :unless '(sp-point-before-same-p))
+    (sp-local-pair sp-lisp-modes "(" ")"
+                   :wrap ")"
+                   :unless '(:rem sp-point-before-same-p)))
+
   (after! elisp-mode
     (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode))
   (after! clojure-mode

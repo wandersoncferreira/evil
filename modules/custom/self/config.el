@@ -7,6 +7,9 @@
       ;; systemfontstack.com
       doom-font (font-spec :size 12)
 
+      ;; make doom increase font in smaller steps
+      doom-font-increment 1
+
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
 
