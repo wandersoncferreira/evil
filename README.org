@@ -1,12 +1,12 @@
-#+TITLE: Emacs Configuration
+#+TITLE: Emacs
 #+DATE: April 30, 2022
 #+AUTHOR: Wanderson Ferreira
 
-My first configuration files using Doom Emacs with Evil mode enabled.
+My first configuration files using Doom Emacs + Evil mode.
 
-So far, enjoying a lot. I'm documenting all the learning process in the =docs/=
-folder. After 10 years of standard Emacs keybindings, this was a big jump and a
-great level of frustration for the first two weeks.
+So far, enjoying a lot.
+
+After 10 years of standard Emacs keybindings, this is a big jump.
 
 Enjoy and be patient if traveling the same waters.
 
@@ -14,19 +14,15 @@ Enjoy and be patient if traveling the same waters.
 
 * Documentation for that little voice on your shoulder!
 
-I fear not knowing what is installed in Emacs Frameworks. I didn't add
-most of the packages explicitly and the anxiety of "not knowing" grows every
-day in me.
+I fear not knowing what is installed *my* Emacs instance.
 
-This is definitely bothering me on Doom Emacs, but before going to the
+This is definitely bothering me on Doom Emacs now, but before going to the
 self-degradation route of "do-it-yourself because you can", let me try
-something new. I will document every aspect of Doom installed packages. My
-goal is to get familiar with what is around. Therefore, if I am unsure about
-what a package does or if I want to keep it or not then just *remove it*.
+something new.
 
-The only enabled packages are those I've made significant effort to understand
-their value proposition. *or they broke Doom/Emacs in some way after I removed
-it*
+I will document every aspect of Doom installed packages. My goal is to get
+familiar with what is around. Therefore, if I am unsure about
+what a package does or if I want to keep it or not then just *remove it*.
 
 The current statuses for each package are:
 
@@ -40,11 +36,10 @@ The current statuses for each package are:
 
 
 ** Doom CORE
-Doom is basically divided into ~core~ and ~modules~ at a very high level. All
-the code in ~core~ are related to sane defaults, Doom's foundation on package
-management, projects, and a feel more pieces.
+Doom is basically broken down into ~core~ and ~modules~ at a very high level.
+All the code in ~core~ are related to sane defaults, Doom's foundation on
+package management, projects, and a feel more pieces.
 
-These are some packages of my interest:
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
 - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
   - Only display on ~C-h~ press after a prefix
@@ -66,20 +61,22 @@ These are some packages of my interest:
 - [❌] [[https://github.com/iqbalansari/restart-emacs][restart-emacs]]
 - [✅️️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
   - I felt the difference in my first day working without this package.
-  - The package seems pretty nice and the functionality is important to daily usage when coding.
+  - The package seems pretty nice and the functionality is important to daily
+    usage when coding. Jumping back and forth a definition is not as reliable
+    without this package.
 
 ** Doom MODULES
-I'll follow the order from ~init.el~ file.
-
-*** STARTED vertico
-Packages that I'm interesting in keeping & learning:
+*** vertico
 - [✅] [[https://github.com/minad/vertico][vertico]]
 - [✅] [[https://github.com/oantolin/orderless][orderless]]
-  - It is possible to live without orderless and configuring ~completion-styles~ option to consider ~partial-completion~ and ~flex~, however ~orderless~ is a lot faster. Let's keep it around.
-  - Amazing! I learned how to use ~orderless~ in company completion UI. As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
+  - It is possible to live without orderless and configuring ~completion-styles~
+    option to consider ~partial-completion~ and ~flex~, however ~orderless~
+    is a lot faster. Let's keep it around.
+  - Amazing! I learned how to use ~orderless~ in company completion UI.
+    As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
   - The separator also works with ~corfu~ now that I ditched ~company~ for a while
 - [☑️] consult
-  - First, without ~consult~ my project search via ~SPC /~ was broken inside a Clojure project :(
+  - Project search via ~SPC /~ was broken 
 - [⚠️] consult-dir
 - [⚠️] consult-flycheck
 - [⚠️] embark
@@ -95,10 +92,12 @@ Packages that I'm interesting in keeping & learning:
     - ~:s/<pattern>/<new-pattern>/g~
     - ~ZZ~
 - [✅] marginalia
-  - This is useful because as there is a bug with ~uniquify~ and ~persp-mode~ used for workspaces, then I can't really know the difference for several buffers opened with the same name. Therefore, marginalia adds sufficient annotation to make this way better.
+  - This is useful because as there is a bug with ~uniquify~ and ~persp-mode~
+     used for workspaces, then I can't really know the difference for several
+     buffers opened with the same name. Therefore, marginalia adds sufficient
+     annotation to make this way better.
 
 *** doom
-Nothing here to see.
 - [❌] doom-themes
 - [❌] solaire-mode
 
@@ -109,7 +108,6 @@ deeper here. Taming popup has been one of my worst skills in Emacs.
 I enabled ~+all~ special buffers to be handled as popups. Very optimistic about this.
 
 *** vc-gutter
-Nowdays, the hint to know which code block was added/modified/deleted compared to remote branch is mandatory.
 - [✅️] git-gutter-fringe
 
 *** hl-todo
@@ -117,9 +115,10 @@ Nowdays, the hint to know which code block was added/modified/deleted compared t
 
 *** workspaces
 - [✅] persp-mode
-  - I have a couple of modifications to include special buffers from project project to the enabled workspace at the time
+  - I added a couple of modifications to include special buffers
+    from project to the enabled workspace at the time
 
-*** STARTED evil
+*** evil
 Module responsible for bringing Vim over to the party.
 - [✅] evil
   - There are some dependencies required by ~evil~ stated in their README page:
@@ -172,18 +171,17 @@ Module responsible for bringing Vim over to the party.
 - [⚠️️] doom-snippets
 
 *** dired
-Dired is the main mode for Emacs file-manager operations.
-
 - [❌] diredfl
 - [✅️] dired-git-info
   - This is nice specially because it comes disabled and I can toggle using ~)~ in Dired buffer
-  - However, I'm still having double thoughts about its usefulness... I never needed this feature, but who knows now that I'm aware of it
+  - However, I'm still having double thoughts about its usefulness...
+    I never needed this feature, but who knows now that I'm aware of it
 - [❌] diff-hl
 - [❌] fd-dired
 - [❌] dired-rsync
 
 *** electric
-No external package! Small customization fro Doom also.
+No external package! Small customization from Doom also.
 
 *** vc
 - [💠] browse-at-remote
@@ -200,7 +198,8 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
      - Redo will not pass the initial undo action
      - Redo winn not undo
      - These constraints can be disabled by pressing ~C-g~ before undo or redo.
-   - Doom increases the undo-limit, I'd like to revert that to defaults. Look for the default values at ~preferences/+doom.el~
+   - Doom increases the undo-limit, I'd like to revert that to defaults.
+     Look for the default values at ~preferences/+doom.el~
  - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
 
 *** eshell
@@ -232,15 +231,12 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
 - [❌] osx-trash
 
 *** clojure
-Clojure extension packages so I can pay my bills and not get crazy working with
-insane langs setup commonly found in the mainstream
-
 - [✅] clojure-mode
 - [✅] clj-refactor
 - [✅] cider
-  - CIDER is a big project and reading its documentation always teaches me something new
-  - I also added ~eval-sexp-fu~. Very handy when the cursor is inside a sexp and I want to eval the surrounding sexp
-  - I could not make the fuzzy completion work with CIDER. The instructions from CIDER docs didn't work
+  - reading its documentation always teaches me something new
+  - I could not make the fuzzy completion work with CIDER.
+    The instructions from CIDER docs didn't work
 - [✅] flycheck-clj-kondo
 
 *** emacs-lisp
@@ -258,7 +254,7 @@ insane langs setup commonly found in the mainstream
   - Displays Github-flavored markdown in xwidget or browser
 - [❌] markdown-toc
 
-*** STARTED org
+*** org
 - [✅] org
 - [✅] evil-org
 - [❌] org-roam
@@ -291,11 +287,13 @@ registration in their specified format. I'm considering writing something myself
 - [❌] link-hint
 - [❌] expand-region
 
+
 * The little voice is getting louder...
 
-Yeap, now it's time for the keybindings. I see some modes adds lots and lots of
-bindigs with custom functions and whatnot. Let's start documenting a few obvious
-ones:
+Yeap, now it's time for the keybindings. Some modes add lots of bindigs with
+custom functions and whatnot.
+
+Let's start documenting a few obvious ones:
 
 | keybinding | description          |
 |------------+----------------------|
