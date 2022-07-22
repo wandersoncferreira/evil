@@ -41,12 +41,10 @@
        (clojure +lsp)    ; java with a lisp
        nix               ; I hereby declare "nix geht mehr!"
        emacs-lisp        ; drown in parentheses
-       (markdown +grip)  ; writing docs for people to ignore
+       markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
-       (org
-        +journal)        ; organize your plain life in plain text
+       org               ; organize your plain life in plain text
        (haskell +lsp)    ; a language that's lazier than I am
-       ledger            ; be audit you can be
 
        :email
        :app
@@ -56,19 +54,26 @@
 
        :custom
        buffers
-       clj
-       coding
+       (clj +lsp)
+       (coding +lsp)
        completions
-       corfu
+       (corfu
+        +cape
+        +icons
+        +docs)
        encryption
        keys
-       landlord
+       (landlord
+        +spotify
+        +code-review
+        +oblique)
        parenthesis
        projects
        search
        self
        skin
-       whatever
+       (whatever
+        +screencast
+        +pocket-reader)
        wicked
-       (work +cisco)
-       )
+       (work +cisco))

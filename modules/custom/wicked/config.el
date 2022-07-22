@@ -35,3 +35,20 @@
 ;; enable evil in the minibuffer
 (after! evil-collection
   (setq evil-collection-setup-minibuffer t))
+
+(defun add-line-below-on-normal-mode ()
+  (interactive)
+  (save-excursion
+    (evil-open-below 1)
+    (evil-normal-state)))
+
+(defun add-line-above-on-normal-mode ()
+  (interactive)
+  (save-excursion
+    (evil-open-above 1)
+    (evil-normal-state)))
+
+(map!
+ :n "go" #'add-line-below-on-normal-mode
+ :n "gO" #'add-line-above-on-normal-mode
+ )

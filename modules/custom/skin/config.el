@@ -119,7 +119,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-modus-operandi)
+(enable-vim-colors)
 
 (map! :leader
       "wo" #'delete-other-windows
@@ -130,3 +130,6 @@
 
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+(after! git-gutter
+  (setq git-gutter:update-interval 0.3))

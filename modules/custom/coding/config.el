@@ -9,7 +9,6 @@
   (setq flycheck-check-syntax-automatically nil))
 
 (after! ws-butler
-  ;; include org mode too
   (setq ws-butler-global-exempt-modes
         '(special-mode
           comint-mode
@@ -18,23 +17,16 @@
           markdown-mode
           org-mode)))
 
-;;; enable lsp for coding
-(use-package! lsp-mode
-  :commands lsp
-  :config
-  (setq lsp-semantic-tokens-enable t
-        lsp-completion-no-cache t
-        lsp-file-watch-threshold 2000
-        lsp-completion-use-last-result nil)
+(when (featurep! +lsp)
+  (after! lsp-mode
+    (add-hook 'lsp-after-apply-edits-hook
+              (lambda (&rest _)
+                (save-buffer)))
 
-  (add-hook 'lsp-after-apply-edits-hook
-            (lambda (&rest _)
-              (save-buffer)))
-
-  (add-hook 'lsp-completion-mode-hook
-            (lambda ()
-              (setq-local completion-styles '(orderless)
-                          completion-category-defaults nil))))
+    (add-hook 'lsp-completion-mode-hook
+              (lambda ()
+                (setq-local completion-styles '(orderless)
+                            completion-category-defaults nil)))))
 
 (after! better-jumper
   (setq ;; more than 20 jumps, starts to drop the oldest
@@ -64,3 +56,6 @@
 
 ;; center window on error
 (add-hook! 'next-error-hook #'recenter)
+
+(after! projectile
+  (add-to-list 'projectile-project-root-files-bottom-up "project.clj"))

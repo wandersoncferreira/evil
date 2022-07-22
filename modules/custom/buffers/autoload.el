@@ -18,6 +18,7 @@
 
 ;;;###autoload
 (defun diff-current-buffer-with-file ()
+  "Run diff of current buffer against the file in your disk."
   (interactive)
   (let ((buf (current-buffer)))
     (with-current-buffer buf

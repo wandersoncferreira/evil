@@ -1,5 +1,23 @@
 ;;; custom/clj/config.el -*- lexical-binding: t; -*-
 
+(when (featurep! +lsp)
+  (after! cider
+    (setq cider-font-lock-dynamically nil
+          cider-use-xref nil)
+
+    ;; prefer lsp over cider in completion
+    (add-hook 'cider-mode-hook
+              (lambda ()
+                (remove-hook 'completion-at-point-functions
+                             #'cider-complete-at-point))))
+
+  (after! lsp-mode
+    (setq lsp-semantic-tokens-enable nil
+          lsp-file-watch-threshold nil
+          lsp-enable-file-watchers nil
+          lsp-modeline-diagnostics-enable nil
+          lsp-idle-delay 0.2)))
+
 (use-package! cider
   :init
   (setq cider-jdk-src-paths '("~/Downloads/clojure-1.10.3-sources" "~/Downloads/jvm11/source")
@@ -8,19 +26,8 @@
         cider-auto-jump-to-error 'errors-only
         cider-save-file-on-load t
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
-        clojure-toplevel-inside-comment-form t
-        ;;; prefer lsp over cider
-        ;; semantic tokens
-        cider-font-lock-dynamically nil
-        ;; completion system
-        cider-use-xref nil)
+        clojure-toplevel-inside-comment-form t)
   :config
-  ;;; prefer lsp over cider
-  ;; remove completion hooks
-  (add-hook 'cider-mode-hook
-            (lambda ()
-              (remove-hook 'completion-at-point-functions
-                           #'cider-complete-at-point)))
 
   (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
 

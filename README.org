@@ -273,14 +273,6 @@ These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) 
 - [✅] plantuml-mode
 - [✅] flycheck-plantuml
 
-*** ledger
-I'm trying to keep my finances in order. I've been using Ledger CLI for almost 2
-years now and enjoying it. However, I need a better software to handle the
-registration in their specified format. I'm considering writing something myself.
-- [✅] ledger-mode
-- [✅] evil-ledger
-- [✅] flycheck-ledger
-
 *** config
 - [❌] avy
 - [❌] drag-stuff

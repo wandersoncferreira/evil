@@ -8,6 +8,8 @@ an [[file:vim-operators.org][operator]] command, to have the comand operate on t
 
 | Commands    | Description                                           |
 |-------------+-------------------------------------------------------|
+| I           | start insert mode in the beg of a line                |
+| A           | start insert mode in the end of a line                |
 | H           | high                                                  |
 | M           | middle                                                |
 | L           | low                                                   |

@@ -1,11 +1,9 @@
 #+TITLE: Learning Doom and Vim
 
-Vim is fundammentally built on command composability. It favors small,
-general-purpose commands that can be combined with objects to compose larger
-commands.
+Vim is fundammentally built on command composability.
 
-This philosophy of minimalist commands that can be composed together is the
-fundamental philosophy of Unix and Vim exemplifies it like no other editor.
+It favors small, general-purpose commands that can be combined with objects to
+compose larger commands.
 
 You know what improves productivity? *Mastering motions and operators.*
 

@@ -5,7 +5,7 @@
 
       ;; font
       ;; systemfontstack.com
-      doom-font (font-spec :size 12)
+      doom-font (font-spec :size 14)
 
       ;; make doom increase font in smaller steps
       doom-font-increment 1
