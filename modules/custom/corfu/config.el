@@ -7,7 +7,10 @@
         corfu-auto nil
         corfu-quit-no-match 'separator)
   :config
-  (global-corfu-mode))
+  (global-corfu-mode)
+
+  (map! :map corfu-map
+        "SPC" 'corfu-insert-separator))
 
 ;; fix corfu for evil users
 (evil-make-overriding-map corfu-map)
@@ -24,8 +27,7 @@
     (add-hook 'corfu-mode-hook #'corfu-doc-mode))
 
   (map! :map corfu-map
-        "C-h" 'corfu-doc-toggle
-        "SPC" 'corfu-insert-separator))
+        "C-h" 'corfu-doc-toggle))
 
 (when (featurep! "+icons")
   (use-package! kind-icon

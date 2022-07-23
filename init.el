@@ -6,7 +6,7 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       (popup +all)      ; tame sudden yet inevitable temporary windows
+       popup             ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
        workspaces        ; tab emulation, persistence & separate workspaces
 

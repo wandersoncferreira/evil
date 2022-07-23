@@ -119,7 +119,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-vim-colors)
+(enable-default-black-theme)
 
 (map! :leader
       "wo" #'delete-other-windows
