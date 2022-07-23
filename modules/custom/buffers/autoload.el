@@ -6,7 +6,8 @@
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
-  (untabify (point-min) (point-max)))
+  (untabify (point-min) (point-max))
+  (message "Indented whole buffer"))
 
 ;;;###autoload
 (defun switch-to-message-buffer ()
