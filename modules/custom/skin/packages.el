@@ -2,4 +2,3 @@
 ;;; custom/skin/packages.el
 
 (package! delight)
-(package! windresize)

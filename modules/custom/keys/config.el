@@ -1,17 +1,22 @@
 ;;; custom/keys/config.el -*- lexical-binding: t; -*-
 
+(after! which-key
+  ;; do not show which-key if not explicitly asked
+  (setq which-key-show-early-on-C-h t
+        which-key-idle-delay 10000
+        which-key-idle-secondary-delay 0.05))
+
 (map! :leader
-      "fj" #'dired-jump
       "y" #'consult-yank-from-kill-ring
       "pt" #'projectile-toggle-between-implementation-and-test
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
 
-(global-set-key (kbd "M-m") nil)
-(global-set-key (kbd "M-m m") #'evil-multiedit-match-symbol-and-next)
-(global-set-key (kbd "M-m p") #'evil-multiedit-match-symbol-and-prev)
-(global-set-key (kbd "M-m a") #'evil-multiedit-match-all)
-(global-set-key (kbd "M-m h") #'lsp-evil-multiedit-highlights)
+;; (global-set-key (kbd "M-m") nil)
+;; (global-set-key (kbd "M-m m") #'evil-multiedit-match-symbol-and-next)
+;; (global-set-key (kbd "M-m p") #'evil-multiedit-match-symbol-and-prev)
+;; (global-set-key (kbd "M-m a") #'evil-multiedit-match-all)
+;; (global-set-key (kbd "M-m h") #'lsp-evil-multiedit-highlights)
 
 ;; set registers
 (set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))

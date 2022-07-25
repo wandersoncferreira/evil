@@ -3,7 +3,7 @@
 (use-package! corfu
   :init
   (setq corfu-separator ?&
-        ;; stop the madness of completion *all the time*
+        ;; stop the madness of completion pop up *all the time*
         corfu-auto nil
         corfu-quit-no-match 'separator)
   :config

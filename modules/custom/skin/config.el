@@ -5,7 +5,6 @@
   (delight
    '((company-mode nil company)
      (eldoc-mode nil eldoc)
-
      (dired-omit-mode nil dired-x)
      (better-jumper-local-mode nil better-jumper)
      (which-key-mode nil which-key)
@@ -19,7 +18,6 @@
      (visual-line-mode nil simple)
      (vi-tilde-fringe-mode nil vi-tilde-fringe)
      (dtrt-indent-mode nil dtrt-indent)
-
      (evil-snipe-local-mode nil evil-snipe)
      (evil-escape-mode nil evil-escape)
      (evil-traces-mode nil evil-traces)
@@ -27,7 +25,6 @@
      (evil-smartparens-mode nil evil-smartparens)
      (evil-cleverparens-mode nil evil-cleverparens)
      (evil-goggles-mode nil evil-goggles)
-
      (org-indent-mode nil org-indent)
      (projectile-mode nil projectile)
      (gcmh-mode nil gcmh)
@@ -56,6 +53,12 @@
 ;; disable aesthetic plugin for fancier bullets
 (remove-hook 'org-mode-hook #'org-superstar-mode)
 
+(defun highlight-todos ()
+  "highlight common words to indicate work in progress for dev projects"
+  (font-lock-add-keywords
+   nil
+   '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
+
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'highlight-todos))
 
@@ -78,7 +81,7 @@
 (global-display-fill-column-indicator-mode)
 
 (map! :leader
-      :desc "Set window to 80 columns" "w8" #'set-80-columns)
+      :desc "Set window to 80 columns" "w8" #'bk/set-80-columns)
 
 (defun enable-some-modus-theme ()
   (setq modus-themes-mode-line '(accented padded borderless)
@@ -98,12 +101,6 @@
   (enable-some-modus-theme)
   (setq doom-theme 'modus-operandi))
 
-(defun highlight-todos ()
-  "highlight common words to indicate work in progress for dev projects"
-  (font-lock-add-keywords
-   nil
-   '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
-
 (defun enable-default-black-theme ()
   "customizing the faces for default-black theme."
   (setq doom-theme 'default-black)
@@ -111,25 +108,19 @@
             (lambda ()
               (custom-set-faces
                '(success ((t (:foreground "ForestGreen" :weight bold))))
-               '(vertico-current ((t (:background "DarkSlateGray")))))
-              )))
+               '(vertico-current ((t (:background "DarkSlateGray"))))))))
 
 (defun enable-vim-colors ()
   "enable the vim-colors theme."
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-default-black-theme)
+(enable-modus-vivendi)
 
 (map! :leader
       "wo" #'delete-other-windows
-      "wr" #'windresize
-      "wt" #'toggle-window-split
-      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
-      )
+      "wt" #'bk/toggle-window-split
+      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized)
 
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
-
-(after! git-gutter
-  (setq git-gutter:update-interval 0.3))

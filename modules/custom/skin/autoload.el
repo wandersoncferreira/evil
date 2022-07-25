@@ -8,7 +8,7 @@
    (- n (window-width)) t))
 
 ;;;###autoload
-(defun set-80-columns ()
+(defun bk/set-80-columns ()
   "Set the selected window to 80 columns."
   (interactive)
   (set-window-width 80))
@@ -43,7 +43,7 @@ Fit more in the screen!"
        100))))
 
 ;;;###autoload
-(defun toggle-window-split ()
+(defun bk/toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))

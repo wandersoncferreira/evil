@@ -1,9 +1,10 @@
 ;;; custom/orgmode/config.el -*- lexical-binding: t; -*-
 
-(setq org-directory "~/org/"
-      org-archive-location (concat org-directory ".archive/%s::"))
 
 (after! org
+  (setq org-directory "~/org/"
+        org-return-follows-link t
+        org-archive-location (concat org-directory ".archive/%s::"))
   (setq org-capture-templates
         '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
            "* [ ] %?\n"

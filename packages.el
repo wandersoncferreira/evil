@@ -102,9 +102,9 @@
 (package! evil-quick-diff :disable t)
 
 ;; multiple-cursors
-(package! evil-multiedit :disable t)
-(package! evil-mc :disable t)
-(package! multiple-cursors :disable t)
+;; (package! evil-multiedit :disable t)
+;; (package! evil-mc :disable t)
+;; (package! multiple-cursors :disable t)
 
 ;; snippets
 (package! auto-yasnippet :disable t)

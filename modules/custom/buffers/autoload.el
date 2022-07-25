@@ -1,7 +1,7 @@
 ;;; custom/buffers/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defun iwb ()
+(defun bk/indent-whole-buffer ()
   "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
@@ -10,7 +10,7 @@
   (message "Indented whole buffer"))
 
 ;;;###autoload
-(defun switch-to-message-buffer ()
+(defun bk/switch-to-message-buffer ()
   "Switch to the `*Message*' buffer."
   (interactive)
   (with-current-buffer (messages-buffer)
@@ -18,7 +18,7 @@
     (evil-normal-state)))
 
 ;;;###autoload
-(defun diff-current-buffer-with-file ()
+(defun bk/diff-current-buffer-with-file ()
   "Run diff of current buffer against the file in your disk."
   (interactive)
   (let ((buf (current-buffer)))

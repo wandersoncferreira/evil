@@ -1,7 +1,7 @@
 ;;; custom/coding/autoload.el -*- lexical-binding: t; -*-
 
 ;;;###autoload
-(defun toggle/flycheck-list-errors ()
+(defun bk/flycheck-list-errors ()
   "Toggle flycheck list errors buffer."
   (interactive)
   (let ((buff (get-buffer "*Flycheck errors*")))

@@ -62,18 +62,18 @@
         +icons
         +docs)
        encryption
+       folders
        keys
-       (landlord
-        +spotify
-        +code-review
-        +oblique)
+       ;;(landlord
+        ;;+spotify
+        ;;+code-review
+        ;;+oblique)
        parenthesis
        projects
-       search
        self
        skin
        (whatever
         +screencast
-        +pocket-reader)
+       +pocket-reader)
        wicked
        (work +cisco))

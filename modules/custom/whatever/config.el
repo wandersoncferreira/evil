@@ -2,6 +2,9 @@
 
 ;; timezones that I care about
 (after! time
+  ;; disable evil in world-clock mode
+  (add-hook 'world-clock-mode-hook #'turn-off-evil-mode)
+
   (setq world-clock-list
         '(("America/Chicago" "Central")
           ("Europe/Paris" "Paris")
@@ -32,3 +35,6 @@
 
   (after! evil
     (add-hook 'pocket-reader-mode-hook #'turn-off-evil-mode)))
+
+(map! :leader
+      "bw" #'bk/bitwarden)

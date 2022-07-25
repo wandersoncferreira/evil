@@ -18,8 +18,19 @@
           lsp-modeline-diagnostics-enable nil
           lsp-idle-delay 0.2)))
 
-(use-package! cider
-  :init
+(after! clojure-mode
+  ;; keep the underscore as a word character like in Vim
+  (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+
+  (map! (:localleader
+         (:map (clojure-mode-map)
+          (:prefix ("r" . "repl")
+           "s" #'sesman-browser)
+          (:prefix ("e" . "eval")
+           "v" #'cider-eval-sexp-at-point
+           ";" #'cider-eval-defun-to-comment)))))
+
+(after! cider
   (setq cider-jdk-src-paths '("~/Downloads/clojure-1.10.3-sources" "~/Downloads/jvm11/source")
         cider-clojure-cli-command "~/code/dotfiles/clojure/clojure-bin-enriched"
         ;; only jump to errors
@@ -27,7 +38,6 @@
         cider-save-file-on-load t
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
-  :config
 
   (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
 
@@ -55,17 +65,7 @@
   ;; fix the placement of the cider-repl buffer
   (set-popup-rule! "^\\*cider-repl" :side 'bottom :quit nil))
 
-(use-package! clj-refactor
-  :after clojure-mode
-  :config
+(after! clj-refactor
   (set-lookup-handlers! 'clj-refactor-mode nil)
   (setq cljr-eagerly-build-asts-on-startup nil
         cljr-add-ns-to-blank-clj-files nil))
-
-(map! (:localleader
-       (:map (clojure-mode-map)
-        (:prefix ("r" . "repl")
-         "s" #'sesman-browser)
-        (:prefix ("e" . "eval")
-         "v" #'cider-eval-sexp-at-point
-         ";" #'cider-eval-defun-to-comment))))
