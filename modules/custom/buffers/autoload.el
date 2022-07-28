@@ -7,7 +7,7 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max))
-  (message "Indented"))
+  (message "Buffer indented"))
 
 ;;;###autoload
 (defun bk/switch-to-message-buffer ()

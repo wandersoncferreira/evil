@@ -6,15 +6,14 @@
 (map! :leader
       :desc "Indent Whole Buffer" "bi" #'bk/indent-whole-buffer
       :desc "Diff current buffer with file" "bd" #'bk/diff-current-buffer-with-file
-      :desc "Goto *Message* buffer" "mb" #'bk/switch-to-message-buffer)
+      :desc "Goto *Message* buffer" "mb" #'bk/switch-to-message-buffer
 
-(map! :leader
       (:prefix ("N" . "narrowing")
        "f" #'narrow-to-defun
        "p" #'narrow-to-page
        "r" #'narrow-to-region
-       "w" #'widen))
+       "w" #'widen)
 
-(map! :mode emacs-lisp-mode
+      :mode emacs-lisp-mode
       :localleader
       "eb" #'eval-buffer)
