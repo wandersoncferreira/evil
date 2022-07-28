@@ -37,7 +37,6 @@
 
 (use-package! smartparens
   :config
-
   ;; Doom's default module skips pairs if one is typed at the beggining of word
   (dolist (brace '("(" "{" "["))
     (sp-pair brace nil

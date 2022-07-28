@@ -8,7 +8,6 @@
       :desc "Diff current buffer with file" "bd" #'bk/diff-current-buffer-with-file
       :desc "Goto *Message* buffer" "mb" #'bk/switch-to-message-buffer)
 
-;;; narrowing commands
 (map! :leader
       (:prefix ("N" . "narrowing")
        "f" #'narrow-to-defun

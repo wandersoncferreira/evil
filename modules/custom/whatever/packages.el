@@ -2,4 +2,3 @@
 ;;; custom/whatever/packages.el
 
 (package! gif-screencast)
-(package! pocket-reader)

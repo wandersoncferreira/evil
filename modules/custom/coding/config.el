@@ -25,24 +25,6 @@
           markdown-mode
           org-mode)))
 
-(when (featurep! +lsp)
-  (after! lsp-mode
-    (add-hook 'lsp-after-apply-edits-hook
-              (lambda (&rest _)
-                (save-buffer)))
-
-    (add-hook 'lsp-completion-mode-hook
-              (lambda ()
-                (setq-local completion-styles '(orderless)
-                            completion-category-defaults nil)))))
-
-(after! better-jumper
-  (setq ;; more than 20 jumps, starts to drop the oldest
-        better-jumper-max-length 24
-        ;; start new window with empty jumplist
-        better-jumper-new-window-behavior 'empty
-        ))
-
 (after! dumb-jump
   (setq dumb-jump-default-project "~/code"))
 
@@ -55,9 +37,9 @@
 ;; center window on error
 (add-hook! 'next-error-hook #'recenter)
 
+;; add project.clj file to projectile root
 (after! projectile
   (add-to-list 'projectile-project-root-files-bottom-up "project.clj"))
 
-(after! git-commit
-  ;; make evil start in emacs state for magit commit buffers
-  (add-hook 'git-commit-mode-hook 'evil-insert-state))
+;; make evil start in emacs state for magit commit buffers
+(add-hook 'git-commit-mode-hook 'evil-insert-state)

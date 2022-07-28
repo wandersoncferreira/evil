@@ -26,4 +26,4 @@
 ;; TIL:
 ;; [ SPC -- insert newline above
 ;; ] SPC -- insert newline below
-;; this is provided by unimpared.vim plugin too
+;; this is provided by unimpared.vim plugin if you were in Vim land

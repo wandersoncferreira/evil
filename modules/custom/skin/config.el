@@ -86,6 +86,7 @@
 (defun enable-some-modus-theme ()
   (setq modus-themes-mode-line '(accented padded borderless)
         modus-themes-region '(bg-only no-extend)
+        modus-themes-fringes 'intense
         modus-themes-completions '(moderate)
         modus-themes-bold-constructs t
         modus-themes-italic-constructs t

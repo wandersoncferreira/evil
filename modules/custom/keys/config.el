@@ -12,12 +12,6 @@
       :desc "CamelCase" "tc" #'subword-mode
       :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
 
-;; (global-set-key (kbd "M-m") nil)
-;; (global-set-key (kbd "M-m m") #'evil-multiedit-match-symbol-and-next)
-;; (global-set-key (kbd "M-m p") #'evil-multiedit-match-symbol-and-prev)
-;; (global-set-key (kbd "M-m a") #'evil-multiedit-match-all)
-;; (global-set-key (kbd "M-m h") #'lsp-evil-multiedit-highlights)
-
 ;; set registers
 (set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))
 

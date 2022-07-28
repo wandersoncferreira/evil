@@ -22,19 +22,5 @@
           gif-screencast-cropping-program ""
           gif-screencast-capture-format "ppm")))
 
-(when (featurep! "+pocket-reader")
-  (use-package! pocket-reader
-    :defer t
-    :commands pocket-reader
-    :config
-    ;; change face for archived items
-    (set-face-attribute 'pocket-reader-archived nil :foreground "dim gray")
-    :bind (:map pocket-reader-mode-map
-           ("j" . evil-next-line)
-           ("k" . evil-previous-line)))
-
-  (after! evil
-    (add-hook 'pocket-reader-mode-hook #'turn-off-evil-mode)))
-
 (map! :leader
       "bw" #'bk/bitwarden)

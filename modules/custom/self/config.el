@@ -9,6 +9,9 @@
       ;; make doom increase font in smaller steps
       doom-font-increment 1
 
+      ;; spc b x to create scratch buffers in elisp mode
+      doom-scratch-initial-major-mode 'lisp-interaction-mode
+
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
 

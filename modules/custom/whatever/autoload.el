@@ -7,4 +7,4 @@
   (kill-new (auth-source-pick-first-password
              :host "bitwarden.app"
              :user "bartuka"))
-  (message "Copied!"))
+  (message "Bitwarden copied!"))

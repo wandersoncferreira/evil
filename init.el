@@ -3,11 +3,12 @@
 (doom! :input
        :completion
        vertico           ; the search engine of the future
+       company           ; the ultimate code completion backend
 
        :ui
        doom              ; what makes DOOM look the way it does
        popup             ; tame sudden yet inevitable temporary windows
-       vc-gutter         ; vcs diff in the fringe
+       ;;vc-gutter         ; vcs diff in the fringe
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
@@ -23,8 +24,6 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
-       eshell
-
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
@@ -38,7 +37,7 @@
         macos)           ; improve compatibility with macOS
 
        :lang
-       (clojure +lsp)    ; java with a lisp
+       clojure           ; java with a lisp
        nix               ; I hereby declare "nix geht mehr!"
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
@@ -54,26 +53,17 @@
 
        :custom
        buffers
-       (clj +lsp)
-       (coding +lsp)
+       clj
+       coding
        completions
-       (corfu
-        +cape
-        +icons
-        +docs)
        encryption
        folders
        keys
-       ;;(landlord
-        ;;+spotify
-        ;;+code-review
-        ;;+oblique)
        parenthesis
        projects
        self
        skin
        (whatever
-        +screencast
-       +pocket-reader)
+        +screencast)
        wicked
        (work +cisco))

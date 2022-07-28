@@ -7,7 +7,7 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max))
-  (message "Indented whole buffer"))
+  (message "Indented"))
 
 ;;;###autoload
 (defun bk/switch-to-message-buffer ()
@@ -27,4 +27,4 @@
           (progn
             (diff-buffer-with-file buf)
             (select-window (get-buffer-window "*Diff*")))
-        (message "Buffer has not file")))))
+        (message "Buffer has no file")))))

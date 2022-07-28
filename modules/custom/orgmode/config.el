@@ -1,11 +1,11 @@
 ;;; custom/orgmode/config.el -*- lexical-binding: t; -*-
 
-
-(after! org
+(use-package! org
+  :config
   (setq org-directory "~/org/"
         org-return-follows-link t
-        org-archive-location (concat org-directory ".archive/%s::"))
-  (setq org-capture-templates
+        org-archive-location (concat org-directory ".archive/%s::")
+        org-capture-templates
         '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
            "* [ ] %?\n"
            :prepend t)

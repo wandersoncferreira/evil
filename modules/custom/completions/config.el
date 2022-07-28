@@ -13,32 +13,26 @@
          'bookmark-delete
          embark-pre-action-hooks)))
 
-(after! vertico
+(use-package! vertico
+  :init
   (setq vertico-count-format nil
         vertico-cycle nil
         ;; keep cursor always at mid-height when scrolling..
         ;; bottom of screen is unecessary head movement
         vertico-scroll-margin 10)
-
-  ;; let's make a test and only sort functions by history and alphabetically
-  (setq vertico-sort-function #'vertico-sort-history-alpha)
-
+  :config
   ;; restore some vim balance
   ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
   (map! :n "[I" #'+vertico/search-symbol-at-point
         :map vertico-map
         "]" #'vertico-next-group
-        "[" #'vertico-previous-group)
+        "[" #'vertico-previous-group))
 
-  ;;; restrict the set of candidates
-  (defun +vertico-restrict-to-matches ()
-    (interactive)
-    (let ((inhibit-read-only t))
-      (goto-char (point-max))
-      (insert " ")
-      (add-text-properties
-       (minibuffer-prompt-end) (point-max)
-       '(invisible t read-only t cursor-intangible t rear-nonsticky t))))
+(use-package! vertico-repeat
+  :after vertico
+  :config
+  (map! :leader "rl" #'vertico-repeat-last)
+  (add-hook! 'minibuffer-setup-hook #'vertico-repeat-save))
 
-  (map! :map vertico-map
-        "s-SPC" #'+vertico-restrict-to-matches))
+(after! company
+  (setq company-idle-delay nil))
