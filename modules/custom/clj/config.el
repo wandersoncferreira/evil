@@ -26,10 +26,6 @@
 
   (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
 
-  ;; remove the colors in the parens, I'm boring person
-  (remove-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
-
-
   ;; add buffer to current persp
   (dolist (it '(cider-repl-mode-hook
                 cider-test-report-mode-hook

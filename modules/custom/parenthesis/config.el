@@ -1,5 +1,24 @@
 ;;; custom/parenthesis/config.el -*- lexical-binding: t; -*-
 
+(defvar bk-lisp-modes
+  '(emacs-lisp-mode
+    elisp-mode
+    clojure-mode
+    cider-repl-mode))
+
+(defun bk/str-mode->symbol-hook (name)
+  (-> (symbol-name name)
+      (concat "-hook")
+      (intern)))
+
+(defun bk/add-hooks (modes func)
+  (dolist (mode modes)
+    (add-hook (bk/str-mode->symbol-hook mode) func)))
+
+(defun bk/remove-hooks (modes func)
+  (dolist (mode modes)
+    (remove-hook (bk/str-mode->symbol-hook mode) func)))
+
 (use-package! evil-cleverparens
   :init
   (setq evil-cleverparens-move-skip-delimiters nil
@@ -10,30 +29,12 @@
   ;;       evil-cleverparens-use-s-and-S nil
   ;;       evil-cleverparens-indent-afterwards nil)
   :config
-  ;; clojure setup
-  (after! clojure-mode
-    (add-hook 'clojure-mode-hook
-              (lambda ()
-                (evil-cleverparens-mode))))
-  ;; emacs setup
-  (after! elisp-mode
-    (add-hook 'emacs-lisp-mode-hook
-              (lambda ()
-                (evil-cleverparens-mode)))))
+  (bk/add-hooks bk-lisp-modes #'evil-cleverparens-mode))
 
 (use-package! evil-smartparens
   :after evil-cleverparens
   :config
-  ;; clojure-setup
-  (after! clojure-mode
-    (add-hook 'clojure-mode-hook
-              (lambda ()
-                (evil-smartparens-mode))))
-  ;; emacs setup
-  (after! elisp-mode
-    (add-hook 'emacs-lisp-mode-hook
-              (lambda ()
-                (evil-smartparens-mode)))))
+  (bk/add-hooks bk-lisp-modes #'evil-smartparens-mode))
 
 (use-package! smartparens
   :config
@@ -46,17 +47,10 @@
                    :wrap ")"
                    :unless '(:rem sp-point-before-same-p)))
 
-  (after! elisp-mode
-    (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode))
-  (after! clojure-mode
-    (add-hook 'clojure-mode-hook #'smartparens-strict-mode))
-
-  (after! haskell-mode
-    (add-hook 'haskell-mode-hook #'smartparens-strict-mode)))
+  (bk/add-hooks bk-lisp-modes #'smartparens-strict-mode))
 
 ;; remove highlighting of the parens...
-(after! elisp-mode
-  (remove-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode))
+(bk/remove-hooks bk-lisp-modes #'rainbow-delimiters-mode)
 
 ;; make leader + l to handle parenthesis
 (map! :leader

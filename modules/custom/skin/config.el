@@ -95,6 +95,11 @@
         modus-themes-subtle-line-numbers t
         modus-themes-lang-checkers '(background)))
 
+;; change default font
+(setq doom-font (font-spec :family "Consolas"
+                           :size 14
+                           :weight 'regular))
+
 (defun enable-modus-vivendi ()
   (enable-some-modus-theme)
   (setq doom-theme 'modus-vivendi))

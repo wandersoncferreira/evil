@@ -12,6 +12,13 @@
       ;; spc b x to create scratch buffers in elisp mode
       doom-scratch-initial-major-mode 'lisp-interaction-mode
 
+      ;; initial major mode
+      initial-major-mode 'lisp-interaction-mode
+
+      initial-scratch-message "\
+;; Here be evil dragons...
+"
+
       ;; DO NOT display fixed line numbers in the left fringe
       display-line-numbers-type nil
 

@@ -7,5 +7,4 @@
   ;; DO NOT group directories first
   (setq dired-listing-switches "-alh"))
 
-(map! :leader
-      "fj" #'dired-jump)
+(map! :leader "fj" #'dired-jump)
