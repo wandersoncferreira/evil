@@ -7,8 +7,7 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       popup             ; tame sudden yet inevitable temporary windows
-       ;;vc-gutter         ; vcs diff in the fringe
+       (popup +all)      ; tame sudden yet inevitable temporary windows
        workspaces        ; tab emulation, persistence & separate workspaces
 
        :editor
