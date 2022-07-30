@@ -57,6 +57,7 @@
        completions
        encryption
        folders
+       harpoon
        keys
        parenthesis
        projects

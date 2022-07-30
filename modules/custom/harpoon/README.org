@@ -1,0 +1,24 @@
+#+TITLE:   custom/harpoon
+#+DATE:    July 30, 2022
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+
+* Description
+
+Custom implementation of [[https://github.com/ThePrimeagen/harpoon][Harpoon]] Vim Plugin.
+
+Usually when we work coding some functionality there are few important files we
+care about. Perhaps 1, 2, 3, .. 5. Idk. Usually few than 5. But we jump to a lot
+of auxiliary files to read something, to check some assumptions, or whatnot.
+Then we want to get back to one of our important files.
+
+This is how harpoon works:
+- by project
+- set harpoon: 1 to 5 important files using ~SPC + h + {!, @, #, $, %}~ (notice, 1 to 5 + shift)
+- jump to harpoon using ~SPC + h + {1, 2, 3, 4, 5}~
+
+If you want to clear all harpoons from current project call ~M-x bk/harpoon-clean-project~
+
+** Plugins
+- [[https://codeberg.org/ideasman42/emacs-bookmark-in-project][bookmark-in-project]] 
