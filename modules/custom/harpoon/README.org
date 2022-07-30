@@ -9,7 +9,7 @@
 Custom implementation of [[https://github.com/ThePrimeagen/harpoon][Harpoon]] Vim Plugin.
 
 Usually when we work coding some functionality there are few important files we
-care about. Perhaps 1, 2, 3, .. 5. Idk. Usually few than 5. But we jump to a lot
+care about. Perhaps 1, 2, 3, .. 5. Idk. Usually less than 5. But we jump to a lot
 of auxiliary files to read something, to check some assumptions, or whatnot.
 Then we want to get back to one of our important files.
 
