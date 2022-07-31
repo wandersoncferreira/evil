@@ -64,25 +64,18 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
             setter-harpoon-key
             (bk/make-set-to-harpoon number-string)))))
 
-(defun bk/reset-global-harpoons ()
-  (map! :leader
-        "h1" (bk/harpoon-noop 1)
-        "h2" (bk/harpoon-noop 2)
-        "h3" (bk/harpoon-noop 3)
-        "h4" (bk/harpoon-noop 4)
-        "h5" (bk/harpoon-noop 5)))
-
-;;;###autoload
-(defun bk/harpoon-noop (n)
+(defun harpoon/noop (n)
   (lambda ()
     (interactive)
     (message "Harpoon %s not defined." n)))
 
-;;;###autoload
-(defun bk/harpoon-clean-project ()
-  (interactive)
-  (bk/reset-global-harpoons)
-  (bookmark-in-project-delete-all))
+(defun bk/reset-global-harpoons ()
+  (map! :leader
+        "h1" (harpoon/noop 1)
+        "h2" (harpoon/noop 2)
+        "h3" (harpoon/noop 3)
+        "h4" (harpoon/noop 4)
+        "h5" (harpoon/noop 5)))
 
 (use-package! bookmark-in-project
   :init

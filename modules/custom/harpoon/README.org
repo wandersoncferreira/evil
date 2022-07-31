@@ -8,17 +8,27 @@
 
 Custom implementation of [[https://github.com/ThePrimeagen/harpoon][Harpoon]] Vim Plugin.
 
-Usually when we work coding some functionality there are few important files we
-care about. Perhaps 1, 2, 3, .. 5. Idk. Usually less than 5. But we jump to a lot
-of auxiliary files to read something, to check some assumptions, or whatnot.
-Then we want to get back to one of our important files.
+Usually when we are coding some functionality there are few important files we
+care about. Perhaps 1, 2, 3, or 5. Idk. Usually less than 5, but we jump to a lot
+of auxiliary files to lookup something, to check assumptions, or whatnot, then
+we want to get back to one of our important files.
 
 This is how harpoon works:
 - by project
-- set harpoon: 1 to 5 important files using ~SPC + h + {!, @, #, $, %}~ (notice, 1 to 5 + shift)
-- jump to harpoon using ~SPC + h + {1, 2, 3, 4, 5}~
+- set harpoon
+  - 1 to 5 important files using ~SPC + h + {!, @, #, $, %}~
+  - notice the symbols are hold SHIFT + 1 to 5
+- jump to harpoon
+  - using ~SPC + h + {1, 2, 3, 4, 5}~
 
-If you want to clear all harpoons from current project call ~M-x bk/harpoon-clean-project~
+If you want to clear all harpoons from current project call ~M-x harpoon/clean~
+
+
+Note:
+The way I use Doom Emacs each project belongs to a single Workspace, therefore
+it is common to me to have many projects opened at once. The Hack described
+below makes sure that the harpoon keys are going to point to the correct
+locations if I switch project or switch workspaces. 
 
 
 ** Plugins
