@@ -20,5 +20,16 @@ This is how harpoon works:
 
 If you want to clear all harpoons from current project call ~M-x bk/harpoon-clean-project~
 
+
 ** Plugins
 - [[https://codeberg.org/ideasman42/emacs-bookmark-in-project][bookmark-in-project]] 
+
+** Hack
+
+Everything here is a hack! what isn't? however, there is a interesting mechanism
+to reset/restore keybindings pointing to your pre-defined harpoons *per
+project*.
+
+This code is a best effort to accomodate for changes via
+~projectile-switch-project~ or ~+workspaces-switch-to~ (which uses
+persp-frame-switch under the cover).
