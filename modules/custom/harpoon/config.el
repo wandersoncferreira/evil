@@ -9,12 +9,8 @@
    (intern (concat "bk/jump-to-harpoon-" fn-number))
    `(lambda ()
       (interactive)
-      (bookmark-in-project--has-file-name-or-error)
-      (bookmark-in-project--jump-impl
-       (lambda ()
-         (interactive)
-         (bookmark-jump ,bm-name)
-         (message "Harpooned!"))))))
+      (bookmark-jump ,bm-name)
+      (message "Harpooned!"))))
 
 (defun bk/make-set-to-harpoon (fn-number)
   "Create set Harpoon functions."
@@ -41,6 +37,7 @@
 
 However, we lose the jump to harpoon functions. This function loads
 the jump-to-* definitions after emacs starts."
+  (bookmark-maybe-load-default-file)
   (let* ((proj-dir (or project-dir (bookmark-in-project--project-root-impl)))
          (bookmarks
           (bookmark-in-project--filter-by-project proj-dir bookmark-alist)))

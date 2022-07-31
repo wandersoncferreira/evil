@@ -25,9 +25,6 @@
           markdown-mode
           org-mode)))
 
-(after! dumb-jump
-  (setq dumb-jump-default-project "~/code"))
-
 ;; allow haskell-mode to look for ghc in the current sandbox
 (after! haskell-customize
   (setq haskell-process-wrapper-function
