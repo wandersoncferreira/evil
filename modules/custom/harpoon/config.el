@@ -6,7 +6,7 @@
 (defun bk/make-jump-to-harpoon (fn-number bm-name)
   "Create jump to Harpoon functions."
   (fset
-   (intern (concat "bk/jump-to-harpoon-" fn-number))
+   (intern (concat "harpoon/jump-to-" fn-number))
    `(lambda ()
       (interactive)
       (bookmark-jump ,bm-name)
@@ -16,7 +16,7 @@
   "Create set Harpoon functions."
   (message "Loading harpon setters...")
   (fset
-   (intern (concat "bk/set-harpoon-" fn-number))
+   (intern (concat "harpoon/set-" fn-number))
    `(lambda ()
       (interactive)
       (bookmark-in-project--has-file-name-or-error)
@@ -51,20 +51,6 @@ the jump-to-* definitions after emacs starts."
               harpoon-key
               (bk/make-jump-to-harpoon harpoon-number bm-name))))))
 
-(defun bk/harpoon-noop (n)
-  (lambda ()
-    (interactive)
-    (message "Harpoon %s not defined." n)))
-
-(defun bk/reset-global-harpoons ()
-  (map! :leader
-        "h1" (bk/harpoon-noop 1)
-        "h2" (bk/harpoon-noop 2)
-        "h3" (bk/harpoon-noop 3)
-        "h4" (bk/harpoon-noop 4)
-        "h5" (bk/harpoon-noop 5)))
-
-;;;###autoload
 (defun bk/create-harpoons ()
   "This functions creates 5 harpoons.
 
@@ -78,32 +64,49 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
             setter-harpoon-key
             (bk/make-set-to-harpoon number-string)))))
 
-(use-package! bookmark-in-project
-  :config
-  (setq bookmark-in-project-verbose-cycle nil
-        bookmark-in-project-verbose-toggle nil
-        bookmark-in-project-name-fontify #'identity))
+(defun bk/reset-global-harpoons ()
+  (map! :leader
+        "h1" (bk/harpoon-noop 1)
+        "h2" (bk/harpoon-noop 2)
+        "h3" (bk/harpoon-noop 3)
+        "h4" (bk/harpoon-noop 4)
+        "h5" (bk/harpoon-noop 5)))
 
-(add-hook 'after-init-hook #'bk/create-harpoons)
-(add-hook 'after-init-hook #'bk/reset-global-harpoons)
+;;;###autoload
+(defun bk/harpoon-noop (n)
+  (lambda ()
+    (interactive)
+    (message "Harpoon %s not defined." n)))
 
-(advice-add '+workspace/switch-to
-            :after
-            (lambda (&rest args)
-              (let ((persp-buff (car (persp-buffers (get-current-persp))))
-                    (proj-dir))
-                (when (buffer-file-name persp-buff)
-                  (with-current-buffer persp-buff
-                    (setq proj-dir (projectile-project-root)))
-                  (bk/reset-global-harpoons)
-                  (bk/load-harpoon-keys-in-project proj-dir)))))
-
-(add-hook 'projectile-after-switch-project-hook
-          (lambda ()
-            (bk/reset-global-harpoons)
-            (bk/load-harpoon-keys-in-project)))
-
+;;;###autoload
 (defun bk/harpoon-clean-project ()
   (interactive)
   (bk/reset-global-harpoons)
   (bookmark-in-project-delete-all))
+
+(use-package! bookmark-in-project
+  :init
+  (setq bookmark-in-project-verbose-cycle nil
+        bookmark-in-project-verbose-toggle nil
+        bookmark-in-project-name-fontify #'identity)
+  :config
+  (add-hook 'after-init-hook
+            (lambda ()
+              (bk/create-harpoons)
+              (bk/reset-global-harpoons)))
+
+  (advice-add '+workspace/switch-to
+              :after
+              (lambda (&rest args)
+                (let ((persp-buff (car (persp-buffers (get-current-persp))))
+                      (proj-dir))
+                  (when (buffer-file-name persp-buff)
+                    (with-current-buffer persp-buff
+                      (setq proj-dir (projectile-project-root)))
+                    (bk/reset-global-harpoons)
+                    (bk/load-harpoon-keys-in-project proj-dir)))))
+
+  (add-hook 'projectile-after-switch-project-hook
+            (lambda ()
+              (bk/reset-global-harpoons)
+              (bk/load-harpoon-keys-in-project))))
