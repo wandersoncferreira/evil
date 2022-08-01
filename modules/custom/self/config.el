@@ -20,7 +20,7 @@
 "
 
       ;; DO NOT display fixed line numbers in the left fringe
-      display-line-numbers-type nil
+      display-line-numbers-type 'relative
 
       ;; when at the beginning of a line, make `ctrl-k' remove the whole
       ;; line, instead of just emptying it

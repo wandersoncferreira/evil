@@ -27,3 +27,6 @@
 ;; [ SPC -- insert newline above
 ;; ] SPC -- insert newline below
 ;; this is provided by unimpared.vim plugin if you were in Vim land
+
+;; add lookup definition to jump list
+(evil-add-command-properties #'+lookup/definition :jump t)

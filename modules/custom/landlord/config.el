@@ -2,7 +2,7 @@
 
 ;; code review!
 
-(when (featurep! "+code-review")
+(when (featurep! +code-review)
   (use-package! code-review
     :commands (code-review-start)
     ;; :load-path "~/code/code-review"
@@ -19,12 +19,12 @@
                 ;; emojify!
                 (emojify-mode)))))
 
-(when (featurep! "+spotify")
+(when (featurep! +spotify)
   (use-package! helm-spotify-plus
     :commands (helm-spotify-plus)
     :config
     (set-popup-rule! "*helm-spotify*" :side 'bottom :size 0.5)))
 
-(when (featurep! "+oblique")
+(when (featurep! +oblique)
   (use-package! oblique-strategies
     :commands (oblique-strategies)))

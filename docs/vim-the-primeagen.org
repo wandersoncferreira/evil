@@ -1,0 +1,37 @@
+#+title: Vim The Primeagen
+
+Notes on the 6 videos on Vim from ThePrimeagen
+
+* Vim as Your Editor (1/6):
+* Vim as Your Editor (2/6): 
+* Vim as Your Editor (3/6): Horizontal Speed
+
+| keybindings | descriptions                                      |
+|-------------+---------------------------------------------------|
+| f<char>     | move forward to <char> in-line                    |
+| t<char>     | move forward UP to <char> in-line                 |
+| ;           | find next occurrences of the searched <char>      |
+| ,           | find previous occurrences of the searched <char>  |
+| F<char>     | move backward to <char> in-line                   |
+| x           | delete <char>-at-point                            |
+| s           | delete <char>-at-point and go to insert mode      |
+| cw          | delete WORD and go to insert mode                 |
+| D           | delete the rest of the line                       |
+| S           | delete the rest of the line and go to insert mode |
+
+* Vim as Your Editor (4/6): Vertical Domination
+
+| keybindings | descriptions           |
+|-------------+------------------------|
+| gg          | go to the top          |
+| G           | go to the bottom       |
+| :2          | move to the line 2     |
+| {           | move up by paragraph   |
+| }           | move down by paragraph |
+| %           | move to matching pairs |
+
+* Vim as Your Editor (5/6): Going Full Vim: File Movements, Buffers, Splits
+
+Marks ...
+
+* Vim as Your Editor (6/6): Vim Long and Prosper

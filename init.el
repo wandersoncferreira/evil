@@ -9,6 +9,7 @@
        doom              ; what makes DOOM look the way it does
        (popup +all)      ; tame sudden yet inevitable temporary windows
        workspaces        ; tab emulation, persistence & separate workspaces
+       vc-gutter         ; vcs diff in the fringe
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -42,6 +43,7 @@
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
        org               ; organize your plain life in plain text
+       ledger            ; be audit you can be
        (haskell +lsp)    ; a language that's lazier than I am
 
        :email
@@ -59,6 +61,10 @@
        folders
        harpoon
        keys
+       (landlord
+        +code-review
+        +spotify
+        +oblique)
        parenthesis
        projects
        self

@@ -125,8 +125,9 @@
 (enable-modus-vivendi)
 
 (map! :leader
-      "wo" #'delete-other-windows
-      "wt" #'bk/toggle-window-split
+      :desc "Delete other windows" "wo" #'delete-other-windows
+      :desc "Toggle window split layout" "wt" #'bk/toggle-window-split
+      :desc "Toggle Transparency" "tt" #'bk/toggle-transparency
       :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized)
 
 ;; prevents some cases of emacs flickering

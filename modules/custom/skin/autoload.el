@@ -39,7 +39,7 @@ Fit more in the screen!"
                         ((numberp (cadr alpha)) (cadr alpha)))
                   100)
              (not alpha))
-         85
+         75
        100))))
 
 ;;;###autoload
