@@ -126,7 +126,6 @@
 
 (map! :leader
       :desc "Delete other windows" "wo" #'delete-other-windows
-      :desc "Toggle window split layout" "wt" #'bk/toggle-window-split
       :desc "Toggle Transparency" "tt" #'bk/toggle-transparency
       :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized)
 

@@ -42,8 +42,10 @@
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
+       (java +lsp)       ; the poster child for carpal tunnel syndrome
        org               ; organize your plain life in plain text
        ledger            ; be audit you can be
+       (rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (haskell +lsp)    ; a language that's lazier than I am
 
        :email
@@ -53,13 +55,16 @@
        (default +bindings +smartparens)
 
        :custom
+       apl
        buffers
        clj
        coding
        completions
+       denote
        encryption
        folders
        harpoon
+       jvm
        keys
        (landlord
         +code-review
