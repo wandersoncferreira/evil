@@ -13,3 +13,7 @@
   :config
   (setq lsp-java-references-code-lens-enabled t
         lsp-java-implementations-code-lens-enabled t))
+
+(after! java-mode
+  (add-hook 'java-mode-hook
+            (lambda () (setq-local company-idle-delay 0.2))))
