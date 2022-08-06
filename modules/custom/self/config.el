@@ -46,3 +46,7 @@
 
 ;; change line spacing for all buffers
 (setq-default line-spacing 6)
+
+(map! :leader
+      (:prefix "e"
+       "s" #'eshell))

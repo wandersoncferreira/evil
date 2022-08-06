@@ -40,3 +40,14 @@
 
 ;; make evil start in emacs state for magit commit buffers
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
+
+(use-package! lsp-treemacs
+  :config
+  (setq lsp-treemacs-error-list-current-project-only t))
+
+(use-package! lsp-ui
+  :after lsp-mode
+  :commands lsp-ui-mode
+  :config
+  (setq lsp-ui-doc-enable nil
+        lsp-ui-peek-enable nil))
