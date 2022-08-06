@@ -76,7 +76,6 @@
 (package! highlight-numbers :disable t)
 (package! all-the-icons :disable t)
 (package! dtrt-indent :disable t)
-(package! rainbow-delimiters :disable t)
 (package! project :disable t)
 (package! helpful :disable t)
 (package! restart-emacs :disable t)
