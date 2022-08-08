@@ -16,6 +16,7 @@
      (lsp-lens-mode nil lsp-lens)
      (clj-refactor-mode nil clj-refactor)
      (visual-line-mode nil simple)
+     (format-all-mode nil format-all)
      (vi-tilde-fringe-mode nil vi-tilde-fringe)
      (dtrt-indent-mode nil dtrt-indent)
      (evil-snipe-local-mode nil evil-snipe)
