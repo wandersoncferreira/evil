@@ -51,3 +51,8 @@
   :config
   (setq lsp-ui-doc-enable nil
         lsp-ui-peek-enable nil))
+
+(after! flycheck
+  (define-key flycheck-mode-map flycheck-keymap-prefix nil)
+  (setq flycheck-keymap-prefix nil)
+  (map! :leader "!" flycheck-command-map))
