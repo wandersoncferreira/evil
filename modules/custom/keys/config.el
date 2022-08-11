@@ -14,6 +14,7 @@
 
 ;; set registers
 (set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))
+(set-register ?b '(file . "~/org/denote/20220810T182437--bookmarks__bookmarks.org"))
 
 ;; disabling bindings
 (map! :leader
