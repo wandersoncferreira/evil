@@ -2,7 +2,7 @@
 
 (use-package! denote
   :init
-  (setq denote-directory (expand-file-name "~/org")
+  (setq denote-directory (expand-file-name "~/org/denote")
         denote-known-keywords
         '("emacs"
           "programming lang"

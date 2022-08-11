@@ -51,6 +51,8 @@
 
        :email
        :app
+       rss               ; emacs as an RSS reader
+       irc               ; how neckbeards socialize
 
        :config
        (default +bindings +smartparens)
@@ -71,12 +73,15 @@
         +code-review
         +spotify
         +oblique)
+       orgmode
        parenthesis
        projects
        rst
        self
        skin
        (whatever
-        +screencast)
+        +screencast
+        +feeds
+        +finance)
        wicked
        (work +cisco))

@@ -25,7 +25,6 @@
 (map! :leader
       "bw" #'bk/bitwarden)
 
-
 (when (featurep! +finance)
   (use-package! ledger-mode
     :mode ("\\.dat\\'")
@@ -50,3 +49,18 @@
             ("reg" "%(binary) -f %(ledger-file) reg")
             ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
             ("account" "%(binary) -f %(ledger-file) reg %(account)")))))
+
+(when (featurep! +feeds)
+  (after! elfeed
+    (setq elfeed-feeds
+          '(("https://memex.marginalia.nu/log/feed.xml" blog)
+            ("http://nullprogram.com/feed/" blog dev)
+            ("https://blog.cryptographyengineering.com/feed/" blog crypto)
+            ("https://astralcodexten.substack.com/feed/" blog philosophy)))
+
+    ;; should not do this.. but memex does not support HTTP and
+    ;; the SSL certificate is not updated.
+    (setq elfeed-curl-extra-arguments '("--insecure")))
+
+  ;; automatically update on elfeed-search
+  (add-hook 'elfeed-search-mode-hook #'elfeed-update))
