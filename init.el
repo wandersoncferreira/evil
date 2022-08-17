@@ -52,7 +52,6 @@
        :email
        :app
        rss               ; emacs as an RSS reader
-       irc               ; how neckbeards socialize
 
        :config
        (default +bindings +smartparens)
@@ -84,4 +83,5 @@
         +feeds
         +finance)
        wicked
-       (work +cisco))
+       (work
+        +cisco))
