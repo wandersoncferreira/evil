@@ -16,6 +16,7 @@
      (lsp-lens-mode nil lsp-lens)
      (clj-refactor-mode nil clj-refactor)
      (visual-line-mode nil simple)
+     (evil-ledger-mode nil evil-ledger)
      (format-all-mode nil format-all)
      (vi-tilde-fringe-mode nil vi-tilde-fringe)
      (dtrt-indent-mode nil dtrt-indent)
@@ -123,7 +124,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-modus-vivendi)
+(enable-modus-operandi)
 
 (map! :leader
       :desc "Delete other windows" "wo" #'delete-other-windows

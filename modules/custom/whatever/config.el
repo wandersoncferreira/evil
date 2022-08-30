@@ -13,7 +13,7 @@
           ("EST5EDT" "Durham")
           ("MST7MDT" "Calgary"))))
 
-(when (featurep! +screencast)
+(when (modulep! +screencast)
   (use-package! gif-screencast
     :defer t
     :commands gif-screencast
@@ -25,13 +25,13 @@
 (map! :leader
       "bw" #'bk/bitwarden)
 
-(when (featurep! +finance)
+(when (modulep! +finance)
   (use-package! ledger-mode
     :mode ("\\.dat\\'")
     :config
     (setq ledger-schedule-file "~/org/ledger/ledger-2022.dat"
           ledger-reports
-          '(("netcash" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --current bal ^assets:bank ^assets:crypto liabilities:creditcard")
+          '(("netcash" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --current bal ^assets liabilities")
             ("sports" "ledger [[ledger-mode-flags]] -f %(ledger-file) -X R$ --current bal ^expenses:sports")
             ("doctor" "ledger [[ledger-mode-flags]] -f %(ledger-file) -X R$ --current bal ^expenses:doctor")
             ("apartamento-mae" "ledger [[ledger-mode-flags]] -f %(ledger-file) -X R$ -S date --current -w reg ^liabilities:apartment:mother")
@@ -50,13 +50,18 @@
             ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
             ("account" "%(binary) -f %(ledger-file) reg %(account)")))))
 
-(when (featurep! +feeds)
+(when (modulep! +feeds)
   (after! elfeed
-    (setq elfeed-feeds
+    (setq elfeed-search-filter "@4-week-ago +unread"
+          elfeed-feeds
           '(("https://memex.marginalia.nu/log/feed.xml" blog)
             ("http://nullprogram.com/feed/" blog dev)
             ("https://blog.cryptographyengineering.com/feed/" blog crypto)
-            ("https://astralcodexten.substack.com/feed/" blog philosophy)))
+            ("https://www.lesswrong.com/feed.xml?view=curated-rss" blog)
+            ("https://api.quantamagazine.org/feed/" magazine)
+            ("https://espial.esy.fun/u:yogsototh/feed.xml" bookmarks yann)
+            ("https://www.masteringemacs.org/feed" blog emacs)
+            ))
 
     ;; should not do this.. but memex does not support HTTP and
     ;; the SSL certificate is not updated.

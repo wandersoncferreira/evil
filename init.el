@@ -45,6 +45,8 @@
        plantuml          ; diagrams for confusing people more
        (java +lsp)       ; the poster child for carpal tunnel syndrome
        org               ; organize your plain life in plain text
+       ocaml             ; an objective camel
+       python            ; beautiful is better than ugly
        ledger            ; be audit you can be
        (rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (haskell +lsp)    ; a language that's lazier than I am

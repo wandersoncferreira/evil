@@ -3,7 +3,7 @@
 (use-package! denote
   :init
   (setq denote-directory (expand-file-name "~/org/denote")
-        denote-file-type 'markdown-yaml
+        denote-file-type nil
         denote-known-keywords
         '("emacs"
           "programming lang"
