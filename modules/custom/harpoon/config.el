@@ -12,6 +12,18 @@
       (bookmark-jump ,bm-name)
       (message "Harpooned!"))))
 
+(defun bk/make-harpoon-abbrev-name ()
+  (let ((name (bookmark-in-project--name-impl bookmark-alist))
+        (proj-dir (bookmark-in-project--project-root-impl)))
+    (bookmark-in-project--name-abbrev proj-dir name)))
+
+(defun bk/harpoon-set (harpoon-name harpoon-key fn-number)
+  (bookmark-in-project--without-messages
+   (bookmark-set harpoon-name))
+  (map! :leader
+        harpoon-key
+        (bk/make-jump-to-harpoon fn-number harpoon-name)))
+
 (defun bk/make-set-to-harpoon (fn-number)
   "Create set Harpoon functions."
   (message "Loading harpon setters...")
@@ -20,17 +32,11 @@
    `(lambda ()
       (interactive)
       (bookmark-in-project--has-file-name-or-error)
-      (let* ((name (bookmark-in-project--name-impl bookmark-alist))
-             (proj-dir (bookmark-in-project--project-root-impl))
-             (abbrev-name (bookmark-in-project--name-abbrev proj-dir name))
+      (let* ((abbrev-name (bk/make-harpoon-abbrev-name))
              (harpoon-name (concat abbrev-name ":harpoon-" ,fn-number))
              (harpoon-key (concat harpoon-prefix-key ,fn-number)))
-        (bookmark-in-project--without-messages
-         (bookmark-set harpoon-name))
-        (message "Harpoon %s set" ,fn-number)
-        (map! :leader
-              harpoon-key
-              (bk/make-jump-to-harpoon ,fn-number harpoon-name))))))
+        (bk/harpoon-set harpoon-name harpoon-key ,fn-number)
+        (message "Harpoon %s set" ,fn-number)))))
 
 (defun bk/load-harpoon-keys-in-project (&optional project-dir)
   "Harpoons are persistent across emacs sessions.
@@ -78,9 +84,8 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
         "h5" (harpoon/noop 5)))
 
 (defun harpoon-update-bookmark-as-you-edit (&optional _)
-  (let* ((name (bookmark-in-project--name-impl bookmark-alist))
-         (proj-dir (bookmark-in-project--project-root-impl))
-         (abbrev-name (bookmark-in-project--name-abbrev proj-dir name))
+  (let* ((proj-dir (bookmark-in-project--project-root-impl))
+         (abbrev-name (bk/make-harpoon-abbrev-name))
          (bm-list
           (sort
            (bookmark-in-project--filter-by-project proj-dir bookmark-alist)
@@ -94,20 +99,14 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
     (save-excursion
       (goto-last-change 1)
       (dolist (bm bm-in-current-file)
-        (let* ((name (bookmark-in-project--name-impl bookmark-alist))
-               (proj-dir (bookmark-in-project--project-root-impl))
-               (abbrev-name (bookmark-in-project--name-abbrev proj-dir name))
+        (let* ((abbrev-name (bk/make-harpoon-abbrev-name))
                (harpoon-number (cadr (split-string (car bm) ":harpoon-")))
                (harpoon-key (concat harpoon-prefix-key harpoon-number))
                (harpoon-name (concat abbrev-name ":harpoon-" harpoon-number)))
           ;; remove old bookmark
           (bookmark-delete (car bm))
           ;; create new bookmark in last edit position
-           (bookmark-in-project--without-messages
-            (bookmark-set harpoon-name))
-           (map! :leader
-                 harpoon-key
-                 (bk/make-jump-to-harpoon harpoon-number harpoon-name)))))))
+          (bk/harpoon-set harpoon-name harpoon-key harpoon-number))))))
 
 (use-package! goto-chg
   :config
