@@ -77,16 +77,59 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
         "h4" (harpoon/noop 4)
         "h5" (harpoon/noop 5)))
 
+(defun harpoon-update-bookmark-as-you-edit (&optional _)
+  (let* ((name (bookmark-in-project--name-impl bookmark-alist))
+         (proj-dir (bookmark-in-project--project-root-impl))
+         (abbrev-name (bookmark-in-project--name-abbrev proj-dir name))
+         (bm-list
+          (sort
+           (bookmark-in-project--filter-by-project proj-dir bookmark-alist)
+           #'bookmark-in-project--compare))
+         (bm-in-current-file
+          (-filter (lambda (bm)
+                     (string-match-p
+                      (car (split-string abbrev-name ":"))
+                      (car bm)))
+                   bm-list)))
+    (save-excursion
+      (goto-last-change 1)
+      (dolist (bm bm-in-current-file)
+        (let* ((name (bookmark-in-project--name-impl bookmark-alist))
+               (proj-dir (bookmark-in-project--project-root-impl))
+               (abbrev-name (bookmark-in-project--name-abbrev proj-dir name))
+               (harpoon-number (cadr (split-string (car bm) ":harpoon-")))
+               (harpoon-key (concat harpoon-prefix-key harpoon-number))
+               (harpoon-name (concat abbrev-name ":harpoon-" harpoon-number)))
+          ;; remove old bookmark
+          (bookmark-delete (car bm))
+          ;; create new bookmark in last edit position
+           (bookmark-in-project--without-messages
+            (bookmark-set harpoon-name))
+           (map! :leader
+                 harpoon-key
+                 (bk/make-jump-to-harpoon harpoon-number harpoon-name)))))))
+
+(use-package! goto-chg
+  :config
+  (require 'goto-chg))
+
 (use-package! bookmark-in-project
   :init
   (setq bookmark-in-project-verbose-cycle nil
         bookmark-in-project-verbose-toggle nil
         bookmark-in-project-name-fontify #'identity)
   :config
+  ;; create harpoons and reset global values
   (add-hook 'after-init-hook
             (lambda ()
               (bk/create-harpoons)
               (bk/reset-global-harpoons)))
+
+  ;; update harpoon position when changing buffer/window
+  (add-hook 'window-buffer-change-functions #'harpoon-update-bookmark-as-you-edit)
+
+  ;; update harpoon position when saving a buffer
+  (add-hook 'after-save-hook #'harpoon-update-bookmark-as-you-edit)
 
   (advice-add '+workspace/switch-to
               :after
