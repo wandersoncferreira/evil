@@ -1,0 +1,13 @@
+#+title: Doom Works Only In Vim
+
+Works in Vim, but seems not to work on Doom
+
+- [ ] Global marks are preserved between sessions in Vim
+- [ ] :help <doc-entry> ---- Vim docs not available :/
+- [ ] :changes doesn't work
+- [X] =[I= show lines with matching word under cursor
+  - now, this binding will call =+vertico/search-symbol-at-point= function which
+    is an improvement over Vim's default behavior due to interactivity
+- [ ] the commands ='[=, and =']= does not work.
+  - These are marks defined by Vim to jump to last yank/changed text
+  - we can use ~goto-last-change~ or ~g;~ command though

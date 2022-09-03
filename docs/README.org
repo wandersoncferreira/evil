@@ -21,6 +21,10 @@ There is no clear rationale for why each of the topics below are in separate
 files other than my desired to study them deeper at some moment.
 
 - [[file:doom.org][Doom]]
+- [[file:doom-projects.org][Doom Projects]]
+- [[file:doom-evil-collections.org][Doom Evil Collections]]
+- [[file:doom-works-only-in-vim.org][Doom Works only in Vim]]
+- [[file:doom-docs-for-that-little-voice.org][Doom Docs for that little voice on your shoulders]]
 - [[file:vim-marks.org][Vim Marks]]
 - [[file:vim-text-objects.org][Vim Text Objects]]
 - [[file:vim-motions.org][Vim Motions]]
@@ -36,17 +40,6 @@ files other than my desired to study them deeper at some moment.
 - [[file:vim-daily-tricks.org][Vim Daily Tricks - from Twitter]]
 
 If you have contributions, please open a PR.
-
-* Works in Vim, but seems not to work on Doom [1/5]
-- [ ] Global marks are preserved between sessions in Vim
-- [ ] :help <doc-entry> ---- Vim docs not available :/
-- [ ] :changes doesn't work
-- [X] =[I= show lines with matching word under cursor
-  - now, this binding will call =+vertico/search-symbol-at-point= function which
-    is an improvement over Vim's default behavior due to interactivity
-- [ ] the commands ='[=, and =']= does not work.
-  - These are marks defined by Vim to jump to last yank/changed text
-  - we can use ~goto-last-change~ or ~g;~ command though
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
