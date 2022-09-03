@@ -16,35 +16,6 @@ You know what improves productivity? *Mastering motions and operators.*
 - history of past searches: ~q/~
 - ~ctrl-^~ will send you back to the previous buffer you were in
 
-** Anti-Patterns
-*** If you are pressing the same key more than twice, you're doing it wrong
-- You should either prefix a command with the number of times you want to repeat
-it or look for a shorter command which does the same thing (there always is).
-
-*** Moving one line at a time
-- use relative line numbers instead. Using relative line numbers will tell you how
-many lines above and below the cursor the other lines are. Knowing that you can
-then use RELATIVE_NUMBER + j/k to jump straight to that line.
-  - I removed all line numbers from Doom.
-- / to search for a word is usually faster than moving the cursor.
-- to move up/down multiple lines I then use ~CTRL+u~ and ~CTRL+d~.
-
-*** Moving sideways one character at a time
-
-- use ~f~ to move to a particular character (forward) and ~t~ to move to place right before a character (forward)
-- use ~F~ and ~T~ to move backwards
-
-*** Deleting text before inserting new text
-*** Spending too much time in insert mode
-*** Using / to search for the word under cursor
-- Instead use * (to search forward) and # (to search backward)
-
-*** Using macros for simple replacements
-- Many people record a macro to change multiple lines when they could be using a
-RegEx find and replace instead
-- To invert a function's argument's order throughout all of a file's call, you could use:
-  - :%s/myfun(\(.*\),\(.*\))/myfun(\2,\1)/g
-
 * Dive in
 There is no clear rationale for why each of the topics below are in separate
 files other than my desired to study them deeper at some moment.
@@ -61,6 +32,7 @@ files other than my desired to study them deeper at some moment.
 - [[file:vim-macros.org][Vim Macros]]
 - [[file:vim-g-commands.org][Vim G Commands]]
 - [[file:vim-registers.org][Vim Registers]]
+- [[file:vim-antipatterns.org][Vim Antipatterns]]
 
 If you have contributions, please open a PR.
 
