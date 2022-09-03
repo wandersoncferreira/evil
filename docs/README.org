@@ -2,15 +2,14 @@
 
 Vim is fundammentally built on command composability.
 
-It favors small, general-purpose commands that can be combined with objects to
+Vim favors small, general-purpose commands that can be combined with objects to
 compose larger commands.
 
 You know what improves productivity? *Mastering motions and operators.*
 
 * Vim
-
-- use the more general text objects (iw rather than w)
-- prefer text objects to motions when possible
+- use the more general text objects (~iw~ rather than ~w~)
+- prefer text objects over motions when possible
 - visual mode is a smell because it breaks repeatability
 - don't use two sentences where one will do it
 - to avoid using Esc we can press ~C-[~ or ~jk~ in Doom
@@ -18,7 +17,6 @@ You know what improves productivity? *Mastering motions and operators.*
 - ~ctrl-^~ will send you back to the previous buffer you were in
 
 ** Anti-Patterns
-
 *** If you are pressing the same key more than twice, you're doing it wrong
 - You should either prefix a command with the number of times you want to repeat
 it or look for a shorter command which does the same thing (there always is).
@@ -48,9 +46,8 @@ RegEx find and replace instead
   - :%s/myfun(\(.*\),\(.*\))/myfun(\2,\1)/g
 
 * Dive in
-
 There is no clear rationale for why each of the topics below are in separate
-files other than my desired to study then deeper at some moment.
+files other than my desired to study them deeper at some moment.
 
 - [[file:doom.org][Doom]]
 - [[file:vim-marks.org][Vim Marks]]
@@ -65,20 +62,20 @@ files other than my desired to study then deeper at some moment.
 - [[file:vim-g-commands.org][Vim G Commands]]
 - [[file:vim-registers.org][Vim Registers]]
 
-If you have good corrections or contributions, please open a PR.
+If you have contributions, please open a PR.
 
 * Works in Vim, but seems not to work on Doom [1/5]
 - [ ] Global marks are preserved between sessions in Vim
-- [ ] :help <doc-entry> Vim docs not available :/
+- [ ] :help <doc-entry> ---- Vim docs not available :/
 - [ ] :changes doesn't work
 - [X] =[I= show lines with matching word under cursor
   - now, this binding will call =+vertico/search-symbol-at-point= function which
     is an improvement over Vim's default behavior due to interactivity
-- [ ] the commands ='[=, and =']= does not work. Marks preset by Vim to jump to last yank/changed text
-
+- [ ] the commands ='[=, and =']= does not work.
+  - These are marks defined by Vim to jump to last yank/changed text
+  - we can use ~goto-last-change~ or ~g;~ command though
 
 * Vim Daily Tricks & Vim Tricks Twitter threads
-
  [[file:vim-daily-tricks.org][Page to follow Vim Daily Tips and Vim Tricks on twitter.]]
 
 * Resources
