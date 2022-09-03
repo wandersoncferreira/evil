@@ -1,0 +1,286 @@
+#+title: Doom Docs For That Little Voice
+
+* Documentation for that little voice on your shoulder!
+
+I fear not knowing what is installed *my* Emacs instance.
+
+This is definitely bothering me on Doom Emacs now, but before going to the
+self-degradation route of "do-it-yourself because you can", let me try
+something new.
+
+I will document every aspect of Doom installed packages. My goal is to get
+familiar with what is around. Therefore, if I am unsure about
+what a package does or if I want to keep it or not then just *remove it*.
+
+The current statuses for each package are:
+
+| Status | Meaning                                             |
+|--------+-----------------------------------------------------|
+| ✅     | package kept                                        |
+| ❌     | package removed                                     |
+| ⚠️     | package removed, but under consideration            |
+| ☑️     | package kept, something broke on removal            |
+| 💠     | package kept, hard dependency of some other package |
+
+
+** Doom CORE
+Doom is basically broken down into ~core~ and ~modules~ at a very high level.
+All the code in ~core~ are related to sane defaults, Doom's foundation on
+package management, projects, and a feel more pieces.
+
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/d6d1e600c0b22ce323558002eccdaac6edbcf2b2/core/core-projects.el#L22][projectile]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-keybinds.el#L214][which-key]]
+  - Only display on ~C-h~ press after a prefix
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L713][ws-butler]]
+- [✅] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L585][smartparens]]
+- [✅] gcmh
+- [✅] pcre2el
+  - Improve working with Emacs regexp
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L481][highlight-numbers]]
+- [❌] [[https://github.com/lastquestion/explain-pause-mode][explain-pause-mode]] ;; top, for Emacs
+- [❌] [[https://github.com/Fanael/rainbow-delimiters][rainbow-delimiters]]
+- [❌] project
+- [❌] [[https://github.com/magnars/expand-region.el][expand-region.el]]
+- [❌] [[https://github.com/rejeep/drag-stuff.el][drag-stuff.el]]
+- [❌] [[https://github.com/emacsmirror/paredit][paredit]]
+- [❌] dtrt-indent
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-ui.el#L438][all-the-icons]]
+- [❌] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L527][helpful]]
+- [❌] [[https://github.com/iqbalansari/restart-emacs][restart-emacs]]
+- [✅️️] [[https://github.com/doomemacs/doomemacs/blob/master/core/core-editor.el#L429][better-jumper]]
+  - I felt the difference in my first day working without this package.
+  - The package seems pretty nice and the functionality is important to daily
+    usage when coding. Jumping back and forth a definition is not as reliable
+    without this package.
+
+** Doom MODULES
+*** vertico
+- [✅] [[https://github.com/minad/vertico][vertico]]
+- [✅] [[https://github.com/oantolin/orderless][orderless]]
+  - It is possible to live without orderless and configuring ~completion-styles~
+    option to consider ~partial-completion~ and ~flex~, however ~orderless~
+    is a lot faster. Let's keep it around.
+  - Amazing! I learned how to use ~orderless~ in company completion UI.
+    As ~SPC~ takes us out of completion, let's use ~&~ as the separator.
+  - The separator also works with ~corfu~ now that I ditched ~company~ for a while
+- [☑️] consult
+  - Project search via ~SPC /~ was broken 
+- [⚠️] consult-dir
+- [⚠️] consult-flycheck
+- [⚠️] embark
+- [⚠️] embark-consult
+- [⚠️] consult-dir
+- [✅️] wgrep
+  - wgrep allows you to edit a grep buffer and apply those changes to the
+    file buffer like ~sed~ interactively. No need to learn sed script, just
+    learn Emacs
+  - example of workflow:
+    - ~projectile-grep~
+    - ~i~
+    - ~:s/<pattern>/<new-pattern>/g~
+    - ~ZZ~
+- [✅] marginalia
+  - This is useful because as there is a bug with ~uniquify~ and ~persp-mode~
+     used for workspaces, then I can't really know the difference for several
+     buffers opened with the same name. Therefore, marginalia adds sufficient
+     annotation to make this way better.
+
+*** doom
+- [❌] doom-themes
+- [❌] solaire-mode
+
+*** popup
+Very amazing package developed by Doom team. I'm very interested in digging
+deeper here. Taming popup has been one of my worst skills in Emacs.
+
+I enabled ~+all~ special buffers to be handled as popups. Very optimistic about this.
+
+*** vc-gutter
+- [✅️] git-gutter-fringe
+
+*** hl-todo
+- [❌️] hl-todo
+
+*** workspaces
+- [✅] persp-mode
+  - I added a couple of modifications to include special buffers
+    from project to the enabled workspace at the time
+
+*** evil
+Module responsible for bringing Vim over to the party.
+- [✅] evil
+  - There are some dependencies required by ~evil~ stated in their README page:
+  - Evil requires any of the following for ~C-r~
+    - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
+    - However, Doom also uses undo-fu-session to save/restore undo history. I'm not interested in this.
+      - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
+- [⚠️] evil-args
+- [⚠️] evil-easymotion
+- [⚠️] evil-embrace
+- [✅] evil-escape
+- [✅️] evil-exchange
+  - I'm extremely happy I'm going through all of this! What a nice package!!!
+  - [[http://vimcasts.org/episodes/swapping-two-regions-of-text-with-exchange-vim/][learn more about this here]]
+  - be aware that in Doom the keybinding is bound to ~gx~ instead of ~cx~ as in vim-exchange. Yeah, the way evil works... this is a gem!
+- [⚠️] evil-indent-plus
+- [⚠️] evil-lion
+- [✅️] evil-nerd-commenter
+  - Comment code efficiently!
+- [❌️] evil-numbers
+  - :/ I think I never had to increase/decrease numbers by unit before
+- [⚠️] evil-snipe
+- [✅️] evil-surround
+  - I use this plugin everytime! I'm not using smartparens to handle surrounding.
+  - Actually, I use ~add surrounding~ (~yS<textobject>~) a lot but not the next ones:
+    - change surrounding: ~cs<old-textobject><new-textobject>~
+    - delete surrounding: ~ds<textobject>~
+- [⚠️] evil-textobj-anyblock
+- [✅️] evil-traces
+  - It's useful to visualize the output of some commands before applying it
+  - I'm not so good at Ex commands in Vim, so I generally like visual hints that I'm not doing something wrong.
+- [❌️️] evil-visualstar
+  - Didn't see any improvement in the behavior of plain ~*~ or ~#~
+  - tbh, I think I'm not a power user of Visual mode so I don't see the benefit here.
+- [⚠️] exato
+- [⚠️] evil-quick-diff
+- [✅] evil-collection
+
+*** file-templates
+- [✅] yasnippet
+
+*** multiple-cursors
+- [⚠] evil-multiedit
+- [⚠️️] evil-mc
+- [⚠️️] multiple-cursors
+
+*** snippets
+- [✅] yasnippet
+- [⚠️️] auto-yasnippet
+- [⚠️️] doom-snippets
+
+*** dired
+- [❌] diredfl
+- [✅️] dired-git-info
+  - This is nice specially because it comes disabled and I can toggle using ~)~ in Dired buffer
+  - However, I'm still having double thoughts about its usefulness...
+    I never needed this feature, but who knows now that I'm aware of it
+- [❌] diff-hl
+- [❌] fd-dired
+- [❌] dired-rsync
+
+*** electric
+No external package! Small customization from Doom also.
+
+*** vc
+- [💠] browse-at-remote
+  - After removing the package, Doom didn't startup correctly.
+-️️ [⚠️️] git-commit
+- [✅] git-timemachine
+- [⚠] git-modes
+
+*** undo
+These packages are required by ~evil~ in order to enable ~evil-redo~ (~Ctrl-r~) properly.
+ - [✅] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L3][undo-fu]]
+   - Simple, stable linear undo with redo for Emacs.
+   - Changes compared to Emacs undo:
+     - Redo will not pass the initial undo action
+     - Redo winn not undo
+     - These constraints can be disabled by pressing ~C-g~ before undo or redo.
+   - Doom increases the undo-limit, I'd like to revert that to defaults.
+     Look for the default values at ~preferences/+doom.el~
+ - [❌] [[https://github.com/doomemacs/doomemacs/blob/master/modules/emacs/undo/config.el#L27][undo-fu-session]]
+
+*** eshell
+- [⚠️️] eshell-z
+- [⚠️️] eshell-did-you-mean
+- [⚠️️] esh-help
+- [⚠️️] shrink-path
+- [⚠️️] eshell-up
+- [☑️] eshell-syntax-highlighting
+
+*** syntax
+- [✅️] flycheck
+- [⚠️] flycheck-popup-tip
+
+*** lookup
+- [✅️] dumb-jump
+- [✅️] request
+  - For online lookup
+
+*** magit
+- [✅️] magit
+- [❌️] magit-gitflow
+  - Oh, I'm glad I don't work following gitflow anymore
+- [❌️] magit-todos
+- [😎] code-review
+  - I'm the maintainer, so yeah! I should use it.
+*** macos
+- [❌] ns-auto-titlebar
+- [❌] osx-trash
+
+*** clojure
+- [✅] clojure-mode
+- [✅] clj-refactor
+- [✅] cider
+  - reading its documentation always teaches me something new
+  - I could not make the fuzzy completion work with CIDER.
+    The instructions from CIDER docs didn't work
+- [✅] flycheck-clj-kondo
+
+*** emacs-lisp
+- [❌] macrostep
+- [❌] overseer
+- [❌] elisp-def
+- [❌] elisp-demos
+
+*** markdown
+- [✅] markdown-mode
+- [✅] edit-indirect
+- [✅] evil-markdown
+  - Let's keep ~evil-everywhere~ motto!
+- [✅] grip
+  - Displays Github-flavored markdown in xwidget or browser
+- [❌] markdown-toc
+
+*** org
+- [✅] org
+- [✅] evil-org
+- [❌] org-roam
+- [✅] ox-hugo
+- [✅] org-journal
+- [⚠] org-contrib
+- [❌] avy
+- [❌] org-yt
+-️ [⚠️️] ox-clip
+- [⚠️️] orgit
+- [⚠️️] toc-org
+- [⚠️️] org-cliplink
+- [💠] htmlize
+
+*** plantuml
+- [✅] plantuml-mode
+- [✅] flycheck-plantuml
+
+*** config
+- [❌] avy
+- [❌] drag-stuff
+- [❌] link-hint
+- [❌] expand-region
+
+
+* The little voice is getting louder...
+
+Yeap, now it's time for the keybindings. Some modes add lots of bindigs with
+custom functions and whatnot.
+
+Let's start documenting a few obvious ones:
+
+| keybinding | description          |
+|------------+----------------------|
+| spc + ret  | jump to bookmark     |
+| spc + spc  | find file in project |
+| spc + y    | kill-ring history    |
+| spc + ~    | toggle last popup    |
+
+
+All the disabled values can be found [[https://github.com/wandersoncferreira/evil/blob/main/preferences/%2Bdoom.el#L97][here]].
