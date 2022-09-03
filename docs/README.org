@@ -33,6 +33,7 @@ files other than my desired to study them deeper at some moment.
 - [[file:vim-g-commands.org][Vim G Commands]]
 - [[file:vim-registers.org][Vim Registers]]
 - [[file:vim-antipatterns.org][Vim Antipatterns]]
+- [[file:vim-daily-tricks.org][Vim Daily Tricks - from Twitter]]
 
 If you have contributions, please open a PR.
 
@@ -46,9 +47,6 @@ If you have contributions, please open a PR.
 - [ ] the commands ='[=, and =']= does not work.
   - These are marks defined by Vim to jump to last yank/changed text
   - we can use ~goto-last-change~ or ~g;~ command though
-
-* Vim Daily Tricks & Vim Tricks Twitter threads
- [[file:vim-daily-tricks.org][Page to follow Vim Daily Tips and Vim Tricks on twitter.]]
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
