@@ -1,8 +1,10 @@
 #+title: Doom Projects
 
-These are some commands from ~projectile~ worth studying for my use-cases:
+Doom basic rely on [[https://github.com/bbatsov/projectile][Projectile]] to handle all project related functionalities
+under =SPC p= prefix.
 
-| Key     | Description                   |
-|---------+-------------------------------|
-| s-p s g | Grep (search for text/regexp) |
-| s-p r   | replace in project            |
+| Command   | Description                                    |
+|-----------+------------------------------------------------|
+| spc-p + e | edit .dir-locals file from project             |
+| spc-p + i | invalidate project cache                       |
+| spc-p + t | toggle between project implementation and test |

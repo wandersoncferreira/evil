@@ -6,13 +6,11 @@ same time the most fun and biggest challenge of any Emacs installation, Doom has
 the advantage to be a sink for several hours of digging into very specific
 corners of Emacs. Let's all leverage that.
 
-*General recommendations:*
+* General recommendations:
+ - Use REPL and Eshell toggle functionality: =SPC o e=
+ - When ~Too many open pipes~ error pops up run: ~M-x file-notify-rm-all-watchers~
 
-1. Use REPL and Eshell toggle functionality: =SPC o e=
-2. When ~Too many open pipes~ error pops up run: ~M-x file-notify-rm-all-watchers~
-
-
-*Commands:*
+* Commands:
 
 | Command      | Description                             |
 |--------------+-----------------------------------------|
@@ -30,7 +28,6 @@ corners of Emacs. Let's all leverage that.
 | SPC w Ctrl p | jumps to the last window used           |
 
 * How to perform project-search and replace?
-
 - =spc s p= launch a project text search
 - =c-;= to run =embark-act=
 - =E= to run =embark-export=
@@ -39,12 +36,12 @@ corners of Emacs. Let's all leverage that.
 - =Z Z= to write all the changes to their respective files or =Z Q= to abort search and replace
 
 * Modules / Layers
+Doom has several modules enabling different features across Emacs.
 
-Doom has several modules enabling different features across Emacs. This section
-attempts to document the major functionalities I rely on in a daily basis
+This section attempts to document the major functionalities I rely on in a daily
+basis
 
 ** Search
-
 If you press =SPC= and wait for a few seconds, the =which-key= panel will pop
 up. We can already see a couple of good search options, but the majority of the
 search functionality is behind =SPC s=.
@@ -56,19 +53,7 @@ search functionality is behind =SPC s=.
 | SPC + /   | search in the whole project                           |
 | SPC + s j | search in the jumplist                                |
 
-** Project
-
-Doom basic rely on [[https://github.com/bbatsov/projectile][Projectile]] to handle all project related functionalities
-under =SPC p= prefix.
-
-| Command     | Description                                    |
-|-------------+------------------------------------------------|
-| spc + p + e | edit .dir-locals file from project             |
-| spc + p + i | invalidate project cache                       |
-| spc + p + t | toggle between project implementation and test |
-
 ** Git timemachine
-
 The evil keybindings for git-timemachine are:
 
 | Command | Function                           |

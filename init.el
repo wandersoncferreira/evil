@@ -25,6 +25,8 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
+       eshell            ; the elisp shell that works everywhere
+
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
