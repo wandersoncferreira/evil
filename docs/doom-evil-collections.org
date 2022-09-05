@@ -1,15 +1,21 @@
 #+title: Doom Evil Collections
 
-* Rationale
+- Prefix keys: ~g~ and ~z~ are the ubiquituos prefix keys
+  - ~g~ generally stands for "go" and is best used for movements
+  - ~z~ is used for scrolling, folding, spell-checking and more
 
-Many special modes share the same set of similar actions. Those actions should share the same bindings across all modes whenever feasible.
+* Motions
+* Quitting (q, ZQ, ZZ)
+In Vim, ~q~ is for recording macros.
 
-** Motions
-** Quitting (q, ZQ, ZZ)
-In Vim, ~q~ is for recording macros. Vim quits with ~ZZ~ or ~ZQ~. In most Emacs special modes, it stands for quitting while macros are recorded/played with ~<f3>~ and ~<f4>~.
+Vim quits with ~ZZ~ or ~ZQ~. In most Emacs special modes, it stands for quitting
+while macros are recorded/played with ~<f3>~ and ~<f4>~.
 
 - Bind ~q~ and ~ZZ~ to ~quit-window~
 - Bind ~ZQ~ to ~evil-quit~
 
-** Refreshing / Reverting (gr)
+* Refreshing / Reverting (gr)
 - ~gr~ is used for refreshing in ~evil-magit~, ~evil-mu4e~, and more.
+
+* REPL (gz)
+If the mode has a Go To REPL-type command, set it to ~gz~

@@ -1,6 +1,5 @@
-#+title: Doom Docs For That Little Voice
+#+title: Doom Docs For That Little Voice on your shoulder
 
-* Documentation for that little voice on your shoulder!
 
 I fear not knowing what is installed *my* Emacs instance.
 

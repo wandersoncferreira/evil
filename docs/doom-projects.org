@@ -1,10 +1,10 @@
 #+title: Doom Projects
 
-Doom basic rely on [[https://github.com/bbatsov/projectile][Projectile]] to handle all project related functionalities
+Doom relies on [[https://github.com/bbatsov/projectile][Projectile]] to handle all project related functionalities
 under =SPC p= prefix.
 
 | Command   | Description                                    |
 |-----------+------------------------------------------------|
-| spc-p + e | edit .dir-locals file from project             |
-| spc-p + i | invalidate project cache                       |
-| spc-p + t | toggle between project implementation and test |
+| spc p + e | edit .dir-locals file from project             |
+| spc p + i | invalidate project cache                       |
+| spc p + t | toggle between project implementation and test |

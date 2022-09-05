@@ -4,7 +4,8 @@ A *mark* allows to record the current cursor position, then later we can return
 to it. They have one non-trivial problem, you can't easily see them while
 working on your document.
 
-- each file has a set of available marks identified by lowercase letters from =a= to =z=
+- each file has a set of available marks identified by lowercase letters from
+  =a= to =z=
 - global marks are identified by uppercase letters
 
 * Using marks
