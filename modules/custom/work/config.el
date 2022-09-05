@@ -1,6 +1,6 @@
 ;;; custom/work/config.el -*- lexical-binding: t; -*-
 
-(when (featurep! +cisco)
+(when (modulep! +cisco)
   (let* ((fname "landlord/emacs-at-work/cisco.el")
          (fpath (expand-file-name fname doom-private-dir)))
     (add-to-list 'load-path fpath)

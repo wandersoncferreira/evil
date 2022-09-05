@@ -1,9 +1,8 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; custom/landlord/packages.el
 
-(package! code-review :disable t)
 (package! code-review
-  :recipe (:local-repo "/../../../landlord/code-review"))
+  :recipe (:local-repo "../../../landlord/code-review"))
 
 (package! helm-spotify-plus
   :recipe (:local-repo "../../../landlord/helm-spotify-plus"))
