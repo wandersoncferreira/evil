@@ -34,5 +34,7 @@ constructs.
 
 This sentence has a hidden code block (function arg1 arg2)
 
+~gdii~ will comment all indentation
+
 * References
  - [[https://blog.carbonfive.com/vim-text-objects-the-definitive-guide/][Vim text objects the definitive guide]] - Jared Carroll blog post

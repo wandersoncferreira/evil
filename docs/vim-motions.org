@@ -6,31 +6,34 @@ These commands move the cursor position. The motion commands can be used after
 an [[file:vim-operators.org][operator]] command, to have the comand operate on the text that was moved over.
 
 
-| Commands    | Description                                           |
-|-------------+-------------------------------------------------------|
-| I           | start insert mode in the beg of a line                |
-| A           | start insert mode in the end of a line                |
-| H           | high                                                  |
-| M           | middle                                                |
-| L           | low                                                   |
-| zt          | put the cursor positon to top                         |
-| zz          | put the cursor position to middle                     |
-| zb          | put the cursor position to bottom                     |
-| Ctrl-U      | scroll up half screen                                 |
-| Ctrl-B      | scroll up full screen                                 |
-| Ctrl-Y      | scroll up incrementally                               |
-| Ctrl-D      | scroll down half screen                               |
-| Ctrl-F      | scroll down full screen                               |
-| Ctrl-E      | scroll down incrementally                             |
-| f/F and t/T | find characters                                       |
-| +           | to go to the next line                                |
-| ^           | goto the first non-blank character of the line        |
-| g_          | goto the first non-blank character of the line        |
-| %           | goto the corresponding (, [, or {                     |
-| *           | goto the next occurrence of the word under cursor     |
-| #           | goto the previous occurrence of the word under cursor |
-| ]           | next-*                                                |
-| [           | previous-*                                            |
+| Commands        | Description                                           |
+|-----------------+-------------------------------------------------------|
+| I               | start insert mode in the beg of a line                |
+| A               | start insert mode in the end of a line                |
+| H               | high                                                  |
+| M               | middle                                                |
+| L               | low                                                   |
+| zt              | put the cursor positon to top                         |
+| zz              | put the cursor position to middle                     |
+| zb              | put the cursor position to bottom                     |
+| Ctrl-U          | scroll up half screen                                 |
+| Ctrl-B          | scroll up full screen                                 |
+| Ctrl-Y          | scroll up incrementally                               |
+| Ctrl-D          | scroll down half screen                               |
+| Ctrl-F          | scroll down full screen                               |
+| Ctrl-E          | scroll down incrementally                             |
+| Ctrl-o / Ctrl-i | cycle through ~:jumps~                                |
+| f/F and t/T     | find characters                                       |
+| +               | to go to the next line                                |
+| ^               | goto the first non-blank character of the line        |
+| g_              | goto the first non-blank character of the line        |
+| %               | goto the corresponding (, [, or {                     |
+| *               | goto the next occurrence of the word under cursor     |
+| #               | goto the previous occurrence of the word under cursor |
+| ]               | next-*                                                |
+| [               | previous-*                                            |
+| [m              | move to the beginning of the current method           |
+| ]m              | move to the beginning of the next method              |
 
 
 After applying the operator the cursor is mostly left at the start of the text

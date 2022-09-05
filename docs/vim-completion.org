@@ -10,8 +10,9 @@ in Doom:
 | C-x C-o | invoke complete-at-point function |
 | C-x C-p | complete previous symbol at point |
 | C-x C-s | complete snippet                  |
+| C-w     | erase the last inserted word      |
+| C-u     | erase the last inserted line      |
 | C-x s   | complete spelling suggestions     |
-
 
 There's yet a simple completion in any text by hit =Ctrl-n= in insert mode.
 There is also a backward search using =Ctrl-p=.

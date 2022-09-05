@@ -2,23 +2,25 @@
 
 The following operators are available:
 
-| Command | Description                        |
-|---------+------------------------------------|
-| c       | change                             |
-| d       | delete                             |
-| y       | yank into register                 |
-| ~       | swap case                          |
-| g~      | swap case                          |
-| gu      | make lowercase                     |
-| gU      | make uppercase                     |
-| !       | filter through an external program |
-| =       | filter through C-indenting         |
-| ==      | indent the current line            |
-| gq      | text formatting                    |
-| >       | shift right                        |
-| <       | shift left                         |
-| zf      | define a fold                      |
-| d])     | delete until the next close parens |
+| Command | Description                           |
+|---------+---------------------------------------|
+| c       | change                                |
+| d       | delete                                |
+| y       | yank into register                    |
+| ~       | swap case                             |
+| g~      | swap case                             |
+| gu      | make lowercase                        |
+| gU      | make uppercase                        |
+| !       | filter through an external program    |
+| =       | filter through C-indenting            |
+| ==      | indent the current line               |
+| gq      | text formatting                       |
+| >       | shift right                           |
+| <       | shift left                            |
+| zf      | define a fold                         |
+| d])     | delete until the next close parens    |
+| M-d     | iedit select the current word forward |
+| M-D     | iedit select the next word backward   |
 
 If the motion includes a count and the operator also had a count before it, then
 the two counts are multiplied. For example: "2d3w" deletes six words.
