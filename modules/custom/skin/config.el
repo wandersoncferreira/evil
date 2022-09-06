@@ -124,7 +124,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-modus-operandi)
+(enable-modus-vivendi)
 
 (map! :leader
       :desc "Delete other windows" "wo" #'delete-other-windows
