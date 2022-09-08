@@ -11,3 +11,4 @@ Works in Vim, but seems not to work on Doom
 - [ ] the commands ='[=, and =']= does not work.
   - These are marks defined by Vim to jump to last yank/changed text
   - we can use ~goto-last-change~ or ~g;~ command though
+- [ ] ``0` will return you to the last file you had open before you quit vim

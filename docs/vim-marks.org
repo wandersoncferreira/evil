@@ -4,9 +4,9 @@ A *mark* allows to record the current cursor position, then later we can return
 to it. They have one non-trivial problem, you can't easily see them while
 working on your document.
 
-- each file has a set of available marks identified by lowercase letters from
-  =a= to =z=
+- each file has available marks identified by lowercase letters from =a= to =z=
 - global marks are identified by uppercase letters
+- marks are motions, so you can use them with actions
 
 * Using marks
 
@@ -45,6 +45,10 @@ There are many ways to use marks, the following table summarize some of it:
 Example of =``= usage:
 - =/while<Enter>=  ;; jump to the first match of while
 - =``=             ;; move back to start
+
+* Deleting Marks
+You can delete marks with the `:delm` command. To delete marks ``a`, ``e`, and
+``G`, you would type `:delm aeG`. You can delete all local marks with `:delm!`
 
 * Seeing Marks
 Without plugins you can "see" your marks by running =:marks= which shows you a
