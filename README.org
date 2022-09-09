@@ -1,12 +1,12 @@
 #+DATE: April 30, 2022
 #+AUTHOR: Wanderson Ferreira
 
-My first configuration using Doom Emacs + Evil mode.
+Configuration using Doom Emacs with Evil mode.
 
 So far, enjoying a lot.
 
 After 10 years of standard Emacs keybindings this has been a big jump.
 
-Enjoy and be patient if traveling the same waters.
+Enjoy and be patient if you are traveling the same waters.
 
 [[file:docs/README.org][Learn more about Doom and Evil]]

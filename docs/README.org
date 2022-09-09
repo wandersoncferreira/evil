@@ -1,30 +1,14 @@
 #+TITLE: Learning Doom and Vim
 
-Vim is fundammentally built on command composability.
-
-Vim favors small, general-purpose commands that can be combined with objects to
-compose larger commands.
-
 You know what improves productivity? *Mastering motions and operators.*
 
-* Vim
-- use the more general text objects (~iw~ rather than ~w~)
-- prefer text objects over motions when possible
-- visual mode is a smell because it breaks repeatability
-- don't use two sentences where one will do it
-- to avoid using Esc we can press ~C-[~ or ~jk~ in Doom
-- history of past searches: ~q/~
-- ~ctrl-^~ will send you back to the previous buffer you were in
-
 * Dive in
-There is no clear rationale for why each of the topics below are in separate
-files other than my desired to study them deeper at some moment.
-
 - [[file:doom.org][Doom]]
 - [[file:doom-projects.org][Doom Projects]]
 - [[file:doom-evil-collections.org][Doom Evil Collections]]
 - [[file:doom-works-only-in-vim.org][Doom Works only in Vim]]
 - [[file:doom-docs-for-that-little-voice.org][Doom Docs for that little voice on your shoulders]]
+- [[file:vim-tips.org][Vim Tips]]
 - [[file:vim-marks.org][Vim Marks]]
 - [[file:vim-text-objects.org][Vim Text Objects]]
 - [[file:vim-motions.org][Vim Motions]]
@@ -38,8 +22,6 @@ files other than my desired to study them deeper at some moment.
 - [[file:vim-registers.org][Vim Registers]]
 - [[file:vim-antipatterns.org][Vim Antipatterns]]
 - [[file:vim-daily-tricks.org][Vim Daily Tricks - from Twitter]]
-
-If you have contributions, please open a PR.
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot

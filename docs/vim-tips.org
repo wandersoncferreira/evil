@@ -1,0 +1,14 @@
+#+title: Vim Tips
+
+Vim is fundammentally built on command composability.
+
+Vim favors small, general-purpose commands that can be combined with objects to
+compose larger commands.
+
+- use the more general text objects (~iw~ rather than ~w~)
+- prefer text objects over motions when possible
+- visual mode is a smell because it breaks repeatability
+- don't use two sentences where one will do it
+- to avoid using Esc we can press ~C-[~ or ~jk~ in Doom
+- history of past searches: ~q/~
+- ~ctrl-^~ will send you back to the previous buffer you were in
