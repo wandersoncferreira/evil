@@ -8,8 +8,16 @@ compose larger commands.
 * General recommendations:
 - use the more general text objects (~iw~ rather than ~w~)
 - prefer text objects over motions when possible
+  - words: ~w~
+  - sentences: ~s~
+  - paragraph: ~p~
+  - double quoted string: ~"~
+  - parenthesized block: ~)~
+  - indentation block: ~i~
 - visual mode is a smell because it breaks repeatability
 - don't use two sentences where one will do it
 - to avoid using Esc we can press ~C-[~ or ~jk~ in Doom
 - history of past searches: ~q/~
 - ~ctrl-^~ will send you back to the previous buffer you were in
+- ~gn~ for the next occurrence of the last used search pattern
+- always be scrolling! don't use ~hjkl~ to move around the screen

@@ -31,6 +31,5 @@ It's important to know what qualifies as a jump?
 
 You can see all the jump list by typing =:jumps=
 
-
 * References
 - [[https://medium.com/@kadek/understanding-vims-jump-list-7e1bfc72cdf0][Understanding Vim's jump list]] - Kade Killary blog post

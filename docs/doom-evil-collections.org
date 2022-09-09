@@ -4,7 +4,6 @@
   - ~g~ generally stands for "go" and is best used for movements
   - ~z~ is used for scrolling, folding, spell-checking and more
 
-* Motions
 * Quitting (q, ZQ, ZZ)
 In Vim, ~q~ is for recording macros.
 

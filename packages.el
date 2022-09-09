@@ -89,7 +89,6 @@
 (package! evil-args :disable t)
 (package! evil-easymotion :disable t)
 (package! evil-embrace :disable t)
-(package! evil-indent-plus :disable t)
 (package! evil-lion :disable t)
 (package! evil-numbers :disable t)
 (package! evil-snipe :disable t)

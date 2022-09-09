@@ -1,9 +1,9 @@
 #+title:  Vim Motions
 
-Always be scrolling! Don't use =hjkl= to move around the screen.
+These commands move the cursor position.
 
-These commands move the cursor position. The motion commands can be used after
-an [[file:vim-operators.org][operator]] command, to have the comand operate on the text that was moved over.
+The motion commands can be used after an [[file:vim-operators.org][operator]] command, to have the comand
+operate on the text that was moved over.
 
 
 | Commands        | Description                                           |

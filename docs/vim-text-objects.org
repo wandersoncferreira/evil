@@ -1,8 +1,10 @@
 #+title: Vim Text Objects
 
 Vim provides text objects for the three building blocks of plaintext: words,
-sentences, and paragraphs. Vim's text objects provides an incredible level of
-precison, the key is to try to always edit by text objects.
+sentences, and paragraphs.
+
+Vim's text objects provides an incredible level of precison, the key is to try
+to always edit by text objects.
 
 - =aw= - a word (includes surrounding white space)
 - =iw= - inner word (does not include surrounding white space)
@@ -28,7 +30,6 @@ constructs.
 | i{      | inner  nearest curly brackets                       |
 | ai      | a indentation block                                 |
 | ii      | inner indentation                                   |
-| gn      | the next occurrence of the last used search pattern |
 
 * Examples
 
