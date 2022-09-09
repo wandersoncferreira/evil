@@ -11,7 +11,6 @@
 
 ;; magit
 (package! magit-gitflow :disable t)
-(package! magit-todos :disable t)
 
 ;; eshell
 (package! eshell-z :disable t)

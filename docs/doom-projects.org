@@ -8,3 +8,6 @@ under =SPC p= prefix.
 | spc p + e | edit .dir-locals file from project             |
 | spc p + i | invalidate project cache                       |
 | spc p + t | toggle between project implementation and test |
+| spc p + l | list todos                                     |
+| spc p + d | see project directory files in Dired           |
+| spc p + g | projectile-ripgrep                             |

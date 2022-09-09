@@ -4,6 +4,7 @@ You know what improves productivity? *Mastering motions and operators.*
 
 * Dive in
 - [[file:doom.org][Doom]]
+- [[file:doom-popup.org][Doom Popup]]
 - [[file:doom-projects.org][Doom Projects]]
 - [[file:doom-evil-collections.org][Doom Evil Collections]]
 - [[file:doom-works-only-in-vim.org][Doom Works only in Vim]]

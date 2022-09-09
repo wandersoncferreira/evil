@@ -5,6 +5,7 @@ Vim is fundammentally built on command composability.
 Vim favors small, general-purpose commands that can be combined with objects to
 compose larger commands.
 
+* General recommendations:
 - use the more general text objects (~iw~ rather than ~w~)
 - prefer text objects over motions when possible
 - visual mode is a smell because it breaks repeatability

@@ -24,6 +24,8 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
+       eshell            ; the elisp shell that works everywhere
+
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
@@ -38,7 +40,6 @@
 
        :lang
        clojure           ; java with a lisp
-       nix               ; I hereby declare "nix geht mehr!"
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more

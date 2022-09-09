@@ -9,23 +9,9 @@ corners of Emacs. Let's all leverage that.
 * General recommendations:
  - Use REPL and Eshell toggle functionality: =SPC o e=
  - When ~Too many open pipes~ error pops up run: ~M-x file-notify-rm-all-watchers~
-
-* Commands:
-
-| Command      | Description                             |
-|--------------+-----------------------------------------|
-| jk           | get me out of INSERT MODE               |
-| SPC sp       | search all files in the current project |
-| /            | search within the current buffer        |
-| ?            | search backwards                        |
-| CTRL ,       | find next flyspell error                |
-| z=           | fix wrong word at point                 |
-| CTRL ;       | fix previous wrong word                 |
-| SPC bl       | cycle between buffers                   |
-| SPC RET      | jump to bookmark                        |
-| SPC bm       | set bookmark                            |
-| SPC sj       | show me the jumplist                    |
-| SPC w Ctrl p | jumps to the last window used           |
+ - ~SPC sj~ search in the jumplist
+ - ~Ctrl ,~ find next flyspell error
+ - Use ~SPC ~~ to toggle popup buffers
 
 * How to perform project-search and replace?
 - =spc s p= launch a project text search
@@ -51,7 +37,6 @@ search functionality is behind =SPC s=.
 | SPC + *   | search for the word at point across the whole project |
 | SPC + '   | resume last search                                    |
 | SPC + /   | search in the whole project                           |
-| SPC + s j | search in the jumplist                                |
 
 ** Git timemachine
 The evil keybindings for git-timemachine are:
