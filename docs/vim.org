@@ -1,4 +1,4 @@
-#+title: Vim Tips
+#+title: Vim
 
 Vim is fundammentally built on command composability.
 

@@ -8,7 +8,7 @@ You know what improves productivity? *Mastering motions and operators.*
 - [[file:doom-evil-collections.org][Doom Evil Collections]]
 - [[file:doom-works-only-in-vim.org][Doom Works only in Vim]]
 - [[file:doom-docs-for-that-little-voice.org][Doom Docs for that little voice on your shoulders]]
-- [[file:vim-tips.org][Vim Tips]]
+- [[file:vim.org][Vim]]
 - [[file:vim-marks.org][Vim Marks]]
 - [[file:vim-text-objects.org][Vim Text Objects]]
 - [[file:vim-motions.org][Vim Motions]]
