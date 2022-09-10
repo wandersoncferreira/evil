@@ -3,7 +3,11 @@
 (use-package! clojure-mode
   :config
   ;; keep the underscore as a word character like in Vim
-  (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w"))))
+  (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+
+  ;; change evil-args delimiters
+  (add-hook 'clojure-mode-hook
+            (lambda () (setq-local evil-args-delimiters '(" ")))))
 
 (use-package! cider
   :init

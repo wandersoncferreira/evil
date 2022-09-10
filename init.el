@@ -9,6 +9,7 @@
        doom              ; what makes DOOM look the way it does
        (popup +all)      ; tame sudden yet inevitable temporary windows
        workspaces        ; tab emulation, persistence & separate workspaces
+       treemacs          ; a project drawer, like neotree but cooler
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies

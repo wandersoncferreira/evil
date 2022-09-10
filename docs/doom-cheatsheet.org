@@ -1,0 +1,61 @@
+#+title: Doom Cheatsheet
+
+* General
+- ~spc :~ for entering a command
+- ~spc f D~ to delete this file
+
+* Projects with Projectile
+- ~spc o E~ to open the shell (eshell) in fullscreen
+- ~spc o e~ to open the shell (eshell) in a popup window
+- ~spc f r~ recently visited files
+- ~spc f R~ rename file
+- ~spc p r~ recently visited files in a project
+
+* Dired
+- ~C~ to copy
+- ~R~ to move
+- Toggle ~(~ for simple view
+
+* Buffers, Windows and Basic Navigation
+** Buffers
+- ~spc b X~ you can create a scratch buffer
+
+** Windows
+- ~spc w w~ to switch windows
+
+** Workspaces
+- ~spc tab [~ previous workspace
+- ~spc tab ]~ next workspace
+
+* Quick, horizontal movements with evil-snipe
+- ~f~ and then the letter you want to navigate to
+  - ~,~ will go backward
+  - ~;~ will go forward after that "find"
+- ~s~ to snipe (choose two letters)
+  - ~evil-snipe~ remembers your last search.
+    you can press ~;~ or ~,~ and the last search will be replayed.
+- ~] a~ move forward by arg
+  
+* Long distance navigation inside the file
+- ~g s spc~ to use avy and going to a certain word in file
+- Use ~t~ to "teleport" the word from one place to another
+  ~g s spc select-one-letter t select-the-correct-spot-to-teleport~
+
+* Multiple cursor in Emacs with evil-multiedit
+Make selections and then edit those selections interactively. You can make
+an edit and the changes will be reflected in all the selections
+
+- ~M-d~ will select the current word, and again will find another occurrence
+- ~M-o~ will find the occurrence upward
+  
+Many evil-mode motions/operators will have slightly different behavior while
+~evil-multiedit~ is active or the cursor is in an iedit region:
+- ~D~ delete the region
+- ~C~ delete to end-of-region and go into insert mode
+- ~A~ go into insert mode at end-of-region
+- ~I~ go into insert mode at start-of-region
+- ~V~ select the region
+- ~P~ replace the iedit region with the contents of the clipboard
+
+* File tree
+- ~spc o p~ for opening treemacs

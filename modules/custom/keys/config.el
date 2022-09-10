@@ -9,11 +9,13 @@
 (map! :leader
       "y" #'consult-yank-from-kill-ring
       :desc "CamelCase" "tc" #'subword-mode
-      :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode)
+      :desc "Column Indicator" "ti" #'display-fill-column-indicator-mode
+      :desc "jump to register" "rr" #'jump-to-register)
 
 ;; set registers
 (set-register ?l '(file . "~/org/ledger/ledger-2022.dat"))
 (set-register ?b '(file . "~/org/denote/20220810T182437--bookmarks__bookmarks.org"))
+(set-register ?c '(file . "~/.doom.d/docs/doom-cheatsheet.org"))
 
 ;; disabling bindings
 (map! :leader

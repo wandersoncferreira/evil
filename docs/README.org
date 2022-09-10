@@ -4,6 +4,7 @@ You know what improves productivity? *Mastering motions and operators.*
 
 * Dive in
 - [[file:doom.org][Doom]]
+- [[file:doom-cheatsheet.org][Doom Cheatsheet]]
 - [[file:doom-popup.org][Doom Popup]]
 - [[file:doom-projects.org][Doom Projects]]
 - [[file:doom-evil-collections.org][Doom Evil Collections]]
@@ -54,3 +55,4 @@ You know what improves productivity? *Mastering motions and operators.*
 - [[https://rohitpaulk.com/articles/doom-emacs-1][Doom: Jumping to the previous window]] - Paul Kuruvilla blog post
 - [[https://hungyi.net/posts/doom-emacs-search-replace-project/][How to do a Project-wide search and replace in Doom]]  - Hung-Yi blog post
 - [[https://twitter.com/thewizardlucas/status/1528692254843490304][vim anti-patterns]] - Lucas, The Wizard twitter thread
+- [[https://www.youtube.com/watch?v=ywRExNOyybY][Emacs Doom 06: Quick, horizontal movements with evil-snipe]] - DoomCasts by Zaiste
