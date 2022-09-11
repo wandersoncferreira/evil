@@ -3,6 +3,8 @@
 * General
 - ~spc :~ for entering a command
 - ~spc f D~ to delete this file
+- ~spc b m~ bookmark current buffer window
+- ~spc b RET~ open bookmark browser
 
 * Projects with Projectile
 - ~spc o E~ to open the shell (eshell) in fullscreen
@@ -15,6 +17,7 @@
 - ~C~ to copy
 - ~R~ to move
 - Toggle ~(~ for simple view
+- ~c~ compress file
 
 * Buffers, Windows and Basic Navigation
 ** Buffers
