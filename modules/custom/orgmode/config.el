@@ -23,3 +23,7 @@
 (require 'org-tempo)
 
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+
+(after! ox-hugo
+  (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
+        org-hugo-section "posts"))

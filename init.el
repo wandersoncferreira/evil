@@ -45,7 +45,7 @@
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
        (java +lsp)       ; the poster child for carpal tunnel syndrome
-       org               ; organize your plain life in plain text
+       (org +hugo)               ; organize your plain life in plain text
        ledger            ; be audit you can be
 
        :email
