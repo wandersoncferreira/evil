@@ -44,6 +44,9 @@
       undo-strong-limit 240000
       undo-outer-limit 24000000)
 
+;; disable management of mode-line by popups
+(remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
+
 ;; change line spacing for all buffers
 (setq-default line-spacing 6)
 
