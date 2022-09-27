@@ -2,28 +2,29 @@
 
 You know what improves productivity? *Mastering motions and operators.*
 
-* Dive in
-- [[file:doom.org][Doom]]
-- [[file:doom-cheatsheet.org][Doom Cheatsheet]]
-- [[file:doom-popup.org][Doom Popup]]
-- [[file:doom-projects.org][Doom Projects]]
-- [[file:doom-evil-collections.org][Doom Evil Collections]]
-- [[file:doom-works-only-in-vim.org][Doom Works only in Vim]]
-- [[file:doom-docs-for-that-little-voice.org][Doom Docs for that little voice on your shoulders]]
-- [[file:vim.org][Vim]]
-- [[file:vim-marks.org][Vim Marks]]
-- [[file:vim-text-objects.org][Vim Text Objects]]
-- [[file:vim-motions.org][Vim Motions]]
-- [[file:vim-jumplist.org][Vim Jumplist]]
-- [[file:vim-fold.org][Vim Fold]]
-- [[file:vim-brackets.org][Vim Brackets]]
-- [[file:vim-operators.org][Vim Operators]]
-- [[file:vim-search.org][Vim Search]]
-- [[file:vim-macros.org][Vim Macros]]
-- [[file:vim-g-commands.org][Vim G Commands]]
-- [[file:vim-registers.org][Vim Registers]]
-- [[file:vim-antipatterns.org][Vim Antipatterns]]
-- [[file:vim-daily-tricks.org][Vim Daily Tricks - from Twitter]]
+* Doom
+- [[file:doom.org][General]]
+- [[file:doom-cheatsheet.org][Cheatsheet]]
+- [[file:doom-projects.org][Projects]]
+- [[file:doom-evil-collections.org][Evil Collections]]
+- [[file:doom-works-only-in-vim.org][Works only in Vim]]
+- [[file:doom-docs-for-that-little-voice.org][Docs for that little voice on your shoulders]]
+
+* Vim
+- [[file:vim.org][General]]
+- [[file:vim-marks.org][Marks]]
+- [[file:vim-text-objects.org][Text Objects]]
+- [[file:vim-motions.org][Motions]]
+- [[file:vim-jumplist.org][Jumplist]]
+- [[file:vim-fold.org][Fold]]
+- [[file:vim-brackets.org][Brackets]]
+- [[file:vim-operators.org][Operators]]
+- [[file:vim-search.org][Search]]
+- [[file:vim-macros.org][Macros]]
+- [[file:vim-g-commands.org][G Commands]]
+- [[file:vim-registers.org][Registers]]
+- [[file:vim-antipatterns.org][Antipatterns]]
+- [[file:vim-daily-tricks.org][Daily Tricks - from Twitter]]
 
 * Resources
 - [[https://youtu.be/wlR5gYd6um0][Mastering the Vim Language ]]- Video by thoughtbot
