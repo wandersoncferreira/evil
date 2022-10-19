@@ -9,7 +9,6 @@
        doom              ; what makes DOOM look the way it does
        (popup +all)      ; tame sudden yet inevitable temporary windows
        workspaces        ; tab emulation, persistence & separate workspaces
-       treemacs          ; a project drawer, like neotree but cooler
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -25,8 +24,6 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
-       eshell            ; the elisp shell that works everywhere
-
        :checkers
        syntax            ; tasing you for every semicolon you forget
 
@@ -45,13 +42,10 @@
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
        (java +lsp)       ; the poster child for carpal tunnel syndrome
-       (org +hugo)               ; organize your plain life in plain text
        ledger            ; be audit you can be
 
        :email
        :app
-       rss               ; emacs as an RSS reader
-
        :config
        (default +bindings +smartparens)
 
@@ -62,16 +56,12 @@
        coding
        completions
        denote
+       difftastic
        encryption
        folders
        harpoon
        jvm
        keys
-       (landlord
-        +code-review
-        +spotify
-        +oblique)
-       orgmode
        parenthesis
        projects
        rst
