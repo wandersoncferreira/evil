@@ -26,12 +26,10 @@
       ;; line, instead of just emptying it
       kill-whole-line t
 
-      ;; change fringe width
-      ;; remove default style of git-gutter-fringe to use thin fringe width
-      +vc-gutter-default-style nil
-
       ;; do not ask me if I want to leave Emacs
       confirm-kill-emacs nil
+
+      warning-minimum-level :error
 
       ;; prefer to use newer files always
       load-prefer-newer t

@@ -75,7 +75,6 @@
 (package! dtrt-indent :disable t)
 (package! project :disable t)
 (package! helpful :disable t)
-(package! restart-emacs :disable t)
 
 ;; vertico
 (package! consult-dir :disable t)

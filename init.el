@@ -15,7 +15,6 @@
        file-templates    ; auto-snippets for empty files
        multiple-cursors  ; editing in many places at once
        snippets          ; my elves. They type so I don't have to
-       (format +onsave)  ; automated prettiness
 
        :emacs
        dired             ; making dired pretty [functional]
@@ -50,12 +49,10 @@
        (default +bindings +smartparens)
 
        :custom
-       apl
        buffers
        clj
        coding
        completions
-       denote
        difftastic
        encryption
        folders
@@ -69,7 +66,6 @@
        skin
        (whatever
         +screencast
-        +feeds
         +finance)
        wicked
        (work

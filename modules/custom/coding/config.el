@@ -14,7 +14,7 @@
           (apply 'nix-shell-command (nix-current-sandbox) command))
         flycheck-executable-find
         (lambda (cmd)
-          (nix-executable-find (nix-current-sandbox) cmd))) )
+          (nix-executable-find (nix-current-sandbox) cmd))))
 
 (after! ws-butler
   (setq ws-butler-global-exempt-modes
@@ -53,6 +53,5 @@
         lsp-ui-peek-enable nil))
 
 (after! flycheck
-  (define-key flycheck-mode-map flycheck-keymap-prefix nil)
   (setq flycheck-keymap-prefix nil)
   (map! :leader "!" flycheck-command-map))

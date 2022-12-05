@@ -93,7 +93,6 @@
         modus-themes-completions '(moderate)
         modus-themes-bold-constructs t
         modus-themes-italic-constructs t
-        modus-themes-paren-match 'intense-bold
         modus-themes-subtle-line-numbers t
         modus-themes-lang-checkers '(background)))
 
@@ -124,7 +123,7 @@
   (setq doom-theme 'vim-colors))
 
 ;; current theme
-(enable-modus-operandi)
+(enable-modus-vivendi)
 
 (map! :leader
       :desc "Delete other windows" "wo" #'delete-other-windows

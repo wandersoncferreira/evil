@@ -74,15 +74,16 @@
      (get-buffer-create name)
      `("git" "--no-pager" "diff" "--ext-diff" ,@(when arg (list arg))))))
 
-(transient-define-prefix bk/magit-aux-commands ()
-  "My personal auxiliary magit commands."
-  ["Auxiliary commands"
-   ("d" "Difftastic Diff (dwim)" bk/magit-diff-with-difftastic)
-   ("s" "Difftastic Show" bk/magit-show-with-diffstatic)])
+(after! magit
+  (transient-define-prefix bk/magit-aux-commands ()
+    "My personal auxiliary magit commands."
+    ["Auxiliary commands"
+     ("d" "Difftastic Diff (dwim)" bk/magit-diff-with-difftastic)
+     ("s" "Difftastic Show" bk/magit-show-with-diffstatic)])
 
-(transient-append-suffix 'magit-dispatch "!"
-  '("#" "My Magit Cmds" bk/magit-aux-commands))
+  (transient-append-suffix 'magit-dispatch "!"
+    '("#" "My Magit Cmds" bk/magit-aux-commands))
 
-(define-key magit-status-mode-map (kbd "#") #'bk/magit-aux-commands)
+  (define-key magit-status-mode-map (kbd "#") #'bk/magit-aux-commands))
 
 (set-popup-rule! "*git diff difftastic*" :side 'bottom :size 0.5)
