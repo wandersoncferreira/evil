@@ -50,4 +50,4 @@
 
 (map! :leader
       (:prefix "e"
-       "s" #'eshell))
+               "s" #'eshell))
