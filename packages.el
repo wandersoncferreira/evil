@@ -99,7 +99,6 @@
 
 ;; snippets
 (package! auto-yasnippet :disable t)
-(package! doom-snippets :disable t)
 
 ;; vc
 (package! git-commit :disable t)
