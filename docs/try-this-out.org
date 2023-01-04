@@ -1,0 +1,18 @@
+#+title: Try This Out
+
+
+First you need to clone this repository and rename it to =~/doom.d=.
+
+#+begin_src shell
+git clone --recurse-submodules https://github.com/wandersoncferreira/evil ~/.doom.d
+#+end_src
+
+This will prevent Doom instalation process to create a default configuration for
+you.
+
+Now install Doom:
+
+#+begin_src shell
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+#+end_src

@@ -10,3 +10,5 @@ After 10 years of standard Emacs keybindings this was a big jump.
 Enjoy and be patient if traveling the same waters.
 
 [[file:docs/README.org][Learn more about Doom and Evil]]
+
+[[file:docs/try-this-out.org][Do you want to try this out?]]
