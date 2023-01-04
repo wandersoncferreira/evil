@@ -1,0 +1,11 @@
+#+title: Folders
+
+I wanted to call this custom module =dired= but we already have one in Doom.
+
+Everything here is =dired= related.
+
+
+* Main change
+
+- Perhaps my first keybinding in Emacs: "F J" for "Folder Jump":
+  - =SPC f j= executes =dired-jump=

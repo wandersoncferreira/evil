@@ -6,15 +6,7 @@
 
 (after! flycheck
   ;; uses `flycheck-buffer' manually to check syntax
-  (setq flycheck-check-syntax-automatically nil
-        ;; allow flycheck to find executables of checkers that would be only
-        ;; accessible via nix-shell
-        flycheck-command-wrapper-function
-        (lambda (command)
-          (apply 'nix-shell-command (nix-current-sandbox) command))
-        flycheck-executable-find
-        (lambda (cmd)
-          (nix-executable-find (nix-current-sandbox) cmd))))
+  (setq flycheck-check-syntax-automatically nil))
 
 (after! ws-butler
   (setq ws-butler-global-exempt-modes
@@ -24,12 +16,6 @@
           eshell-mode
           markdown-mode
           org-mode)))
-
-;; allow haskell-mode to look for ghc in the current sandbox
-(after! haskell-customize
-  (setq haskell-process-wrapper-function
-        (lambda (args)
-          (apply 'nix-shell-command (nix-current-sandbox) args))))
 
 ;; center window on error
 (add-hook! 'next-error-hook #'recenter)

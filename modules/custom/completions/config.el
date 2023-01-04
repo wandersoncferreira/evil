@@ -28,11 +28,5 @@
         "]" #'vertico-next-group
         "[" #'vertico-previous-group))
 
-(use-package! vertico-repeat
-  :after vertico
-  :config
-  (map! :leader "rl" #'vertico-repeat-last)
-  (add-hook! 'minibuffer-setup-hook #'vertico-repeat-save))
-
 (after! company
   (setq company-idle-delay nil))

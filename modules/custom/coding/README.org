@@ -1,0 +1,13 @@
+#+title: General Coding Settings
+
+Always hard to tell what should go here in general settings or in a specific
+layer for the programming language most affected by that change.
+
+For now, the code restrict itself to disable automatic syntax checking on
+Flycheck and some small details that annoys me in general.
+
+
+* Main changes
+
+- =bk/flycheck-list-errors=
+- Disable Flycheck automatic checkers

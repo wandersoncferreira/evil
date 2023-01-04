@@ -1,0 +1,4 @@
+#+title: Keybindings
+
+Personal choices for keybindings and some paranoid moments where I need to
+disable many default Doom bindings that I either don't use or don't know.

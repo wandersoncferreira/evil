@@ -1,0 +1,7 @@
+#+title: Encryption
+
+I'll be very honest, these lines of encryption configuration follows me for
+almost one decade. I don't remember anymore why they need to be the way they
+are, but I'm sure it works for what I do.
+
+I'm old enough to choose my battles.
