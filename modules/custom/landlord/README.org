@@ -11,5 +11,8 @@ Module to configure all projects that I own in Emacs Lisp.
 I usually keep these modules around even though I'm not currently maintaining
 then any more. 
 
-** Plugins
+* Plugins
 + code-review
++ helm-spotify-plus
++ oblique-strategies
++ alabaster-theme
