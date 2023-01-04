@@ -1,14 +1,14 @@
 #+title: Try This Out
 
 
-First you need to clone this repository and rename it to =~/doom.d=.
+First you need to clone this repository and rename it to =~/.doom.d=.
 
 #+begin_src shell
 git clone --recurse-submodules https://github.com/wandersoncferreira/evil ~/.doom.d
 #+end_src
 
 This will prevent Doom instalation process to create a default configuration for
-you.
+you and use this =evil= repo instead.
 
 Now install Doom:
 
@@ -16,3 +16,7 @@ Now install Doom:
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
 #+end_src
+
+Keep in mind that Doom usually relies on =~/.doom.d/config.el= to change its
+configuration. However, as you can see if you read the =evil/config.el= file, I
+use custom modules for everything!
