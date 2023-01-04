@@ -9,9 +9,6 @@
       ;; make doom increase font in smaller steps
       doom-font-increment 1
 
-      ;; spc b x to create scratch buffers in elisp mode
-      doom-scratch-initial-major-mode 'lisp-interaction-mode
-
       ;; initial major mode
       initial-major-mode 'lisp-interaction-mode
 

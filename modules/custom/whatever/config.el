@@ -51,8 +51,7 @@
             ("https://www.lesswrong.com/feed.xml?view=curated-rss" blog)
             ("https://api.quantamagazine.org/feed/" magazine)
             ("https://espial.esy.fun/u:yogsototh/feed.xml" bookmarks yann)
-            ("https://www.masteringemacs.org/feed" blog emacs)
-            ))
+            ("https://www.masteringemacs.org/feed" blog emacs)))
 
     ;; should not do this.. but memex does not support HTTP and
     ;; the SSL certificate is not updated.

@@ -1,0 +1,22 @@
+#+title: Buffers
+
+Emacs buffers are similar to what other systems might call a *file*, *document*,
+*workspace* or *editor*. A buffer can contain text and images.
+
+Buffers are shown in windows on the screen.
+
+Buffers can be displayed in more than one window at a time, or it might not be
+displayed at all.
+
+
+* My changes
+
+I like how Doom treats buffers. For now, my only changes are solely based on
+adding more functions and keybindings.
+
+
+My custom functions:
+
+- =bk/indent-whole-buffer=
+- =bk/diff-current-buffer-with-file=
+- =bk/switch-to-message-buffer=
