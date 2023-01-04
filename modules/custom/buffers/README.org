@@ -1,7 +1,9 @@
 #+title: Buffers
 
 Emacs buffers are similar to what other systems might call a *file*, *document*,
-*workspace* or *editor*. A buffer can contain text and images.
+*workspace* or *editor*.
+
+Buffers can contain text and images.
 
 Buffers are shown in windows on the screen.
 
