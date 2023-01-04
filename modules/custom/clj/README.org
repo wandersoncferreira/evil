@@ -1,0 +1,14 @@
+#+title: Clojure
+
+My day-to-day job involves coding in Clojure for most of the time.
+
+Therefore, as I find some opportunity to improve my daily workflow I often add
+or remove elisp code in here. Very volatile config ahead!
+
+
+* Main changes
+
+- Change cider modeline indicator (=autoload.el/bk/cider--modeline-info=)
+- Add REPL buffers to current perspective
+- Save buffers after running tests
+- Tame test and REPL buffers

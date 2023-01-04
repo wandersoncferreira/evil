@@ -11,8 +11,7 @@
 
 (use-package! cider
   :init
-  (setq cider-jdk-src-paths '("~/Downloads/clojure-1.10.3-sources" "~/Downloads/jvm11/source")
-        ;; automatically download all available .jars with Java sources
+  (setq ;; automatically download all available .jars with Java sources
         ;; and javadocs - allowing you to navigate to Java sources and
         ;; javadocs in your Clojure projects
         cider-enrich-classpath t
@@ -27,8 +26,6 @@
 
   (defadvice nrepl-load-current-buffer (before save-first activate)
     (save-buffer))
-
-  (set-lookup-handlers! '(cider-mode cider-repl-mode) nil)
 
   ;; add buffer to current persp
   (dolist (it '(cider-repl-mode-hook
@@ -46,9 +43,7 @@
   :init
   (setq cljr-eagerly-build-asts-on-startup nil
         cljr-add-ns-to-blank-clj-files nil
-        cljr-favor-private-functions nil)
-  :config
-  (set-lookup-handlers! 'clj-refactor-mode nil))
+        cljr-favor-private-functions nil))
 
 (map! (:after (:and clojure-mode cider)
        :localleader
