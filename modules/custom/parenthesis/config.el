@@ -25,9 +25,6 @@
         evil-cleverparens-use-additional-movement-keys nil
         evil-cleverparens-use-additional-bindings nil
         evil-cleverparens-use-regular-insert t)
-  ;; (setq evil-cleverparens-complete-parens-in-yanked-region t
-  ;;       evil-cleverparens-use-s-and-S nil
-  ;;       evil-cleverparens-indent-afterwards nil)
   :config
   (bk/add-hooks bk-lisp-modes #'evil-cleverparens-mode))
 
