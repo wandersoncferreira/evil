@@ -1,0 +1,11 @@
+#+title: Work
+
+This package will contain several functions tailored to my work.
+
+I work at Cisco now, therefore only Cisco functions will be available here.
+
+The functions are bound to =SPC j= prefix .. this is a very good restriction to
+have only one work at a time. :)
+
+The code itself of these functions are behind a private repo called
+=emacs-at-work=.

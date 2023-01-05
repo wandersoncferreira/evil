@@ -1,0 +1,10 @@
+#+title: Miscellaneous
+
+Many settings that didn't fit anywhere else or was not worthy a dedicated module.
+
+* Main changes
+
+- Include =gif-screencast=
+- Configure =ledger-mode= with tailored reports
+- Configure =elfeed= 
+- Expose =bitwarden= function to recover pwd from gpg signed file

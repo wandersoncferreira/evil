@@ -1,0 +1,9 @@
+#+title: Wicked Emacs
+
+Yeap, I wanted to make a custom =evil= module but this name is taken.
+
+The main idea here is to make Emacs Evil as close as possible to Vim in
+behavior.
+
+Please, if you know some modification missing to achieve this goal, send me a PR
+or comment in a new issue.

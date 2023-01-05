@@ -13,7 +13,6 @@
                         iroh/find-service-def))
       (autoload fun-name fpath "Cisco" t))
 
-    ;; bindings
     (map! (:leader
            (:map (clojure-mode-map)
             (:prefix-map ("j" . "Job - Cisco Bindings")
