@@ -1,0 +1,14 @@
+#+title: Skin - Look and Feels
+
+Settings about how my Emacs instance looks like.
+
+Interesting fact about me: I usually run in the default white theme and default
+font. I try to find nice themes and good fonts, but is very hard for me to
+commit with any of them.
+
+And the reason is interesting, I don't have any data to back this up however, I
+am pretty sure *any* font I set made my Emacs slower than default font and *any*
+theme I load (I'm lying.. =zenburn= seems faster in fact) made my Emacs slower
+too.
+
+Please, change my mind!
