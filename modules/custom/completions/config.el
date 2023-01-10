@@ -1,5 +1,8 @@
 ;;; custom/completions/config.el -*- lexical-binding: t; -*-
 
+;; tab key is very useful in insert molde to fix identation or completion imho
+(setq tab-always-indent 'complete)
+
 ;;; consult
 ;; disable the default preview when switching buffers
 (after! consult

@@ -3,11 +3,14 @@
 (use-package! clojure-mode
   :config
   ;; keep the underscore as a word character like in Vim
-  (add-hook 'clojure-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'clojure-mode-hook
+            (lambda ()
+              (modify-syntax-entry ?_ "w")))
 
   ;; change evil-args delimiters
   (add-hook 'clojure-mode-hook
-            (lambda () (setq-local evil-args-delimiters '(" ")))))
+            (lambda ()
+              (setq-local evil-args-delimiters '(" ")))))
 
 (use-package! cider
   :init
@@ -31,7 +34,8 @@
   (dolist (it '(cider-repl-mode-hook
                 cider-test-report-mode-hook
                 cider-popup-buffer-mode-hook))
-    (add-hook it (lambda () (persp-add-buffer (current-buffer)))))
+    (add-hook it (lambda ()
+                   (persp-add-buffer (current-buffer)))))
 
   ;; fix the placement of the test-report buffer
   (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)

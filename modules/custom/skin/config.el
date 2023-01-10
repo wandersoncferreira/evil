@@ -1,5 +1,18 @@
 ;;; custom/skin/config.el -*- lexical-binding: t; -*-
 
+;; change line spacing for all buffers
+(setq-default line-spacing 6)
+
+(setq initial-scratch-message "\
+;; Here be evil dragons...
+")
+
+;; DO NOT display fixed line numbers in the left fringe
+(setq display-line-numbers-type nil)
+
+;; make doom increase font in smaller steps
+(setq doom-font-increment 2)
+
 (use-package! delight
   :config
   (delight
@@ -124,3 +137,11 @@
 
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+;; enable default theme
+(enable-modus-operandi)
+
+;; enable default font
+(setq doom-font (font-spec :family "Consolas"
+                           :size 14
+                           :weight 'regular))

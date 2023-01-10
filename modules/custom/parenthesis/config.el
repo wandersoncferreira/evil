@@ -17,7 +17,9 @@
 
 (defun bk/remove-hooks (modes func)
   (dolist (mode modes)
-    (remove-hook (bk/str-mode->symbol-hook mode) func)))
+    (add-hook 'after-init-hook
+              (lambda ()
+                (remove-hook (bk/str-mode->symbol-hook mode) func)))))
 
 (use-package! evil-cleverparens
   :init

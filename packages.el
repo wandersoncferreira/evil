@@ -71,7 +71,6 @@
 (package! expand-region :disable t)
 (package! paredit :disable t)
 (package! highlight-numbers :disable t)
-(package! all-the-icons :disable t)
 (package! dtrt-indent :disable t)
 (package! project :disable t)
 (package! helpful :disable t)

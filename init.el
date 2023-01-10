@@ -29,7 +29,6 @@
        :tools
        lookup            ; navigate your code and its documentation
        magit             ; a git porcelain for Emacs
-       lsp               ; M-x vscode
 
        :os
        (:if IS-MAC
@@ -40,7 +39,6 @@
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        plantuml          ; diagrams for confusing people more
-       (java +lsp)       ; the poster child for carpal tunnel syndrome
        org               ; organize your plain life in plain text
        ledger            ; be audit you can be
 
@@ -56,11 +54,9 @@
        clj
        coding
        completions
-       difftastic
        encryption
        folders
        harpoon
-       jvm
        keys
        (landlord
         +code-review
