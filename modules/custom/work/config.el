@@ -27,4 +27,6 @@
              (:prefix ("f" . "Find")
               "s" #'iroh/find-service-def)
              (:prefix ("y" . "Yank")
-              "p" #'iroh/copy-permalink-at-point)))))))
+              "p" #'iroh/copy-permalink-at-point))))))
+
+  (require 'browse-at-remote))
