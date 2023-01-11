@@ -13,6 +13,14 @@
 ;; make doom increase font in smaller steps
 (setq doom-font-increment 2)
 
+;; enable default theme
+(setq doom-theme 'doom-one)
+
+;; enable default font
+(setq doom-font (font-spec :family "Consolas"
+                           :size 14
+                           :weight 'regular))
+
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
 
@@ -46,9 +54,6 @@
 ;; enable column indicator
 (global-display-fill-column-indicator-mode)
 
-(map! :leader
-      :desc "Set window to 80 columns" "w8" #'bk/set-80-columns)
-
 (defun enable-some-modus-theme ()
   (setq modus-themes-mode-line '(accented padded borderless)
         modus-themes-region '(bg-only no-extend)
@@ -81,18 +86,12 @@
   "enable the vim-colors theme."
   (setq doom-theme 'vim-colors))
 
-(map! :leader
-      :desc "Delete other windows" "wo" #'delete-other-windows
-      :desc "Toggle Transparency" "tt" #'bk/toggle-transparency
-      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized)
-
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-;; enable default theme
-(setq doom-theme 'doom-one)
-
-;; enable default font
-(setq doom-font (font-spec :family "Consolas"
-                           :size 14
-                           :weight 'regular))
+;;; * skin keybindings
+(map! :leader
+      :desc "Delete other windows" "wo" #'delete-other-windows
+      :desc "Toggle Transparency" "tt" #'bk/toggle-transparency
+      :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
+      :desc "Set window to 80 columns" "w8" #'bk/set-80-columns)

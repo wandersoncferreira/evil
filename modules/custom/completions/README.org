@@ -1,3 +1,22 @@
 #+title: Completions
 
-TODO
+I settled with =consult=, =vertico=, =embark=, and =company= combo to handle
+completions.
+
+I really don't like automatic completions because I feel they slow down Emacs a
+lot. Also, it is inconvenient to type a few letters and have a big list of
+options poping up every time with candidates. I find this very distractive.
+
+#+begin_src elisp
+(setq company-idle-delay nil)
+#+end_src
+
+Allow me to have completions only when I want it..
+
+#+begin_src elisp
+(setq tab-always-indent 'complete)
+#+end_src
+
+Will make the completion list popup from the bottom every time I hit TAB.
+
+Simple and enough for me.

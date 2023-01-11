@@ -13,8 +13,6 @@
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
-       file-templates    ; auto-snippets for empty files
-       multiple-cursors  ; editing in many places at once
        snippets          ; my elves. They type so I don't have to
 
        :emacs

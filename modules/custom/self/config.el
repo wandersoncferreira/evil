@@ -29,3 +29,8 @@
 (map! :leader
       (:prefix "e"
                "s" #'eshell))
+
+;; disable yas-snippet globally
+;; in fact, I wanted to remove (:editor snippets) from init.el
+;; but the clojure module depends on it...
+(add-hook 'after-init-hook (lambda () (yas-global-mode -1)))

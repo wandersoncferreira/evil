@@ -3,9 +3,9 @@
 (use-package! flycheck
   :init
   ;; uses `flycheck-buffer' manually to check syntax
-  (setq flycheck-check-syntax-automatically nil
-        flycheck-keymap-prefix nil)
+  (setq flycheck-check-syntax-automatically nil)
   :config
+  (setq flycheck-keymap-prefix nil)
   (map! :leader "!" flycheck-command-map))
 
 (use-package! ws-butler
