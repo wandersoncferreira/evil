@@ -14,12 +14,13 @@
 (setq doom-font-increment 2)
 
 ;; enable default theme
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-moonlight)
 
 ;; enable default font
-(setq doom-font (font-spec :family "Consolas"
-                           :size 14
-                           :weight 'regular))
+(setq doom-font
+      (font-spec :family "Consolas"
+                 :size 14
+                 :weight 'regular))
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
