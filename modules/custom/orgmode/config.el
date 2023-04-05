@@ -3,6 +3,7 @@
 (setq org-directory "~/org/"
       org-return-follows-link t
       org-fontify-quote-and-verse-blocks t
+      +org-capture-journal-file (file-truename "~/code/driving/20230405201604-progress_journal.org")
       org-fontify-whole-heading-line t
       org-startup-indented nil
       org-archive-location (concat org-directory ".archive/%s::")
@@ -27,3 +28,15 @@
 (after! ox-hugo
   (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
         org-hugo-section "posts"))
+
+(use-package org-roam
+  :custom
+  (org-roam-directory (file-truename "~/code/driving/")))
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
