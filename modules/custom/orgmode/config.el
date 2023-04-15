@@ -40,3 +40,9 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
+
+(use-package! khoj
+  :config
+  (setq khoj-org-directories '("~/code/driving")
+        khoj-org-files '("~/org/todo.org")
+        khoj-openai-api-key "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"))

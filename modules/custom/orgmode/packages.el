@@ -2,3 +2,5 @@
 ;;; custom/orgmode/packages.el
 
 (package! org-roam-ui)
+(package! org-download)
+(package! khoj)
