@@ -37,7 +37,7 @@ Fit more in the screen!"
                                     ((numberp (cadr alpha)) (cadr alpha)))
                               100)
                          (not alpha)))
-         (opacity (if is-opaque? 80 100))
+         (opacity (if is-opaque? 75 100))
          (theme (if is-opaque? 'doom-dark+ old-doom-theme)))
     (when is-opaque?
       (setq old-doom-theme doom-theme))
