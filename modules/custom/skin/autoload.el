@@ -31,16 +31,19 @@ Fit more in the screen!"
 ;;;###autoload
 (defun bk/toggle-transparency ()
   (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
-    (set-frame-parameter
-     nil 'alpha
-     (if (or (eql (cond ((numberp alpha) alpha)
-                        ((numberp (cdr alpha)) (cdr alpha))
-                        ((numberp (cadr alpha)) (cadr alpha)))
-                  100)
-             (not alpha))
-         75
-       100))))
+  (let* ((alpha (frame-parameter nil 'alpha))
+         (is-opaque? (or (eql (cond ((numberp alpha) alpha)
+                                    ((numberp (cdr alpha)) (cdr alpha))
+                                    ((numberp (cadr alpha)) (cadr alpha)))
+                              100)
+                         (not alpha)))
+         (opacity (if is-opaque? 80 100))
+         (theme (if is-opaque? 'doom-dark+ old-doom-theme)))
+    (when is-opaque?
+      (setq old-doom-theme doom-theme))
+    (set-frame-parameter nil 'alpha opacity)
+    (setq doom-theme theme)
+    (load-theme doom-theme t)))
 
 ;;;###autoload
 (defun what-face (pos)

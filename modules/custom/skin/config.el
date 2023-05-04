@@ -13,9 +13,6 @@
 ;; make doom increase font in smaller steps
 (setq doom-font-increment 2)
 
-;; enable default theme
-(setq doom-theme 'doom-moonlight)
-
 ;; enable default font
 (setq doom-font
       (font-spec :family "Consolas"
@@ -89,6 +86,8 @@
 
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+(enable-vim-colors)
 
 ;;; * skin keybindings
 (map! :leader
