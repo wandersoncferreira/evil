@@ -17,7 +17,7 @@
   (setq ;; automatically download all available .jars with Java sources
         ;; and javadocs - allowing you to navigate to Java sources and
         ;; javadocs in your Clojure projects
-        cider-enrich-classpath t
+        ;; cider-enrich-classpath t
         ;; only jump to errors
         cider-auto-jump-to-error 'errors-only
         cider-save-file-on-load t

@@ -1,25 +1,79 @@
 ;;; custom/orgmode/config.el -*- lexical-binding: t; -*-
 
-(setq org-directory "~/org/"
-      org-return-follows-link t
-      org-fontify-quote-and-verse-blocks t
-      +org-capture-journal-file (file-truename "~/code/driving/20230405201604-progress_journal.org")
-      org-fontify-whole-heading-line t
-      org-startup-indented nil
-      org-archive-location (concat org-directory ".archive/%s::")
-      org-capture-templates
+(setq org-directory (expand-file-name "~/code/org/")
+      org-deadline-warning-days 60
+      ;; add close time when changing to DONE
+      org-log-done 'time
+      org-default-notes-file (concat org-directory "capture.org"))
+
+;; hide everything
+(setq org-startup-folded t)
+
+;; new state to todo
+(setq org-todo-keywords
+      '((sequence
+         "TODO(t)"
+         "WAIT(w)"
+         "DELEGATED(e)"
+         "STARTED(s)"
+         "|"
+         "DONE(d)"
+         "CANCELED(c)"
+         "INACTIVE(i)")))
+
+(setq org-return-follows-link t)
+
+(setq-local org-capture-templates
       '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
-         "* [ ] %?\n"
+         "* TODO %?\n"
          :prepend t)
-        ("d" "deadline" entry (file+headline "todo.org" "Schedule")
-         "* [ ] %?\nDEADLINE: <%(org-read-date)>\n\n%i"
+        ("d" "deadline" entry (file+headline "todo.org" "Deadline")
+         "* TODO %?\nDEADLINE: <%(org-read-date)>\n\n%i"
          :prepend t)
-        ("d" "schedule" entry (file+headline "todo.org" "Schedule")
-         "* [ ] %?\nSCHEDULE: <%(org-read-date)>\n\n%i"
+        ("s" "schedule" entry (file+headline "todo.org" "Scheduled")
+         "* TODO %?\nSCHEDULED: <%(org-read-date)>\n\n%i"
          :prepend t)
+        ("h" "habit" entry (file+headline "todo.org" "Habits")
+         "* TODO %?\nSCHEDULED: <%(org-read-date)>\n:PROPERTIES:\n:STYLE:   habit\n:END:\n")
         ("c" "check out later" entry (file+headline "todo.org" "Check out later")
-         "* [ ] %?\n"
+         "* TODO %?\n"
          :prepend t)))
+
+(defun bk/skip-scheduled-or-deadline-if-not-today ()
+  (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
+         (deadline-entry (org-entry-get nil "DEADLINE"))
+         (deadline-day (when deadline-entry
+                         (time-to-days (org-time-string-to-time deadline-entry))))
+         (scheduled-entry (org-entry-get nil "SCHEDULED"))
+         (scheduled-day (when scheduled-entry
+                          (time-to-days
+                           (org-time-string-to-time
+                            scheduled-entry))))
+         (now (time-to-days (current-time))))
+    (and
+     (or
+      (and deadline-day (not (= deadline-day now)))
+      (and scheduled-day (not (= scheduled-day now))))
+     subtree-end)))
+
+(require 'org-habit)
+
+(defun bk/skip-habits ()
+  (save-restriction
+    (widen)
+    (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
+      (if (org-is-habit-p)
+          next-headline
+        nil))))
+
+(setq org-agenda-custom-commands
+      '(("d" "Today's agenda"
+         ((agenda ""
+                  ((org-agenda-span 'week)
+                   (org-agenda-skip-function (lambda ()
+                                               (or
+                                                (bk/skip-scheduled-or-deadline-if-not-today)
+                                                (bk/skip-habits))))))))))
 
 (require 'org-tempo)
 
@@ -30,8 +84,19 @@
         org-hugo-section "posts"))
 
 (use-package org-roam
+  :init
+  (setq org-roam-completion-everywhere t
+        completion-ignore-case t)
   :custom
-  (org-roam-directory (file-truename "~/code/driving/")))
+  (org-roam-directory (file-truename "~/code/brain"))
+  :config
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '(company-capf))
+              (setq-local company-idle-delay 0.3
+                          company-minimum-prefix-length 3)))
+  (add-to-list 'company-backends 'company-capf))
 
 (use-package! org-roam-ui
   :after org-roam
@@ -40,9 +105,3 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
-
-(use-package! khoj
-  :config
-  (setq khoj-org-directories '("~/code/driving")
-        khoj-org-files '("~/org/todo.org")
-        khoj-openai-api-key "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"))

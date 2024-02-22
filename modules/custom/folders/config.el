@@ -8,3 +8,12 @@
   (setq dired-listing-switches "-alh"))
 
 (map! :leader "fj" #'dired-jump)
+
+(use-package! dired-subtree
+  :after dired
+  :config
+  (progn
+    (set-face-foreground 'dired-subtree-depth-1-face "black")
+    (set-face-background 'dired-subtree-depth-1-face "light gray"))
+  (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
+  (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))

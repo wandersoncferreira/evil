@@ -1,11 +1,12 @@
 ;;; custom/orgmode/autoload.el -*- lexical-binding: t; -*-
 
+(require 'org-journal)
+
 ;;;###autoload
-(defun bk/khoj--clear-chat-buffer ()
-  "Clear Khoj Chat buffer"
+(defun bk/org-add-today-as-entry ()
+  "Insert the current date as a org header"
   (interactive)
-  (with-current-buffer (get-buffer khoj--chat-buffer-name)
-    (let ((inhibit-read-only t))
-      (erase-buffer)
-      (insert "* Khoj Chat\n")))
-  (message "Buffer cleared!"))
+  (let* ((time (current-time)))
+        (org-insert-heading-respect-content)
+        (insert
+         (format-time-string org-journal-date-format time))))
