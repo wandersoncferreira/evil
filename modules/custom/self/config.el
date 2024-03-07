@@ -33,4 +33,5 @@
 ;; disable yas-snippet globally
 ;; in fact, I wanted to remove (:editor snippets) from init.el
 ;; but the clojure module depends on it...
-(add-hook 'after-init-hook (lambda () (yas-global-mode -1)))
+;; EDIT: 28/02/2024 - let me try to use this again!
+;; (add-hook 'after-init-hook (lambda () (yas-global-mode -1)))

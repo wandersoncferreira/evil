@@ -9,6 +9,7 @@
        doom
        (popup +all)
        workspaces
+       (treemacs +lsp)
        modeline
 
        :editor
@@ -28,6 +29,7 @@
        :tools
        lookup
        magit
+       lsp
 
        :os
        (:if IS-MAC
@@ -36,7 +38,7 @@
        :lang
        clojure
        emacs-lisp
-       javascript
+       (javascript +lsp)
        markdown
        plantuml
        (org +roam2

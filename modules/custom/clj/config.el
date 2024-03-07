@@ -56,4 +56,5 @@
          "s" #'sesman-browser)
         (:prefix ("e" . "eval")
          "v" #'cider-eval-sexp-at-point
+         "s" #'yas-expand
          ";" #'cider-eval-defun-to-comment))))
