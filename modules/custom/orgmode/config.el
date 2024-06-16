@@ -83,25 +83,58 @@
   (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
         org-hugo-section "posts"))
 
-(use-package org-roam
-  :init
-  (setq org-roam-completion-everywhere t
-        completion-ignore-case t)
-  :custom
-  (org-roam-directory (file-truename "~/code/brain"))
-  :config
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '(company-capf))
-              (setq-local company-idle-delay 0.3
-                          company-minimum-prefix-length 3)))
-  (add-to-list 'company-backends 'company-capf))
+(setq org-roam-directory (file-truename "~/code/roam"))
 
-(use-package! org-roam-ui
-  :after org-roam
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
+(setq org-roam-capture-templates
+      '(("f" "fleeting" plain
+         "%?"
+         :if-new (file+head "fleeting/${slug}.org"
+                            "#+title: ${title}\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("l" "literature" plain
+         "%?"
+         :if-new (file+head "literature/${slug}.org"
+                            "#+title: ${title}\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ("c" "concept" plain
+         "%?"
+         :if-new (file+head "concepts/${slug}.org"
+                            "#+title: ${title}\n")
+         :immediate-finish t
+         :unnarrowed t)))
+
+(cl-defmethod org-roam-node-type ((node org-roam-node))
+  "Return the TYPE of NODE."
+  (condition-case nil
+      (file-name-directory
+       (directory-file-name
+        (file-name-directory
+         (file-relative-name (org-roam-node-file node) org-roam-directory))))
+    (error "")))
+
+(setq org-roam-node-display-template
+      (concat "${type:15} ${title:*} "
+              (propertize "${tags:10}" 'face 'org-tag)))
+
+;; every zettel is a draft until declared otherwise
+(defun bk/tag-new-node-as-draft ()
+  (org-roam-tag-add '("draft")))
+
+(add-hook 'org-roam-capture-new-node-hook #'bk/tag-new-node-as-draft)
+
+;; (use-package org-roam
+;;   :init
+;;   (setq org-roam-completion-everywhere t
+;;         completion-ignore-case t)
+;;   :custom
+;;   (org-roam-directory (file-truename "~/code/roam"))
+;;   :config
+;;   (add-hook 'org-mode-hook
+;;             (lambda ()
+;;               (set (make-local-variable 'company-backends)
+;;                    '(company-capf))
+;;               (setq-local company-idle-delay 0.3
+;;                           company-minimum-prefix-length 3)))
+;;   (add-to-list 'company-backends 'company-capf))
