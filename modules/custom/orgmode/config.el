@@ -88,19 +88,19 @@
 (setq org-roam-capture-templates
       '(("f" "fleeting" plain
          "%?"
-         :if-new (file+head "fleeting/${slug}.org"
+         :if-new (file+head "fleeting/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)
         ("l" "literature" plain
          "%?"
-         :if-new (file+head "literature/${slug}.org"
+         :if-new (file+head "literature/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)
         ("c" "concept" plain
          "%?"
-         :if-new (file+head "concepts/${slug}.org"
+         :if-new (file+head "concepts/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)))
@@ -124,17 +124,18 @@
 
 (add-hook 'org-roam-capture-new-node-hook #'bk/tag-new-node-as-draft)
 
-;; (use-package org-roam
-;;   :init
-;;   (setq org-roam-completion-everywhere t
-;;         completion-ignore-case t)
-;;   :custom
-;;   (org-roam-directory (file-truename "~/code/roam"))
-;;   :config
-;;   (add-hook 'org-mode-hook
-;;             (lambda ()
-;;               (set (make-local-variable 'company-backends)
-;;                    '(company-capf))
-;;               (setq-local company-idle-delay 0.3
-;;                           company-minimum-prefix-length 3)))
-;;   (add-to-list 'company-backends 'company-capf))
+(use-package org-roam
+  :init
+  (setq org-roam-completion-everywhere t
+        completion-ignore-case t)
+  :config
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   '(company-capf))
+              (setq-local company-idle-delay 0.3
+                          company-minimum-prefix-length 3)))
+  (add-to-list 'company-backends 'company-capf))
+
+
+(require 'org-roam-protocol)
