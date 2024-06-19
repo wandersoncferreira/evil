@@ -83,7 +83,8 @@
   (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
         org-hugo-section "posts"))
 
-(setq org-roam-directory (file-truename "~/code/roam"))
+(setq org-roam-directory (file-truename "~/code/roam")
+      org-roam-db-location (file-truename "~/code/roam/org-roam.db"))
 
 (setq org-roam-capture-templates
       '(("f" "fleeting" plain
@@ -98,25 +99,34 @@
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)
-        ("c" "concept" plain
+        ("c" "permanent" plain
          "%?"
-         :if-new (file+head "concepts/%<%Y%m%d%H%M%S>-${slug}.org"
+         :if-new (file+head "permanent/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)))
 
-(cl-defmethod org-roam-node-type ((node org-roam-node))
-  "Return the TYPE of NODE."
-  (condition-case nil
-      (file-name-directory
-       (directory-file-name
-        (file-name-directory
-         (file-relative-name (org-roam-node-file node) org-roam-directory))))
-    (error "")))
+;; showing the number of backlinks for each node in `org-roam-node-find'
+(cl-defmethod org-roam-node-directories ((node org-roam-node))
+  (if-let ((dirs (file-name-directory (file-relative-name (org-roam-node-file node) org-roam-directory))))
+      (format "(%s)" (car (split-string dirs "/")))
+    ""))
+
+(cl-defmethod org-roam-node-backlinkscount ((node org-roam-node))
+  (let* ((count (caar (org-roam-db-query
+                       [:select (funcall count source)
+                                :from links
+                                :where (= dest $s1)
+                                :and (= type "id")]
+                       (org-roam-node-id node)))))
+    (format "[%d]" count)))
 
 (setq org-roam-node-display-template
-      (concat "${type:15} ${title:*} "
-              (propertize "${tags:10}" 'face 'org-tag)))
+      "${directories:10} ${tags:10} ${title:100} ${backlinkscount:6}")
+
+;; break lines automatically on the specified width
+(add-hook! org-mode-hook #'auto-fill-mode)
+
 
 ;; every zettel is a draft until declared otherwise
 (defun bk/tag-new-node-as-draft ()

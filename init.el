@@ -11,6 +11,7 @@
        workspaces
        (treemacs +lsp)
        modeline
+       zen
 
        :editor
        (evil +everywhere)
@@ -71,6 +72,7 @@
        parenthesis
        projects
        self
+       shell
        skin
        (whatever
         +screencast
