@@ -1,11 +1,12 @@
 ;;; custom/folders/config.el -*- lexical-binding: t; -*-
 
-(after! dired
+(use-package! dired
+  :config
   ;; dired tries to guess the default target directory
   (setq dired-dwim-target t)
 
   ;; DO NOT group directories first
-  (setq dired-listing-switches "-alh"))
+  (setq dired-listing-switches "-alFh"))
 
 (map! :leader "fj" #'dired-jump)
 
@@ -17,3 +18,8 @@
     (set-face-background 'dired-subtree-depth-1-face "light gray"))
   (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
   (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))
+
+
+(use-package! dired-quick-sort
+  :config
+  (dired-quick-sort-setup))

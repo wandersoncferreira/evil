@@ -7,6 +7,7 @@
 
        :ui
        doom
+       doom-dashboard
        (popup +all)
        workspaces
        (treemacs +lsp)
@@ -18,7 +19,7 @@
        snippets
 
        :emacs
-       dired
+       (dired +icons)
        electric
        vc
        undo

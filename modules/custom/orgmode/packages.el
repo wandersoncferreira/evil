@@ -3,3 +3,4 @@
 
 (package! org-roam-ui)
 (package! org-download)
+(package! org-transclusion)

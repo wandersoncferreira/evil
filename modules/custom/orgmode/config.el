@@ -2,6 +2,8 @@
 
 (setq org-directory (expand-file-name "~/code/org/")
       org-deadline-warning-days 60
+      org-hide-emphasis-markers t
+      org-pretty-entities t
       ;; add close time when changing to DONE
       org-log-done 'time
       org-default-notes-file (concat org-directory "capture.org"))
@@ -83,6 +85,8 @@
   (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
         org-hugo-section "posts"))
 
+;; org roam section
+
 (setq org-roam-directory (file-truename "~/code/roam")
       org-roam-db-location (file-truename "~/code/roam/org-roam.db"))
 
@@ -99,9 +103,9 @@
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)
-        ("c" "permanent" plain
+        ("t" "todos" plain
          "%?"
-         :if-new (file+head "permanent/%<%Y%m%d%H%M%S>-${slug}.org"
+         :if-new (file+head "todos/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)))
@@ -125,7 +129,7 @@
       "${directories:10} ${tags:10} ${title:100} ${backlinkscount:6}")
 
 ;; break lines automatically on the specified width
-(add-hook! org-mode-hook #'auto-fill-mode)
+(add-hook 'org-mode-hook 'auto-fill-mode)
 
 
 ;; every zettel is a draft until declared otherwise
@@ -145,7 +149,79 @@
                    '(company-capf))
               (setq-local company-idle-delay 0.3
                           company-minimum-prefix-length 3)))
-  (add-to-list 'company-backends 'company-capf))
-
+  (add-to-list 'company-backends 'company-capf)
+  (org-roam-db-autosync-mode))
 
 (require 'org-roam-protocol)
+
+(defun org-roam-link-report-dangling ()
+  "Create a report of dangling links (broken links)
+in Org-Roam,
+A table containing the sources and the links themselves are presented."
+  (interactive)
+  (let ((buffer (generate-new-buffer "*Org-Roam Dangling Links*"))
+        (query (org-roam-db-query
+                "select
+                        '\"id:' || ltrim(links.source, '\"'),
+                       '(' || group_concat(rtrim(links.type, '\"') || ':' || ltrim(links.dest, '\"'), ' \"\n||\" ') || ')'
+                   from links
+                   where links.type in ('\"roam\"', '\"id\"')
+                     and (rtrim(links.type, '\"') || ':' || ltrim(links.dest, '\"'))
+                         not in
+                               (select '\"id:' || ltrim(nodes.id, '\"') from nodes
+                          union select '\"roam:' || ltrim(nodes.title, '\"') from nodes
+                          union select '\"roam:' || ltrim(aliases.alias, '\"') from aliases)
+                   group by links.source;")))
+    (with-current-buffer buffer
+      (switch-to-buffer buffer)
+      (org-mode)
+      (insert "#+TITLE: Dangling Links Report\n\n")
+      (insert "* Dangling Links\n\n")
+      (insert "| Source | Broken Links \n")
+      (insert "|")
+      (org-table-align)
+      (org-table-insert-hline)
+      (forward-line 2)
+      (dolist (row query)
+        (insert "||\n")
+        (insert (format "| %s | %s\n" (car row) (cadr row)))
+        (org-table-align))
+      (goto-char (point-min)))))
+
+(require 'org-download)
+
+(defun bk/roam-todo-files ()
+  "returns a list of note files containing the 'todo' tag."
+  (seq-uniq
+   (seq-map
+    #'car
+    (org-roam-db-query
+     [:select [nodes:file]
+              :from tags
+              :left-join nodes
+              :on (= tags:node-id nodes:id)
+              :where (like tag (quote "%\"todo\"%"))]))))
+
+(defun bk/agenda-files-update (&rest _)
+  "update the value of org agenda"
+  (setq org-agenda-files (bk/roam-todo-files)))
+
+(advice-add 'org-agenda :before #'bk/agenda-files-update)
+(advice-add 'org-todo-list :before #'bk/agenda-files-update)
+
+(use-package! org-agenda
+  :config
+  (setq org-agenda-span 1
+        org-agenda-start-day "+0d"
+        org-agenda-skip-timestamp-if-done t
+        org-agenda-skip-deadline-if-done t
+        org-agenda-skip-scheduled-if-done t))
+
+(use-package! org-transclusion
+  :after org
+  :init
+  (map!
+   :map global-map "<f12>" #'org-transclusion-add
+   :leader
+   :prefix "n"
+   :desc "Org Transclusion Mode" "t" #'org-transclusion-mode))
