@@ -211,8 +211,9 @@ A table containing the sources and the links themselves are presented."
 
 (use-package! org-agenda
   :config
-  (setq org-agenda-span 1
+  (setq org-agenda-span 3
         org-agenda-start-day "+0d"
+        org-agenda-hide-tags-regexp "draft\\|todo"
         org-agenda-skip-timestamp-if-done t
         org-agenda-skip-deadline-if-done t
         org-agenda-skip-scheduled-if-done t))
@@ -225,3 +226,8 @@ A table containing the sources and the links themselves are presented."
    :leader
    :prefix "n"
    :desc "Org Transclusion Mode" "t" #'org-transclusion-mode))
+
+(defun bk/insert-timestamp-now ()
+  "insert org mode timestamp at point with current date and time"
+  (interactive)
+  (org-insert-time-stamp (current-time) t))
