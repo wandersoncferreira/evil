@@ -14,7 +14,7 @@
 (setq wsl? (string-match-p "microsoft" (shell-command-to-string "uname -a")))
 
 (setq doom-font (font-spec :family "Consolas"
-                           :size (if wsl? 24 16)))
+                           :size (if wsl? 12 16)))
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
@@ -84,9 +84,12 @@
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-(setq doom-theme 'doom-one)
 
-;; (enable-vim-colors)
+;; best theme is dark default theme
+(setq doom-theme nil)
+(when (display-graphic-p)
+  (invert-face 'default))
+(set-variable 'frame-background-mode 'dark)
 
 ;;; * skin keybindings
 (map! :leader
