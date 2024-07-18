@@ -91,21 +91,9 @@
       org-roam-db-location (file-truename "~/code/roam/org-roam.db"))
 
 (setq org-roam-capture-templates
-      '(("f" "fleeting" plain
+      '(("n" "notes" plain
          "%?"
-         :if-new (file+head "fleeting/%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}\n")
-         :immediate-finish t
-         :unnarrowed t)
-        ("l" "literature" plain
-         "%?"
-         :if-new (file+head "literature/%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}\n")
-         :immediate-finish t
-         :unnarrowed t)
-        ("t" "todos" plain
-         "%?"
-         :if-new (file+head "todos/%<%Y%m%d%H%M%S>-${slug}.org"
+         :if-new (file+head "notes/%<%Y%m%d%H%M%S>-${slug}.org"
                             "#+title: ${title}\n")
          :immediate-finish t
          :unnarrowed t)))

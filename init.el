@@ -45,6 +45,7 @@
        (javascript +lsp)
        markdown
        plantuml
+       (python +lsp +pyright)
        (org +roam2
             +journal)
        ledger

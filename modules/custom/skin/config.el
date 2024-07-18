@@ -14,7 +14,7 @@
 (setq wsl? (string-match-p "microsoft" (shell-command-to-string "uname -a")))
 
 (setq doom-font (font-spec :family "Consolas"
-                           :size (if wsl? 12 16)))
+                           :size (if wsl? 24 16)))
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
