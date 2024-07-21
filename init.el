@@ -7,17 +7,19 @@
 
        :ui
        doom
+       doom-dashboard
        (popup +all)
        workspaces
        (treemacs +lsp)
        modeline
+       zen
 
        :editor
        (evil +everywhere)
        snippets
 
        :emacs
-       dired
+       (dired +icons)
        electric
        vc
        undo
@@ -43,6 +45,7 @@
        (javascript +lsp)
        markdown
        plantuml
+       (python +lsp +pyright)
        (org +roam2
             +journal)
        ledger
@@ -72,6 +75,7 @@
        parenthesis
        projects
        self
+       shell
        skin
        (whatever
         +screencast

@@ -1,7 +1,7 @@
 ;;; custom/skin/config.el -*- lexical-binding: t; -*-
 
 ;; change line spacing for all buffers
-(setq-default line-spacing 6)
+(setq-default line-spacing 8)
 
 (setq initial-scratch-message "\
 ;; Here be evil dragons...
@@ -10,17 +10,17 @@
 ;; DO NOT display fixed line numbers in the left fringe
 (setq display-line-numbers-type nil)
 
-;; make doom increase font in smaller steps
-(setq doom-font-increment 2)
-
 ;; enable default font
-(setq doom-font (font-spec :family "Consolas" :size 16))
+(setq wsl? (string-match-p "microsoft" (shell-command-to-string "uname -a")))
+
+(setq doom-font (font-spec :family "Consolas"
+                           :size (if wsl? 24 16)))
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
 
 ;; disable aesthetic plugin for fancier bullets
-(remove-hook 'org-mode-hook #'org-superstar-mode)
+;; (remove-hook 'org-mode-hook #'org-superstar-mode)
 
 (defun highlight-todos ()
   "highlight common words to indicate work in progress for dev projects"
@@ -32,7 +32,7 @@
   (add-hook 'clojure-mode-hook #'highlight-todos))
 
 ;; change frige width
-(fringe-mode '(10 . 0))
+;; (fringe-mode '(10 . 0))
 
 ;; do not truncate lines in the minibuffer
 (add-hook 'minibuffer-setup-hook
@@ -41,10 +41,10 @@
 
 ;; start emacs with specific size and position
 (setq initial-frame-alist
-      '((top . 0)
-        (left . -1)
-        (width . 82)
-        (height . 65)))
+      '((top . -15)
+        (left . -40)
+        (width . 140)
+        (height . 85)))
 
 ;; enable column indicator
 (global-display-fill-column-indicator-mode)
@@ -84,7 +84,12 @@
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-(enable-vim-colors)
+
+;; best theme is dark default theme
+(setq doom-theme nil)
+(when (display-graphic-p)
+  (invert-face 'default))
+(set-variable 'frame-background-mode 'dark)
 
 ;;; * skin keybindings
 (map! :leader

@@ -7,4 +7,4 @@
 
 (after! typescript-mode
   (setq typescript-indent-level 2)
-  (setq-local company-idle-delay .2))
+  (setq-local company-idle-delay 0.2))
