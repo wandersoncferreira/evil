@@ -119,13 +119,6 @@
 ;; break lines automatically on the specified width
 (add-hook 'org-mode-hook 'auto-fill-mode)
 
-
-;; every zettel is a draft until declared otherwise
-(defun bk/tag-new-node-as-draft ()
-  (org-roam-tag-add '("draft")))
-
-(add-hook 'org-roam-capture-new-node-hook #'bk/tag-new-node-as-draft)
-
 (use-package org-roam
   :init
   (setq org-roam-completion-everywhere t
