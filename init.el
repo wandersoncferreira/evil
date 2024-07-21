@@ -29,6 +29,8 @@
        :tools
        lookup
        magit
+       editorconfig
+       direnv
        lsp
 
        :os
@@ -44,6 +46,7 @@
        (org +roam2
             +journal)
        ledger
+       web
 
        :email
        :app
@@ -60,6 +63,7 @@
        encryption
        folders
        harpoon
+       js
        keys
        (landlord
         +code-review

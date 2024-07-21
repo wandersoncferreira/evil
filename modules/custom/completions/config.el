@@ -28,4 +28,4 @@
         "[" #'vertico-previous-group))
 
 (after! company
-  (setq company-idle-delay nil))
+  (setq company-idle-delay 1))

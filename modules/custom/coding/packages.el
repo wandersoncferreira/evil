@@ -2,3 +2,4 @@
 ;;; custom/coding/packages.el
 
 (package! ripgrep)
+(package! exec-path-from-shell)

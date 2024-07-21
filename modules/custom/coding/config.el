@@ -33,3 +33,7 @@
 (map! :leader
       :desc "Toggle list errors" "fe" #'bk/flycheck-list-errors
       :desc "Check buffer syntax" "fb" #'flycheck-buffer)
+
+(use-package! exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
