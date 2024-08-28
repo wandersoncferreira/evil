@@ -15,6 +15,12 @@
 ;; set registers
 (set-register ?c '(file . "~/.doom.d/docs/doom-cheatsheet.org"))
 
+(defun bk/insert-cedilha ()
+  (interactive)
+  (evil-append 1)
+  (insert "ç")
+  (evil-append 1))
+
 ;; disabling bindings
 (map! :leader
       "." nil ;; find file -- i'm always in projects `spc spc'
@@ -47,3 +53,6 @@
       "C-o" nil "C-b" nil
       "C-n" nil "C-c" nil
       )
+
+;; add cedilha in insert mode
+(evil-define-key 'insert global-map (kbd "C-,") #'bk/insert-cedilha)

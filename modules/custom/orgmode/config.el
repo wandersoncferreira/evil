@@ -88,7 +88,8 @@
 ;; org roam section
 
 (setq org-roam-directory (file-truename "~/code/roam")
-      org-roam-db-location (file-truename "~/code/roam/org-roam.db"))
+      org-roam-db-location (file-truename "~/code/roam/notes/org-roam.db")
+      org-roam-dailies-directory "notes/")
 
 (setq org-roam-capture-templates
       '(("n" "notes" plain
@@ -131,7 +132,8 @@
               (setq-local company-idle-delay 0.3
                           company-minimum-prefix-length 3)))
   (add-to-list 'company-backends 'company-capf)
-  (org-roam-db-autosync-mode))
+ ;(org-roam-db-autosync-mode)
+ )
 
 (require 'org-roam-protocol)
 
@@ -212,3 +214,28 @@ A table containing the sources and the links themselves are presented."
   "insert org mode timestamp at point with current date and time"
   (interactive)
   (org-insert-time-stamp (current-time) t))
+
+(use-package! org-roam-ui
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start nil))
+
+;; org-tree-slide
+(setq org-tree-slide-skip-outline-level 0)
+
+;; overwrite the function to a weird behavior that i want
+;; always try to move to the next heading nested
+(defun org-tree-slide-move-next-tree ()
+  "ALWAYS Display the next slide"
+  (interactive)
+  (when (org-tree-slide--active-p)
+    (let ((msg (plist-get org-tree-slide-indicator :next))
+          (message-log-max nil))
+      (when msg
+        (message "%s" msg)))
+    (run-hooks 'org-tree-slide-before-move-next-hook)
+    (widen)
+    (org-tree-slide--outline-next-heading)
+    (org-tree-slide--display-tree-with-narrow)))

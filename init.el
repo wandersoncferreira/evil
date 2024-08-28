@@ -47,6 +47,7 @@
        plantuml
        (python +lsp +pyright)
        (org +roam2
+            +present
             +journal)
        ledger
        web

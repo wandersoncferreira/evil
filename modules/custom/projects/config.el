@@ -24,6 +24,10 @@
         :desc "See project root dir" "pd" #'projectile-dired
         :desc "Ripgrep" "pg" #'projectile-ripgrep))
 
+;; stop $HOME from being recognizes as a project root
+(setq projectile-project-root-files-bottom-up
+      (remove ".git" projectile-project-root-files-bottom-up))
+
 (after! persp-mode
   (setq persp-lighter
         '(:eval
