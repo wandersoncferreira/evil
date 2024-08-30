@@ -2,16 +2,15 @@
 
 (doom! :input
        :completion
-       vertico
-       company
+       (vertico +childframe)
+       (company +childframe +tng)
 
        :ui
        doom
-       doom-dashboard
        (popup +all)
        workspaces
        (treemacs +lsp)
-       modeline
+       (modeline +light)
        zen
 
        :editor
@@ -31,8 +30,6 @@
        :tools
        lookup
        magit
-       editorconfig
-       direnv
        lsp
 
        :os
@@ -49,13 +46,10 @@
        (org +roam2
             +present
             +journal)
-       ledger
        web
 
        :email
        :app
-       rss
-
        :config
        (default +bindings +smartparens)
 

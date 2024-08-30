@@ -27,5 +27,6 @@
         "]" #'vertico-next-group
         "[" #'vertico-previous-group))
 
+;;; fix to make `company-tng' work with `company-box'
 (after! company
-  (setq company-idle-delay 1))
+  (setq company-frontends '(company-tng-frontend company-box-frontend)))
