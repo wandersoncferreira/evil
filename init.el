@@ -11,7 +11,6 @@
        workspaces
        (treemacs +lsp)
        (modeline +light)
-       zen
 
        :editor
        (evil +everywhere)
@@ -74,7 +73,6 @@
        skin
        (whatever
         +screencast
-        +feeds
         +finance)
        wicked
        (work

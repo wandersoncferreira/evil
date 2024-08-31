@@ -40,22 +40,3 @@
             ("aluguel/morumbi" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg liabilities:boletos:quintoandar")
             ("cisco" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg income:cisco")
             ("maple-bear" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg liabilities:boletos:maplebear")))))
-
-(when (modulep! +feeds)
-  (after! elfeed
-    (setq elfeed-search-filter "@4-week-ago +unread"
-          elfeed-feeds
-          '(("https://memex.marginalia.nu/log/feed.xml" blog)
-            ("http://nullprogram.com/feed/" blog dev)
-            ("https://blog.cryptographyengineering.com/feed/" blog crypto)
-            ("https://www.lesswrong.com/feed.xml?view=curated-rss" blog)
-            ("https://api.quantamagazine.org/feed/" magazine)
-            ("https://espial.esy.fun/u:yogsototh/feed.xml" bookmarks yann)
-            ("https://www.masteringemacs.org/feed" blog emacs)))
-
-    ;; should not do this.. but memex does not support HTTP and
-    ;; the SSL certificate is not updated.
-    (setq elfeed-curl-extra-arguments '("--insecure")))
-
-  ;; automatically update on elfeed-search
-  (add-hook 'elfeed-search-mode-hook #'elfeed-update))
