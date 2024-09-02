@@ -17,8 +17,6 @@
          embark-pre-action-hooks)))
 
 (use-package! vertico
-  :init
-  (setq vertico-scroll-margin 10)
   :config
   ;; restore some vim balance
   ;; if you want to type  [ or ] in the minibuffer use C-q [ or ]
@@ -30,3 +28,13 @@
 ;;; fix to make `company-tng' work with `company-box'
 (after! company
   (setq company-frontends '(company-tng-frontend company-box-frontend)))
+
+(use-package! company-box
+  :defer t
+  :config
+  (setq-hook! 'prog-mode-hook
+    company-box-frame-top-margin 20)
+  (setq-hook! 'text-mode-hook
+    company-box-frame-top-margin 75)
+  (set-face-attribute 'child-frame-border nil :background "#ffffff")
+  (setq company-box-doc-frame-parameters '((left-fringe . 10) (right-fringe . 10))))
