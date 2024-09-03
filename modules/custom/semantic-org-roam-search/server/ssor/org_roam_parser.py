@@ -71,12 +71,12 @@ def org_roam_nodes_to_dataframe(org_file):
 def org_roam_df():
     org_files = get_all_files_in_folder(full=True)
     df = pd.concat([org_roam_nodes_to_dataframe(org_file) for org_file in org_files])
-    df["text_to_encode"] = (
-        df["node_text_nested_exclusive"]
-        .astype(str)
-        .str.replace("#\+filetags:", "tags:")
-        .str.replace("#\+title:", "title:")
-        .str.replace("#\+STARTUP: inlineimages latexpreview", "")
-    )
+    df["text_to_encode"] = df.apply(lambda el:
+                                    el["node_text_nested_exclusive"]\
+                                    .replace("#+title:", "title:") \
+                                    .replace("#+filetags:", "tags:") \
+                                    .replace("#+begin_quote", "") \
+                                    .replace("#+end_quote", "")
+                                    , axis=1)
     df["text_to_encode"] = ("[" + df["node_hierarchy"] + "] " + df["text_to_encode"].astype(str))
     return df

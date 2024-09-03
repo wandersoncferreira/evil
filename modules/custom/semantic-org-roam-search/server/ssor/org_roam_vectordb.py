@@ -20,12 +20,13 @@ openai_api_key = config.get("config", "openai_api_key")
 def org_roam_vectordb():
     embedding = OpenAIEmbeddings(
         openai_api_key=openai_api_key,
-        model="text-embedding-3-small",
+        model="text-embedding-3-large",
         )
     vectordb = Chroma(
         "langchain_store",
         embedding_function=embedding,
-        persist_directory=persist_directory
+        persist_directory=persist_directory,
+        relevance_score_fn=lambda distance: 1.0 - distance / 2,
         )
     roam_df = org_roam_df()
     text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=0)
@@ -34,11 +35,11 @@ def org_roam_vectordb():
         title = row["node_title"]
         file_name = row["file_name"]
         node_hierarchy = row["node_hierarchy"]
-        if type(row["node_text_nested_exclusive"]) == float:
-            texts = [""]
+        if type(row["text_to_encode"]) == float:
+            _texts = [""]
         else:
-            texts = text_splitter.split_text(row["node_text_nested_exclusive"])
-        texts = ["[" + node_hierarchy + "] " + text for text in texts]
+            _texts = text_splitter.split_text(row["text_to_encode"])
+        texts = ["[" + node_hierarchy + "] " + text for text in _texts]
         metadatas = [
             {
                 "source": f"{index}-{i}",

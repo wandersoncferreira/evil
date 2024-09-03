@@ -27,7 +27,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         request_str = urllib.parse.unquote(self.path.split("/api/")[-1])
 
         # Retrieve docs
-        search_results = vectordb.similarity_search_with_score(request_str, k=10)
+        search_results = vectordb.similarity_search_with_score(request_str, k=23)
         retrieved_docs = sorted(search_results, key=lambda x: x[1], reverse=True)
         org_link_format = "[%.2f]: [[id:%s][%s]] \n %s"
         docs = [org_link_format % (score, doc.metadata["ID"],
@@ -51,7 +51,11 @@ def run_server():
 if __name__ == '__main__':
     embedding = OpenAIEmbeddings(
         openai_api_key=openai_api_key,
-        model="text-embedding-3-small"
+        model="text-embedding-3-large"
         )
-    vectordb = Chroma("langchain_store", embedding_function=embedding, persist_directory=persist_directory)
+    vectordb = Chroma(
+        "langchain_store",
+        embedding_function=embedding,
+        persist_directory=persist_directory
+        )
     run_server()
