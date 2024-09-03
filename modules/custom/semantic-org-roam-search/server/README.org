@@ -1,0 +1,13 @@
+#+title: Semantic Search for Org Roam
+
+Original post: http://lgmoneda.github.io/2023/04/08/semantic-search-for-org-roam.html
+
+Steps:
+
+Go to config.py file and provide the correct paths for your use case and the OpenAI API Key.
+
+Run ~poetry run python ssor/server.py~
+
+Run ~poetry run python ssor/org_roam_vectordb.py~ to build the knowledge base
+
+Run ~python ssor/server.py~ to serve the application under the 17042 port

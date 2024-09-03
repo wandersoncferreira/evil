@@ -69,6 +69,7 @@
        parenthesis
        projects
        self
+       semantic-org-roam-search
        shell
        skin
        (whatever

@@ -35,6 +35,18 @@
   (setq-hook! 'prog-mode-hook
     company-box-frame-top-margin 20)
   (setq-hook! 'text-mode-hook
-    company-box-frame-top-margin 75)
+    company-box-frame-top-margin 35)
   (set-face-attribute 'child-frame-border nil :background "#ffffff")
   (setq company-box-doc-frame-parameters '((left-fringe . 10) (right-fringe . 10))))
+
+(after! vertico-posframe
+  (setq vertico-posframe-parameters
+        '((left-fringe . 8)
+          (right-frige . 8))))
+
+(advice-add 'vertico-posframe--show
+            :before
+            (defun vertico-posframe--show/before (&rest _args)
+              ;; https://github.com/minad/vertico/blob/0f12d85a5a38353471d7657572e69f00fa1b9639/vertico.el#L611
+              (setq vertico-posframe-truncate-lines
+                    (< (point) (* 0.8 (window-width (active-minibuffer-window)))))))
