@@ -14,7 +14,7 @@
 (setq wsl? (string-match-p "microsoft" (shell-command-to-string "uname -a")))
 
 (setq doom-font (font-spec :family "Consolas"
-                           :size (if wsl? 24 16)))
+                           :size (if wsl? 22 16)))
 
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
@@ -31,9 +31,6 @@
 (after! clojure-mode
   (add-hook 'clojure-mode-hook #'highlight-todos))
 
-;; change frige width
-;; (fringe-mode '(10 . 0))
-
 ;; do not truncate lines in the minibuffer
 (add-hook 'minibuffer-setup-hook
           (lambda ()
@@ -41,10 +38,13 @@
 
 ;; start emacs with specific size and position
 (setq initial-frame-alist
-      '((top . -15)
-        (left . -40)
-        (width . 140)
-        (height . 85)))
+      '((top . 300)
+        (left . 2500)
+        (width . 82)
+        (height . 70)
+        (vertical-scroll-bars . nil)
+        (horizontal-scroll-bars . nil)
+        (tool-bar-lines . 0)))
 
 ;; enable column indicator
 (global-display-fill-column-indicator-mode)
