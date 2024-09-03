@@ -76,7 +76,8 @@ def org_roam_df():
                                     .replace("#+title:", "title:") \
                                     .replace("#+filetags:", "tags:") \
                                     .replace("#+begin_quote", "") \
-                                    .replace("#+end_quote", "")
+                                    .replace("#+end_quote", "") \
+                                    .replace("\n", " ")
                                     , axis=1)
     df["text_to_encode"] = ("[" + df["node_hierarchy"] + "] " + df["text_to_encode"].astype(str))
     return df

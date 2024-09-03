@@ -27,8 +27,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         request_str = urllib.parse.unquote(self.path.split("/api/")[-1])
 
         # Retrieve docs
-        search_results = vectordb.similarity_search_with_score(request_str, k=23)
-        retrieved_docs = sorted(search_results, key=lambda x: x[1], reverse=True)
+        search_results = vectordb.similarity_search_with_score(request_str, k=15)
+        retrieved_docs = sorted(search_results, key=lambda x: x[1], reverse=False)
         org_link_format = "[%.2f]: [[id:%s][%s]] \n %s"
         docs = [org_link_format % (score, doc.metadata["ID"],
                                    doc.metadata["title"].strip(),

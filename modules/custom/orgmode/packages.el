@@ -4,3 +4,5 @@
 (package! org-roam-ui)
 (package! org-download)
 (package! org-transclusion)
+(package! org-similarity
+  :recipe (:host github :repo "brunoarine/org-similarity" :branch "main"))

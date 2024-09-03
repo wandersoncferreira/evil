@@ -26,7 +26,6 @@ def org_roam_vectordb():
         "langchain_store",
         embedding_function=embedding,
         persist_directory=persist_directory,
-        relevance_score_fn=lambda distance: 1.0 - distance / 2,
         )
     roam_df = org_roam_df()
     text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=0)
@@ -52,6 +51,5 @@ def org_roam_vectordb():
         ]
         ids = [f"{index}-{i}" for i in range(len(texts))]
         vectordb.add_texts(texts, metadatas=metadatas, ids=ids)
-    print("VectorDB persisted successfully!")
 
 org_roam_vectordb()

@@ -239,3 +239,13 @@ A table containing the sources and the links themselves are presented."
     (widen)
     (org-tree-slide--outline-next-heading)
     (org-tree-slide--display-tree-with-narrow)))
+
+;; org similarity
+(use-package! org-similarity
+  :config
+  (setq org-similarity-directory org-roam-directory
+        org-similarity-language "english"
+        org-similarity-remove-first t
+        org-similarity-use-id-links t
+        org-similarity-recursive-search t
+        org-similarity-number-of-documents 10))
