@@ -2,8 +2,8 @@
 
 (doom! :input
        :completion
-       (vertico +childframe)
-       (company +childframe +tng)
+       vertico
+       company
 
        :ui
        doom
