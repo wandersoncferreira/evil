@@ -248,4 +248,26 @@ A table containing the sources and the links themselves are presented."
         org-similarity-remove-first t
         org-similarity-use-id-links t
         org-similarity-recursive-search t
-        org-similarity-number-of-documents 10))
+        org-similarity-number-of-documents 10)
+
+  ;; overwrite internal function of org-similarity
+  (defun org-similarity--show-sidebuffer (filename)
+    "Search similar documents related to FILENAME and puts results in a side buffer."
+    (add-to-list 'display-buffer-alist
+                 '("*Similarity Results*"
+                   ;; (display-buffer-in-side-window)
+                   ;; changed to use some window because i cant split side windows
+                   ;; and i want to use evil-split-and-follow function
+                   ;; and keep the similarity buffer still visible
+                   (display-buffer-use-some-window)
+                   (inhibit-same-window . t)
+                   (side . right)
+                   (window-width . 0.33)))
+    (let* ((org-similarity-heading org-similarity-heading-sidebuffer)
+           (org-similarity-prefix org-similarity-prefix-sidebuffer)
+           (results (org-similarity--run-command filename))
+           (formatted-results (org-similarity--format-pairs (org-similarity--parse-json-string results))))
+      (with-output-to-temp-buffer "*Similarity Results*"
+        (princ formatted-results))
+      (with-current-buffer "*Similarity Results*"
+        (org-mode)))))

@@ -30,3 +30,25 @@
 
 ;; add lookup definition to jump list
 (evil-add-command-properties #'+lookup/definition :jump t)
+
+
+;; fix split and follow functions to press RET automatically
+(defun org/window-split-and-follow ()
+  "Split current window horizontally, then focus new window.
+If `evil-split-window-below' is non-nil, the new window isn't focused."
+  (interactive)
+  (let ((evil-split-window-below (not evil-split-window-below)))
+    (call-interactively #'evil-window-split)
+    (call-interactively #'+org/dwim-at-point)))
+
+(defun org/window-vsplit-and-follow ()
+  "Split current window vertically, then focus new window.
+If `evil-vsplit-window-right' is non-nil, the new window isn't focused."
+  (interactive)
+  (let ((evil-vsplit-window-right (not evil-vsplit-window-right)))
+    (call-interactively #'evil-window-vsplit)
+    (call-interactively #'+org/dwim-at-point)))
+
+(map! (:map org-mode-map
+            :n "wS" #'org/window-split-and-follow
+            :n "wV" #'org/window-vsplit-and-follow))
