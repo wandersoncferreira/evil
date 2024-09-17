@@ -43,6 +43,7 @@
        plantuml
        (python +lsp +pyright)
        (org +roam2
+            +hugo
             +present
             +journal)
        web

@@ -81,9 +81,55 @@
 
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 
-(after! ox-hugo
-  (setq org-hugo-base-dir "~/code/wandersoncferreira.github.io"
-        org-hugo-section "posts"))
+;; hugo section
+
+(setq org-hugo-base-dir "~/code/wandersoncferreira.github.io")
+(setq org-roam-publish-path org-hugo-base-dir)
+
+(defun file-path-to-md-file-name (path)
+    (let ((file-name (car (last (split-string path "/")))))
+      (concat (car (split-string file-name "\\.")) ".md")))
+
+  (defun file-path-to-slug (path)
+    (let* ((file-name (car (last (split-string path "--"))))
+           (title (car (split-string file-name "\\."))))
+      (replace-regexp-in-string (regexp-quote "_") "-" title nil 'literal)))
+
+(defun org-roam-to-hugo-md ()
+  (interactive)
+  ;; make sure the author is me
+  (setq user-full-name "Wanderson Ferreira")
+
+  ;; call org roam to update id locations
+  (org-roam-update-org-id-locations)
+
+  (let ((files (org-roam-db-query
+                [:select [nodes:id nodes:file]
+                         :from nodes
+                         :inner :join tags :on (= tags:node_id nodes:id)
+                         :where (= tags:tag "publish")])))
+    (-map
+     (-lambda ((id file))
+       ;; use temporary buffer to prevent a buffer being opened for each note
+       (with-temp-buffer
+         (message "Working on: %s" file)
+         (insert-file-contents file)
+
+         (goto-char (point-min))
+         (while (re-search-forward "\\[\\[\\.\\/img\\([^]]*\\)\\]\\]" nil t)
+           (replace-match "[[/img\\1]]" nil nil))
+         (goto-char (point-min))
+         (re-search-forward ":END:")
+         (newline)
+         ;; add in hugo tags for export.
+         (insert
+          (format "#+HUGO_BASE_DIR: %s\n#+HUGO_SECTION: ./\n#+HUGO_SLUG: %s\n#+EXPORT_FILE_NAME: %s\n"
+                  org-roam-publish-path
+                  (file-path-to-slug file)
+                  (file-path-to-md-file-name file)))
+
+         (org-hugo-export-to-md)))
+     files)))
 
 ;; org roam section
 
@@ -99,23 +145,8 @@
          :immediate-finish t
          :unnarrowed t)))
 
-;; showing the number of backlinks for each node in `org-roam-node-find'
-(cl-defmethod org-roam-node-directories ((node org-roam-node))
-  (if-let ((dirs (file-name-directory (file-relative-name (org-roam-node-file node) org-roam-directory))))
-      (format "(%s)" (car (split-string dirs "/")))
-    ""))
-
-(cl-defmethod org-roam-node-backlinkscount ((node org-roam-node))
-  (let* ((count (caar (org-roam-db-query
-                       [:select (funcall count source)
-                                :from links
-                                :where (= dest $s1)
-                                :and (= type "id")]
-                       (org-roam-node-id node)))))
-    (format "[%d]" count)))
-
 (setq org-roam-node-display-template
-      "${directories:10} ${tags:10} ${title:100} ${backlinkscount:6}")
+     "${doom-tags:30} ${doom-hierarchy:*}" )
 
 ;; break lines automatically on the specified width
 (add-hook 'org-mode-hook 'auto-fill-mode)
