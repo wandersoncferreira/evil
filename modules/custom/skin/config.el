@@ -20,7 +20,7 @@
 (setq doom-font (font-spec :family "Consolas"
                            :size (cond
                                   ((eq wsl? 't) 22)
-                                  ((eq vinhedo-computer? 't) 12)
+                                  ((eq vinhedo-computer? 't) 10)
                                   (20))))
 
 ;; disable highliting of current line
@@ -93,10 +93,13 @@
 
 
 ;; best theme is dark default theme
-(setq doom-theme nil)
-(when (display-graphic-p)
-  (invert-face 'default))
-(set-variable 'frame-background-mode 'dark)
+(defun enable-inverse-default-theme ()
+  (setq doom-theme nil)
+  (when (display-graphic-p)
+    (invert-face 'default))
+  (set-variable 'frame-background-mode 'dark))
+
+(enable-inverse-default-theme)
 
 ;;; * skin keybindings
 (map! :leader
