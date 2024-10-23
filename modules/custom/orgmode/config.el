@@ -302,3 +302,5 @@ A table containing the sources and the links themselves are presented."
         (princ formatted-results))
       (with-current-buffer "*Similarity Results*"
         (org-mode)))))
+
+(require 'org-inline-video-thumbnails)

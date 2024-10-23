@@ -8,7 +8,6 @@
        :ui
        doom
        (popup +all)
-       workspaces
        (treemacs +lsp)
        (modeline +light)
 
@@ -41,6 +40,7 @@
        (javascript +lsp)
        markdown
        plantuml
+       yaml
        (python +lsp +pyright)
        (org +roam2
             +hugo
