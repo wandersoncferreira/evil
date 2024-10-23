@@ -98,10 +98,12 @@
 
 
 ;; best theme is dark default theme
-(setq doom-theme nil)
-(when (display-graphic-p)
-  (invert-face 'default))
-(set-variable 'frame-background-mode 'dark)
+;; (setq doom-theme nil)
+;; (when (display-graphic-p)
+;;   (invert-face 'default))
+;; (set-variable 'frame-background-mode 'dark)
+
+(enable-modus-operandi)
 
 ;;; * skin keybindings
 (map! :leader
