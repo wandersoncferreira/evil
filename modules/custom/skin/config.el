@@ -11,8 +11,12 @@
 (setq display-line-numbers-type nil)
 
 ;; enable default font
-(setq wsl? (booleanp
-            (string-search "microsoft" (shell-command-to-string "uname -a"))))
+(setq wsl? (not
+            (booleanp
+             (string-search "microsoft" (shell-command-to-string "uname -a")))))
+(setq macos? (not
+              (booleanp
+               (string-search "Darwin" (shell-command-to-string "uname -a")))))
 
 ;; am i in vinhedo?
 (setq vinhedo-computer? nil)
@@ -20,6 +24,7 @@
 (setq doom-font (font-spec :family "Consolas"
                            :size (cond
                                   ((eq wsl? 't) 22)
+                                  ((eq macos? 't) 12)
                                   ((eq vinhedo-computer? 't) 12)
                                   (20))))
 
