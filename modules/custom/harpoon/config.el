@@ -135,16 +135,17 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
   ;; update harpoon position when saving a buffer
   (add-hook 'after-save-hook #'harpoon-update-bookmark-as-you-edit)
 
-  (advice-add '+workspace/switch-to
-              :after
-              (lambda (&rest args)
-                (let ((persp-buff (car (persp-buffers (get-current-persp))))
-                      (proj-dir))
-                  (when (buffer-file-name persp-buff)
-                    (with-current-buffer persp-buff
-                      (setq proj-dir (projectile-project-root)))
-                    (bk/reset-global-harpoons)
-                    (bk/load-harpoon-keys-in-project proj-dir)))))
+  ;; workspace is disabled in my doom.d
+  ;; (advice-add '+workspace/switch-to
+  ;;             :after
+  ;;             (lambda (&rest args)
+  ;;               (let ((persp-buff (car (persp-buffers (get-current-persp))))
+  ;;                     (proj-dir))
+  ;;                 (when (buffer-file-name persp-buff)
+  ;;                   (with-current-buffer persp-buff
+  ;;                     (setq proj-dir (projectile-project-root)))
+  ;;                   (bk/reset-global-harpoons)
+  ;;                   (bk/load-harpoon-keys-in-project proj-dir)))))
 
   (add-hook 'projectile-after-switch-project-hook
             (lambda ()

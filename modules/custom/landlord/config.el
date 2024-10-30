@@ -12,8 +12,6 @@
 
     (add-hook 'code-review-mode-hook
               (lambda ()
-                ;; include *Code-Review* buffer into current workspace
-                (persp-add-buffer (current-buffer))
                 ;; emojify!
                 (emojify-mode)))))
 
