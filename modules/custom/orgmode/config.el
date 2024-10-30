@@ -3,6 +3,8 @@
 (setq org-directory (expand-file-name "~/code/org/")
       org-deadline-warning-days 60
       org-hide-emphasis-markers t
+      ;; remove gap when you add a new heading
+      org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
       org-pretty-entities t
       ;; add close time when changing to DONE
       org-log-done 'time
@@ -14,13 +16,17 @@
 ;; new state to todo
 (setq org-todo-keywords
       '((sequence
-         "TODO(t)"
+         "TODO(t!)"
          "WAIT(w)"
          "DELEGATED(e)"
          "STARTED(s)"
+         "SOMEDAY(o)"
+         "TO-READ(r)"
+         "TO-WATCH(w)"
+         "CHECK(k)"
          "|"
-         "DONE(d)"
-         "CANCELED(c)"
+         "DONE(d!)"
+         "CANCELED(c!)"
          "INACTIVE(i)")))
 
 (setq org-return-follows-link t)
@@ -68,17 +74,7 @@
           next-headline
         nil))))
 
-(setq org-agenda-custom-commands
-      '(("d" "Today's agenda"
-         ((agenda ""
-                  ((org-agenda-span 'week)
-                   (org-agenda-skip-function (lambda ()
-                                               (or
-                                                (bk/skip-scheduled-or-deadline-if-not-today)
-                                                (bk/skip-habits))))))))))
-
 (require 'org-tempo)
-
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 
 ;; hugo section
@@ -204,34 +200,6 @@ A table containing the sources and the links themselves are presented."
 
 (require 'org-download)
 
-(defun bk/roam-todo-files ()
-  "returns a list of note files containing the 'todo' tag."
-  (seq-uniq
-   (seq-map
-    #'car
-    (org-roam-db-query
-     [:select [nodes:file]
-              :from tags
-              :left-join nodes
-              :on (= tags:node-id nodes:id)
-              :where (like tag (quote "%\"todo\"%"))]))))
-
-(defun bk/agenda-files-update (&rest _)
-  "update the value of org agenda"
-  (setq org-agenda-files (bk/roam-todo-files)))
-
-(advice-add 'org-agenda :before #'bk/agenda-files-update)
-(advice-add 'org-todo-list :before #'bk/agenda-files-update)
-
-(use-package! org-agenda
-  :config
-  (setq org-agenda-span 3
-        org-agenda-start-day "+0d"
-        org-agenda-hide-tags-regexp "draft\\|todo"
-        org-agenda-skip-timestamp-if-done t
-        org-agenda-skip-deadline-if-done t
-        org-agenda-skip-scheduled-if-done t))
-
 (use-package! org-transclusion
   :after org
   :init
@@ -304,3 +272,16 @@ A table containing the sources and the links themselves are presented."
         (org-mode)))))
 
 (require 'org-inline-video-thumbnails)
+
+
+(use-package! org-modern
+  :hook (org-mode . org-modern-mode)
+  :config
+  (setq
+   ;; org-modern-star '("●" "○" "✸" "✿")
+   org-modern-star '( "⌾" "✸" "◈" "◇")
+   org-modern-list '((42 . "◦") (43 . "•") (45 . "–"))
+   org-modern-tag nil
+   org-modern-priority nil
+   org-modern-todo nil
+   org-modern-table nil))

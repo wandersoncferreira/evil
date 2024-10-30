@@ -99,7 +99,7 @@
     (invert-face 'default))
   (set-variable 'frame-background-mode 'dark))
 
-(enable-inverse-default-theme)
+(enable-vim-colors)
 
 ;;; * skin keybindings
 (map! :leader

@@ -54,6 +54,7 @@
        (default +bindings +smartparens)
 
        :custom
+       agenda
        buffers
        clj
        coding
