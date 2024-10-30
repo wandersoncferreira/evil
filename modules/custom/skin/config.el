@@ -11,8 +11,12 @@
 (setq display-line-numbers-type nil)
 
 ;; enable default font
-(setq wsl? (booleanp
-            (string-search "microsoft" (shell-command-to-string "uname -a"))))
+(setq wsl? (not
+            (booleanp
+             (string-search "microsoft" (shell-command-to-string "uname -a")))))
+(setq macos? (not
+              (booleanp
+               (string-search "Darwin" (shell-command-to-string "uname -a")))))
 
 ;; am i in vinhedo?
 (setq vinhedo-computer? nil)
@@ -20,7 +24,8 @@
 (setq doom-font (font-spec :family "Consolas"
                            :size (cond
                                   ((eq wsl? 't) 22)
-                                  ((eq vinhedo-computer? 't) 10)
+                                  ((eq macos? 't) 12)
+                                  ((eq vinhedo-computer? 't) 12)
                                   (20))))
 
 ;; disable highliting of current line
@@ -93,11 +98,10 @@
 
 
 ;; best theme is dark default theme
-(defun enable-inverse-default-theme ()
-  (setq doom-theme nil)
-  (when (display-graphic-p)
-    (invert-face 'default))
-  (set-variable 'frame-background-mode 'dark))
+;; (setq doom-theme nil)
+;; (when (display-graphic-p)
+;;   (invert-face 'default))
+;; (set-variable 'frame-background-mode 'dark)
 
 (enable-vim-colors)
 
