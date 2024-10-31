@@ -35,6 +35,9 @@
      :discard (:deadline t)
      :order 1)))
 
+(defvar bk/fazer-alguma-coisa-label
+  "Fazer alguma coisa sobre isso ...")
+
 (use-package! org-agenda
   :config
   (setq org-agenda-span 7
@@ -42,9 +45,6 @@
         ;; org-agenda-hide-tags-regexp "draft\\|todo"
         org-treat-insert-todo-heading-as-state-change t
         org-log-into-drawer t
-        org-agenda-skip-timestamp-if-done t
-        org-agenda-skip-deadline-if-done t
-        org-agenda-skip-scheduled-if-done t
         org-agenda-custom-commands
         '(("d" "Agenda do Dia"
            ((agenda "" ((org-agenda-overriding-header "Agenda do Dia")
@@ -56,7 +56,9 @@
                         (org-agenda-sorting-strategy '(scheduled-up deadline-up priority-down))
                         (org-super-agenda-groups bk/super-agenda-today-filter)))
             (org-ql-block '(or (and (habit)
-                                    (or (scheduled :to today) (deadline :to today)))
+                                    (or (scheduled :to today)
+                                        (deadline :to today)
+                                        (done)))
                                (and (todo)
                                     (or (scheduled :to today)
                                         (deadline :to today)
@@ -76,7 +78,7 @@
                                :scheduled today
                                :deadline today
                                :tag "reunião")
-                              (:name "Sometime this week"
+                              (:name "Gaveta"
                                :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
                                :order 9
                                )))))))
@@ -125,11 +127,26 @@
   :init
   (setq svg-tag-tags
         '(("Important" . ((lambda (tag) (svg-tag-make "Important"
-                                                   :face 'org-todo
-                                                   :margin 2))))
+                                                      :face 'org-todo
+                                                      :inverse t
+                                                      :radius 10
+                                                      :margin 0
+                                                      :padding 2))))
           ("Habits" . ((lambda (tag) (svg-tag-make "Habits"
-                                                   :face 'org-priority
-                                                   :margin 0))))))
+                                                   :face 'org-date
+                                                   :radius 10
+                                                   :inverse t
+                                                   :margin 0
+                                                   :padding 2))))
+          ("DONE" . ((lambda (tag) (svg-tag-make "DONE" :face 'org-done :margin 0))))
+          ("Gaveta" . ((lambda (tag)
+                         (svg-tag-make "Gaveta"
+                                       :face 'org-priority
+                                       :margin 0
+                                       :inverse t
+                                       :radius 10
+                                       :padding 2
+                                       :height 1))))))
   :config
   (add-hook 'org-agenda-finalize-hook #'org-agenda-show-svg)
   (global-svg-tag-mode))

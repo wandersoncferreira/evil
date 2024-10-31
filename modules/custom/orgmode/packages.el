@@ -12,3 +12,4 @@
          :repo "kisaragi-hiu/org-inline-video-thumbnails"
          :branch "main"))
 (package! org-modern)
+(package! org-alert)

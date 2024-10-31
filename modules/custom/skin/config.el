@@ -23,7 +23,7 @@
 
 (setq doom-font (font-spec :family "Consolas"
                            :size (cond
-                                  ((eq wsl? 't) 22)
+                                  ((eq wsl? 't) 24)
                                   ((eq macos? 't) 12)
                                   ((eq vinhedo-computer? 't) 12)
                                   (20))))

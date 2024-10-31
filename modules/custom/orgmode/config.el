@@ -20,6 +20,7 @@
          "WAIT(w)"
          "DELEGATED(e)"
          "STARTED(s)"
+         "PROJECT(p)"
          "SOMEDAY(o)"
          "TO-READ(r)"
          "TO-WATCH(w)"
@@ -27,7 +28,7 @@
          "|"
          "DONE(d!)"
          "CANCELED(c!)"
-         "INACTIVE(i)")))
+         )))
 
 (setq org-return-follows-link t)
 
@@ -285,3 +286,10 @@ A table containing the sources and the links themselves are presented."
    org-modern-priority nil
    org-modern-todo nil
    org-modern-table nil))
+
+;; (use-package! org-alert
+;;   :config
+;;   (setq alert-default-style 'toaster
+;;         org-alert-interval 300
+;;         org-alert-notify-cutoff 10
+;;         org-alert-notify-after-event-cutoff 10))
