@@ -30,13 +30,6 @@
   (defadvice nrepl-load-current-buffer (before save-first activate)
     (save-buffer))
 
-  ;; add buffer to current persp
-  (dolist (it '(cider-repl-mode-hook
-                cider-test-report-mode-hook
-                cider-popup-buffer-mode-hook))
-    (add-hook it (lambda ()
-                   (persp-add-buffer (current-buffer)))))
-
   ;; fix the placement of the test-report buffer
   (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
 
