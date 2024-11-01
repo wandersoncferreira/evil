@@ -13,3 +13,9 @@
          :branch "main"))
 (package! org-modern)
 (package! org-alert)
+(package! org-variable-pitch)
+(package! org-margin
+  :recipe
+  (:host github
+         :repo "rougier/org-margin"
+         :branch "master"))

@@ -1,7 +1,7 @@
 ;;; custom/skin/config.el -*- lexical-binding: t; -*-
 
 ;; change line spacing for all buffers
-(setq-default line-spacing 8)
+(setq-default line-spacing 2)
 
 (setq initial-scratch-message "\
 ;; Here be evil dragons...
@@ -23,7 +23,7 @@
 
 (setq doom-font (font-spec :family "Consolas"
                            :size (cond
-                                  ((eq wsl? 't) 24)
+                                  ((eq wsl? 't) 22)
                                   ((eq macos? 't) 12)
                                   ((eq vinhedo-computer? 't) 12)
                                   (20))))

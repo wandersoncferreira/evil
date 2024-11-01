@@ -18,16 +18,14 @@
 
 (defun bk/agenda-files-update (&rest _)
   "update the value of org agenda"
-  (setq org-agenda-files (bk/roam-todo-files)))
+  (setq org-agenda-files (cons "~/googlecalendar_iagwanderson.org"
+                               (bk/roam-todo-files))))
 
 (advice-add 'org-agenda :before #'bk/agenda-files-update)
 (advice-add 'org-todo-list :before #'bk/agenda-files-update)
 
-(defvar bk/super-agenda-today-filter
-  '((:name "Today"
-     :scheduled t
-     :order 2)
-    (:name "Deadlines"
+(setq bk/super-agenda-today-filter
+  '((:name "Deadlines"
      :deadline t
      :order 3)
     (:name "Cronograma de Hoje"
@@ -35,25 +33,24 @@
      :discard (:deadline t)
      :order 1)))
 
-(defvar bk/fazer-alguma-coisa-label
-  "Fazer alguma coisa sobre isso ...")
-
 (use-package! org-agenda
   :config
   (setq org-agenda-span 7
         org-agenda-start-day "+0d"
-        ;; org-agenda-hide-tags-regexp "draft\\|todo"
-        org-treat-insert-todo-heading-as-state-change t
+        org-treat-insert-todo-heading-as-state-change nil
         org-log-into-drawer t
         org-agenda-custom-commands
         '(("d" "Agenda do Dia"
            ((agenda "" ((org-agenda-overriding-header "Agenda do Dia")
-                        (org-agenda-span 1)
+                        (org-agenda-span 'day)
+                        (org-agenda-prefix-format "   %i %?-2 t%s")
+                        (org-agenda-skip-scheduled-if-done nil)
+                        (org-agenda-skip-deadline-if-done t)
+                        (org-agenda-time-leading-zero t)
                         (org-agenda-skip-function
                          (lambda ()
                            (when (string-equal (org-entry-get (point) "style") "habit")
                              (outline-next-heading))))
-                        (org-agenda-sorting-strategy '(scheduled-up deadline-up priority-down))
                         (org-super-agenda-groups bk/super-agenda-today-filter)))
             (org-ql-block '(or (and (habit)
                                     (or (scheduled :to today)
@@ -64,39 +61,31 @@
                                         (deadline :to today)
                                         (todo "SOMEDAY"
                                               "CHECK"
+                                              "PROJECT"
                                               "TO-READ"
                                               "TO-WATCH"))))
-                          ((org-ql-block-header "Atividades de Hoje")
+                          ((org-ql-block-header "Atividades Gerais")
                            (org-super-agenda-groups
-                            '((:name "Habits" :habit t)
+                            '((:discard (:todo "TODO"))
+                              (:name "Habits" :habit t)
                               (:name "Compromissos Presenciais"
-                               :tag "presencial"
-                               :scheduled today
-                               :deadline today)
+                               :time-grid t
+                               :tag "presencial")
                               (:name "Reuniões"
                                :time-grid t
-                               :scheduled today
-                               :deadline today
                                :tag "reunião")
                               (:name "Gaveta"
                                :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
-                               :order 9
-                               )))))))
-          ("n" "Agenda de Amanhã"
-           ((agenda "" ((org-agenda-overriding-header "Agenda de Amanhã")
-                        (org-agenda-span 2)
-                        (org-agenda-skip-function
-                         (lambda ()
-                           (when (string-equal (org-entry-get (point) "style") "habit")
-                             (outline-next-heading))))
-                        (org-agenda-sorting-strategy '(scheduled-up deadline-up priority-down))
-                        (org-super-agenda-groups bk/super-agenda-today-filter))))))))
+                               :order 8)
+                              (:name "Projetos"
+                               :todo "PROJECT"
+                               :order 9))))))))))
 
 (add-to-list 'org-modules 'org-habit t)
 
 (setq org-habit-preceding-days 4
       org-habit-following-days 4
-      org-habit-show-habits-only-for-today nil
+      org-habit-show-habits-only-for-today t
       org-habit-today-glyph ?⍟
       org-habit-completed-glyph ?✓
       org-habit-graph-column 40)
@@ -123,30 +112,66 @@
       (pop keywords)
       (setq keyword (car keywords)))))
 
+(defun svg-progress-percent (value)
+  (save-match-data
+    (svg-image (svg-lib-concat
+                (svg-lib-progress-bar  (/ (string-to-number value) 100.0)
+                                       nil :margin 0 :stroke 2 :radius 3 :padding 2 :width 11)
+                (svg-lib-tag (concat value "%")
+                             nil :stroke 0 :margin 0))
+               :ascent 'center)))
+
+(defun svg-progress-count (value)
+  (save-match-data
+    (let* ((seq (split-string value "/"))
+           (count (if (stringp (car seq))
+                      (float (string-to-number (car seq)))
+                    0))
+           (total (if (stringp (cadr seq))
+                      (float (string-to-number (cadr seq)))
+                    1000)))
+      (svg-image (svg-lib-concat
+                  (svg-lib-progress-bar (/ count total) nil
+                                        :margin 0 :stroke 2 :radius 3 :padding 2 :width 11)
+                  (svg-lib-tag value nil
+                               :stroke 0 :margin 0))
+                 :ascent 'center))))
+
+(defun bk/make-svg-headings (name-string face)
+  (svg-tag-make name-string
+                :face face
+                :inverse t
+                :radius 10
+                :margin 0
+                :padding 4))
+
+
 (use-package! svg-tag-mode
   :init
   (setq svg-tag-tags
-        '(("Important" . ((lambda (tag) (svg-tag-make "Important"
-                                                      :face 'org-todo
-                                                      :inverse t
-                                                      :radius 10
-                                                      :margin 0
-                                                      :padding 2))))
-          ("Habits" . ((lambda (tag) (svg-tag-make "Habits"
-                                                   :face 'org-date
-                                                   :radius 10
-                                                   :inverse t
-                                                   :margin 0
-                                                   :padding 2))))
+        '(
+          ;; headings
+          ("Important" . ((lambda (tag) (bk/make-svg-headings "Important" 'org-todo))))
+          ("Deadlines" . ((lambda (tag) (bk/make-svg-headings "Deadlines" 'org-todo))))
+          ("Habits" . ((lambda (tag) (bk/make-svg-headings "Habits" 'org-date))))
+          ("Gaveta" . ((lambda (tag) (bk/make-svg-headings "Gaveta" 'org-priority))))
+          ("Projetos" . ((lambda (tag) (bk/make-svg-headings "Projetos" nil))))
+          ;; more
           ("DONE" . ((lambda (tag) (svg-tag-make "DONE" :face 'org-done :margin 0))))
-          ("Gaveta" . ((lambda (tag)
-                         (svg-tag-make "Gaveta"
-                                       :face 'org-priority
-                                       :margin 0
-                                       :inverse t
-                                       :radius 10
-                                       :padding 2
-                                       :height 1))))))
+          ;; Progress bars
+          ("\\(\\[[0-9]\\{1,3\\}%\\]\\)" . ((lambda (tag)
+                                              (svg-progress-percent (substring tag 1 -2)))))
+          ("\\(\\[[0-9]+/[0-9]+\\]\\)" . ((lambda (tag)
+                                            (svg-progress-count (substring tag 1 -1)))))))
   :config
   (add-hook 'org-agenda-finalize-hook #'org-agenda-show-svg)
   (global-svg-tag-mode))
+
+
+(use-package! org-gcal
+  :config
+  (setq google-calendar-client-info (car (auth-source-search :max 1 :host "google.calendar.client"))
+        org-gcal-client-id (plist-get google-calendar-client-info :user)
+        org-gcal-client-secret (plist-get google-calendar-client-info :secret)
+        plstore-cache-passphrase-for-symmetric-encryption t
+        org-gcal-fetch-file-alist '(("iagwanderson@gmail.com" . "~/googlecalendar_iagwanderson.org"))))

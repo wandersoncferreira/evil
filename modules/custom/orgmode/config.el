@@ -30,7 +30,11 @@
          "CANCELED(c!)"
          )))
 
+(add-hook 'org-trigger-hook 'save-buffer)
+
 (setq org-return-follows-link t)
+
+(add-hook 'org-mode-hook (lambda () (setq line-spacing 0.2)))
 
 (setq-local org-capture-templates
       '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
@@ -279,13 +283,26 @@ A table containing the sources and the links themselves are presented."
   :hook (org-mode . org-modern-mode)
   :config
   (setq
-   ;; org-modern-star '("●" "○" "✸" "✿")
    org-modern-star '( "⌾" "✸" "◈" "◇")
    org-modern-list '((42 . "◦") (43 . "•") (45 . "–"))
+   org-pretty-entities t
+   org-modern-table-vertical t
    org-modern-tag nil
    org-modern-priority nil
    org-modern-todo nil
    org-modern-table nil))
+
+(use-package! org-variable-pitch
+  :hook (org-mode . org-variable-pitch-minor-mode))
+
+(use-package! org-margin
+  :custom
+  (org-margin-headers-set 'H-svg)
+  :config
+  (add-hook 'org-mode
+            (lambda ()
+              (org-indent-mode -1)
+              (org-margin-mode))))
 
 ;; (use-package! org-alert
 ;;   :config
