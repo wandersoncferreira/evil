@@ -172,7 +172,9 @@
 
 (use-package! org-gcal
   :config
-  (setq org-gcal-client-id gclient-id
-        org-gcal-client-secret gclient-secret
+  (setq org-gcal-up-days '10
+        org-gcal-down-days '20
+        org-gcal-recurring-events-mode 'top-level
+        org-gcal-remove-api-cancelled-events t
         plstore-cache-passphrase-for-symmetric-encryption t
         org-gcal-fetch-file-alist '(("iagwanderson@gmail.com" . "~/googlecalendar_iagwanderson.org"))))
