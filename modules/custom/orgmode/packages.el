@@ -19,3 +19,4 @@
   (:host github
          :repo "rougier/org-margin"
          :branch "master"))
+(package! org-music :recipe (:host github :repo "debanjum/org-music" :branch "master"))

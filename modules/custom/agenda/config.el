@@ -18,35 +18,39 @@
 
 (defun bk/agenda-files-update (&rest _)
   "update the value of org agenda"
-  (setq org-agenda-files (cons "~/googlecalendar_iagwanderson.org"
-                               (bk/roam-todo-files))))
+  (setq org-agenda-files (append
+                          (list "~/googlecalendar_iagwanderson.org"
+                                `,(concat org-roam-directory "/todo.org"))
+                          (bk/roam-todo-files))))
+
 
 (advice-add 'org-agenda :before #'bk/agenda-files-update)
 (advice-add 'org-todo-list :before #'bk/agenda-files-update)
 
 (setq bk/super-agenda-today-filter
-  '((:name "Deadlines"
+  '((:discard (:habit t))
+    (:name "Deadlines"
      :deadline t
-     :order 3)
-    (:name "Cronograma de Hoje"
-     :time-grid t
      :discard (:deadline t)
-     :order 1)))
+     :order 1)
+    (:name "Cronograma de Hoje"
+     :anything t
+     ;; :not (:deadline today)
+     :order 2)))
 
 (use-package! org-agenda
   :config
   (setq org-agenda-span 7
         org-agenda-start-day "+0d"
-        org-treat-insert-todo-heading-as-state-change nil
         org-log-into-drawer t
         org-agenda-custom-commands
         '(("d" "Agenda do Dia"
            ((agenda "" ((org-agenda-overriding-header "Agenda do Dia")
-                        (org-agenda-span 'day)
+                        (org-agenda-span 2)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-agenda-skip-scheduled-if-done nil)
                         (org-agenda-skip-deadline-if-done t)
-                        (org-agenda-time-leading-zero t)
+                        (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
                         (org-agenda-skip-function
                          (lambda ()
                            (when (string-equal (org-entry-get (point) "style") "habit")
@@ -66,29 +70,27 @@
                                               "TO-WATCH"))))
                           ((org-ql-block-header "Atividades Gerais")
                            (org-super-agenda-groups
-                            '((:discard (:todo "TODO"))
-                              (:name "Habits" :habit t)
+                            '((:name "Habits" :habit t)
                               (:name "Compromissos Presenciais"
-                               :time-grid t
                                :tag "presencial")
                               (:name "Reuniões"
-                               :time-grid t
                                :tag "reunião")
                               (:name "Gaveta"
                                :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
                                :order 8)
                               (:name "Projetos"
                                :todo "PROJECT"
-                               :order 9))))))))))
+                               :order 9)
+                              (:discard (:todo "TODO")))))))))))
 
 (add-to-list 'org-modules 'org-habit t)
 
-(setq org-habit-preceding-days 4
-      org-habit-following-days 4
-      org-habit-show-habits-only-for-today t
-      org-habit-today-glyph ?⍟
-      org-habit-completed-glyph ?✓
-      org-habit-graph-column 40)
+;; (setq org-habit-preceding-days 4
+;;       org-habit-following-days 4
+;;       org-habit-show-habits-only-for-today t
+;;       org-habit-today-glyph ?⍟
+;;       org-habit-completed-glyph ?✓
+;;       org-habit-graph-column 40)
 
 (use-package! org-super-agenda
   :after org
@@ -170,8 +172,7 @@
 
 (use-package! org-gcal
   :config
-  (setq google-calendar-client-info (car (auth-source-search :max 1 :host "google.calendar.client"))
-        org-gcal-client-id (plist-get google-calendar-client-info :user)
-        org-gcal-client-secret (plist-get google-calendar-client-info :secret)
+  (setq org-gcal-client-id gclient-id
+        org-gcal-client-secret gclient-secret
         plstore-cache-passphrase-for-symmetric-encryption t
         org-gcal-fetch-file-alist '(("iagwanderson@gmail.com" . "~/googlecalendar_iagwanderson.org"))))

@@ -36,20 +36,20 @@
 
 (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.2)))
 
-(setq-local org-capture-templates
-      '(("t" "todo" entry (file+headline "todo.org" "Unsorted")
+(setq org-capture-templates
+      '(("t" "todo" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Unsorted")
          "* TODO %?\n"
          :prepend t)
-        ("d" "deadline" entry (file+headline "todo.org" "Deadline")
+        ("d" "deadline" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Deadline")
          "* TODO %?\nDEADLINE: <%(org-read-date)>\n\n%i"
          :prepend t)
-        ("s" "schedule" entry (file+headline "todo.org" "Scheduled")
+        ("s" "schedule" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Scheduled")
          "* TODO %?\nSCHEDULED: <%(org-read-date)>\n\n%i"
          :prepend t)
-        ("h" "habit" entry (file+headline "todo.org" "Habits")
+        ("h" "habit" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Habits")
          "* TODO %?\nSCHEDULED: <%(org-read-date)>\n:PROPERTIES:\n:STYLE:   habit\n:END:\n")
-        ("c" "check out later" entry (file+headline "todo.org" "Check out later")
-         "* TODO %?\n"
+        ("c" "check out later" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Check out later")
+         "* CHECK %?\n"
          :prepend t)))
 
 (defun bk/skip-scheduled-or-deadline-if-not-today ()
@@ -310,3 +310,32 @@ A table containing the sources and the links themselves are presented."
 ;;         org-alert-interval 300
 ;;         org-alert-notify-cutoff 10
 ;;         org-alert-notify-after-event-cutoff 10))
+;;
+;;
+
+;; journal
+
+(defun bk/running-daily-journal ()
+  "Create a new entry in my journal about my running experiences."
+  (interactive)
+  (let ((org-journal-dir (concat org-roam-directory "/journal/running")))
+    (org-journal-new-entry nil)))
+
+(use-package! org-journal
+  :config
+  (setq org-journal-file-type 'monthly
+        org-journal-file-format "%Y-%m-%d.org"))
+
+
+;; music
+(use-package! org-music
+  :after (org emms)
+  :config
+  (setq org-music-file "~/code/roam/music.org"
+        org-music-media-directory "~/code/roam/media"
+        org-music-youtube-downloader "yt-dlp"
+        org-music-operating-system "linux")
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (if (equal buffer-file-name (expand-file-name org-music-file))
+                  (org-music-mode)))))
