@@ -40,3 +40,8 @@
             ("aluguel/morumbi" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg liabilities:boletos:quintoandar")
             ("cisco" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg income:cisco")
             ("maple-bear" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg liabilities:boletos:maplebear")))))
+
+(use-package! emms
+  :config
+  (emms-all)
+  (emms-default-players))

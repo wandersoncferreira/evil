@@ -326,13 +326,13 @@ A table containing the sources and the links themselves are presented."
   (setq org-journal-file-type 'monthly
         org-journal-file-format "%Y-%m-%d.org"))
 
-
 ;; music
 (use-package! org-music
   :after (org emms)
   :config
   (setq org-music-file "~/code/roam/music.org"
         org-music-media-directory "~/code/roam/media"
+        org-music-cache-download-song-format "m4a"
         org-music-youtube-downloader "yt-dlp"
         org-music-operating-system "linux")
   (add-hook 'org-mode-hook
