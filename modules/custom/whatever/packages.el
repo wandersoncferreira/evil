@@ -4,3 +4,4 @@
 (package! gif-screencast)
 (package! gnuplot)
 (package! gnuplot-mode)
+(package! osx-dictionary)
