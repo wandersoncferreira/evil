@@ -8,3 +8,11 @@
              :host "bitwarden.app"
              :user "bartuka"))
   (message "Bitwarden copied!"))
+
+(defun bk/gpg ()
+  "Get GPG."
+  (interactive)
+  (kill-new (auth-source-pick-first-password
+             :host "gpg.client"
+             :user "gpg"))
+  (message "GPG copied!"))
