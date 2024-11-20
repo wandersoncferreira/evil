@@ -343,7 +343,7 @@ A table containing the sources and the links themselves are presented."
 
 ;; org jira
 (use-package! org-jira
-  :config
+  :init
   (setq jiralib-url "https://cisco-sbg.atlassian.net"
         org-jira-progress-issue-flow
         '(("Open" . "To Do")
