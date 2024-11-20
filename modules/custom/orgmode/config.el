@@ -339,3 +339,24 @@ A table containing the sources and the links themselves are presented."
             (lambda ()
               (if (equal buffer-file-name (expand-file-name org-music-file))
                   (org-music-mode)))))
+
+
+;; org jira
+(use-package! org-jira
+  :config
+  (setq jiralib-url "https://cisco-sbg.atlassian.net"
+        org-jira-progress-issue-flow
+        '(("Open" . "To Do")
+          ("To Do" . "In Progress")
+          ("In Progress" . "In Review")
+          ("In Review" . "QA")
+          ("QA" . "Ready for Acceptance")
+          ("Ready for Acceptance" . "Ready for QA")
+          ("Ready for QA" . "Done"))
+        org-jira-custom-jqls
+        '(
+          (:jql "
+assignee = currentUser() AND status not in (\"Won't Do\")
+order by priority, created DESC "
+           :filename "cisco")
+          )))

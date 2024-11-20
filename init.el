@@ -61,6 +61,7 @@
        completions
        encryption
        folders
+       git
        harpoon
        js
        keys
