@@ -24,3 +24,4 @@
   (:host github
    :repo "debanjum/org-music"
    :branch "master"))
+(package! org-jira)
