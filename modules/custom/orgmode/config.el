@@ -304,27 +304,20 @@ A table containing the sources and the links themselves are presented."
               (org-indent-mode -1)
               (org-margin-mode))))
 
-;; (use-package! org-alert
-;;   :config
-;;   (setq alert-default-style 'toaster
-;;         org-alert-interval 300
-;;         org-alert-notify-cutoff 10
-;;         org-alert-notify-after-event-cutoff 10))
-;;
-;;
-
 ;; journal
-
-(defun bk/running-daily-journal ()
-  "Create a new entry in my journal about my running experiences."
-  (interactive)
-  (let ((org-journal-dir (concat org-roam-directory "/journal/running")))
-    (org-journal-new-entry nil)))
-
 (use-package! org-journal
+  :defer 2
   :config
-  (setq org-journal-file-type 'monthly
-        org-journal-file-format "%Y-%m-%d.org"))
+  (setq org-journal-dir (expand-file-name "~/code/roam/journal")
+        org-journal-file-format "%Y-%m-%d"
+        org-journal-encrypt-journal t))
+
+(use-package! org-crypt
+  :init
+  (setq org-crypt-key "wand@hey.com"
+        auto-save-default  nil)
+  :config
+  (org-crypt-use-before-save-magic))
 
 ;; music
 (use-package! org-music
