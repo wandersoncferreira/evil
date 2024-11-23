@@ -1,4 +1,4 @@
-;;; init.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/init.el -*- lexical-binding: t; -*-
 
 (doom! :input
        :completion

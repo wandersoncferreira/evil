@@ -1,4 +1,4 @@
-;;; ../code/evil/config.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; empty file added on purpose.
 ;; when you perform a clean install, Doom will automatically create this file.
