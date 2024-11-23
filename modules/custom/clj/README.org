@@ -1,12 +1,8 @@
 #+title: Clojure
 
-My day-to-day job involves coding in Clojure for most of the time.
+My day-to-day job involves coding in Clojure for most of the time. Therefore, as I find some opportunity to improve my daily workflow I often add or remove elisp code in here.
 
-Therefore, as I find some opportunity to improve my daily workflow I often add
-or remove elisp code in here. Very volatile config ahead!
-
-
-* Main changes
+Highlights of this clojure configuration:
 
 - Change cider modeline indicator (=autoload.el/bk/cider--modeline-info=)
 - Save buffers after running tests

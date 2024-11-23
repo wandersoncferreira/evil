@@ -3,22 +3,8 @@
 Emacs buffers are similar to what other systems might call a *file*, *document*,
 *workspace* or *editor*.
 
-Buffers can contain text and images.
+Highlights of this buffer configuration:
 
-Buffers are shown in windows on the screen.
-
-Buffers can be displayed in more than one window at a time, or it might not be
-displayed at all.
-
-
-* Main changes
-
-I like how Doom treats buffers. For now, my only changes are solely based on
-adding more functions and keybindings.
-
-
-My custom functions:
-
-- =bk/indent-whole-buffer=
-- =bk/diff-current-buffer-with-file=
-- =bk/switch-to-message-buffer=
+- Add function =bk/indent-whole-buffer=
+- Add function =bk/diff-current-buffer-with-file=
+- Add function =bk/switch-to-message-buffer=

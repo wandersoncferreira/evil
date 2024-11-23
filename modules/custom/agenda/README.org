@@ -1,0 +1,11 @@
+#+TITLE: Org Agenda
+
+Emacs ~org-agenda~ allows you to have a agenda buffer to organize your tasks and
+control your future schedules.
+
+Highlights of this org agenda configuration:
+
+- Use ~org-roam~ files with tag ~todo~ as agenda files
+- Custom views using ~org-super-agenda~
+- Enable ~org-habits~
+- Sync google events through ~org-gcal~
