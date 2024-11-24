@@ -100,7 +100,7 @@
     (invert-face 'default))
   (set-variable 'frame-background-mode 'dark))
 
-(enable-vim-colors)
+(setq doom-theme 'ef-light)
 
 ;;; * skin keybindings
 (map! :leader

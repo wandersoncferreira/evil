@@ -68,3 +68,6 @@
 
 ;; custom/work/packages
 (package! browse-at-remote)
+
+;; themes
+(package! ef-themes)
