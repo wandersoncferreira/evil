@@ -65,6 +65,7 @@
 (package! gnuplot)
 (package! gnuplot-mode)
 (package! osx-dictionary)
+(package! emacs-bitwarden :recipe (:host github :repo "jsilve24/emacs-bitwarden" :branch "main"))
 
 ;; custom/work/packages
 (package! browse-at-remote)
