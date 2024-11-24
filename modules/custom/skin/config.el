@@ -3,9 +3,7 @@
 ;; change line spacing for all buffers
 (setq-default line-spacing 2)
 
-(setq initial-scratch-message "\
-;; Here be evil dragons...
-")
+(setq initial-scratch-message "\ ;; Here be evil dragons... ")
 
 ;; DO NOT display fixed line numbers in the left fringe
 (setq display-line-numbers-type nil)
@@ -96,12 +94,11 @@
 ;; prevents some cases of emacs flickering
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
-
-;; best theme is dark default theme
-;; (setq doom-theme nil)
-;; (when (display-graphic-p)
-;;   (invert-face 'default))
-;; (set-variable 'frame-background-mode 'dark)
+(defun bk/dark-default-theme ()
+  (setq doom-theme nil)
+  (when (display-graphic-p)
+    (invert-face 'default))
+  (set-variable 'frame-background-mode 'dark))
 
 (enable-vim-colors)
 

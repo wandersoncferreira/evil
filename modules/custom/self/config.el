@@ -26,9 +26,7 @@
 ;; disable management of mode-line by popups
 (remove-hook '+popup-buffer-mode-hook #'+popup-set-modeline-on-enable-h)
 
-(map! :leader
-      (:prefix "e"
-               "s" #'eshell))
+(map! :leader (:prefix "e" "s" #'eshell))
 
 ;; disable yas-snippet globally
 ;; in fact, I wanted to remove (:editor snippets) from init.el

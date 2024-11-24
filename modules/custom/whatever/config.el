@@ -22,8 +22,9 @@
           gif-screencast-cropping-program ""
           gif-screencast-capture-format "ppm")))
 
-(map! :leader
-      "bw" #'bk/bitwarden)
+;; keybindings for shortcuts
+(map! :leader "bw" #'bk/bitwarden)
+(map! :leader "bg" #'bk/gpg)
 
 (when (modulep! +finance)
   (use-package! ledger-mode

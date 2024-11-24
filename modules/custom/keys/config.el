@@ -51,8 +51,7 @@
       "C-w" nil "C-S-s" nil
       "C-_" nil "C-S-r" nil
       "C-o" nil "C-b" nil
-      "C-n" nil "C-c" nil
-      )
+      "C-n" nil "C-c" nil)
 
 ;; add cedilha in insert mode
 (evil-define-key 'insert global-map (kbd "C-,") #'bk/insert-cedilha)

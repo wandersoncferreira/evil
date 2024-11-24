@@ -12,7 +12,6 @@
                         iroh/worktree
                         iroh/find-service-def))
       (autoload fun-name fpath "Cisco" t))
-
     (map! (:leader
            (:map (clojure-mode-map)
             (:prefix-map ("j" . "Job - Cisco Bindings")
@@ -28,5 +27,4 @@
               "s" #'iroh/find-service-def)
              (:prefix ("y" . "Yank")
               "p" #'iroh/copy-permalink-at-point))))))
-
   (require 'browse-at-remote))

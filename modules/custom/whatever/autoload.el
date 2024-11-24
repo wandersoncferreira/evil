@@ -9,6 +9,7 @@
              :user "bartuka"))
   (message "Bitwarden copied!"))
 
+;;;###autoload
 (defun bk/gpg ()
   "Get GPG."
   (interactive)

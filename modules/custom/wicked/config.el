@@ -31,7 +31,6 @@
 ;; add lookup definition to jump list
 (evil-add-command-properties #'+lookup/definition :jump t)
 
-
 ;; fix split and follow functions to press RET automatically
 (defun org/window-split-and-follow ()
   "Split current window horizontally, then focus new window.
