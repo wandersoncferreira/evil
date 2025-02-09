@@ -27,3 +27,7 @@
 ;; stop $HOME from being recognizes as a project root
 (setq projectile-project-root-files-bottom-up
       (remove ".git" projectile-project-root-files-bottom-up))
+
+;; add .github to files that identify the root of a project
+(setq projectile-project-root-files-bottom-up
+      (cons ".github" projectile-project-root-files-bottom-up))

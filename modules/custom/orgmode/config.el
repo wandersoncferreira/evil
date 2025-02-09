@@ -96,7 +96,7 @@
            (title (car (split-string file-name "\\."))))
       (replace-regexp-in-string (regexp-quote "_") "-" title nil 'literal)))
 
-(defun org-roam-to-hugo-md ()
+(defun org-roam-publish-to-hugo ()
   (interactive)
   ;; make sure the author is me
   (setq user-full-name "Wanderson Ferreira")
@@ -353,3 +353,9 @@ assignee = currentUser() AND status not in (\"Won't Do\")
 order by priority, created DESC "
            :filename "cisco")
           )))
+
+
+;; toc-org
+(use-package! toc-org
+  :config
+  (add-hook 'org-mode-hook 'toc-org-mode))
