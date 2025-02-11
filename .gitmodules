@@ -13,3 +13,6 @@
 [submodule "landlord/alabaster-theme"]
 	path = landlord/alabaster-theme
 	url = git@github.com:wandersoncferreira/alabaster-theme.git
+[submodule "others/roam2025"]
+	path = others/roam2025
+	url = git@github.com:wandersoncferreira/roam2025.git

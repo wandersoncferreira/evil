@@ -36,22 +36,6 @@
 
 (add-hook 'org-mode-hook (lambda () (setq line-spacing 0.2)))
 
-(setq org-capture-templates
-      '(("t" "todo" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Unsorted")
-         "* TODO %?\n"
-         :prepend t)
-        ("d" "deadline" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Deadline")
-         "* TODO %?\nDEADLINE: <%(org-read-date)>\n\n%i"
-         :prepend t)
-        ("s" "schedule" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Scheduled")
-         "* TODO %?\nSCHEDULED: <%(org-read-date)>\n\n%i"
-         :prepend t)
-        ("h" "habit" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Habits")
-         "* TODO %?\nSCHEDULED: <%(org-read-date)>\n:PROPERTIES:\n:STYLE:   habit\n:END:\n")
-        ("c" "check out later" entry (file+headline "~/code/roam/notes/20241103101117-todo.org" "Check out later")
-         "* CHECK %?\n"
-         :prepend t)))
-
 (defun bk/skip-scheduled-or-deadline-if-not-today ()
   (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
          (deadline-entry (org-entry-get nil "DEADLINE"))
@@ -134,8 +118,9 @@
 
 ;; org roam section
 
-(setq org-roam-directory (file-truename "~/code/roam")
-      org-roam-db-location (file-truename "~/code/roam/notes/org-roam.db")
+doom-user-dir
+(setq org-roam-directory (file-truename (concat doom-user-dir "others/roam2025"))
+      org-roam-db-location (file-truename (concat doom-user-dir "others/roam2025/org-roam.db"))
       org-roam-dailies-directory "notes/")
 
 (setq org-roam-capture-templates
@@ -166,6 +151,44 @@
   (add-to-list 'company-backends 'company-capf)
  ;(org-roam-db-autosync-mode)
  )
+
+(after! org-roam
+  (setq org-roam-capture-templates
+        `(("n" "note" plain
+           ,(format "#+title: ${title}\n%%[%s/template/note.org]" org-roam-directory)
+           :target (file "note/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("r" "thought" plain
+           ,(format "#+title: ${title}\n%%[%s/template/thought.org]" org-roam-directory)
+           :target (file "thought/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("t" "topic" plain
+           ,(format "#+title: ${title}\n%%[%s/template/topic.org]" org-roam-directory)
+           :target (file "topic/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("c" "contact" plain
+           ,(format "#+title: ${title}\n%%[%s/template/contact.org]" org-roam-directory)
+           :target (file "contact/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("p" "project" plain
+           ,(format "#+title: ${title}\n%%[%s/template/project.org]" org-roam-directory)
+           :target (file "project/%<%Y%m%d>-${slug}.org")
+           :unnarrowed t)
+          ("f" "todo" plain
+           ,(format "#+title: ${title}\n%%[%s/template/todo.org]" org-roam-directory)
+           :target (file "todo/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("w" "works" plain
+           ,(format "#+title: ${title}\n%%[%s/template/works.org]" org-roam-directory)
+           :target (file "works/%<%Y%m%d%H%M%S>-${slug}.org")
+           :unnarrowed t)
+          ("s" "secret" plain "#+title: ${title}\n\n"
+           :target (file "secret/%<%Y%m%d%H%M%S>-${slug}.org.gpg")
+           :unnarrowed t))
+        ;; Use human readable dates for dailies titles
+        org-roam-dailies-capture-templates
+        `(("d" "default" plain ""
+           :target (file+head "%<%Y-%m-%d>.org" ,(format "%%[%s/template/journal.org]" org-roam-directory))))))
 
 (require 'org-roam-protocol)
 
