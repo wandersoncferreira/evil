@@ -5,6 +5,12 @@
   ;; disable projectile caching
   (setq projectile-enable-caching nil)
 
+  (setq projectile-auto-discover nil)
+
+  ;; When set to nil you'll have always add projects explicitly with
+  ;; projectile-add-known-project.
+  (setq projectile-track-known-projects-automatically nil)
+
   ;; create missing test files
   (setq projectile-create-missing-test-files t)
 
@@ -24,10 +30,6 @@
         :desc "See project root dir" "pd" #'projectile-dired
         :desc "Ripgrep" "pg" #'projectile-ripgrep))
 
-;; stop $HOME from being recognizes as a project root
-(setq projectile-project-root-files-bottom-up
-      (remove ".git" projectile-project-root-files-bottom-up))
-
-;; add .github to files that identify the root of a project
-(setq projectile-project-root-files-bottom-up
-      (cons ".github" projectile-project-root-files-bottom-up))
+(after! projectile
+  (setq projectile-project-root-files-bottom-up
+        (remove ".git" projectile-project-root-files-bottom-up)))

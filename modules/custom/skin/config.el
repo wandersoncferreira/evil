@@ -19,13 +19,6 @@
 ;; am i in vinhedo?
 (setq vinhedo-computer? nil)
 
-(setq doom-font (font-spec :family "Consolas"
-                           :size (cond
-                                  ((eq wsl? 't) 22)
-                                  ((eq macos? 't) 12)
-                                  ((eq vinhedo-computer? 't) 12)
-                                  (20))))
-
 ;; disable highliting of current line
 (remove-hook 'doom-first-buffer-hook 'global-hl-line-mode)
 
@@ -45,16 +38,6 @@
 (add-hook 'minibuffer-setup-hook
           (lambda ()
             (setq truncate-lines nil)))
-
-;; start emacs with specific size and position
-(setq initial-frame-alist
-      '((top . 300)
-        (left . 2500)
-        (width . 82)
-        (height . 70)
-        (vertical-scroll-bars . nil)
-        (horizontal-scroll-bars . nil)
-        (tool-bar-lines . 0)))
 
 ;; enable column indicator
 (global-display-fill-column-indicator-mode)

@@ -71,6 +71,7 @@
        orgmode
        parenthesis
        projects
+       py
        self
        semantic-org-roam-search
        shell

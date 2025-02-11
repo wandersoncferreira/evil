@@ -12,3 +12,66 @@ Enjoy and be patient if traveling the same waters.
 [[file:docs/README.org][Learn more about Doom and Evil]]
 
 [[file:docs/try-this-out.org][Do you want to try this out?]]
+
+* FAQ
+
+Let me help myself for the future again!
+
+** Have no idea how to setup Doom Emacs again! I know
+
+#+begin_src bash
+## clone this repo in the ~/.doom.d folder
+git clone git@github.com:wandersoncferreira/evil.git ~/.doom.d
+
+## install doom emacs (got this from their repo)
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+#+end_src
+
+** Forgot to include the submodules after a clone, right?
+
+#+begin_src bash
+git submodule update --init --recursive
+#+end_src
+
+** Need to update  all submodules with remote, you lazy?
+
+#+begin_src bash
+git pull --recurse-submodules --jobs=10
+#+end_src
+
+** Before figuring out that Doom Emacs doesn't start, pay attention to these deps
+
+*** Python deps
+
+Using macOS?
+
+#+begin_src bash
+## create a BASE python3 environment
+python3 -m venv base
+source base/bin/activate
+
+## install dependencies
+python3 -m pip install isort nose pipenv pytest
+
+## when working with python, activate the env with pyvenv emacs package
+## M-x pyvenv-activate RET base
+#+end_src
+
+*** System  deps
+
+#+begin_src bash
+## plantuml
+brew install plantuml
+
+## ripgrep
+brew install rg
+#+end_src
+
+** Emacs is using your $HOME folder as root project
+
+You probably have ~package.json~ in the ~$HOME~ dir. I was caught by this mistake 3
+times already.
+
+Anyway, one the ~projectile-project-root-files~ is in your ~$HOME~, just remove it,
+it is probably there because you did something wrong!

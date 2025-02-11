@@ -12,9 +12,3 @@
 ;; ./modules  - configuration defined in `:custom' keys in init.el file
 ;; ./themes   - custom themes not available as elisp packages
 ;; ./docs     - too many words to say: "learn with practice, use Emacs + Vim"
-
-;; load security variables and easier ways to reach it
-(defvar private-file-name
-  (expand-file-name "private.el" user-emacs-directory))
-(load private-file-name)
-(set-register ?s (cons 'file private-file-name))
