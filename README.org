@@ -13,6 +13,21 @@ Enjoy and be patient if traveling the same waters.
 
 [[file:docs/try-this-out.org][Do you want to try this out?]]
 
+* To consider ...
+
+When I setup a new machine from scratch, which does not happen very often, I
+have no idea what to install, or what are the very essential tools I will need.
+
+I don't like the idea of using a ~Brewfile~ to install everything I had before,
+because seems to me that a fresh start should not start with tons of apps that I
+needed in the past for a specific reason that I don't recall anymore.
+
+However, Emacs is always essential. This repo is the first thing I clone and
+make sure that is working.
+
+I am considering adding a new folder for *essentials for fresh machine* that will
+be triggered from here. Let's see! When the next restart happen, I might work on that.
+
 * FAQ
 
 Let me help myself for the future again!
@@ -21,7 +36,7 @@ Let me help myself for the future again!
 
 #+begin_src bash
 ## clone this repo in the ~/.doom.d folder
-git clone git@github.com:wandersoncferreira/evil.git ~/.doom.d
+git clone --recurse-submodules git@github.com:wandersoncferreira/evil.git ~/.doom.d
 
 ## install doom emacs (got this from their repo)
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
