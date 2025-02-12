@@ -1,10 +1,9 @@
 #+title: Doom Docs For That Little Voice on your shoulder
 
-
-I fear not knowing what is installed *my* Emacs instance.
+I fear not knowing what is installed in *my* Emacs instance.
 
 This is definitely bothering me on Doom Emacs now, but before going to the
-self-degradation route of "do-it-yourself because you can", let me try
+self-degradation route of  "do-it-yourself because you can", let me try
 something new.
 
 I will document every aspect of Doom installed packages. My goal is to get

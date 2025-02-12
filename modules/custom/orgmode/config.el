@@ -184,11 +184,7 @@ doom-user-dir
            :unnarrowed t)
           ("s" "secret" plain "#+title: ${title}\n\n"
            :target (file "secret/%<%Y%m%d%H%M%S>-${slug}.org.gpg")
-           :unnarrowed t))
-        ;; Use human readable dates for dailies titles
-        org-roam-dailies-capture-templates
-        `(("d" "default" plain ""
-           :target (file+head "%<%Y-%m-%d>.org" ,(format "%%[%s/template/journal.org]" org-roam-directory))))))
+           :unnarrowed t))))
 
 (require 'org-roam-protocol)
 

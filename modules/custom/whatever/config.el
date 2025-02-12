@@ -127,3 +127,8 @@ With prefix argument, repeat completin-read selection even if there was a recent
 
 (map! :leader "bu" #'bitwarden-kill-username)
 (map! :leader "bj" #'bitwarden-kill-password)
+
+
+;; bindings
+;; open eshell in the root project
+(map! :leader "oe" #'project-eshell)

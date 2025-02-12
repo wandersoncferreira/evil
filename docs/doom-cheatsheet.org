@@ -1,34 +1,46 @@
 #+title: Doom Cheatsheet
 
 * General
+
 - ~spc :~ for entering a command
 - ~spc f D~ to delete this file
 - ~spc b m~ bookmark current buffer window
-- ~spc b RET~ open bookmark browser
+- ~spc RET~ open bookmark browser
 
 * Projects with Projectile
-- ~spc o E~ to open the shell (eshell) in fullscreen
+
 - ~spc o e~ to open the shell (eshell) in a popup window
 - ~spc f r~ recently visited files
 - ~spc f R~ rename file
 - ~spc p r~ recently visited files in a project
 
 * Dired
+
 - ~C~ to copy
 - ~R~ to move
 - Toggle ~(~ for simple view
 - ~c~ compress file
 
 * Buffers, Windows and Basic Navigation
+** Files
+- ~spc spc~ to find a file
+
 ** Buffers
 - ~spc b X~ you can create a scratch buffer
 
 ** Windows
 - ~spc w w~ to switch windows
+* Finding Text
 
-** Workspaces
-- ~spc tab [~ previous workspace
-- ~spc tab ]~ next workspace
+- ~spc sp~ to search all files in the current project
+
+** Edit multiple files
+- ~spc sp~ to search all files in the current project
+- while the minibuffer is open, find ~M-x embark-export~
+- in the embark buffer hit ~C-x C-q~
+- press ~ESC~ to cancel existing selection if you want
+- replace the text you desire
+- press ~C-c C-c~ to save the operation
 
 * Quick, horizontal movements with evil-snipe
 - ~f~ and then the letter you want to navigate to
@@ -59,6 +71,16 @@ Many evil-mode motions/operators will have slightly different behavior while
 - ~I~ go into insert mode at start-of-region
 - ~V~ select the region
 - ~P~ replace the iedit region with the contents of the clipboard
+
+*** evil-mc
+
+There are many more options to create multiple cursors with evil-mc:
+
+- ~gzm~ to create a cursor at all matches for the word at point
+- ~gzd~ to create a cursor at point and move to the next match
+- ~gzj~ to create a cursor at point and move to the next line
+- ~gzz~ to create a cursor at point
+- ~gzu~ remove the last cursor and move point to its position
 
 * File tree
 - ~spc o p~ for opening treemacs

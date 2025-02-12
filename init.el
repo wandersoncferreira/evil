@@ -13,7 +13,11 @@
 
        :editor
        (evil +everywhere)
+       file-templates
+       multiple-cursors
        snippets
+       rotate-text
+       word-wrap
 
        :emacs
        (dired +icons)
