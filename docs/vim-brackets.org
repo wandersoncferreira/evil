@@ -8,7 +8,6 @@ and square. Clojure is by far no exception. =)
 Moving the cursor over a bracket and pressing =%= will cause the cursor to jump
 to the corresponding bracket.
 
-
 * Resources
 
 - [[https://vim.fandom.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier][Making Parenthesis/Brackets handling easier]] - Vim Wiki

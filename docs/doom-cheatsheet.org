@@ -5,7 +5,14 @@
 - ~spc :~ for entering a command
 - ~spc f D~ to delete this file
 - ~spc b m~ bookmark current buffer window
-- ~spc RET~ open bookmark browser
+- ~spc s o~ search online.
+- ~spc s g~ to search google translate directly from Emacs
+- ~spc s t~ to search dictionary for the word at point
+- ~spc RET~ open bookmark browser (jump to bookmark)
+- always be scrolling! don't use ~hjkl~ to move around the screen
+  - how do you scroll?TODO
+    - ~C-u~ to scroll UP
+    - ~C-d~ to scroll DOWN
 
 * Projects with Projectile
 
@@ -30,9 +37,14 @@
 
 ** Windows
 - ~spc w w~ to switch windows
+  
 * Finding Text
 
 - ~spc sp~ to search all files in the current project
+- ~q/~ history of past searches
+- ~gn~ for the next occurrence of the last use search pattern
+- use ~*~ to search the word at point forward
+- use ~#~ to search the word at point backward
 
 ** Edit multiple files
 - ~spc sp~ to search all files in the current project

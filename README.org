@@ -79,6 +79,9 @@ python3 -m pip install isort nose pipenv pytest
 ## plantuml
 brew install plantuml
 
+## setup for the lookup module
+brew install ripgrep wordnet
+
 ## ripgrep
 brew install rg
 #+end_src

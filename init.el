@@ -10,6 +10,10 @@
        (popup +all)
        (treemacs +lsp)
        (modeline +light)
+       (emoji +unicode)
+       indent-guides
+       unicode
+       zen
 
        :editor
        (evil +everywhere)
@@ -27,10 +31,15 @@
 
        :term
        :checkers
+       (spell +aspell
+              +everywhere)
        syntax
 
        :tools
-       lookup
+       (lookup
+        +offline
+        +dictionary
+        +docsets)
        magit
        lsp
 

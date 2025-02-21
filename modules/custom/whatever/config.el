@@ -132,3 +132,19 @@ With prefix argument, repeat completin-read selection even if there was a recent
 ;; bindings
 ;; open eshell in the root project
 (map! :leader "oe" #'project-eshell)
+
+;; google translate
+(use-package! google-translate
+  :config
+  (setq google-translate-default-target-language nil
+        google-translate-translation-directions-alist
+        '(("fr" . "en")
+          ("en" . "fr")
+          ("en" . "pt_BR")))
+  (map! :leader "sg" #'google-translate-smooth-translate))
+
+
+;; spell-fu
+(add-hook 'spell-fu-mode-hook
+          (lambda ()
+            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))

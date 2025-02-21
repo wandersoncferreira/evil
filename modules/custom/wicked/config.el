@@ -48,3 +48,11 @@ If `evil-vsplit-window-right' is non-nil, the new window isn't focused."
 (map! (:map org-mode-map
             :n "wS" #'org/window-split-and-follow
             :n "wV" #'org/window-vsplit-and-follow))
+
+
+;; snipe improvements
+
+(after! evil-snipe
+  (setq evil-snipe-scope 'whole-line
+        evil-snipe-spillover-scope 'whole-buffer)
+  (push '(?\[ "[[{(]") evil-snipe-aliases))

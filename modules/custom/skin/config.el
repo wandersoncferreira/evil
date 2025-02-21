@@ -85,9 +85,31 @@
 
 (setq doom-theme 'ef-light)
 
+
+(defun bk/move-window-to-right ()
+  (interactive)
+  (modify-frame-parameters
+  nil '((left . -1)
+       (fullscreen . fullheight)
+       (width . .5))))
+
+(defun bk/move-window-to-left ()
+  (interactive)
+  (modify-frame-parameters
+  nil '((left . 0)
+       (fullscreen . fullheight)
+       (width . .5))))
+
 ;;; * skin keybindings
 (map! :leader
       :desc "Delete other windows" "wo" #'delete-other-windows
       :desc "Toggle Transparency" "tt" #'bk/toggle-transparency
       :desc "Fullscreen (maximized)" "wf" #'toggle-frame-maximized
-      :desc "Set window to 80 columns" "w8" #'bk/set-80-columns)
+      :desc "Set window to 80 columns" "w8" #'bk/set-80-columns
+      :desc "move whole frame to the right" "wr" #'bk/move-window-to-right)
+
+(map! :leader
+      (:prefix ("@" . "move your frames!")
+               "f" #'toggle-frame-maximized
+               "r" #'bk/move-window-to-right
+               "l" #'bk/move-window-to-left))

@@ -4,6 +4,10 @@
 ;;; left blank on purpose
 (package! emacsql :pin "07699353a43f629848c66c0949e7170e8f29e299")
 
+;; setup lookup module
+(package! synosaurus)
+(package! google-translate)
+
 ;; custom/agenda/packages
 (package! org-super-agenda)
 (package! svg-tag-mode)
