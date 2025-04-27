@@ -38,8 +38,8 @@
 
 (use-package! clj-refactor
   :init
-  (setq cljr-eagerly-build-asts-on-startup nil
-        cljr-add-ns-to-blank-clj-files nil
+  (setq cljr-eagerly-build-asts-on-startup t
+        cljr-add-ns-to-blank-clj-files t
         cljr-favor-private-functions nil))
 
 (map! (:after (:and clojure-mode cider)

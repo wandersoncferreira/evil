@@ -141,15 +141,6 @@ doom-user-dir
   :init
   (setq org-roam-completion-everywhere t
         completion-ignore-case t)
-  :config
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '(company-capf))
-              (setq-local company-idle-delay 0.3
-                          company-minimum-prefix-length 3)))
-  (add-to-list 'company-backends 'company-capf)
- ;(org-roam-db-autosync-mode)
  )
 
 (after! org-roam
@@ -337,21 +328,6 @@ A table containing the sources and the links themselves are presented."
         auto-save-default  nil)
   :config
   (org-crypt-use-before-save-magic))
-
-;; music
-(use-package! org-music
-  :after (org emms)
-  :config
-  (setq org-music-file "~/code/roam/music.org"
-        org-music-media-directory "~/code/roam/media"
-        org-music-cache-download-song-format "m4a"
-        org-music-youtube-downloader "yt-dlp"
-        org-music-operating-system "linux")
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (if (equal buffer-file-name (expand-file-name org-music-file))
-                  (org-music-mode)))))
-
 
 ;; org jira
 (use-package! org-jira

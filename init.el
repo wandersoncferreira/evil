@@ -3,7 +3,10 @@
 (doom! :input
        :completion
        vertico
-       company
+       (corfu
+        +icons
+        +orderless
+        +dabbrev)
 
        :ui
        doom
