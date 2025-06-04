@@ -83,8 +83,10 @@
     (invert-face 'default))
   (set-variable 'frame-background-mode 'dark))
 
-(setq doom-theme 'ef-light)
-
+(setq doom-theme 'almost-mono-white)
+(setq doom-font (font-spec :family "Source Code Pro"
+                           :size 14
+                           :weight 'light))
 
 (defun bk/move-window-to-right ()
   (interactive)
