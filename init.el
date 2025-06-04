@@ -77,13 +77,9 @@
        completions
        encryption
        folders
-       git
        harpoon
        js
        keys
-       (landlord
-        +code-review
-        +spotify)
        orgmode
        parenthesis
        projects
