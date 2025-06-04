@@ -77,3 +77,4 @@
 
 ;; themes
 (package! ef-themes)
+(package! almost-mono-themes)

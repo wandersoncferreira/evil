@@ -93,3 +93,9 @@ times already.
 
 Anyway, one the ~projectile-project-root-files~ is in your ~$HOME~, just remove it,
 it is probably there because you did something wrong!
+
+** Source Code Pro
+
+#+begin_src bash
+brew install --cask font-source-code-pro
+#+end_src
