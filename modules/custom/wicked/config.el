@@ -56,3 +56,8 @@ If `evil-vsplit-window-right' is non-nil, the new window isn't focused."
   (setq evil-snipe-scope 'whole-line
         evil-snipe-spillover-scope 'whole-buffer)
   (push '(?\[ "[[{(]") evil-snipe-aliases))
+
+
+(use-package! evil-escape
+  :config
+  (setq-default evil-escape-key-sequence "jk"))
