@@ -86,7 +86,7 @@
 (setq doom-theme 'almost-mono-white)
 (setq doom-font (font-spec :family "Source Code Pro"
                            :size 14
-                           :weight 'light))
+                           :weight 'regular))
 
 (defun bk/move-window-to-right ()
   (interactive)
