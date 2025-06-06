@@ -51,7 +51,7 @@
         macos)
 
        :lang
-       clojure
+       (clojure +lsp)
        emacs-lisp
        (javascript +lsp)
        markdown
