@@ -118,7 +118,6 @@
 
 ;; org roam section
 
-doom-user-dir
 (setq org-roam-directory (file-truename (concat doom-user-dir "others/roam2025"))
       org-roam-db-location (file-truename (concat doom-user-dir "others/roam2025/org-roam.db"))
       org-roam-dailies-directory "notes/")

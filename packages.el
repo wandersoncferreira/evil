@@ -78,3 +78,7 @@
 ;; themes
 (package! ef-themes)
 (package! almost-mono-themes)
+
+;; ai
+(package! mcp
+  :pin "3a380185597f56290057f370ab65dde89a20a18f")

@@ -44,6 +44,7 @@
         +dictionary
         +docsets)
        magit
+       llm
        lsp
 
        :os
@@ -71,6 +72,7 @@
 
        :custom
        agenda
+       ai
        buffers
        clj
        coding
