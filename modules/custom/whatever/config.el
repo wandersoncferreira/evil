@@ -140,6 +140,6 @@ With prefix argument, repeat completin-read selection even if there was a recent
 
 
 ;; spell-fu
-(add-hook 'spell-fu-mode-hook
-          (lambda ()
-            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))
+;; (add-hook 'spell-fu-mode-hook
+;;           (lambda ()
+;;             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))

@@ -34,9 +34,25 @@
 ;; EDIT: 28/02/2024 - let me try to use this again!
 ;; (add-hook 'after-init-hook (lambda () (yas-global-mode -1)))
 
-(after! spell-fu
-  ;; TODO workround for https://github.com/doomemacs/doomemacs/issues/6246
-  (unless (file-exists-p ispell-personal-dictionary)
-    (make-directory (file-name-directory ispell-personal-dictionary) t)
-    (with-temp-file ispell-personal-dictionary
-      (insert (format "personal_ws-1.1 %s 0\n" ispell-dictionary)))))
+;; (after! spell-fu
+;;   ;; TODO workround for https://github.com/doomemacs/doomemacs/issues/6246
+;;   (unless (file-exists-p ispell-personal-dictionary)
+;;     (make-directory (file-name-directory ispell-personal-dictionary) t)
+;;     (with-temp-file ispell-personal-dictionary
+;;       (insert (format "personal_ws-1.1 %s 0\n" ispell-dictionary)))))
+
+
+(use-package! jinx
+  :hook (org-mode . jinx-mode)
+  :config
+  (setq jinx-languages "pt_BR en_US"
+        jinx-delay 1.0)
+  (nconc (cadr jinx-exclude-faces) '(org-ref-ref-face))
+  (map! :map evil-normal-state-map
+        "z g" #'jinx-correct
+        "z n" #'jinx-next))
+
+(after! vertico-multiform
+  (add-to-list 'vertico-multiform-categories
+               '(jinx (vertico-grid-annotate . 25)))
+  (vertico-multiform-mode 1))
