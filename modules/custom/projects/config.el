@@ -9,7 +9,7 @@
 
   ;; When set to nil you'll have always add projects explicitly with
   ;; projectile-add-known-project.
-  (setq projectile-track-known-projects-automatically nil)
+  (setq projectile-track-known-projects-automatically t)
 
   ;; create missing test files
   (setq projectile-create-missing-test-files t)

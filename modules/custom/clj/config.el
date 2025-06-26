@@ -15,11 +15,13 @@
 (use-package! cider
   :init
   (setq ;; automatically download all available .jars with Java sources
-        ;; and javadocs - allowing you to navigate to Java sources and
-        ;; javadocs in your Clojure projects
-        ;; cider-enrich-classpath t
-        ;; only jump to errors
         cider-auto-jump-to-error 'errors-only
+        cider-show-error-buffer t ;; only-in-repl
+        cider-font-lock-dynamically nil ;; use lsp semantic tokens
+        cider-eldoc-display-for-symbol-at-point nil ;; use lsp
+        cider-prompt-for-symbol nil
+        cider-reuse-dead-repls nil
+        cider-use-xref nil ;; use lsp
         cider-save-file-on-load t
         cider-mode-line '(:eval (format " cider[%s]" (bk/cider--modeline-info)))
         clojure-toplevel-inside-comment-form t)
@@ -34,13 +36,27 @@
   (set-popup-rule! "*cider-test-report*" :side 'right :width 0.4)
 
   ;; fix the placement of the cider-repl buffer
-  (set-popup-rule! "^\\*cider-repl" :side 'bottom :quit nil))
+  (set-popup-rule! "^\\*cider-repl" :side 'bottom :quit nil)
+  :config
+  ;; use lsp completion
+  (add-hook 'cider-mode-hook
+            (lambda ()
+              (remove-hook 'completion-at-point-functions #'cider-complete-at-point))))
 
 (use-package! clj-refactor
   :init
   (setq cljr-eagerly-build-asts-on-startup nil
-        cljr-add-ns-to-blank-clj-files nil
+        cljr-warn-on-eval nil
+        cljr-add-ns-to-blank-clj-files nil ;; use lsp
         cljr-favor-private-functions nil))
+
+(use-package! lsp-mode
+  :commands lsp
+  :config
+  ;; clojure
+  (setq lsp-completion-no-cache t
+        lsp-enable-file-watchers nil
+        lsp-completion-use-last-result nil))
 
 (map! (:after (:and clojure-mode cider)
        :localleader
@@ -51,3 +67,13 @@
          "v" #'cider-eval-sexp-at-point
          "s" #'yas-expand
          ";" #'cider-eval-defun-to-comment))))
+
+
+;; AI
+(use-package! mcp
+  :after gptel
+  :config
+  (require 'mcp-hub)
+  :init (setq mcp-hub-servers
+              '(("iroh" :command "clojure-mcp" :args ("iroh"))))
+  :hook (after-init . mcp-hub-start-all-server))

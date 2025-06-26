@@ -9,6 +9,7 @@
 - ~spc s g~ to search google translate directly from Emacs
 - ~spc s t~ to search dictionary for the word at point
 - ~spc RET~ open bookmark browser (jump to bookmark)
+- ~z g~ add new word to dictionary
 - always be scrolling! don't use ~hjkl~ to move around the screen
   - how do you scroll?TODO
     - ~C-u~ to scroll UP

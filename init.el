@@ -3,7 +3,10 @@
 (doom! :input
        :completion
        vertico
-       company
+       (corfu
+        +icons
+        +orderless
+        +dabbrev)
 
        :ui
        doom
@@ -41,6 +44,7 @@
         +dictionary
         +docsets)
        magit
+       llm
        lsp
 
        :os
@@ -48,7 +52,7 @@
         macos)
 
        :lang
-       clojure
+       (clojure +lsp)
        emacs-lisp
        (javascript +lsp)
        markdown
@@ -68,19 +72,16 @@
 
        :custom
        agenda
+       ai
        buffers
        clj
        coding
        completions
        encryption
        folders
-       git
        harpoon
        js
        keys
-       (landlord
-        +code-review
-        +spotify)
        orgmode
        parenthesis
        projects
