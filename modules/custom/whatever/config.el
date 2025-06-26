@@ -42,11 +42,6 @@
             ("cisco" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg income:cisco")
             ("maple-bear" "ledger [[ledger-mode-flags]] -f %(ledger-file) -R -X R$ --sort d reg liabilities:boletos:maplebear")))))
 
-(use-package! emms
-  :config
-  (emms-all)
-  (emms-default-players))
-
 (defvar bitwarden-time-to-store "5 min"
   "Length of time to store last selected username and password before deleting. String should be recognized by the command run-at-time.")
 
@@ -145,6 +140,6 @@ With prefix argument, repeat completin-read selection even if there was a recent
 
 
 ;; spell-fu
-(add-hook 'spell-fu-mode-hook
-          (lambda ()
-            (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))
+;; (add-hook 'spell-fu-mode-hook
+;;           (lambda ()
+;;             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))
