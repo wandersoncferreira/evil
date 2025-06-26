@@ -55,6 +55,7 @@
   :config
   ;; clojure
   (setq lsp-completion-no-cache t
+        lsp-enable-file-watchers nil
         lsp-completion-use-last-result nil))
 
 (map! (:after (:and clojure-mode cider)
