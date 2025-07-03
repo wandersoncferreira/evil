@@ -88,6 +88,7 @@
        py
        self
        semantic-org-roam-search
+       search
        shell
        skin
        (whatever
