@@ -85,3 +85,6 @@
 
 ;; spelling
 (package! jinx)
+
+;; keys
+(package! which-key :disable t)

@@ -1,10 +1,8 @@
 ;;; custom/keys/config.el -*- lexical-binding: t; -*-
 
-(after! which-key
-  ;; do not show which-key if not explicitly asked
-  (setq which-key-show-early-on-C-h t
-        which-key-idle-delay 10000
-        which-key-idle-secondary-delay 0.05))
+;; let's try embark instead of which-key
+(setq prefix-help-command #'embark-prefix-help-command)
+(add-to-list 'vertico-multiform-categories '(embark-keybinding grid))
 
 (map! :leader
       "y" #'consult-yank-from-kill-ring
