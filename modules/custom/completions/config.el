@@ -14,7 +14,11 @@
   (setf embark-pre-action-hooks
         (assoc-delete-all
          'bookmark-delete
-         embark-pre-action-hooks)))
+         embark-pre-action-hooks))
+  (map! :map minibuffer-mode-map "C-." #'embark-act))
+
+(use-package embark-consult
+  :demand t)
 
 (use-package! vertico
   :config
