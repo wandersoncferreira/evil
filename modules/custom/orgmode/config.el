@@ -120,7 +120,7 @@
 
 (setq org-roam-directory (file-truename (concat doom-user-dir "others/roam2025"))
       org-roam-db-location (file-truename (concat doom-user-dir "others/roam2025/org-roam.db"))
-      org-roam-dailies-directory "notes/")
+      org-roam-dailies-directory "dailies/")
 
 (setq org-roam-capture-templates
       '(("n" "notes" plain
@@ -144,9 +144,9 @@
 
 (after! org-roam
   (setq org-roam-capture-templates
-        `(("n" "note" plain
+        `(("n" "notes" plain
            ,(format "#+title: ${title}\n" org-roam-directory)
-           :target (file "note/%<%Y%m%d%H%M%S>-${slug}.org")
+           :target (file "notes/%<%Y%m%d%H%M%S>-${slug}.org")
            :unnarrowed t)
           ("r" "thought" plain
            ,(format "#+title: ${title}\n" org-roam-directory)
