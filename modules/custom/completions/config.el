@@ -8,14 +8,21 @@
 (after! consult
   (setq consult-preview-key "M-."))
 
-;;; embark
-;; do not ask for confirmation to delete a bookmark
-(after! embark
-  (setf embark-pre-action-hooks
-        (assoc-delete-all
-         'bookmark-delete
-         embark-pre-action-hooks))
-  (map! :map minibuffer-mode-map "C-." #'embark-act))
+(use-package! embark
+  :bind
+  ("C-." . embark-act)
+  (:map completion-list-mode-map
+        ("." . embark-act))
+  (:map embark-collect-mode-map
+        ("." . embark-act))
+  ;; :custom
+  ;; (embark-quit-after-action nil)
+  ;; (embark-indicators '(embark-minimal-indicator
+  ;;                      embark-highlight-indicator
+  ;;                      embark-isearch-highlight-indicator))
+  ;; (embark-cycle-key ".")
+  ;; (embark-help-key "?")
+  )
 
 (use-package embark-consult
   :demand t)
@@ -27,4 +34,6 @@
   (map! :n "[I" #'+vertico/search-symbol-at-point
         :map vertico-map
         "]" #'vertico-next-group
-        "[" #'vertico-previous-group))
+        "[" #'vertico-previous-group)
+
+  (vertico-multiform-mode 1))
