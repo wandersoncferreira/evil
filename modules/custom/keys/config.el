@@ -2,7 +2,9 @@
 
 ;; let's try embark instead of which-key
 (setq prefix-help-command #'embark-prefix-help-command)
-(add-to-list 'vertico-multiform-categories '(embark-keybinding grid))
+(after! vertico-multiform
+  (add-to-list 'vertico-multiform-categories
+               '(embark-keybinding grid)))
 
 (map! :leader
       "y" #'consult-yank-from-kill-ring
