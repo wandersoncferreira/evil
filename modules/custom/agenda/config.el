@@ -29,11 +29,10 @@
 
 (setq bk/super-agenda-today-filter
   '((:discard (:habit t))
-    (:time-grid t)
     (:discard (:tag "cisco"))
     (:discard (:tag "running"))
     (:discard (:tag "français"))
-    ))
+    (:anything t :order 2)))
 
 (use-package! org-agenda
   :config
@@ -54,7 +53,7 @@
                                               "PROJECT"
                                               "TO-READ"
                                               "TO-WATCH"))))
-                          ((org-ql-block-header "Things to Do")
+                          ((org-ql-block-header "Atividades Gerais")
                            (org-super-agenda-groups
                             '((:name "Habits" :habit t)
                               (:name "Compromissos Presenciais"
@@ -71,8 +70,8 @@
                               (:name "Projetos"
                                :todo "PROJECT"
                                :order 9)
-                              (:discard (:anything t))))))
-            (agenda "" ((org-agenda-overriding-header "Agenda")
+                              (:discard (:todo "TODO"))))))
+            (agenda "" ((org-agenda-overriding-header "More today")
                         (org-agenda-span 1)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-agenda-skip-scheduled-if-done nil)
@@ -86,6 +85,13 @@
 
 (add-to-list 'org-modules 'org-habit t)
 
+;; (setq org-habit-preceding-days 4
+;;       org-habit-following-days 4
+;;       org-habit-show-habits-only-for-today t
+;;       org-habit-today-glyph ?⍟
+;;       org-habit-completed-glyph ?✓
+;;       org-habit-graph-column 40)
+
 (use-package! org-super-agenda
   :after org
   :hook (org-agenda-mode . org-super-agenda-mode)
@@ -93,8 +99,7 @@
   (setq org-super-agenda-header-map nil)
   ;; hide the thin width char glyph
   (add-hook 'org-agenda-mode-hook
-            (lambda ()
-              (setq-local nobreak-char-display nil))))
+            (lambda () (setq-local nobreak-char-display nil))))
 
 (use-package! org-gcal
   :config
