@@ -139,8 +139,7 @@
 (use-package org-roam
   :init
   (setq org-roam-completion-everywhere t
-        completion-ignore-case t)
- )
+        completion-ignore-case t))
 
 (after! org-roam
   (setq org-roam-capture-templates
@@ -313,14 +312,6 @@ A table containing the sources and the links themselves are presented."
               (org-indent-mode -1)
               (org-margin-mode))))
 
-;; journal
-(use-package! org-journal
-  :defer 2
-  :config
-  (setq org-journal-dir (expand-file-name "~/code/roam/journal")
-        org-journal-file-format "%Y-%m-%d"
-        org-journal-encrypt-journal t))
-
 (use-package! org-crypt
   :init
   (setq org-crypt-key "wand@hey.com"
@@ -347,7 +338,6 @@ assignee = currentUser() AND status not in (\"Won't Do\")
 order by priority, created DESC "
            :filename "cisco")
           )))
-
 
 ;; toc-org
 (use-package! toc-org

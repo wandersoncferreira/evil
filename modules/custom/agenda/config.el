@@ -29,13 +29,15 @@
 
 (setq bk/super-agenda-today-filter
   '((:discard (:habit t))
+    (:discard (:tag "cisco"))
+    (:discard (:tag "running"))
+    (:discard (:tag "français"))
     (:name "Deadlines"
      :deadline t
      :discard (:deadline t)
      :order 1)
     (:name "Cronograma de Hoje"
      :anything t
-     ;; :not (:deadline today)
      :order 2)))
 
 (use-package! org-agenda
@@ -46,7 +48,7 @@
         org-agenda-custom-commands
         '(("d" "Agenda do Dia"
            ((agenda "" ((org-agenda-overriding-header "Agenda do Dia")
-                        (org-agenda-span 2)
+                        (org-agenda-span 1)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-agenda-skip-scheduled-if-done nil)
                         (org-agenda-skip-deadline-if-done t)
@@ -73,8 +75,12 @@
                             '((:name "Habits" :habit t)
                               (:name "Compromissos Presenciais"
                                :tag "presencial")
-                              (:name "Reuniões"
-                               :tag "reunião")
+                              (:name "Cisco"
+                               :tag "cisco")
+                              (:name "Français"
+                               :tag "français")
+                              (:name "Running"
+                               :tag "running")
                               (:name "Gaveta"
                                :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
                                :order 8)
@@ -156,6 +162,9 @@
           ("Important" . ((lambda (tag) (bk/make-svg-headings "Important" 'org-todo))))
           ("Deadlines" . ((lambda (tag) (bk/make-svg-headings "Deadlines" 'org-todo))))
           ("Habits" . ((lambda (tag) (bk/make-svg-headings "Habits" 'org-date))))
+          ("Cisco" . ((lambda (tag) (bk/make-svg-headings "Cisco" 'org-date))))
+          ("Running" . ((lambda (tag) (bk/make-svg-headings "Running" '+org-todo-cancel))))
+          ("Français" . ((lambda (tag) (bk/make-svg-headings "Français" 'alert-high-face))))
           ("Gaveta" . ((lambda (tag) (bk/make-svg-headings "Gaveta" 'org-priority))))
           ("Projetos" . ((lambda (tag) (bk/make-svg-headings "Projetos" nil))))
           ;; more
