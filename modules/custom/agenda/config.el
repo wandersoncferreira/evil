@@ -32,11 +32,7 @@
     (:discard (:tag "cisco"))
     (:discard (:tag "running"))
     (:discard (:tag "français"))
-    (:name "Deadlines"
-     :deadline t
-     :discard (:deadline t)
-     :order 1)
-    (:name "Cronograma de Hoje"
+    (:name "More"
      :anything t
      :order 2)))
 
@@ -47,7 +43,7 @@
         org-log-into-drawer t
         org-agenda-custom-commands
         '(("d" "Agenda do Dia"
-           ((agenda "" ((org-agenda-overriding-header "Agenda do Dia")
+           ((agenda "" ((org-agenda-overriding-header "Agenda")
                         (org-agenda-span 1)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-agenda-skip-scheduled-if-done nil)
