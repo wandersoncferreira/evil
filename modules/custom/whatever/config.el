@@ -3,7 +3,7 @@
 ;; timezones that I care about
 (after! time
   ;; disable evil in world-clock mode
-  (add-hook 'world-clock-mode-hook #'turn-off-evil-mode)
+  (add-hook! 'world-clock-mode-hook (turn-off-evil-mode))
 
   (setq world-clock-list
         '(("America/Chicago" "Central")
@@ -137,9 +137,3 @@ With prefix argument, repeat completin-read selection even if there was a recent
           ("en" . "fr")
           ("en" . "pt_BR")))
   (map! :leader "sg" #'google-translate-smooth-translate))
-
-
-;; spell-fu
-;; (add-hook 'spell-fu-mode-hook
-;;           (lambda ()
-;;             (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "fr"))))

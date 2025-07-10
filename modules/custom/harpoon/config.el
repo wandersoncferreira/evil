@@ -124,21 +124,19 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
         bookmark-in-project-name-fontify #'identity)
   :config
   ;; create harpoons and reset global values
-  (add-hook 'after-init-hook
-            (lambda ()
-              (bk/create-harpoons)
-              (bk/reset-global-harpoons)))
+  (add-hook! 'after-init-hook
+    (bk/create-harpoons)
+    (bk/reset-global-harpoons))
 
   ;; update harpoon position when changing buffer/window
-  (add-hook 'window-buffer-change-functions #'harpoon-update-bookmark-as-you-edit)
+  (add-hook! 'window-buffer-change-functions (harpoon-update-bookmark-as-you-edit))
 
   ;; update harpoon position when saving a buffer
-  (add-hook 'after-save-hook #'harpoon-update-bookmark-as-you-edit)
+  (add-hook! 'after-save-hook (harpoon-update-bookmark-as-you-edit))
 
-  (add-hook 'projectile-after-switch-project-hook
-            (lambda ()
-              (bk/reset-global-harpoons)
-              (bk/load-harpoon-keys-in-project)))
+  (add-hook! 'projectile-after-switch-project-hook
+    (bk/reset-global-harpoons)
+    (bk/load-harpoon-keys-in-project))
 
   ;; set of bindings
   (map! :leader

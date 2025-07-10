@@ -53,8 +53,8 @@
   :config
   (setq org-super-agenda-header-map nil)
   ;; hide the thin width char glyph
-  (add-hook 'org-agenda-mode-hook
-            (lambda () (setq-local nobreak-char-display nil))))
+  (add-hook! 'org-agenda-mode-hook
+    (setq-local nobreak-char-display nil)))
 
 (use-package! org-gcal
   :config

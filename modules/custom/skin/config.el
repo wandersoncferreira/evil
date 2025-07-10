@@ -32,12 +32,11 @@
    '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 
 (after! clojure-mode
-  (add-hook 'clojure-mode-hook #'highlight-todos))
+  (add-hook! 'clojure-mode-hook (highlight-todos)))
 
 ;; do not truncate lines in the minibuffer
-(add-hook 'minibuffer-setup-hook
-          (lambda ()
-            (setq truncate-lines nil)))
+(add-hook! 'minibuffer-setup-hook
+  (setq truncate-lines nil))
 
 ;; enable column indicator
 (global-display-fill-column-indicator-mode)
@@ -64,11 +63,10 @@
 (defun enable-default-black-theme ()
   "customizing the faces for default-black theme."
   (setq doom-theme 'default-black)
-  (add-hook 'after-init-hook
-            (lambda ()
-              (custom-set-faces
-               '(success ((t (:foreground "ForestGreen" :weight bold))))
-               '(vertico-current ((t (:background "DarkSlateGray"))))))))
+  (add-hook! 'after-init-hook
+    (custom-set-faces
+     '(success ((t (:foreground "ForestGreen" :weight bold))))
+     '(vertico-current ((t (:background "DarkSlateGray")))))))
 
 (defun enable-vim-colors ()
   "enable the vim-colors theme."

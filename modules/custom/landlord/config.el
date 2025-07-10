@@ -10,10 +10,8 @@
     :config
     (require 'code-review)
 
-    (add-hook 'code-review-mode-hook
-              (lambda ()
-                ;; emojify!
-                (emojify-mode)))))
+    (add-hook! 'code-review-mode-hook
+      (emojify-mode))))
 
 (when (modulep! +spotify)
   (use-package! helm-spotify-plus

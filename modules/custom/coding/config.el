@@ -19,7 +19,7 @@
           org-mode)))
 
 ;; center window on error
-(add-hook! 'next-error-hook #'recenter)
+(add-hook! 'next-error-hook (recenter))
 
 (use-package! projectile
   :config
@@ -27,7 +27,7 @@
   (add-to-list 'projectile-project-root-files-bottom-up "project.clj"))
 
 ;; make evil start in emacs state for magit commit buffers
-(add-hook 'git-commit-mode-hook 'evil-insert-state)
+(add-hook! 'git-commit-mode-hook (evil-insert-state))
 
 ;;; * coding keymaps
 (map! :leader

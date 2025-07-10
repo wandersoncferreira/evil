@@ -30,11 +30,11 @@
          "CANCELED(c!)"
          )))
 
-(add-hook 'org-trigger-hook 'save-buffer)
+(add-hook! 'org-trigger-hook (save-buffer))
 
 (setq org-return-follows-link t)
 
-(add-hook 'org-mode-hook (lambda () (setq line-spacing 0.2)))
+(add-hook! 'org-mode-hook (setq line-spacing 0.2))
 
 (defun bk/skip-scheduled-or-deadline-if-not-today ()
   (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
@@ -134,7 +134,7 @@
      "${doom-tags:30} ${doom-hierarchy:*}" )
 
 ;; break lines automatically on the specified width
-(add-hook 'org-mode-hook 'auto-fill-mode)
+(add-hook! 'org-mode-hook (auto-fill-mode))
 
 (use-package org-roam
   :init
@@ -307,10 +307,9 @@ A table containing the sources and the links themselves are presented."
   :custom
   (org-margin-headers-set 'H-svg)
   :config
-  (add-hook 'org-mode
-            (lambda ()
-              (org-indent-mode -1)
-              (org-margin-mode))))
+  (add-hook! 'org-mode
+    (org-indent-mode -1)
+    (org-margin-mode)))
 
 (use-package! org-crypt
   :init
@@ -342,4 +341,5 @@ order by priority, created DESC "
 ;; toc-org
 (use-package! toc-org
   :config
-  (add-hook 'org-mode-hook 'toc-org-mode))
+  (add-hook! 'org-mode-hook
+    (toc-org-mode)))
