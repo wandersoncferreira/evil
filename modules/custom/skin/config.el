@@ -31,7 +31,7 @@
    nil
    '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t))))
 
-(after! clojure-mode
+(after! clojure
   (add-hook! 'clojure-mode-hook (highlight-todos)))
 
 ;; do not truncate lines in the minibuffer

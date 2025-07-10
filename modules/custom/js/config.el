@@ -5,6 +5,6 @@
   :override #'+javascript-init-lsp-or-tide-maybe-h
   (lsp!))
 
-(after! typescript-mode
+(after! typescript
   (setq typescript-indent-level 2)
   (setq-local company-idle-delay 0.2))
