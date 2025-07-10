@@ -1,6 +1,7 @@
 ;;; custom/clj/config.el -*- lexical-binding: t; -*-
 
 (use-package! clojure-mode
+  :defer t
   :config
   ;; keep the underscore as a word character like in Vim
   (add-hook! 'clojure-mode-hook
@@ -11,6 +12,7 @@
     (setq-local evil-args-delimiters '(" "))))
 
 (use-package! cider
+  :defer t
   :init
   (setq ;; automatically download all available .jars with Java sources
         cider-auto-jump-to-error 'errors-only
@@ -41,6 +43,7 @@
     (remove-hook 'completion-at-point-functions #'cider-complete-at-point)))
 
 (use-package! clj-refactor
+  :defer t
   :init
   (setq cljr-eagerly-build-asts-on-startup nil
         cljr-warn-on-eval nil

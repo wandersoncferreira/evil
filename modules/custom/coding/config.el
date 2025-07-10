@@ -1,6 +1,7 @@
 ;;; custom/coding/config.el -*- lexical-binding: t; -*-
 
 (use-package! flycheck
+  :defer t
   :init
   ;; uses `flycheck-buffer' manually to check syntax
   (setq flycheck-check-syntax-automatically nil)
@@ -9,6 +10,7 @@
   (map! :leader "!" flycheck-command-map))
 
 (use-package! ws-butler
+  :defer t
   :init
   (setq ws-butler-global-exempt-modes
         '(special-mode
@@ -22,6 +24,7 @@
 (add-hook! 'next-error-hook (recenter))
 
 (use-package! projectile
+  :commands projectile-switch-project
   :config
   ;; add project.clj file to projectile root
   (add-to-list 'projectile-project-root-files-bottom-up "project.clj"))
@@ -35,5 +38,6 @@
       :desc "Check buffer syntax" "fb" #'flycheck-buffer)
 
 (use-package! exec-path-from-shell
+  :defer t
   :config
   (exec-path-from-shell-initialize))

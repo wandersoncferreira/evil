@@ -22,6 +22,7 @@
                 (remove-hook (bk/str-mode->symbol-hook mode) func)))))
 
 (use-package! evil-cleverparens
+  :after evil
   :init
   (setq evil-cleverparens-move-skip-delimiters nil
         evil-cleverparens-use-additional-movement-keys nil

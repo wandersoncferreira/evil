@@ -137,6 +137,7 @@
 (add-hook! 'org-mode-hook (auto-fill-mode))
 
 (use-package org-roam
+  :after org
   :init
   (setq org-roam-completion-everywhere t
         completion-ignore-case t))
@@ -228,6 +229,7 @@ A table containing the sources and the links themselves are presented."
   (org-insert-time-stamp (current-time) t))
 
 (use-package! org-roam-ui
+  :after org-roam
   :config
   (setq org-roam-ui-sync-theme t
         org-roam-ui-follow t
@@ -254,6 +256,7 @@ A table containing the sources and the links themselves are presented."
 
 ;; org similarity
 (use-package! org-similarity
+  :commands org-similarity-query
   :config
   (setq org-similarity-directory org-roam-directory
         org-similarity-language "english"

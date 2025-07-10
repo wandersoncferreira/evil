@@ -114,10 +114,12 @@ Jump to harpoon using SPC + h + {1, 2, 3, 4, 5}."
               (bk/harpoon-set harpoon-name harpoon-key harpoon-number))))))))
 
 (use-package! goto-chg
+  :defer t
   :config
   (require 'goto-chg))
 
 (use-package! bookmark-in-project
+  :defer t
   :init
   (setq bookmark-in-project-verbose-cycle nil
         bookmark-in-project-verbose-toggle nil

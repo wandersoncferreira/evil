@@ -59,5 +59,6 @@ If `evil-vsplit-window-right' is non-nil, the new window isn't focused."
 
 
 (use-package! evil-escape
+  :after evil
   :config
   (setq-default evil-escape-key-sequence "jk"))

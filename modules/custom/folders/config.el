@@ -1,6 +1,7 @@
 ;;; custom/folders/config.el -*- lexical-binding: t; -*-
 
 (use-package! dired
+  :defer t
   :config
   ;; dired tries to guess the default target directory
   (setq dired-dwim-target t)
@@ -19,7 +20,7 @@
   (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
   (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))
 
-
 (use-package! dired-quick-sort
+  :after dired
   :config
   (dired-quick-sort-setup))

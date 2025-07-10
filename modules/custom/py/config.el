@@ -4,7 +4,7 @@
       python-shell-interpreter "~/base/bin/python")
 
 (use-package! pyvenv
-  :ensure t
+  :mode ("\\.py\\'" . python-mode)
   :config
   (pyvenv-mode t))
 
