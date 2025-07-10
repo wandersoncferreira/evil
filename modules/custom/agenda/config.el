@@ -27,70 +27,25 @@
 (advice-add 'org-agenda :before #'bk/agenda-files-update)
 (advice-add 'org-todo-list :before #'bk/agenda-files-update)
 
-(setq bk/super-agenda-today-filter
-  '((:discard (:habit t))
-    (:discard (:tag "cisco"))
-    (:discard (:tag "running"))
-    (:discard (:tag "français"))
-    (:anything t :order 2)))
-
 (use-package! org-agenda
   :config
   (setq org-agenda-span 7
         org-agenda-start-day "+0d"
         org-log-into-drawer t
+        org-agenda-compact-blocks t
         org-agenda-custom-commands
-        '(("d" "Agenda do Dia"
-           ((org-ql-block '(or (and (habit)
-                                    (or (scheduled :to today)
-                                        (deadline :to today)
-                                        (done)))
-                               (and (todo)
-                                    (or (scheduled :to today)
-                                        (deadline :to today)
-                                        (todo "SOMEDAY"
-                                              "CHECK"
-                                              "PROJECT"
-                                              "TO-READ"
-                                              "TO-WATCH"))))
-                          ((org-ql-block-header "Atividades Gerais")
-                           (org-super-agenda-groups
-                            '((:name "Habits" :habit t)
-                              (:name "Compromissos Presenciais"
-                               :tag "presencial")
-                              (:name "Gaveta"
-                               :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
-                               :order 8)
-                              (:name "Cisco"
-                               :tag "cisco")
-                              (:name "Français"
-                               :tag "français")
-                              (:name "Running"
-                               :tag "running")
-                              (:name "Projetos"
-                               :todo "PROJECT"
-                               :order 9)
-                              (:discard (:todo "TODO"))))))
-            (agenda "" ((org-agenda-overriding-header "More today")
-                        (org-agenda-span 1)
+        '(("d" "Wan view"
+           ((agenda "" ((org-agenda-span 'day)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
-                        (org-agenda-skip-scheduled-if-done nil)
-                        (org-agenda-skip-deadline-if-done t)
-                        (org-agenda-day-face-function (lambda (date) 'org-agenda-date))
-                        (org-agenda-skip-function
-                         (lambda ()
-                           (when (string-equal (org-entry-get (point) "style") "habit")
-                             (outline-next-heading))))
-                        (org-super-agenda-groups bk/super-agenda-today-filter))))))))
+                        (org-super-agenda-groups
+                         '((:name "Today"
+                            :time-grid t
+                            :date today
+                            :todo "TODAY"
+                            :scheduled today
+                            :order 1))))))))))
 
 (add-to-list 'org-modules 'org-habit t)
-
-;; (setq org-habit-preceding-days 4
-;;       org-habit-following-days 4
-;;       org-habit-show-habits-only-for-today t
-;;       org-habit-today-glyph ?⍟
-;;       org-habit-completed-glyph ?✓
-;;       org-habit-graph-column 40)
 
 (use-package! org-super-agenda
   :after org
