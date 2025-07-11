@@ -2,6 +2,7 @@
 
 ;; let's try embark instead of which-key
 (setq prefix-help-command #'embark-prefix-help-command)
+
 (after! vertico-multiform
   (add-to-list 'vertico-multiform-categories
                '(embark-keybinding grid)))
