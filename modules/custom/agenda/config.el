@@ -35,13 +35,11 @@
         org-agenda-compact-blocks t
         org-agenda-custom-commands
         '(("d" "Wan view"
-           ((agenda "" ((org-agenda-span 'day)
+           ((agenda "" ((org-agenda-span 2)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-super-agenda-groups
                          '((:name "Today"
                             :time-grid t
-                            :date today
-                            :todo "TODAY"
                             :scheduled today
                             :order 1))))))))))
 
