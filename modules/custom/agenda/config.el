@@ -34,8 +34,32 @@
         org-log-into-drawer t
         org-agenda-compact-blocks t
         org-agenda-custom-commands
-        '(("d" "Wan view"
-           ((agenda "" ((org-agenda-span 2)
+        '(("d" "Today"
+           ((agenda "" ((org-agenda-span 1)
+                        (org-agenda-prefix-format "   %i %?-2 t%s")
+                        (org-super-agenda-groups
+                         '((:name "Tasks"
+                            :time-grid t
+                            :scheduled today
+                            :order 1)))))
+            (org-ql-block '(todo "SOMEDAY"
+                            "CHECK"
+                            "PROJECT"
+                            "TO-READ"
+                            "TO-WATCH")
+                          ((org-ql-block-header "\n\n----------------------------\n
+Projects and ideas for the future")
+                           (org-super-agenda-groups
+                            '((:name "Drawer"
+                               :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
+                               :order 8)
+                              (:name "Projects"
+                               :todo "PROJECT"
+                               :order 9)
+                              (:discard (:todo "TODO"))))))))
+          ("t" "Tomorrow"
+           ((agenda "" ((org-agenda-span 1)
+                        (org-agenda-start-day "+1d")
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-super-agenda-groups
                          '((:name "Tasks"
@@ -59,6 +83,19 @@ Projects and ideas for the future")
                               (:discard (:todo "TODO"))))))))))
 
   (add-to-list 'org-modules 'org-habit t))
+
+(defun bk/org-agenda-tomorrow ()
+  (interactive)
+  (org-agenda nil "t"))
+
+(defun bk/org-agenda-today ()
+  (interactive)
+  (org-agenda nil "d"))
+
+(map! :after evil-org-agenda
+      :map evil-org-agenda-mode-map
+      "dh" #'bk/org-agenda-today
+      "dt" #'bk/org-agenda-tomorrow)
 
 (use-package! org-super-agenda
   :after org
