@@ -38,12 +38,27 @@
            ((agenda "" ((org-agenda-span 2)
                         (org-agenda-prefix-format "   %i %?-2 t%s")
                         (org-super-agenda-groups
-                         '((:name "Today"
+                         '((:name "Tasks"
                             :time-grid t
                             :scheduled today
-                            :order 1))))))))))
+                            :order 1)))))
+            (org-ql-block '(todo "SOMEDAY"
+                            "CHECK"
+                            "PROJECT"
+                            "TO-READ"
+                            "TO-WATCH")
+                          ((org-ql-block-header "\n\n----------------------------\n
+Projects and ideas for the future")
+                           (org-super-agenda-groups
+                            '((:name "Drawer"
+                               :todo ("CHECK" "SOMEDAY" "TO-READ" "TO-WATCH")
+                               :order 8)
+                              (:name "Projects"
+                               :todo "PROJECT"
+                               :order 9)
+                              (:discard (:todo "TODO"))))))))))
 
-(add-to-list 'org-modules 'org-habit t)
+  (add-to-list 'org-modules 'org-habit t))
 
 (use-package! org-super-agenda
   :after org
