@@ -5,7 +5,7 @@
  "◀── now ─────────────────────────────────────────────────")
 
 (defun bk/roam-todo-files ()
-  "returns a list of note files containing the 'todo' tag."
+  "returns a list of note files containing the TODO tag."
   (seq-uniq
    (seq-map
     #'car
@@ -29,10 +29,8 @@
 
 (use-package! org-agenda
   :config
-  (setq org-agenda-span 7
-        org-agenda-start-day "+0d"
+  (setq org-agenda-start-day "+0d"
         org-log-into-drawer t
-        org-agenda-compact-blocks t
         org-agenda-custom-commands
         '(("d" "Today"
            ((agenda "" ((org-agenda-span 1)
@@ -114,3 +112,17 @@ Projects and ideas for the future")
         org-gcal-remove-api-cancelled-events t
         plstore-cache-passphrase-for-symmetric-encryption t
         org-gcal-fetch-file-alist '(("iagwanderson@gmail.com" . "~/googlecalendar_iagwanderson.org"))))
+
+;;;###autoload
+(defun bk/open-agenda-on-the-side ()
+  (interactive)
+  (let ((buff (current-buffer)))
+    (if (string= "*Org Agenda*" (buffer-name buff))
+        (org-agenda nil "d")
+      (progn
+        (delete-other-windows)
+        (+evil/window-vsplit-and-follow)
+        (org-agenda nil "d")))))
+
+(map! :leader
+      "oA" #'bk/open-agenda-on-the-side)

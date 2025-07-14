@@ -8,4 +8,5 @@ Highlights of this org agenda configuration:
 - Use ~org-roam~ files with tag ~todo~ as agenda files
 - Custom views using ~org-super-agenda~
 - Enable ~org-habits~
-- Sync google events through ~org-gcal~
+- +Sync google events through ~org-gcal~+
+- Quick shortcuts to open agenda in side buffer.
