@@ -31,7 +31,7 @@
 (use-package! jinx
   :hook (org-mode . jinx-mode)
   :config
-  (setq jinx-languages "pt_BR en_US"
+  (setq jinx-languages "pt_BR en_US fr_FR"
         jinx-delay 1.0)
   (nconc (cadr jinx-exclude-faces) '(org-ref-ref-face))
   (map! :map evil-normal-state-map
