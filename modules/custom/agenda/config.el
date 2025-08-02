@@ -124,5 +124,5 @@ Projects and ideas for the future")
         (+evil/window-vsplit-and-follow)
         (org-agenda nil "d")))))
 
-(map! :leader
-      "oA" #'bk/open-agenda-on-the-side)
+;; (map! :leader
+;;       "oA" #'bk/open-agenda-on-the-side)
