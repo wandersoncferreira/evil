@@ -37,13 +37,12 @@ Fit more in the screen!"
                                     ((numberp (cadr alpha)) (cadr alpha)))
                               100)
                          (not alpha)))
-         (opacity (if is-opaque? 75 100))
-         (theme (if is-opaque? 'doom-dark+ old-doom-theme)))
-    (when is-opaque?
-      (setq old-doom-theme doom-theme))
+         (opacity (if is-opaque? 60 100))
+         (theme (if is-opaque? 'almost-mono-black 'almost-mono-cream)))
     (set-frame-parameter nil 'alpha opacity)
     (setq doom-theme theme)
-    (load-theme doom-theme t)))
+    (load-theme doom-theme t)
+    (consult-theme theme)))
 
 ;;;###autoload
 (defun what-face (pos)

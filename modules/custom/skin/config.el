@@ -81,7 +81,7 @@
     (invert-face 'default))
   (set-variable 'frame-background-mode 'dark))
 
-(setq doom-theme 'almost-mono-white)
+(setq doom-theme 'almost-mono-cream)
 (setq doom-font (font-spec :family "Source Code Pro"
                            :size 14
                            :weight 'regular))
