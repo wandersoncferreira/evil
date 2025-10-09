@@ -5,13 +5,12 @@
       org-hide-emphasis-markers t
       ;; remove gap when you add a new heading
       org-blank-before-new-entry '((heading . nil) (plain-list-item . nil))
+      ;; hide everything
+      org-startup-folded t
       org-pretty-entities t
       ;; add close time when changing to DONE
       org-log-done 'time
       org-default-notes-file (concat org-directory "capture.org"))
-
-;; hide everything
-(setq org-startup-folded t)
 
 ;; new state to todo
 (setq org-todo-keywords
@@ -35,33 +34,6 @@
 (setq org-return-follows-link t)
 
 (add-hook! 'org-mode-hook (setq line-spacing 0.2))
-
-(defun bk/skip-scheduled-or-deadline-if-not-today ()
-  (let* ((subtree-end (save-excursion (org-end-of-subtree t)))
-         (deadline-entry (org-entry-get nil "DEADLINE"))
-         (deadline-day (when deadline-entry
-                         (time-to-days (org-time-string-to-time deadline-entry))))
-         (scheduled-entry (org-entry-get nil "SCHEDULED"))
-         (scheduled-day (when scheduled-entry
-                          (time-to-days
-                           (org-time-string-to-time
-                            scheduled-entry))))
-         (now (time-to-days (current-time))))
-    (and
-     (or
-      (and deadline-day (not (= deadline-day now)))
-      (and scheduled-day (not (= scheduled-day now))))
-     subtree-end)))
-
-(require 'org-habit)
-
-(defun bk/skip-habits ()
-  (save-restriction
-    (widen)
-    (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
-      (if (org-is-habit-p)
-          next-headline
-        nil))))
 
 (require 'org-tempo)
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
@@ -289,31 +261,6 @@ A table containing the sources and the links themselves are presented."
 
 (require 'org-inline-video-thumbnails)
 
-
-(use-package! org-modern
-  :hook (org-mode . org-modern-mode)
-  :config
-  (setq
-   org-modern-star '( "⌾" "✸" "◈" "◇")
-   org-modern-list '((42 . "◦") (43 . "•") (45 . "–"))
-   org-pretty-entities t
-   org-modern-table-vertical t
-   org-modern-tag nil
-   org-modern-priority nil
-   org-modern-todo nil
-   org-modern-table nil))
-
-(use-package! org-variable-pitch
-  :hook (org-mode . org-variable-pitch-minor-mode))
-
-(use-package! org-margin
-  :custom
-  (org-margin-headers-set 'H-svg)
-  :config
-  (add-hook! 'org-mode
-    (org-indent-mode -1)
-    (org-margin-mode)))
-
 (use-package! org-crypt
   :init
   (setq org-crypt-key "wand@hey.com"
@@ -340,9 +287,3 @@ assignee = currentUser() AND status not in (\"Won't Do\")
 order by priority, created DESC "
            :filename "cisco")
           )))
-
-;; toc-org
-(use-package! toc-org
-  :config
-  (add-hook! 'org-mode-hook
-    (toc-org-mode)))
