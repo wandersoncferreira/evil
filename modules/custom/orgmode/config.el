@@ -90,8 +90,8 @@
 
 ;; org roam section
 
-(setq org-roam-directory (file-truename (expand-file-name "~/Documents/notes"))
-      org-roam-db-location (file-truename (expand-file-name "~/Documents/org-roam.db"))
+(setq org-roam-directory (file-truename (expand-file-name "~/code/notes"))
+      org-roam-db-location (file-truename (expand-file-name "~/code/notes/notes/org-roam.db"))
       org-roam-dailies-directory "dailies/")
 
 (setq org-roam-capture-templates
