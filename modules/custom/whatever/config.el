@@ -137,3 +137,7 @@ With prefix argument, repeat completin-read selection even if there was a recent
           ("en" . "fr")
           ("en" . "pt_BR")))
   (map! :leader "sg" #'google-translate-smooth-translate))
+
+;; latex
+(setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
+(add-to-list 'exec-path "/Library/TeX/texbin")

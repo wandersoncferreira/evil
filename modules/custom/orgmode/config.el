@@ -91,7 +91,7 @@
 ;; org roam section
 
 (setq org-roam-directory (file-truename (expand-file-name "~/Documents/notes"))
-      org-roam-db-location (file-truename (expand-file-name "~/Documents/org-roam.db"))
+      org-roam-db-location (file-truename (expand-file-name "~/Documents/notes/notes/org-roam.db"))
       org-roam-dailies-directory "dailies/")
 
 (setq org-roam-capture-templates
@@ -119,22 +119,6 @@
         `(("n" "notes" plain
            ,(format "#+title: ${title}\n" org-roam-directory)
            :target (file "notes/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
-          ("r" "thought" plain
-           ,(format "#+title: ${title}\n" org-roam-directory)
-           :target (file "thought/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
-          ("t" "topic" plain
-           ,(format "#+title: ${title}\n" org-roam-directory)
-           :target (file "topic/%<%Y%m%d%H%M%S>-${slug}.org")
-           :unnarrowed t)
-          ("p" "project" plain
-           ,(format "#+title: ${title}\n" org-roam-directory)
-           :target (file "project/%<%Y%m%d>-${slug}.org")
-           :unnarrowed t)
-          ("f" "todo" plain
-           ,(format "#+title: ${title}\n" org-roam-directory)
-           :target (file "todo/%<%Y%m%d%H%M%S>-${slug}.org")
            :unnarrowed t)
           ("s" "secret" plain "#+title: ${title}\n\n"
            :target (file "secret/%<%Y%m%d%H%M%S>-${slug}.org.gpg")

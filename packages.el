@@ -79,8 +79,12 @@
 (package! mcp
   :pin "3a380185597f56290057f370ab65dde89a20a18f")
 
+(package! claude-code-ide
+  :recipe (:host github :repo "manzaltu/claude-code-ide.el"))
+
 ;; spelling
 (package! jinx)
 
 ;; keys
 (package! which-key :disable t)
+

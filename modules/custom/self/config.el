@@ -41,3 +41,10 @@
 (after! vertico-multiform
   (add-to-list 'vertico-multiform-categories
                '(jinx (vertico-grid-annotate . 25))))
+
+;; not sure why this is not working by default
+(use-package exec-path-from-shell
+  :init
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs
+   '("LIBRARY_PATH" "INFOPATH" "CPATH" "MANPATH")))

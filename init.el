@@ -33,6 +33,8 @@
        undo
 
        :term
+       vterm
+
        :checkers
        (spell +aspell
               +everywhere)
@@ -44,6 +46,7 @@
         +dictionary
         +docsets)
        magit
+       pdf
        llm
        lsp
 
@@ -57,6 +60,7 @@
        (javascript +lsp)
        markdown
        plantuml
+       (latex +fold +lsp +cdlatex)
        yaml
        (python +lsp +pyright)
        (org +roam2
