@@ -77,7 +77,7 @@
 
 ;; ai
 (package! mcp
-  :pin "3a380185597f56290057f370ab65dde89a20a18f")
+  :recipe (:host github :repo "lizqwerscott/mcp.el"))
 
 (package! claude-code-ide
   :recipe (:host github :repo "manzaltu/claude-code-ide.el"))

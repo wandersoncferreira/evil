@@ -28,11 +28,20 @@
 
 (require 'gptel-integrations)
 
-(use-package mcp
+(use-package! mcp
   :config
   (require 'mcp-hub)
   (add-to-list 'mcp-hub-servers '("git" . (:command "uvx" :args ("mcp-server-git")) ))
   (add-to-list 'mcp-hub-servers '("time" . (:command "uvx" :args ("mcp-server-time"))))
+  (add-to-list 'mcp-hub-servers '("github" . (:command "github-mcp-server" :args ("stdio")
+                                              :env (:GITHUB_PERSONAL_ACCESS_TOKEN
+                                                    ,(thread-first (auth-source-search :host "api.github_mcp_server.com" :max 1)
+                                                                   (car)
+                                                                   (plist-get :secret)
+                                                                   (funcall))))))
+  (add-to-list 'mcp-hub-servers '("filesystem" . (:command "npx"
+                                                  :args ("-y" "@modelcontextprotocol/server-filesystem")
+                                                  :roots ("/Users/wferreir/Documents/code/"))))
   (mcp-hub-start-all-server))
 
 ;; IDE
