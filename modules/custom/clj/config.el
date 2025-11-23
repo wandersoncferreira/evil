@@ -69,10 +69,5 @@
                       ";" #'cider-eval-defun-to-comment))))
 
 ;; AI
-(use-package! mcp
-  :after gptel
-  :config
-  (require 'mcp-hub)
-  :init (setq mcp-hub-servers
-              '(("iroh" :command "clojure-mcp" :args ("iroh"))))
-  :hook (after-init . mcp-hub-start-all-server))
+;; (after! mcp
+;;   (add-to-list 'mcp-hub-servers '("iroh" :command "clojure-mcp" :args ("iroh"))))

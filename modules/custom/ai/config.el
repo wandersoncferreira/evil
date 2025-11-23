@@ -28,6 +28,13 @@
 
 (require 'gptel-integrations)
 
+(use-package mcp
+  :config
+  (require 'mcp-hub)
+  (add-to-list 'mcp-hub-servers '("git" . (:command "uvx" :args ("mcp-server-git")) ))
+  (add-to-list 'mcp-hub-servers '("time" . (:command "uvx" :args ("mcp-server-time"))))
+  (mcp-hub-start-all-server))
+
 ;; IDE
 (use-package! claude-code-ide
   :bind ("C-c C-'" . claude-code-ide-menu)
