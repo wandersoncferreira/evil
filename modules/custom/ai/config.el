@@ -21,10 +21,10 @@
 (gptel-make-anthropic "Claude Roam"
   :stream t
   :models '(claude-sonnet-4-5-20250929)
-  :key (thread-first (auth-source-search :host "api.anthropic.com" :max 1)
-                     (car)
-                     (plist-get :secret)
-                     (funcall)))
+  :key (-some-> (auth-source-search :host "api.anthropic.com" :max 1)
+         (car)
+         (plist-get :secret)
+         (funcall)))
 
 (require 'gptel-integrations)
 
@@ -35,10 +35,10 @@
   (add-to-list 'mcp-hub-servers '("time" . (:command "uvx" :args ("mcp-server-time"))))
   (add-to-list 'mcp-hub-servers '("github" . (:command "github-mcp-server" :args ("stdio")
                                               :env (:GITHUB_PERSONAL_ACCESS_TOKEN
-                                                    ,(thread-first (auth-source-search :host "api.github_mcp_server.com" :max 1)
-                                                                   (car)
-                                                                   (plist-get :secret)
-                                                                   (funcall))))))
+                                                    ,(-some-> (auth-source-search :host "api.github_mcp_server.com" :max 1)
+                                                       (car)
+                                                       (plist-get :secret)
+                                                       (funcall))))))
   (add-to-list 'mcp-hub-servers '("filesystem" . (:command "npx"
                                                   :args ("-y" "@modelcontextprotocol/server-filesystem")
                                                   :roots ("/Users/wferreir/Documents/code/"))))
