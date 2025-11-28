@@ -48,6 +48,7 @@
        magit
        pdf
        llm
+       tree-sitter
        lsp
 
        :os
@@ -55,7 +56,7 @@
         macos)
 
        :lang
-       (clojure +lsp)
+       (clojure +lsp +tree-sitter)
        emacs-lisp
        (javascript +lsp)
        markdown

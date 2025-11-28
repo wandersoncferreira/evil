@@ -55,6 +55,7 @@
   :config
   ;; clojure
   (setq lsp-completion-no-cache t
+        lsp-semantic-tokens-enable t
         lsp-enable-file-watchers nil
         lsp-completion-use-last-result nil))
 

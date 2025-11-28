@@ -26,6 +26,14 @@
          (plist-get :secret)
          (funcall)))
 
+(gptel-make-anthropic "Opus 4.5"
+  :stream t
+  :models '(claude-opus-4-5)
+  :key (thread-first (auth-source-search :host "api.anthropic.com" :max 1)
+                     (car)
+                     (plist-get :secret)
+                     (funcall)))
+
 (require 'gptel-integrations)
 
 (use-package! mcp
