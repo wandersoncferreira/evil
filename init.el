@@ -56,15 +56,15 @@
         macos)
 
        :lang
-       (clojure +lsp +tree-sitter)
+       (clojure +lsp)
        emacs-lisp
-       (javascript +lsp)
+       (javascript +lsp +tree-sitter)
        markdown
        plantuml
        (latex +fold +lsp +cdlatex)
        yaml
        (python +lsp +pyright)
-       (org +roam2
+       (org +roam
             +hugo
             +present
             +journal)

@@ -17,7 +17,6 @@
   (setq ;; automatically download all available .jars with Java sources
    cider-auto-jump-to-error 'errors-only
    cider-show-error-buffer t ;; only-in-repl
-   cider-font-lock-dynamically nil ;; use lsp semantic tokens
    cider-eldoc-display-for-symbol-at-point nil ;; use lsp
    cider-prompt-for-symbol nil
    cider-reuse-dead-repls nil
@@ -54,10 +53,7 @@
   :commands lsp
   :config
   ;; clojure
-  (setq lsp-completion-no-cache t
-        lsp-semantic-tokens-enable t
-        lsp-enable-file-watchers nil
-        lsp-completion-use-last-result nil))
+  (setq lsp-enable-file-watchers nil))
 
 (map! (:after (:and clojure-mode cider)
        :localleader
