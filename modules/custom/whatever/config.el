@@ -141,3 +141,19 @@ With prefix argument, repeat completin-read selection even if there was a recent
 ;; latex
 (setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
 (add-to-list 'exec-path "/Library/TeX/texbin")
+
+(require 'evil-collection)
+(require 'wasabi)
+
+(evil-collection-define-key '(normal) 'wasabi-chat-mode-map
+  "q" 'wasabi-chat-quit
+  "N" 'wasabi-chat-next-message
+  "P" 'wasabi-chat-previous-message
+  "G" 'wasabi-chat-refresh
+  (kbd "TAB") 'wasabi-chat-next-actionable
+  (kbd "<tab>") 'wasabi-chat-next-actionable
+  (kbd "S-TAB") 'wasabi-chat-previous-message
+  (kbd "<backtab>") 'wasabi-chat-previous-actionable)
+
+(evil-collection-define-key '(normal) 'wasabi-chat-image-mode-map
+  "q" 'quit-window)

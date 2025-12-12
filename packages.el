@@ -91,7 +91,5 @@
 ;; keys
 (package! which-key :disable t)
 
-
 ;; whatsapp
-(package! wasabi
-  :recipe (:host github :repo "xenodium/wasabi"))
+(package! wasabi :recipe (:host github :repo "wandersoncferreira/wasabi" :branch "main"))

@@ -50,7 +50,8 @@
   (add-to-list 'mcp-hub-servers '("filesystem" . (:command "npx"
                                                   :args ("-y" "@modelcontextprotocol/server-filesystem")
                                                   :roots ("/Users/wferreir/Documents/code/"))))
-  (mcp-hub-start-all-server))
+  ;; (mcp-hub-start-all-server)
+  )
 
 ;; IDE
 (use-package! claude-code-ide
@@ -62,4 +63,5 @@
         claude-code-ide-switch-tab-on-ediff nil
         claude-code-ide-enable-mcp-server t)
   :config
-  (claude-code-ide-emacs-tools-setup))
+  ;; (claude-code-ide-emacs-tools-setup)
+  )
